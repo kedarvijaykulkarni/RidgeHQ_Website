@@ -7,11 +7,18 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[var(--bg)] [background-image:linear-gradient(var(--grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--grid-line)_1px,transparent_1px)] [background-size:56px_56px] pt-24 pb-32">
+    <section className="relative overflow-hidden bg-[var(--bg)] pt-24 pb-32">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 z-0 opacity-40 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/kailash-night.png')" }}
+      />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[var(--bg)]/80 to-[var(--bg)] pointer-events-none" />
+      
       {/* Starfield + ambient dual-tone glow */}
-      <div className="starfield absolute inset-0 pointer-events-none" />
-      <div className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full blur-[100px] pointer-events-none bg-[var(--glow)]" />
-      <div className="absolute top-1/3 -left-40 w-[420px] h-[420px] rounded-full blur-[110px] pointer-events-none bg-[var(--accent-2)] opacity-[0.06]" />
+      <div className="starfield absolute inset-0 z-0 pointer-events-none opacity-50" />
+      <div className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full blur-[100px] pointer-events-none bg-[var(--glow)] z-0" />
+      <div className="absolute top-1/3 -left-40 w-[420px] h-[420px] rounded-full blur-[110px] pointer-events-none bg-[var(--accent-2)] opacity-[0.06] z-0" />
 
       <Container className="relative z-10 text-center max-w-4xl">
         <motion.div
