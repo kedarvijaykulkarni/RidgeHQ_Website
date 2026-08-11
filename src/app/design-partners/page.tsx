@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { ZohoLeadForm } from "@/components/forms/ZohoLeadForm";
+import { DesignPartnerForm } from "@/components/forms/DesignPartnerForm";
 
 export const metadata = {
   title: "Design Partner Program",
@@ -40,10 +40,7 @@ export default function DesignPartnersPage() {
           </div>
         </div>
         
-        <ZohoLeadForm 
-          intent="design_partner" 
-          sourcePage="/design-partners"
-        />
+        <DesignPartnerForm />
       </Container>
     </Section>
   );
