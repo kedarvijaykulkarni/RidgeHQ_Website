@@ -23,8 +23,8 @@ export function CTASection({
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-[#6366F1]/5"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6366F1]/20 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[var(--accent-soft)]"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--accent)]/20 blur-[120px] rounded-full pointer-events-none"></div>
       
       <Container className="relative text-center">
         <div className="max-w-2xl mx-auto space-y-8">

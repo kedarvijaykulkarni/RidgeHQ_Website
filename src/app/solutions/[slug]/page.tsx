@@ -35,7 +35,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
     <div className="flex flex-col w-full">
       {/* Vertical Hero */}
       <Section className="relative overflow-hidden pt-24 pb-16">
-        <div className="absolute inset-0 bg-[#6366F1]/5 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 max-w-xl">
@@ -92,7 +92,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 <div className="space-y-4">
                   {vertical.representativeFlow.map((step, i) => (
                     <div key={i} className="flex gap-4">
-                      <div className="w-6 h-6 rounded-full bg-[#6366F1]/20 text-[#6366F1] flex items-center justify-center shrink-0 text-sm font-bold">
+                      <div className="w-6 h-6 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] flex items-center justify-center shrink-0 text-sm font-bold">
                         {i + 1}
                       </div>
                       <p className="text-sm text-slate-300">{step}</p>

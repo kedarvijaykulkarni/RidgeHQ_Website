@@ -16,7 +16,7 @@ export default function AboutPage() {
     <div className="flex flex-col w-full">
       {/* Section 1 — About Hero */}
       <Section className="relative overflow-hidden pt-24 pb-20">
-        <div className="absolute inset-0 bg-[#6366F1]/5 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium mb-8">
             About RidgeHQ
@@ -75,7 +75,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto relative">
             {/* Visual connector line (hidden on mobile) */}
-            <div className="hidden lg:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[#6366F1]/50 to-transparent -z-10"></div>
+            <div className="hidden lg:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/50 to-transparent -z-10"></div>
             
             <div className="glass-card p-10 border-t-4 border-t-[#8B5CF6] relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -167,7 +167,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {verticals.map((v) => (
               <div key={v.id} className="p-4 border border-white/5 rounded-xl bg-slate-950/50 flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#6366F1]/50"></div>
+                <div className="w-2 h-2 rounded-full bg-[var(--accent)]/50"></div>
                 <span className="font-medium text-slate-300 text-sm">{v.name}</span>
               </div>
             ))}
@@ -178,7 +178,7 @@ export default function AboutPage() {
       {/* Section 6 — Early-Stage Honesty */}
       <Section className="bg-slate-900/50">
         <Container>
-          <div className="max-w-4xl mx-auto glass-card p-10 md:p-16 border-t-4 border-t-[#6366F1]">
+          <div className="max-w-4xl mx-auto glass-card p-10 md:p-16 border-t-4 border-t-[var(--accent)]">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold mb-6">Built closely with operators.</h2>
               <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">

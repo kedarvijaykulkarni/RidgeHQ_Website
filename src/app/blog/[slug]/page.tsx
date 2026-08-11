@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       
       <Section className="py-12">
         <Container className="max-w-3xl">
-          <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-[#6366F1] hover:prose-a:text-[#818cf8]">
+          <div className="prose prose-invert prose-lg max-w-none prose-headings:text-[var(--ink)] prose-a:text-[var(--accent)] hover:prose-a:text-[var(--accent-2)] prose-p:text-[var(--ink-secondary)] prose-li:text-[var(--ink-secondary)] prose-strong:text-[var(--ink)]">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
         </Container>
