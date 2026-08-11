@@ -1,0 +1,36 @@
+import { MetadataRoute } from 'next'
+import { verticals } from '@/lib/config/verticals'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://ridgehq.app'
+  
+  const staticRoutes = [
+    '',
+    '/platform',
+    '/ai-copilot',
+    '/integrations',
+    '/pricing',
+    '/solutions',
+    '/contact',
+    '/book-demo',
+    '/design-partners',
+    '/about',
+    '/security',
+    '/privacy',
+    '/terms',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1 : 0.8,
+  }))
+
+  const solutionRoutes = verticals.map((v) => ({
+    url: `${baseUrl}/solutions/${v.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }))
+
+  return [...staticRoutes, ...solutionRoutes]
+}
