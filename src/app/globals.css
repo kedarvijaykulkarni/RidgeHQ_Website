@@ -86,15 +86,26 @@
 
 @layer utilities {
   .glass-card {
-    background-image: var(--glass-bg);
+    background-image: 
+      var(--glass-bg),
+      linear-gradient(oklch(100% 0 0 / 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(100% 0 0 / 0.015) 1px, transparent 1px);
+    background-size: 
+      100% 100%,
+      24px 24px,
+      24px 24px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
+    border: 1px solid oklch(100% 0 0 / 0.04);
     @apply rounded-2xl;
   }
   
   .glass-card-hover {
-    @apply transition-all duration-300 hover:border-[var(--accent-border)] hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)];
+    @apply transition-all duration-300 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,1),_0_0_20px_-5px_var(--accent-soft)] hover:-translate-y-1;
+  }
+
+  .glass-card-hover:hover, .glass-card-hover:focus-within {
+    background-image: var(--glass-bg);
   }
   
   @keyframes accordion-down {

@@ -3,6 +3,7 @@ import { blogPosts } from "@/lib/config/blog";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
+import { StructuredData } from "@/components/seo/StructuredData";
 import ReactMarkdown from 'react-markdown';
 
 export async function generateStaticParams() {
@@ -32,6 +33,50 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="flex flex-col w-full">
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              "headline": post.title,
+              "description": post.excerpt,
+              "image": `https://ridgehq.app/images/brand/og-image.jpg`,
+              "datePublished": post.publishedAt,
+              "author": {
+                "@type": "Person",
+                "name": post.author
+              },
+              "publisher": {
+                "@id": "https://ridgehq.app/#organization"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://ridgehq.app/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://ridgehq.app/blog"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": post.title,
+                  "item": `https://ridgehq.app/blog/${post.slug}`
+                }
+              ]
+            }
+          ]
+        }}
+      />
       <Section className="pb-8 pt-24 border-b border-white/5">
         <Container className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.category }]} />

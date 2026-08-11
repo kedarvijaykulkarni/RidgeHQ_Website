@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Container } from "@/components/ui/Layout"
 import { Button } from "@/components/ui/Button"
+import { ChevronRight } from "lucide-react"
 import Link from "next/link"
 
 interface CTASectionProps {
@@ -32,11 +33,17 @@ export function CTASection({
           <p className="text-lg md:text-xl text-slate-400">{description}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" asChild>
-              <Link href={primaryCtaHref}>{primaryCtaText}</Link>
+              <Link href={primaryCtaHref}>
+                {primaryCtaText}
+                <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
             {secondaryCtaText && secondaryCtaHref && (
               <Button size="lg" variant="outline" asChild>
-                <Link href={secondaryCtaHref}>{secondaryCtaText}</Link>
+                <Link href={secondaryCtaHref}>
+                  {secondaryCtaText}
+                  <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             )}
           </div>

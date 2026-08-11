@@ -2,6 +2,7 @@ import * as React from "react"
 import Link from "next/link"
 import { mainNav } from "@/lib/config/navigation"
 import { Button } from "@/components/ui/Button"
+import { ChevronRight } from "lucide-react"
 import { Container } from "@/components/ui/Layout"
 
 export function Header() {
@@ -32,7 +33,7 @@ export function Header() {
               <Link href="/contact">Contact</Link>
             </Button>
             <Button className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none font-bold" asChild>
-              <Link href="/book-demo">Book a Demo</Link>
+              <Link href="/book-demo">Book a Demo <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" /></Link>
             </Button>
           </div>
         </div>

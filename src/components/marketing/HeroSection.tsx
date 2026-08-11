@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -41,10 +42,10 @@ export function HeroSection() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] font-bold border-none" asChild>
-              <Link href="/book-demo">Book a Demo</Link>
+              <Link href="/book-demo">Book a Demo <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" /></Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-[var(--ink)] bg-[var(--bg-elevated)] border-[var(--border)] hover:border-[var(--accent)]" asChild>
-              <Link href="/design-partners">Join the Design Partner Program</Link>
+            <Button size="lg" variant="outline" className="group text-[var(--ink)] bg-[var(--bg-elevated)] border-[var(--border)] hover:border-[var(--accent)]" asChild>
+              <Link href="/design-partners">Join the Design Partner Program <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1 text-[var(--ink-tertiary)] group-hover:text-[var(--accent)]" /></Link>
             </Button>
           </div>
         </motion.div>
