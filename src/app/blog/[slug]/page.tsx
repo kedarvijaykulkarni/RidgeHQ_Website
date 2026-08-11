@@ -1,7 +1,7 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { blogPosts } from "@/lib/config/blog";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
 import ReactMarkdown from 'react-markdown';

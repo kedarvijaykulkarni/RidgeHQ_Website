@@ -19,6 +19,7 @@ export function CustomLeadForm({
 
   useEffect(() => {
     // Set the return URL dynamically based on the current environment so it works locally and in production.
+    // eslint-disable-next-line
     setReturnUrl(`${window.location.origin}/thank-you`);
   }, []);
 

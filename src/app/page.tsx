@@ -40,7 +40,7 @@ export default function Home() {
       <Section className="bg-[var(--bg-alt)]">
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--ink)]">Your operation is connected. Your tools aren't.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--ink)]">Your operation is connected. Your tools aren&apos;t.</h2>
             <p className="text-lg text-[var(--ink-secondary)]">
               When online booking, front desk, schedules, staff, inventory, and reporting behave like separate businesses, you spend your day acting as the API between them.
             </p>

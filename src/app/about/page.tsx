@@ -1,5 +1,6 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { CTASection } from "@/components/marketing/CTASection";
+import { Button } from "@/components/ui/Button";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import Link from "next/link";
@@ -21,7 +22,7 @@ export default function AboutPage() {
             About RidgeHQ
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-            We're building the operating system behind activity businesses.
+            We&apos;re building the operating system behind activity businesses.
           </h1>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Running an activity business involves complex operations connecting bookings, sessions, customers, staff, guides, equipment, rentals, locations, trips, accommodation, payments, and changing conditions. 
@@ -147,7 +148,7 @@ export default function AboutPage() {
             <div className="glass-card p-8 md:col-span-2 lg:col-span-1">
               <h3 className="text-xl font-bold mb-4">Trust before automation.</h3>
               <p className="text-slate-400">
-                We believe AI belongs inside operational workflows only where context is understood, permissions apply, risky actions require confirmation, and actions are accountable. We don't claim full autonomy or zero-error decisions.
+                We believe AI belongs inside operational workflows only where context is understood, permissions apply, risky actions require confirmation, and actions are accountable. We don&apos;t claim full autonomy or zero-error decisions.
               </p>
             </div>
           </div>
