@@ -6,19 +6,21 @@ import { Container } from "@/components/ui/Layout"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold tracking-tight text-white">RidgeHQ</span>
+              <span className="font-mono text-lg font-semibold tracking-tight text-[var(--ink)]">
+                <span className="text-gradient-accent">R</span>idge<span className="text-gradient-accent">HQ</span>
+              </span>
             </Link>
             <nav className="hidden md:flex gap-6">
               {mainNav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                  className="text-sm font-medium text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors"
                 >
                   {item.title}
                 </Link>
@@ -26,10 +28,10 @@ export function Header() {
             </nav>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden sm:inline-flex" asChild>
+            <Button variant="ghost" className="hidden sm:inline-flex text-[var(--ink)] hover:text-[var(--accent)]" asChild>
               <Link href="/contact">Contact</Link>
             </Button>
-            <Button asChild>
+            <Button className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none font-bold" asChild>
               <Link href="/book-demo">Book a Demo</Link>
             </Button>
           </div>

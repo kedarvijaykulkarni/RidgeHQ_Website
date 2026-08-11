@@ -10,7 +10,7 @@ export const mainNav: NavItem[] = [
   { title: 'AI Copilot', href: '/ai-copilot' },
   { title: 'Integrations', href: '/integrations' },
   { title: 'Pricing', href: '/pricing' },
-  { title: 'Resources', href: '/resources' },
+  { title: 'Blog', href: '/blog' },
   { title: 'Company', href: '/about' },
 ];
 

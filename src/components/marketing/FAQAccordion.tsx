@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { FAQ } from "@/lib/config/faq"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion"
