@@ -4,7 +4,17 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import Script from "next/script";
 
-export function DesignPartnerForm() {
+interface CustomLeadFormProps {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+}
+
+export function CustomLeadForm({
+  title = "Apply for the Design Partner Program",
+  description = "Fill out the details below and our founding team will be in touch shortly.",
+  buttonText = "Apply to Partner Program"
+}: CustomLeadFormProps) {
   const [returnUrl, setReturnUrl] = useState("https://ridgehq.app/thank-you");
 
   useEffect(() => {
@@ -18,8 +28,8 @@ export function DesignPartnerForm() {
       <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]"></div>
 
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-[var(--ink)]">Apply for the Design Partner Program</h2>
-        <p className="text-[var(--ink-secondary)] mt-2">Fill out the details below and our founding team will be in touch shortly.</p>
+        <h2 className="text-2xl font-bold text-[var(--ink)]">{title}</h2>
+        <p className="text-[var(--ink-secondary)] mt-2">{description}</p>
       </div>
 
       <form 
@@ -159,7 +169,7 @@ export function DesignPartnerForm() {
 
         <div className="pt-4 flex justify-end">
           <Button type="submit" size="lg" className="w-full sm:w-auto">
-            Apply to Partner Program
+            {buttonText}
           </Button>
         </div>
         

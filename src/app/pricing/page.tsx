@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { ZohoLeadForm } from "@/components/forms/ZohoLeadForm";
+import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { marketingConfig } from "@/lib/config/marketing";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -70,7 +70,11 @@ export default function PricingPage() {
 
         <div className="mt-24 max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Pricing Enquiry</h2>
-          <ZohoLeadForm intent="pricing_interest" sourcePage="/pricing" />
+          <CustomLeadForm 
+            title="Pricing Enquiry"
+            description="Get a tailored quote based on your operational volume."
+            buttonText="Request Pricing"
+          />
         </div>
       </Container>
     </Section>

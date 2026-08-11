@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { ZohoLeadForm } from "@/components/forms/ZohoLeadForm";
+import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 
 export const metadata = {
   title: "Contact Us",
@@ -17,9 +17,10 @@ export default function ContactPage() {
           </p>
         </div>
         
-        <ZohoLeadForm 
-          intent="contact" 
-          sourcePage="/contact"
+        <CustomLeadForm 
+          title="Contact our team"
+          description="Let us know how we can help and we'll get back to you shortly."
+          buttonText="Send Message"
         />
       </Container>
     </Section>

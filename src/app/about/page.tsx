@@ -1,7 +1,6 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { CTASection } from "@/components/marketing/CTASection";
-import { Button } from "@/components/ui/Button";
-import { ZohoLeadForm } from "@/components/forms/ZohoLeadForm";
+import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import Link from "next/link";
 import { CheckCircle2, Navigation, Target } from "lucide-react";
@@ -187,7 +186,11 @@ export default function AboutPage() {
             </div>
             
             <h3 className="text-xl font-semibold mb-6 text-center">Join the Design Partner Program</h3>
-            <ZohoLeadForm intent="design_partner" sourcePage="/about" />
+            <CustomLeadForm 
+              title="Work with us"
+              description="Interested in shaping the future of activity operations? Drop us a line."
+              buttonText="Apply to Partner Program"
+            />
           </div>
         </Container>
       </Section>

@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { DesignPartnerForm } from "@/components/forms/DesignPartnerForm";
+import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 
 export const metadata = {
   title: "Design Partner Program",
@@ -40,7 +40,7 @@ export default function DesignPartnersPage() {
           </div>
         </div>
         
-        <DesignPartnerForm />
+        <CustomLeadForm />
       </Container>
     </Section>
   );

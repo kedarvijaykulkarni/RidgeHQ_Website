@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { ZohoLeadForm } from "@/components/forms/ZohoLeadForm";
+import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import { notFound } from "next/navigation";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
@@ -53,7 +53,11 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               <div className="glass-card p-6 md:p-8 space-y-6 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
                 <h3 className="text-xl font-bold text-white">See RidgeHQ in action</h3>
                 <p className="text-sm text-slate-400">Book a personalized demo to see how we handle your specific operational workflows.</p>
-                <ZohoLeadForm intent="book_demo" sourcePage={`/solutions/${vertical.slug}`} vertical={vertical.name} />
+                <CustomLeadForm 
+                  title={`See RidgeHQ for ${vertical.name}`}
+                  description="Book a demo to see how we handle your specific operational workflows."
+                  buttonText="Book a Demo"
+                />
               </div>
             </div>
           </div>

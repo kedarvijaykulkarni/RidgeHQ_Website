@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { ZohoLeadForm } from "@/components/forms/ZohoLeadForm";
+import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 
 export const metadata = {
   title: "Book a Demo",
@@ -17,9 +17,10 @@ export default function BookDemoPage() {
           </p>
         </div>
         
-        <ZohoLeadForm 
-          intent="book_demo" 
-          sourcePage="/book-demo"
+        <CustomLeadForm 
+          title="Book a Demo"
+          description="See RidgeHQ in action and discover how it fits your operation."
+          buttonText="Request Demo"
         />
       </Container>
     </Section>
