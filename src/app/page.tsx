@@ -86,7 +86,7 @@ export default function Home() {
                 <Link href="/ai-copilot">Learn about the Copilot</Link>
               </Button>
             </div>
-            <ScreenshotFrame src="/images/product/dash-responsive-desktop.png" alt="RidgeHQ Dashboard with AI Context" />
+            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.png" alt="RidgeHQ Copilot summarizing what needs attention today" />
           </div>
         </Container>
       </Section>
