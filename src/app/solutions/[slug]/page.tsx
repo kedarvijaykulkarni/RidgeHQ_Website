@@ -3,8 +3,15 @@ import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import { notFound } from "next/navigation";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
+import { CTASection } from "@/components/marketing/CTASection";
+
+const FEATURE_IMAGES = [
+  "/images/product/event-planner.png",
+  "/images/product/gear.png",
+  "/images/product/staff.png",
+];
 
 export async function generateStaticParams() {
   return verticals.map((v) => ({
@@ -48,6 +55,19 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               <p className="text-xl text-slate-400">
                 {vertical.heroDescription}
               </p>
+              {vertical.heroProofPoints && vertical.heroProofPoints.length > 0 && (
+                <ul className="flex flex-wrap gap-2 pt-2">
+                  {vertical.heroProofPoints.map((point, i) => (
+                    <li
+                      key={i}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <div>
               <div className="glass-card p-6 md:p-8 space-y-6 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
@@ -92,16 +112,28 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               <p className="text-[#22D3EE] font-medium text-lg mb-6">{vertical.keyCapability}</p>
               
               <div className="space-y-6">
-                <h4 className="font-semibold text-white">Representative Flow:</h4>
+                <h4 className="font-semibold text-white">From booking to day close:</h4>
                 <div className="space-y-4">
-                  {vertical.representativeFlow.map((step, i) => (
-                    <div key={i} className="flex gap-4">
-                      <div className="w-6 h-6 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] flex items-center justify-center shrink-0 text-sm font-bold">
-                        {i + 1}
-                      </div>
-                      <p className="text-sm text-slate-300">{step}</p>
-                    </div>
-                  ))}
+                  {vertical.workflow && vertical.workflow.length > 0
+                    ? vertical.workflow.map((step, i) => (
+                        <div key={i} className="flex gap-4">
+                          <div className="w-6 h-6 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] flex items-center justify-center shrink-0 text-sm font-bold">
+                            {i + 1}
+                          </div>
+                          <p className="text-sm text-slate-300">
+                            <span className="font-semibold text-white">{step.title}.</span>{" "}
+                            {step.detail}
+                          </p>
+                        </div>
+                      ))
+                    : vertical.representativeFlow.map((step, i) => (
+                        <div key={i} className="flex gap-4">
+                          <div className="w-6 h-6 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] flex items-center justify-center shrink-0 text-sm font-bold">
+                            {i + 1}
+                          </div>
+                          <p className="text-sm text-slate-300">{step}</p>
+                        </div>
+                      ))}
                 </div>
               </div>
             </div>
@@ -109,14 +141,68 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         </Container>
       </Section>
       
+      {/* Feature Sections */}
+      {vertical.featureSections && vertical.featureSections.length > 0 && (
+        <Section className="border-t border-white/5">
+          <Container>
+            <div className="space-y-20 md:space-y-28">
+              {vertical.featureSections.map((feature, i) => (
+                <div
+                  key={i}
+                  className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center"
+                >
+                  <div className={i % 2 === 1 ? "lg:order-last" : ""}>
+                    <ScreenshotFrame
+                      src={FEATURE_IMAGES[i % FEATURE_IMAGES.length]}
+                      alt={`${vertical.name}: ${feature.heading}`}
+                    />
+                  </div>
+                  <div className="space-y-5">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white">{feature.heading}</h2>
+                    <p className="text-lg text-slate-400 leading-relaxed">{feature.body}</p>
+                    <ul className="space-y-3">
+                      {feature.points.map((point, j) => (
+                        <li key={j} className="flex gap-3 text-sm text-slate-300">
+                          <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* Outcomes */}
+      {vertical.outcomes && vertical.outcomes.length > 0 && (
+        <Section className="bg-slate-900/50 border-t border-b border-white/5">
+          <Container>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4 text-white">What changes when the operation is connected</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {vertical.outcomes.map((outcome, i) => (
+                <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
+                  <h3 className="text-lg font-bold text-white mb-2">{outcome.label}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{outcome.detail}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
       {/* Product Proof */}
-      <Section className="bg-slate-900/50 border-t border-b border-white/5">
+      <Section className="border-t border-white/5">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-white">Built around the work</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">Stop acting as the manual API between your booking engine and your team.</p>
           </div>
-          <ScreenshotFrame src="/images/product/event-planner.png" alt={`${vertical.name} schedule management`} />
+          <ScreenshotFrame src="/images/product/dash-responsive-desktop.png" alt={`${vertical.name} schedule management`} />
         </Container>
       </Section>
       
@@ -132,6 +218,15 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           </Container>
         </Section>
       )}
+
+      <CTASection
+        headline={`See RidgeHQ for ${vertical.name.toLowerCase()}`}
+        description="Book a demo and we'll walk through your real operational workflows — bookings, schedule, resources, and the day close."
+        primaryCtaText="Book a Demo"
+        primaryCtaHref="/book-demo"
+        secondaryCtaText="Explore the platform"
+        secondaryCtaHref="/platform"
+      />
     </div>
   );
 }

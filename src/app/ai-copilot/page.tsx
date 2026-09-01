@@ -34,7 +34,17 @@ export default function AICopilotPage() {
                 Because RidgeHQ connects all your data, the Copilot can inspect bookings, staff schedules, and resource availability across the entire business. It uses the exact same permission model as your team.
               </p>
             </div>
-            <ScreenshotFrame src="/images/product/dash-responsive-desktop.png" alt="AI Copilot Interface" />
+            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.png" alt="AI Copilot summarizing what needs attention today" />
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+            <ScreenshotFrame src="/images/product/ai-copilot-create-and-verify.gif" alt="AI Copilot creating a session and asking for confirmation before it commits" className="order-last lg:order-first" />
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold">Create and verify, in one flow</h2>
+              <p className="text-lg text-slate-400">
+                Ask the Copilot to add a session and it drafts the full change &mdash; program, time, staff, capacity &mdash; then shows you exactly what it will do. Nothing is written until you confirm, and the result is checked back against your live schedule.
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
