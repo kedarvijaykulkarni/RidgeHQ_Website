@@ -56,7 +56,7 @@ export function buildZohoFormUrl(baseUrl: string, context: ZohoFormContext): str
           }
           url.searchParams.set('referrername', encodeURIComponent(rfr));
         }
-      } catch (e) {
+      } catch {
         // Ignore iframe cross-origin errors
       }
     }

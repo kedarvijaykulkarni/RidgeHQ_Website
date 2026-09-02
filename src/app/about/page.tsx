@@ -1,10 +1,11 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { Button } from "@/components/ui/Button";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import Link from "next/link";
-import { CheckCircle2, Navigation, Target } from "lucide-react";
+import { Navigation, Target } from "lucide-react";
 
 export const metadata = {
   title: "About RidgeHQ | The Activity Business OS",
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <Section className="relative overflow-hidden pt-24 pb-20">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10 text-center max-w-4xl">
+          <Breadcrumbs className="mb-8 justify-center" items={[{ label: "About" }]} />
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium mb-8">
             About RidgeHQ
           </div>
@@ -83,7 +85,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-sm font-bold tracking-widest uppercase text-[#8B5CF6] mb-4">Our Vision</h3>
               <p className="text-2xl font-bold text-white mb-6 leading-tight">
-                To become the operating system behind the world's activity businesses — helping operators run with greater clarity, control and confidence, wherever their business takes place.
+                To become the operating system behind the world&rsquo;s activity businesses — helping operators run with greater clarity, control and confidence, wherever their business takes place.
               </p>
               <p className="text-slate-400">
                 We envision a future where running a dive center, surf school, ski school, activity camp, resort or rental operation does not require a maze of disconnected calendars, spreadsheets, booking tools and message threads. Every operator should have access to the operational capability of a much larger organization without needing a large administrative team.
@@ -132,7 +134,7 @@ export default function AboutPage() {
             </div>
 
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold mb-4">Earn retention. Don't engineer lock-in.</h3>
+              <h3 className="text-xl font-bold mb-4">Earn retention. Don&rsquo;t engineer lock-in.</h3>
               <p className="text-slate-400">
                 We want businesses to keep RidgeHQ because it continues earning its place in the operation — not because leaving has been made intentionally difficult. We focus on usefulness, reliability, data clarity, and constant improvement over time.
               </p>

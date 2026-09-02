@@ -1,17 +1,46 @@
+import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
+import { Button } from "@/components/ui/Button";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import { notFound } from "next/navigation";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronRight } from "lucide-react";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
-import { CTASection } from "@/components/marketing/CTASection";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 
-const FEATURE_IMAGES = [
+const DEFAULT_FEATURE_IMAGES = [
+  "/images/product/bookings.png",
   "/images/product/event-planner.png",
-  "/images/product/gear.png",
-  "/images/product/staff.png",
+  "/images/product/client-profile.jpg",
 ];
+
+// Per-vertical screenshot sets for the three feature sections
+// (order: "sell every seat" / "day-of operations" / "the admin runs itself").
+const FEATURE_IMAGES_BY_SLUG: Record<string, string[]> = {
+  "dive-centers": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
+  "surf-schools": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
+  "kitesurf-schools": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
+  "sailing-schools": ["/images/product/bookings.png", "/images/product/fleet.png", "/images/product/client-profile.jpg"],
+  "windsurf-schools": ["/images/product/booking-wizard.jpg", "/images/product/gear.png", "/images/product/client-profile.jpg"],
+  "outdoor-whitewater": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
+  "ski-schools": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/staff.png"],
+  "dive-resorts": ["/images/product/bookings.png", "/images/product/accommodation-calendar.jpg", "/images/product/reports-sales.jpg"],
+  "surf-camps": ["/images/product/bookings.png", "/images/product/accommodation-calendar.jpg", "/images/product/client-profile.jpg"],
+  "kayak-rental-tours": ["/images/product/bookings.png", "/images/product/gear.png", "/images/product/client-profile.jpg"],
+  "bike-rental-tours": ["/images/product/bookings.png", "/images/product/fleet.png", "/images/product/client-profile.jpg"],
+  "boat-rental-courses": ["/images/product/bookings.png", "/images/product/fleet.png", "/images/product/client-profile.jpg"],
+};
+
+const PROOF_IMAGE_BY_SLUG: Record<string, string> = {
+  "dive-resorts": "/images/product/accommodation-calendar.jpg",
+  "surf-camps": "/images/product/accommodation-calendar.jpg",
+  "sailing-schools": "/images/product/fleet.png",
+  "boat-rental-courses": "/images/product/fleet.png",
+  "bike-rental-tours": "/images/product/fleet.png",
+};
 
 export async function generateStaticParams() {
   return verticals.map((v) => ({
@@ -38,14 +67,27 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const featureImages = FEATURE_IMAGES_BY_SLUG[vertical.slug] ?? DEFAULT_FEATURE_IMAGES;
+  const proofImage = PROOF_IMAGE_BY_SLUG[vertical.slug] ?? "/images/product/dash-responsive-desktop.png";
+
   return (
     <div className="flex flex-col w-full">
+      <StructuredData
+        data={breadcrumbJsonLd([
+          { name: "Built For", path: "/solutions" },
+          { name: vertical.name, path: `/solutions/${vertical.slug}` },
+        ])}
+      />
       {/* Vertical Hero */}
       <Section className="relative overflow-hidden pt-24 pb-16">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 max-w-xl">
+              <Breadcrumbs
+                className="mb-2"
+                items={[{ label: "Built For", href: "/solutions" }, { label: vertical.name }]}
+              />
               <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#22D3EE] font-medium">
                 Built for {vertical.name}
               </div>
@@ -69,15 +111,19 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 </ul>
               )}
             </div>
-            <div>
-              <div className="glass-card p-6 md:p-8 space-y-6 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
-                <h3 className="text-xl font-bold text-white">See RidgeHQ in action</h3>
-                <p className="text-sm text-slate-400">Book a personalized demo to see how we handle your specific operational workflows.</p>
-                <CustomLeadForm 
-                  title={`See RidgeHQ for ${vertical.name}`}
-                  description="Book a demo to see how we handle your specific operational workflows."
-                  buttonText="Book a Demo"
-                />
+            <div className="lg:pl-8">
+              <div className="glass-card p-8 space-y-5 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
+                <h3 className="text-xl font-bold text-white">See it on your operation</h3>
+                <p className="text-sm text-slate-400">
+                  A short walkthrough of RidgeHQ mapped to how {vertical.name.toLowerCase()} actually run the day &mdash; bookings, schedule, resources, and the close.
+                </p>
+                <Button size="lg" asChild className="w-full">
+                  <Link href="#book-demo">
+                    Book a Demo
+                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <p className="text-xs text-slate-500 text-center">Takes about two minutes to request.</p>
               </div>
             </div>
           </div>
@@ -153,7 +199,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 >
                   <div className={i % 2 === 1 ? "lg:order-last" : ""}>
                     <ScreenshotFrame
-                      src={FEATURE_IMAGES[i % FEATURE_IMAGES.length]}
+                      src={featureImages[i % featureImages.length]}
                       alt={`${vertical.name}: ${feature.heading}`}
                     />
                   </div>
@@ -202,7 +248,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             <h2 className="text-3xl font-bold mb-4 text-white">Built around the work</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">Stop acting as the manual API between your booking engine and your team.</p>
           </div>
-          <ScreenshotFrame src="/images/product/dash-responsive-desktop.png" alt={`${vertical.name} schedule management`} />
+          <ScreenshotFrame src={proofImage} alt={`${vertical.name} operations in RidgeHQ`} />
         </Container>
       </Section>
       
@@ -219,14 +265,28 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      <CTASection
-        headline={`See RidgeHQ for ${vertical.name.toLowerCase()}`}
-        description="Book a demo and we'll walk through your real operational workflows — bookings, schedule, resources, and the day close."
-        primaryCtaText="Book a Demo"
-        primaryCtaHref="/book-demo"
-        secondaryCtaText="Explore the platform"
-        secondaryCtaHref="/platform"
-      />
+      {/* Book a demo */}
+      <Section id="book-demo" className="relative overflow-hidden border-t border-white/5 scroll-mt-24">
+        <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
+        <Container className="relative z-10">
+          <div className="max-w-2xl mx-auto text-center mb-10 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">See RidgeHQ for {vertical.name.toLowerCase()}</h2>
+            <p className="text-lg text-slate-400">
+              Book a demo and we&apos;ll walk through your real operational workflows &mdash; bookings, schedule, resources, and the day close.
+            </p>
+          </div>
+          <CustomLeadForm
+            title={`Book a demo — ${vertical.name}`}
+            description="Tell us about your operation and we'll tailor the walkthrough."
+            buttonText="Book a Demo"
+          />
+          <p className="text-center mt-8">
+            <Link href="/platform" className="text-[#22D3EE] hover:underline text-sm">
+              Or explore the platform &rarr;
+            </Link>
+          </p>
+        </Container>
+      </Section>
     </div>
   );
 }

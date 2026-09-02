@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata = {
   title: "Privacy Policy — RidgeHQ",
@@ -111,6 +112,7 @@ export default function PrivacyPage() {
     <Section className="min-h-[70vh]">
       <Container>
         <div className="max-w-3xl mx-auto space-y-8">
+          <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="mt-2 text-sm text-slate-400">Last updated: July 2026</p>
           <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">

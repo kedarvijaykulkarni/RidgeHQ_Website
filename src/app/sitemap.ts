@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { verticals } from '@/lib/config/verticals'
+import { products } from '@/lib/config/products'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ridgehq.app'
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/platform',
+    '/products',
     '/ai-copilot',
     '/integrations',
     '/pricing',
@@ -32,5 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticRoutes, ...solutionRoutes]
+  const productRoutes = products.map((p) => ({
+    url: `${baseUrl}/products/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }))
+
+  return [...staticRoutes, ...solutionRoutes, ...productRoutes]
 }

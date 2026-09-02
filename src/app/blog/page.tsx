@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { blogPosts } from "@/lib/config/blog";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -13,6 +14,7 @@ export default function BlogIndexPage() {
     <div className="flex flex-col w-full">
       <Section className="pb-12 pt-24">
         <Container>
+          <Breadcrumbs className="mb-8" items={[{ label: "Blog" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Resources & Insights</h1>
             <p className="text-xl text-slate-400">

@@ -19,6 +19,8 @@ export function ScreenshotFrame({ src, alt, className, ...props }: ScreenshotFra
       </div>
       {/* Content */}
       <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950">
+        {/* Static product screenshots served from /public; next/image optimisation not needed here. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={src}
           alt={alt}

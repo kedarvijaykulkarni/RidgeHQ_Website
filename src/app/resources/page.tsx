@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 
 export const metadata = {
@@ -11,6 +12,7 @@ export default function ResourcesPage() {
     <div className="flex flex-col w-full">
       <Section className="min-h-[60vh]">
         <Container>
+          <Breadcrumbs className="mb-8" items={[{ label: "Resources" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Resources</h1>
             <p className="text-xl text-slate-400">

@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export default function DesignPartnersPage() {
   return (
     <Section className="min-h-[80vh]">
       <Container>
+        <Breadcrumbs className="mb-8 justify-center" items={[{ label: "Design Partners" }]} />
         <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium mb-4">
             Early Access Validation
@@ -31,7 +33,7 @@ export default function DesignPartnersPage() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Who we're looking for</h3>
+            <h3 className="text-xl font-bold">Who we&rsquo;re looking for</h3>
             <ul className="space-y-3 text-slate-400">
               <li>• Operators with complex scheduling/resource needs</li>
               <li>• Willing to provide structured, honest feedback</li>

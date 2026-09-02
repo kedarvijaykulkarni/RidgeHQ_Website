@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { marketingConfig } from "@/lib/config/marketing";
 import { Badge } from "@/components/ui/Badge";
@@ -17,6 +18,7 @@ export default function PricingPage() {
   return (
     <Section className="min-h-[80vh]">
       <Container>
+        <Breadcrumbs className="mb-8" items={[{ label: "Pricing" }]} />
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
           <Badge variant="secondary">Predictable Pricing</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -63,7 +65,7 @@ export default function PricingPage() {
               Many platforms promise low monthly fees but take 1.5% to 3% of your gross revenue for every online booking. When your business scales, your software cost skyrockets. 
             </p>
             <p className="text-slate-400 leading-relaxed">
-              We believe you shouldn't be penalized for your own marketing success. RidgeHQ connects your operations with a predictable SaaS subscription, leaving your revenue margins intact.
+              We believe you shouldn&rsquo;t be penalized for your own marketing success. RidgeHQ connects your operations with a predictable SaaS subscription, leaving your revenue margins intact.
             </p>
           </div>
         </div>

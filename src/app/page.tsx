@@ -48,11 +48,12 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {platformCapabilities.map(cap => (
-              <FeatureCard 
+              <FeatureCard
                 key={cap.id}
                 title={cap.title}
                 description={cap.description}
                 icon={iconMap[cap.id]}
+                href={cap.href}
               />
             ))}
           </div>
@@ -111,7 +112,7 @@ export default function Home() {
         <Container className="text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[var(--ink)]">Transparent subscription. Zero direct booking fees.</h2>
           <p className="text-lg text-[var(--ink-secondary)] mb-8">
-            RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn't be penalized for your own marketing success.
+            RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn&rsquo;t be penalized for your own marketing success.
           </p>
           <Button asChild className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none">
             <Link href="/pricing">View Pilot Pricing Details</Link>

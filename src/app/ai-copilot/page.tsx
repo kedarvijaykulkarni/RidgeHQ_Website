@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { CheckCircle2 } from "lucide-react";
@@ -13,13 +14,14 @@ export default function AICopilotPage() {
     <div className="flex flex-col w-full">
       <Section className="pb-12 pt-24">
         <Container>
+          <Breadcrumbs className="mb-8" items={[{ label: "AI Copilot" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium">
               Intelligence built for operations
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">AI that works inside the operation.</h1>
             <p className="text-xl text-slate-400">
-              The Copilot isn't just a chatbot answering FAQs. It understands your live operational context, capacity, and schedule.
+              The Copilot isn&rsquo;t just a chatbot answering FAQs. It understands your live operational context, capacity, and schedule.
             </p>
           </div>
         </Container>

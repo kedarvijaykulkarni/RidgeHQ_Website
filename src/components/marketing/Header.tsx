@@ -1,9 +1,10 @@
 import * as React from "react"
 import Link from "next/link"
-import { mainNav } from "@/lib/config/navigation"
 import { Button } from "@/components/ui/Button"
 import { ChevronRight } from "lucide-react"
 import { Container } from "@/components/ui/Layout"
+import { NavMenu } from "@/components/marketing/NavMenu"
+import { MobileNav } from "@/components/marketing/MobileNav"
 
 export function Header() {
   return (
@@ -16,25 +17,16 @@ export function Header() {
                 <span className="text-gradient-accent">R</span>idge<span className="text-gradient-accent">HQ</span>
               </span>
             </Link>
-            <nav className="hidden md:flex gap-6">
-              {mainNav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-medium text-[var(--ink-secondary)] hover:text-[var(--accent)] transition-colors"
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </nav>
+            <NavMenu />
           </div>
           <div className="flex items-center gap-4">
             <Button variant="ghost" className="hidden sm:inline-flex text-[var(--ink)] hover:text-[var(--accent)]" asChild>
               <Link href="/contact">Contact</Link>
             </Button>
-            <Button className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none font-bold" asChild>
+            <Button className="hidden sm:inline-flex bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none font-bold" asChild>
               <Link href="/book-demo">Book a Demo <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" /></Link>
             </Button>
+            <MobileNav />
           </div>
         </div>
       </Container>

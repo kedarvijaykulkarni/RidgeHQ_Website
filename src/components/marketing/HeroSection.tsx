@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Container, Section } from "@/components/ui/Layout";
+import { Container } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";

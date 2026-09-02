@@ -1,5 +1,4 @@
 import { buildZohoFormUrl } from "./buildZohoFormUrl";
-import { LeadIntent } from "./formIntent";
 
 describe("buildZohoFormUrl", () => {
   const baseUrl = "https://forms.zohopublic.in/ridgehq/form/RidgeHQWebsiteEnquiry/formperma/abc123xyz";
