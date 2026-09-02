@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
+import { siteUrl } from '@/lib/config/site';
 
 export const defaultSeo: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: '%s | RidgeHQ',
     default: 'RidgeHQ | The Activity Business OS',
