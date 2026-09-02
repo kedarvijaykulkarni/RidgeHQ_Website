@@ -2,6 +2,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
+import { VideoFrame } from "@/components/marketing/VideoFrame";
 import { CheckCircle2 } from "lucide-react";
 import { pageSeo } from "@/lib/config/seo";
 
@@ -42,7 +43,7 @@ export default function AICopilotPage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-            <ScreenshotFrame src="/images/product/ai-copilot-create-and-verify.gif" alt="AI Copilot creating a session and asking for confirmation before it commits" className="order-last lg:order-first" />
+            <VideoFrame src="/images/product/ai-copilot-create-and-verify" poster="/images/product/ai-copilot-create-and-verify-poster.webp" label="AI Copilot creating a session and asking for confirmation before it commits" className="order-last lg:order-first" />
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">Create and verify, in one flow</h2>
               <p className="text-lg text-slate-400">
