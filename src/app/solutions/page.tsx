@@ -9,7 +9,7 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/solutions"),
-  title: "Built For — Industries RidgeHQ Runs",
+  title: { absolute: "Built For — Industries RidgeHQ Runs" },
   description: "One operational model. Different ways to run the day.",
 };
 

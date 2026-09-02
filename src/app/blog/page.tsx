@@ -7,7 +7,7 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/blog"),
-  title: "Blog & Resources — RidgeHQ",
+  title: "Blog & Resources",
   description: "Insights, guides, and best practices for running activity businesses.",
 };
 

@@ -4,7 +4,7 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/terms"),
-  title: "Terms of Service — RidgeHQ",
+  title: "Terms of Service",
   description: "The terms that govern use of the RidgeHQ website and live operations platform for dive centers and watersports schools.",
 };
 

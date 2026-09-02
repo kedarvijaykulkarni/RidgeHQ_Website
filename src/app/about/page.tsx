@@ -10,7 +10,7 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/about"),
-  title: "About RidgeHQ | The Activity Business OS",
+  title: { absolute: "About RidgeHQ — The Activity Business OS" },
   description: "Learn why RidgeHQ is building one operating system for activity businesses — connecting bookings, schedules, people, resources, payments and daily operations.",
 };
 
