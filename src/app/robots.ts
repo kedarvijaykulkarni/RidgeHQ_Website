@@ -6,7 +6,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/thank-you'],
+      // /thank-you and /resources are crawlable so Google can see their
+      // `noindex` meta tag; they are kept out of the index that way.
+      disallow: ['/api/'],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   }

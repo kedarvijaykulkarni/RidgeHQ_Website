@@ -7,6 +7,7 @@ export const metadata = {
   ...pageSeo("/resources"),
   title: "Resources",
   description: "Guides, operational insights, and product updates.",
+  robots: { index: false, follow: true },
 };
 
 export default function ResourcesPage() {
