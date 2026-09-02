@@ -7,6 +7,8 @@ import { CTASection } from "@/components/marketing/CTASection";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { HeroSection } from "@/components/marketing/HeroSection";
 import { VerticalsExplorer } from "@/components/marketing/VerticalsExplorer";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { softwareApplicationJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { platformCapabilities } from "@/lib/config/platform";
 import { integrations } from "@/lib/config/integrations";
 import { generalFaqs } from "@/lib/config/faq";
@@ -26,6 +28,8 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function Home() {
   return (
     <div className="flex flex-col w-full bg-[var(--bg)]">
+      <StructuredData data={softwareApplicationJsonLd()} />
+
       {/* 1. Animated Hero */}
       <HeroSection />
 
