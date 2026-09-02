@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
   images: {
     // Negotiate AVIF first, then WebP, then the original.
     formats: ["image/avif", "image/webp"],
+    // 90 is used for the product screenshots (fine UI text); 75 is the
+    // Next 16 default and must stay listed for everything else.
+    qualities: [75, 90],
   },
   async headers() {
     return [
