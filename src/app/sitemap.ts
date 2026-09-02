@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next'
 import { verticals } from '@/lib/config/verticals'
 import { products } from '@/lib/config/products'
+import { platformCapabilities } from '@/lib/config/platform'
+import { blogPosts } from '@/lib/config/blog'
 import { siteUrl } from '@/lib/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteUrl
-  
+
   const staticRoutes = [
     '',
     '/platform',
@@ -14,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/integrations',
     '/pricing',
     '/solutions',
+    '/blog',
     '/contact',
     '/book-demo',
     '/design-partners',
@@ -42,5 +45,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticRoutes, ...solutionRoutes, ...productRoutes]
+  const platformRoutes = platformCapabilities.map((c) => ({
+    url: `${baseUrl}/platform/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  const blogRoutes = blogPosts.map((p) => ({
+    url: `${baseUrl}/blog/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [
+    ...staticRoutes,
+    ...solutionRoutes,
+    ...productRoutes,
+    ...platformRoutes,
+    ...blogRoutes,
+  ]
 }
