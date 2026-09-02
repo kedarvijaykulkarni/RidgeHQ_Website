@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { pageSeo } from "@/lib/config/seo";
+import { StructuredData } from "@/components/seo/StructuredData";
+import { softwareOfferJsonLd } from "@/lib/softwareApplicationJsonLd";
 
 export const metadata = {
   ...pageSeo("/pricing"),
@@ -19,6 +21,7 @@ export default function PricingPage() {
 
   return (
     <Section className="min-h-[80vh]">
+      <StructuredData data={softwareOfferJsonLd()} />
       <Container>
         <Breadcrumbs className="mb-8" items={[{ label: "Pricing" }]} />
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
