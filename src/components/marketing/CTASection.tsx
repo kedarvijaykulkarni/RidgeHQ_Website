@@ -18,8 +18,8 @@ export function CTASection({
   description = "Join the operators using RidgeHQ to manage their day from one unified platform.",
   primaryCtaText = "Book a Demo",
   primaryCtaHref = "/book-demo",
-  secondaryCtaText = "Explore Features",
-  secondaryCtaHref = "/features"
+  secondaryCtaText = "Explore the Platform",
+  secondaryCtaHref = "/platform"
 }: CTASectionProps) {
   return (
     <section className="relative py-24 overflow-hidden">
