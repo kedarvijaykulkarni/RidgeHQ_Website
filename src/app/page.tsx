@@ -36,7 +36,7 @@ export default function Home() {
       {/* Hero Visual / Product Proof */}
       <Section className="pt-0 -mt-16 relative z-20">
         <Container>
-          <ScreenshotFrame src="/images/product/event-planner.webp" alt="RidgeHQ event planner showing a day's sessions, staff, and resources on one timeline" />
+          <ScreenshotFrame src="/images/product/event-planner.webp" alt="RidgeHQ event planner showing a day's sessions, staff, and resources on one timeline" priority />
         </Container>
       </Section>
 
