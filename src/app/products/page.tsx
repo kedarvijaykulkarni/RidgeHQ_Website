@@ -6,6 +6,7 @@ import { CTASection } from "@/components/marketing/CTASection";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { productsItemListJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function ProductsPage() {
   return (
     <div className="flex flex-col w-full">
       <StructuredData data={breadcrumbJsonLd([{ name: "Products", path: "/products" }])} />
+      <StructuredData data={productsItemListJsonLd(products)} />
       <Section className="pb-12 pt-24">
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "Products" }]} />

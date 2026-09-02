@@ -10,6 +10,7 @@ import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { productSoftwareJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
@@ -65,6 +66,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           { name: "Products", path: "/products" },
           { name: product.title, path: `/products/${product.slug}` },
         ])}
+      />
+      <StructuredData
+        data={productSoftwareJsonLd(
+          product,
+          proofImage ?? "/images/product/dash-responsive-desktop.webp",
+        )}
       />
       {/* Hero */}
       <Section className="relative overflow-hidden pt-24 pb-16">
