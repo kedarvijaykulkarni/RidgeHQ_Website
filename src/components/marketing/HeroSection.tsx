@@ -12,7 +12,7 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 opacity-40 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/kailash-night.png')" }}
+        style={{ backgroundImage: "url('/images/kailash-night.webp')" }}
       />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[var(--bg)]/80 to-[var(--bg)] pointer-events-none" />
       
