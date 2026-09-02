@@ -38,7 +38,7 @@ export default function AICopilotPage() {
                 Because RidgeHQ connects all your data, the Copilot can inspect bookings, staff schedules, and resource availability across the entire business. It uses the exact same permission model as your team.
               </p>
             </div>
-            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.png" alt="AI Copilot summarizing what needs attention today" />
+            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.webp" alt="AI Copilot summarizing what needs attention today" />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">

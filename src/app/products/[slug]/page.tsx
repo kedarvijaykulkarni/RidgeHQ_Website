@@ -13,20 +13,20 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
-  "/images/product/dash-responsive-desktop.png",
-  "/images/product/event-planner.png",
+  "/images/product/dash-responsive-desktop.webp",
+  "/images/product/event-planner.webp",
   "/images/product/client-profile.jpg",
 ];
 
 const FEATURE_IMAGES_BY_SLUG: Record<string, string[]> = {
-  "activity-platform": ["/images/product/dash-responsive-desktop.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
-  "rental-app": ["/images/product/gear.png", "/images/product/fleet.png", "/images/product/booking-wizard.jpg"],
-  "waiver-app": ["/images/product/client-profile.jpg", "/images/product/booking-wizard.jpg", "/images/product/bookings.png"],
+  "activity-platform": ["/images/product/dash-responsive-desktop.webp", "/images/product/event-planner.webp", "/images/product/client-profile.jpg"],
+  "rental-app": ["/images/product/gear.webp", "/images/product/fleet.webp", "/images/product/booking-wizard.jpg"],
+  "waiver-app": ["/images/product/client-profile.jpg", "/images/product/booking-wizard.jpg", "/images/product/bookings.webp"],
 };
 
 const PROOF_IMAGE_BY_SLUG: Record<string, string> = {
   "activity-platform": "/images/product/dashboard-overview.jpg",
-  "rental-app": "/images/product/gear.png",
+  "rental-app": "/images/product/gear.webp",
   "waiver-app": "/images/product/client-profile.jpg",
 };
 

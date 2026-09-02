@@ -13,26 +13,26 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
-  "/images/product/dash-responsive-desktop.png",
-  "/images/product/event-planner.png",
-  "/images/product/gear.png",
+  "/images/product/dash-responsive-desktop.webp",
+  "/images/product/event-planner.webp",
+  "/images/product/gear.webp",
 ];
 
 // Per-capability screenshot sets for the three feature sections.
 const FEATURE_IMAGES_BY_SLUG: Record<string, string[]> = {
-  "bookings-pos": ["/images/product/booking-wizard.jpg", "/images/product/reports-sales.jpg", "/images/product/bookings.png"],
-  "scheduling": ["/images/product/event-planner.png", "/images/product/staff.png", "/images/product/gear.png"],
-  "gear-rentals": ["/images/product/gear.png", "/images/product/fleet.png", "/images/product/event-planner.png"],
-  "staff": ["/images/product/staff.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
-  "customers-participants": ["/images/product/client-profile.jpg", "/images/product/bookings.png", "/images/product/dashboard-overview.jpg"],
-  "payments": ["/images/product/reports-sales.jpg", "/images/product/reports-financials.jpg", "/images/product/partners.png"],
+  "bookings-pos": ["/images/product/booking-wizard.jpg", "/images/product/reports-sales.jpg", "/images/product/bookings.webp"],
+  "scheduling": ["/images/product/event-planner.webp", "/images/product/staff.webp", "/images/product/gear.webp"],
+  "gear-rentals": ["/images/product/gear.webp", "/images/product/fleet.webp", "/images/product/event-planner.webp"],
+  "staff": ["/images/product/staff.webp", "/images/product/event-planner.webp", "/images/product/client-profile.jpg"],
+  "customers-participants": ["/images/product/client-profile.jpg", "/images/product/bookings.webp", "/images/product/dashboard-overview.jpg"],
+  "payments": ["/images/product/reports-sales.jpg", "/images/product/reports-financials.jpg", "/images/product/partners.webp"],
 };
 
 const PROOF_IMAGE_BY_SLUG: Record<string, string> = {
-  "bookings-pos": "/images/product/bookings.png",
-  "scheduling": "/images/product/event-planner.png",
-  "gear-rentals": "/images/product/gear.png",
-  "staff": "/images/product/staff.png",
+  "bookings-pos": "/images/product/bookings.webp",
+  "scheduling": "/images/product/event-planner.webp",
+  "gear-rentals": "/images/product/gear.webp",
+  "staff": "/images/product/staff.webp",
   "customers-participants": "/images/product/client-profile.jpg",
   "payments": "/images/product/reports-sales.jpg",
 };
@@ -62,7 +62,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
   }
 
   const featureImages = FEATURE_IMAGES_BY_SLUG[capability.slug] ?? DEFAULT_FEATURE_IMAGES;
-  const proofImage = PROOF_IMAGE_BY_SLUG[capability.slug] ?? "/images/product/dash-responsive-desktop.png";
+  const proofImage = PROOF_IMAGE_BY_SLUG[capability.slug] ?? "/images/product/dash-responsive-desktop.webp";
 
   return (
     <div className="flex flex-col w-full">

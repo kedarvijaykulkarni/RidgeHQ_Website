@@ -52,13 +52,13 @@ export default function PlatformPage() {
                   The operational day combines time, capacity, staff capability, locations, equipment, fleet, accommodation, and changing conditions. RidgeHQ ensures you never double-book a resource or assign an unqualified instructor.
                 </p>
               </div>
-              <ScreenshotFrame src="/images/product/gear.png" alt="Gear and resource management" />
+              <ScreenshotFrame src="/images/product/gear.webp" alt="Gear and resource management" />
             </div>
 
             {/* Detailed section 2 */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <ScreenshotFrame src="/images/product/staff.png" alt="Staff scheduling" />
+                <ScreenshotFrame src="/images/product/staff.webp" alt="Staff scheduling" />
               </div>
               <div className="space-y-6 order-1 lg:order-2">
                 <h2 className="text-3xl font-bold">Move when the day changes</h2>

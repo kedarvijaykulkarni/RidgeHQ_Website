@@ -32,7 +32,7 @@ export default function Home() {
       {/* Hero Visual / Product Proof */}
       <Section className="pt-0 -mt-16 relative z-20">
         <Container>
-          <ScreenshotFrame src="/images/product/event-planner.png" alt="RidgeHQ Event Planner Interface" />
+          <ScreenshotFrame src="/images/product/event-planner.webp" alt="RidgeHQ Event Planner Interface" />
         </Container>
       </Section>
 
@@ -87,7 +87,7 @@ export default function Home() {
                 <Link href="/ai-copilot">Learn about the Copilot</Link>
               </Button>
             </div>
-            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.png" alt="RidgeHQ Copilot summarizing what needs attention today" />
+            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.webp" alt="RidgeHQ Copilot summarizing what needs attention today" />
           </div>
         </Container>
       </Section>

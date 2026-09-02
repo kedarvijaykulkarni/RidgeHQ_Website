@@ -13,34 +13,34 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
-  "/images/product/bookings.png",
-  "/images/product/event-planner.png",
+  "/images/product/bookings.webp",
+  "/images/product/event-planner.webp",
   "/images/product/client-profile.jpg",
 ];
 
 // Per-vertical screenshot sets for the three feature sections
 // (order: "sell every seat" / "day-of operations" / "the admin runs itself").
 const FEATURE_IMAGES_BY_SLUG: Record<string, string[]> = {
-  "dive-centers": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
-  "surf-schools": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
-  "kitesurf-schools": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
-  "sailing-schools": ["/images/product/bookings.png", "/images/product/fleet.png", "/images/product/client-profile.jpg"],
-  "windsurf-schools": ["/images/product/booking-wizard.jpg", "/images/product/gear.png", "/images/product/client-profile.jpg"],
-  "outdoor-whitewater": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/client-profile.jpg"],
-  "ski-schools": ["/images/product/bookings.png", "/images/product/event-planner.png", "/images/product/staff.png"],
-  "dive-resorts": ["/images/product/bookings.png", "/images/product/accommodation-calendar.jpg", "/images/product/reports-sales.jpg"],
-  "surf-camps": ["/images/product/bookings.png", "/images/product/accommodation-calendar.jpg", "/images/product/client-profile.jpg"],
-  "kayak-rental-tours": ["/images/product/bookings.png", "/images/product/gear.png", "/images/product/client-profile.jpg"],
-  "bike-rental-tours": ["/images/product/bookings.png", "/images/product/fleet.png", "/images/product/client-profile.jpg"],
-  "boat-rental-courses": ["/images/product/bookings.png", "/images/product/fleet.png", "/images/product/client-profile.jpg"],
+  "dive-centers": ["/images/product/bookings.webp", "/images/product/event-planner.webp", "/images/product/client-profile.jpg"],
+  "surf-schools": ["/images/product/bookings.webp", "/images/product/event-planner.webp", "/images/product/client-profile.jpg"],
+  "kitesurf-schools": ["/images/product/bookings.webp", "/images/product/event-planner.webp", "/images/product/client-profile.jpg"],
+  "sailing-schools": ["/images/product/bookings.webp", "/images/product/fleet.webp", "/images/product/client-profile.jpg"],
+  "windsurf-schools": ["/images/product/booking-wizard.jpg", "/images/product/gear.webp", "/images/product/client-profile.jpg"],
+  "outdoor-whitewater": ["/images/product/bookings.webp", "/images/product/event-planner.webp", "/images/product/client-profile.jpg"],
+  "ski-schools": ["/images/product/bookings.webp", "/images/product/event-planner.webp", "/images/product/staff.webp"],
+  "dive-resorts": ["/images/product/bookings.webp", "/images/product/accommodation-calendar.jpg", "/images/product/reports-sales.jpg"],
+  "surf-camps": ["/images/product/bookings.webp", "/images/product/accommodation-calendar.jpg", "/images/product/client-profile.jpg"],
+  "kayak-rental-tours": ["/images/product/bookings.webp", "/images/product/gear.webp", "/images/product/client-profile.jpg"],
+  "bike-rental-tours": ["/images/product/bookings.webp", "/images/product/fleet.webp", "/images/product/client-profile.jpg"],
+  "boat-rental-courses": ["/images/product/bookings.webp", "/images/product/fleet.webp", "/images/product/client-profile.jpg"],
 };
 
 const PROOF_IMAGE_BY_SLUG: Record<string, string> = {
   "dive-resorts": "/images/product/accommodation-calendar.jpg",
   "surf-camps": "/images/product/accommodation-calendar.jpg",
-  "sailing-schools": "/images/product/fleet.png",
-  "boat-rental-courses": "/images/product/fleet.png",
-  "bike-rental-tours": "/images/product/fleet.png",
+  "sailing-schools": "/images/product/fleet.webp",
+  "boat-rental-courses": "/images/product/fleet.webp",
+  "bike-rental-tours": "/images/product/fleet.webp",
 };
 
 export async function generateStaticParams() {
@@ -70,7 +70,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
   }
 
   const featureImages = FEATURE_IMAGES_BY_SLUG[vertical.slug] ?? DEFAULT_FEATURE_IMAGES;
-  const proofImage = PROOF_IMAGE_BY_SLUG[vertical.slug] ?? "/images/product/dash-responsive-desktop.png";
+  const proofImage = PROOF_IMAGE_BY_SLUG[vertical.slug] ?? "/images/product/dash-responsive-desktop.webp";
 
   return (
     <div className="flex flex-col w-full">
