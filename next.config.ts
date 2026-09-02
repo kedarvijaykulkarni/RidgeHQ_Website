@@ -18,6 +18,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    // Negotiate AVIF first, then WebP, then the original.
+    formats: ["image/avif", "image/webp"],
+  },
   async headers() {
     return [
       {
