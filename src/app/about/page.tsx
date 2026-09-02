@@ -6,8 +6,10 @@ import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { verticals } from "@/lib/config/verticals";
 import Link from "next/link";
 import { Navigation, Target } from "lucide-react";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/about"),
   title: "About RidgeHQ | The Activity Business OS",
   description: "Learn why RidgeHQ is building one operating system for activity businesses — connecting bookings, schedules, people, resources, payments and daily operations.",
 };

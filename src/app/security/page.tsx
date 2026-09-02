@@ -1,7 +1,9 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/security"),
   title: "Security",
   description: "Security at RidgeHQ.",
 };

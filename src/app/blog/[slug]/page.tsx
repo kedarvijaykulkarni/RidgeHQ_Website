@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
 import ReactMarkdown from 'react-markdown';
+import { pageSeo } from "@/lib/config/seo";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -16,9 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const resolvedParams = await params;
   const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
   if (!post) return {};
-  
+
   return {
-    title: `${post.title} — RidgeHQ Blog`,
+    ...pageSeo(`/blog/${post.slug}`),
+    title: `${post.title} — Blog`,
     description: post.excerpt,
   };
 }

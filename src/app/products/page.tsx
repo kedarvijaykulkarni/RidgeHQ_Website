@@ -6,8 +6,10 @@ import { CTASection } from "@/components/marketing/CTASection";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/products"),
   title: "Products",
   description: "One platform for the operational day, plus the parts you can go deep on.",
 };

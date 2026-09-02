@@ -3,8 +3,10 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { IntegrationCard } from "@/components/marketing/IntegrationCard";
 import { integrations } from "@/lib/config/integrations";
 import { CTASection } from "@/components/marketing/CTASection";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/integrations"),
   title: "Integrations",
   description: "Connected to your ecosystem. See what tools RidgeHQ supports.",
 };

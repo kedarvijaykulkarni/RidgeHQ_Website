@@ -6,8 +6,10 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/pricing"),
   title: "Pricing",
   description: "Transparent subscription. Zero direct booking fees.",
 };

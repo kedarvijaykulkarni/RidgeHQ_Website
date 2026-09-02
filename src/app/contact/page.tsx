@@ -1,8 +1,10 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/contact"),
   title: "Contact Us",
   description: "Get in touch with the RidgeHQ team.",
 };

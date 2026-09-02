@@ -1,7 +1,9 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/terms"),
   title: "Terms of Service — RidgeHQ",
   description: "The terms that govern use of the RidgeHQ website and live operations platform for dive centers and watersports schools.",
 };

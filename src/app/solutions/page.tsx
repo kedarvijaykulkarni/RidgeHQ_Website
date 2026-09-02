@@ -5,8 +5,10 @@ import { CTASection } from "@/components/marketing/CTASection";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/solutions"),
   title: "Built For — Industries RidgeHQ Runs",
   description: "One operational model. Different ways to run the day.",
 };

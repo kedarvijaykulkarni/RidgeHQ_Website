@@ -3,8 +3,10 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { blogPosts } from "@/lib/config/blog";
 import { CTASection } from "@/components/marketing/CTASection";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/blog"),
   title: "Blog & Resources — RidgeHQ",
   description: "Insights, guides, and best practices for running activity businesses.",
 };

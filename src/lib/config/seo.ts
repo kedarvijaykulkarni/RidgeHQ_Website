@@ -8,10 +8,13 @@ export const defaultSeo: Metadata = {
     default: 'RidgeHQ | The Activity Business OS',
   },
   description: 'Run your entire activity business from one HQ. Connect bookings, schedules, staff, customers, gear, rentals, trips, and payments in one live system.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'RidgeHQ | The Activity Business OS',
     description: 'Run your entire activity business from one HQ. Connect bookings, schedules, staff, customers, gear, rentals, trips, and payments in one live system.',
-    url: 'https://ridgehq.app',
+    url: '/',
     siteName: 'RidgeHQ',
     images: [
       {
@@ -30,3 +33,19 @@ export const defaultSeo: Metadata = {
     images: ['/images/brand/og-image.jpg'],
   },
 };
+
+/**
+ * Per-page URL metadata: a self-referencing canonical plus a matching
+ * og:url. Spread it into a page's `metadata` (or `generateMetadata`
+ * return) alongside `title` / `description`.
+ *
+ * `openGraph` does not deep-merge across segments in the Metadata API, so
+ * the site-wide openGraph fields are re-spread here to preserve them.
+ */
+export function pageSeo(path: string): Metadata {
+  const canonicalPath = path === '/' ? '/' : `/${path.replace(/^\/+/, '')}`;
+  return {
+    alternates: { canonical: canonicalPath },
+    openGraph: { ...defaultSeo.openGraph, url: canonicalPath },
+  };
+}

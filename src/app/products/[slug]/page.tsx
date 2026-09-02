@@ -10,6 +10,7 @@ import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/dash-responsive-desktop.png",
@@ -39,7 +40,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!product) return {};
 
   return {
-    title: `${product.title} — RidgeHQ`,
+    ...pageSeo(`/products/${product.slug}`),
+    title: product.title,
     description: product.heroTagline ?? product.description,
   };
 }

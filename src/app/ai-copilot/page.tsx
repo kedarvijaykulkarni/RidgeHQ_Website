@@ -3,8 +3,10 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { CheckCircle2 } from "lucide-react";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/ai-copilot"),
   title: "AI Copilot",
   description: "AI that works inside the operation, with full operational context.",
 };

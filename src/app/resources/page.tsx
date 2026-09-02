@@ -1,8 +1,10 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/resources"),
   title: "Resources",
   description: "Guides, operational insights, and product updates.",
 };

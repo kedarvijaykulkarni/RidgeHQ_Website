@@ -10,6 +10,7 @@ import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/dash-responsive-desktop.png",
@@ -46,7 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!capability) return {};
 
   return {
-    title: `${capability.title} — RidgeHQ`,
+    ...pageSeo(`/platform/${capability.slug}`),
+    title: capability.title,
     description: capability.heroTagline ?? capability.description,
   };
 }

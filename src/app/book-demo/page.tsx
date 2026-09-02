@@ -1,8 +1,10 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
+import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
+  ...pageSeo("/book-demo"),
   title: "Book a Demo",
   description: "See how RidgeHQ can connect your operational day.",
 };
