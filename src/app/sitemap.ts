@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next'
 import { verticals } from '@/lib/config/verticals'
 import { products } from '@/lib/config/products'
+import { siteUrl } from '@/lib/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ridgehq.app'
+  const baseUrl = siteUrl
   
   const staticRoutes = [
     '',

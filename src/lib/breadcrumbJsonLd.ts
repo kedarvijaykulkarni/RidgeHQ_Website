@@ -1,4 +1,6 @@
-const SITE_URL = "https://ridgehq.app";
+import { siteUrl } from "@/lib/config/site";
+
+const SITE_URL = siteUrl;
 
 interface Crumb {
   name: string;
