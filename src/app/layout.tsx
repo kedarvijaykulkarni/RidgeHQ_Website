@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { defaultSeo } from "@/lib/config/seo";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
+import { CTAEventTracker } from "@/components/analytics/CTAEventTracker";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,9 +57,11 @@ export default function RootLayout({
             ]
           }}
         />
-        {process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_GA_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-        )}
+        <Suspense fallback={null}>
+          <GoogleAnalyticsPageView />
+        </Suspense>
+        <CTAEventTracker />
+        <GoogleAnalytics />
       </body>
     </html>
   );
