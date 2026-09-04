@@ -53,7 +53,7 @@ Do **not** use this for pure visual/layout changes that touch no factual copy.
    relevant `verticals.ts`/`products.ts`/`platform.ts` prose (hero copy, feature
    sections, FAQs). For anything that is a **capability claim** (what the product does,
    not just how it's phrased), verify it against the authoritative Brain vault at
-   `D:\work\Bloowatch\aquarosters\Brain\AquaRosters\wiki` before publishing — see
+   `D:\work\RidgeHQAPP\Brain\RidgeHQAPP\wiki` before publishing — see
    "Product-truth verification" below. Pure copy/tone edits don't need this step.
 
 ## Procedure
@@ -81,7 +81,7 @@ For any change that is or touches a capability claim (not just copy polish):
 1. Check `RidgeHQ_Website_AI_Prompt/01-SOURCE-OF-TRUTH.md` for the current reading
    order and any explicit overriding decisions.
 2. Read the relevant doc(s) under
-   `D:\work\Bloowatch\aquarosters\Brain\AquaRosters\wiki\development-reference\Modules\`
+   `D:\work\RidgeHQAPP\Brain\RidgeHQAPP\wiki\development-reference\Modules\`
    (or `APIs/`, `Architecture/`, or the newest QA/decision doc under `Docs/`) for the
    feature in question. Prefer the newest, most specific implementation doc over a
    broad business summary.

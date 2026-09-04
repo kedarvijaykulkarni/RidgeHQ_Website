@@ -75,7 +75,7 @@ Start with the prompt-pack files in this order:
 
 Then inspect the Brain at:
 
-`D:\work\Bloowatch\aquarosters\Brain\AquaRosters`
+`D:\work\RidgeHQAPP\Brain\RidgeHQAPP`
 
 Follow the Tier-A/Tier-B reading rules in `01-SOURCE-OF-TRUTH.md`. Do not load the entire vault blindly.
 

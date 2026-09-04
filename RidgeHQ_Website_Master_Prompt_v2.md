@@ -33,7 +33,7 @@ The website must:
 - Public final pricing: **not yet validated**
 - Direct booking principle: **0% RidgeHQ platform commission on direct bookings** while current
 
-The latest Brain snapshot supplied for this prompt revision is `D:\work\Bloowatch\aquarosters\Brain\AquaRosters`, dated 2026-08-11 in this workstream.
+The latest Brain snapshot supplied for this prompt revision is `D:\work\RidgeHQAPP\Brain\RidgeHQAPP` (moved 2026-09-04 from the earlier `D:\work\Bloowatch\aquarosters\Brain\AquaRosters` location), dated 2026-08-11 in this workstream.
 
 ## 12 master-brand verticals
 
@@ -75,7 +75,7 @@ Start with the prompt-pack files in this order:
 
 Then inspect the Brain at:
 
-`D:\work\Bloowatch\aquarosters\Brain\AquaRosters`
+`D:\work\RidgeHQAPP\Brain\RidgeHQAPP`
 
 Follow the Tier-A/Tier-B reading rules in `01-SOURCE-OF-TRUTH.md`. Do not load the entire vault blindly.
 

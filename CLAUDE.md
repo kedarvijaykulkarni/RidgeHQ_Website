@@ -19,7 +19,7 @@ all seven, not just the page you were editing:**
 7. Marketing/nav copy — `src/lib/config/navigation.ts` and the relevant
    `verticals.ts`/`products.ts`/`platform.ts` entries — checked for product-truth
    accuracy against the authoritative Brain vault
-   (`D:\work\Bloowatch\aquarosters\Brain\AquaRosters\wiki`) when the change touches
+   (`D:\work\RidgeHQAPP\Brain\RidgeHQAPP\wiki`) when the change touches
    a capability claim, not just copy polish
 
 Use the `ai-discoverability-sync` skill (`.claude/skills/ai-discoverability-sync/`)
