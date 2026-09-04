@@ -33,14 +33,14 @@ export function CTASection({
           <p className="text-lg md:text-xl text-slate-400">{description}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" asChild>
-              <Link href={primaryCtaHref}>
+              <Link href={primaryCtaHref} data-ga-event="cta_primary_click">
                 {primaryCtaText}
                 <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             {secondaryCtaText && secondaryCtaHref && (
               <Button size="lg" variant="outline" asChild>
-                <Link href={secondaryCtaHref}>
+                <Link href={secondaryCtaHref} data-ga-event="cta_secondary_click">
                   {secondaryCtaText}
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                 </Link>
