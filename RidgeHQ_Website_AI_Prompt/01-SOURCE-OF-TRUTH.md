@@ -25,9 +25,11 @@ These are explicit decisions for this website task and override older branding/s
 
 The current prompt pack was revised against the founder-supplied **`Brain(1).zip` on 2026-08-11**.
 
-In the local project, the expected Brain root remains:
+In the local project, the expected Brain root is:
 
-`D:\work\Bloowatch\aquarosters\Brain\AquaRosters`
+`D:\work\RidgeHQAPP\Brain\RidgeHQAPP`
+
+(Moved 2026-09-04 from the earlier `D:\work\Bloowatch\aquarosters\Brain\AquaRosters` location — same vault, same reading order below, new path only.)
 
 If the local vault has been intentionally updated after this snapshot, prefer the newer dated implementation evidence while preserving the explicit website decisions above.
 

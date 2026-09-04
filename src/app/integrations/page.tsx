@@ -8,7 +8,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/integrations"),
   title: "Integrations",
-  description: "Connected to your ecosystem. See what tools RidgeHQ supports.",
+  description: "The payment gateways and certification authorities RidgeHQ connects to today, and what's planned next.",
 };
 
 export default function IntegrationsPage() {

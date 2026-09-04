@@ -10,7 +10,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/solutions"),
   title: { absolute: "Built For — Industries RidgeHQ Runs" },
-  description: "One operational model. Different ways to run the day.",
+  description: "How RidgeHQ fits dive centers, surf and kite schools, sailing and windsurf schools, ski schools, outdoor operators, resorts, camps, and rental/tour operators.",
 };
 
 export default function SolutionsIndexPage() {

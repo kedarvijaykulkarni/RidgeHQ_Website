@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/contact"),
   title: "Contact Us",
-  description: "Get in touch with the RidgeHQ team.",
+  description: "Questions about RidgeHQ, the Founding Operator Pilot, or a partnership — reach the RidgeHQ team directly.",
 };
 
 export default function ContactPage() {

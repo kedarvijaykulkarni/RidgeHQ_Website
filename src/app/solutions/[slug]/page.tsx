@@ -10,6 +10,7 @@ import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
@@ -80,6 +81,9 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           { name: vertical.name, path: `/solutions/${vertical.slug}` },
         ])}
       />
+      {vertical.faqs && vertical.faqs.length > 0 && (
+        <StructuredData data={faqPageJsonLd(vertical.faqs)} />
+      )}
       {/* Vertical Hero */}
       <Section className="relative overflow-hidden pt-24 pb-16">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>

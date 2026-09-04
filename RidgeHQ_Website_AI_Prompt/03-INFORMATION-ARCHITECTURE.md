@@ -128,7 +128,7 @@ The homepage should make four things clear quickly:
 
 Use real screenshots from:
 
-`Brain/AquaRosters/wiki/development-reference/Docs/marketing/screenshots/`
+`Brain/RidgeHQAPP/wiki/development-reference/Docs/marketing/screenshots/`
 
 Prefer crops and frames that focus on functionality and avoid prominent stale AquaRosters branding.
 

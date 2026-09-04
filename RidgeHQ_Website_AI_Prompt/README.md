@@ -45,7 +45,7 @@ Each phase reuses the shared source/specification files and is intentionally sco
 
 ## Brain root expected by the prompts
 
-`D:\work\Bloowatch\aquarosters\Brain\AquaRosters`
+`D:\work\RidgeHQAPP\Brain\RidgeHQAPP`
 
 Historical Brain material still uses AquaRosters/AquaRoster. Public website copy uses **RidgeHQ**. The prompt pack deliberately prevents a destructive repository-wide rename.
 

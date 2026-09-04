@@ -5,7 +5,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/security"),
   title: "Security",
-  description: "Security at RidgeHQ.",
+  description: "How RidgeHQ protects operational data: encryption in transit and at rest, role-based access control, and an AI Copilot that shares staff permission boundaries and confirms high-risk actions before executing them.",
 };
 
 export default function SecurityPage() {

@@ -113,6 +113,7 @@ export function Footer() {
             <Link href="/privacy" className="transition-colors hover:text-[var(--accent)]">Privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-[var(--accent)]">Terms</Link>
             <Link href="/security" className="transition-colors hover:text-[var(--accent)]">Security</Link>
+            <Link href="/ai" className="transition-colors hover:text-[var(--accent)]">AI Overview</Link>
           </div>
         </div>
       </Container>

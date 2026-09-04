@@ -9,7 +9,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/ai-copilot"),
   title: "AI Copilot",
-  description: "AI that works inside the operation, with full operational context.",
+  description: "RidgeHQ's AI Copilot reads live bookings, staff schedules, and resource availability across your business, using the same permission model as your team, and confirms before it acts.",
 };
 
 export default function AICopilotPage() {

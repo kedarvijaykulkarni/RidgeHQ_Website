@@ -72,7 +72,7 @@ const platformGroups: NavGroup[] = [
       {
         title: 'AI Copilot',
         href: '/ai-copilot',
-        description: 'An assistant that reads the day and takes reversible actions, each with a confirm step.',
+        description: 'An assistant that reads the day and can take a few scheduling actions, each behind a confirm step.',
         icon: 'Sparkles',
       },
       {
@@ -201,6 +201,7 @@ export const footerNav = {
     { title: 'About', href: '/about' },
     { title: 'Contact', href: '/contact' },
     { title: 'Design Partners', href: '/design-partners' },
+    { title: 'Free Calculators', href: '/tools' },
   ],
   legal: [
     { title: 'Security', href: '/security' },
