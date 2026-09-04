@@ -72,7 +72,7 @@ const platformGroups: NavGroup[] = [
       {
         title: 'AI Copilot',
         href: '/ai-copilot',
-        description: 'An assistant that reads the day and takes reversible actions, each with a confirm step.',
+        description: 'An assistant that reads the day and can take a few scheduling actions, each behind a confirm step.',
         icon: 'Sparkles',
       },
       {
