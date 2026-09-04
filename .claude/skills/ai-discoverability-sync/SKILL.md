@@ -18,6 +18,8 @@ Trigger on any of:
 - An integration's `state` changes in `src/lib/config/integrations.ts`.
 - A new page, tool, or blog post is added or removed.
 - A capability claim (especially AI Copilot behavior) is added, reworded, or reviewed.
+- You're asked to "sync with the vault" / "check for vault updates" — see "Vault ↔ website
+  sync" below.
 
 Do **not** use this for pure visual/layout changes that touch no factual copy.
 
@@ -93,6 +95,38 @@ For any change that is or touches a capability claim (not just copy polish):
 4. If the Brain vault is unreachable or silent on the specific claim, don't publish it
    as current — mark it planned/unverified or leave it out, per AGENTS.md's product-
    truth rule.
+
+## Vault ↔ website sync (pull + push)
+
+The Brain vault is the app/business source of truth; this repo is downstream. Run this
+whenever asked to "sync with the vault," and periodically (e.g. before a marketing content
+push) even without being asked:
+
+**Pull — vault changed, website may be behind:**
+1. Open `docs/vault-sync-log.md` and note the date of its last entry.
+2. Read `wiki/index.md`'s dated `## <topic> update - <date>` sections and `wiki/log.md`
+   entries newer than that date. `index.md` is the faster read — it summarizes each ingest;
+   drop into `log.md` or the specific page (`pricing.md`, `business-context.md`,
+   `competitors.md`, etc.) for detail.
+3. For each change found, decide: does it affect any of the 7 surfaces? If yes, is it
+   **safe to apply directly** (a copy-accuracy fix, a status correction that doesn't change
+   what's sold or for how much) or **consequential** (pricing, a positioning pivot, a claim
+   that commits the business to something)? Apply the safe ones following the normal 7-
+   surface procedure above. For consequential ones: do not publish unprompted — surface it
+   clearly and get a go-ahead first.
+4. Append a dated entry to `docs/vault-sync-log.md` either way (what was pulled, what was
+   applied, what's flagged and pending), so the next pass knows where it left off.
+
+**Push — website work surfaced something the app/business side should know:**
+1. Never edit the vault's own pages directly (`business-context.md`, `pricing.md`,
+   `competitors.md`, etc.) — those are owned and maintained by whatever session works in
+   that repo.
+2. Append an entry to `wiki/log.md` in the vault, matching its existing format exactly:
+   `## [YYYY-MM-DD] query | <title>`, then a short `Source:` line, then the finding in
+   prose. Use `query` (not `ingest`) since a website-repo session isn't ingesting a new
+   source into that vault, just reporting back.
+3. Mirror the same finding in `docs/vault-sync-log.md` on this side, so both logs tell the
+   same story from their own vantage point.
 
 ## Non-goals
 
