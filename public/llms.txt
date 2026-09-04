@@ -39,6 +39,11 @@ RidgeHQ is built for 12 activity-business verticals — dive centers, surf schoo
 - [Bike Rental / Tour Operators](https://ridgehq.app/solutions/bike-rental-tours)
 - [Boat Rental / Course Operators](https://ridgehq.app/solutions/boat-rental-courses)
 
+## Free calculators
+
+- [No-Show Cost Calculator](https://ridgehq.app/tools/no-show-cost-calculator): estimate annual revenue lost to no-shows from your own numbers, formula shown.
+- [Admin Time Cost Calculator](https://ridgehq.app/tools/admin-time-cost-calculator): estimate the annual cost of manually re-keying bookings/waivers/schedules across tools, formula shown.
+
 ## Machine-readable summary
 
 - [AI Overview](https://ridgehq.app/ai): one page summarizing product, pricing mode, industries, capabilities, integrations, security, and FAQs — server-rendered, kept in sync with the config that drives the marketing pages.
