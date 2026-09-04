@@ -5,7 +5,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/privacy"),
   title: "Privacy Policy",
-  description: "How RidgeHQ collects, uses, and protects data for dive centers, watersports schools, and their customers.",
+  description: "How RidgeHQ collects, uses, and protects data for dive centers, watersports schools, rental operators, and their customers.",
 };
 
 const sections: { heading: string; body: string[] }[] = [

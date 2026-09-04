@@ -12,7 +12,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/products"),
   title: "Products",
-  description: "One platform for the operational day, plus the parts you can go deep on.",
+  description: "RidgeHQ's product lineup: the Activity Platform, plus the Rental App, Waiver App, and Channel Manager for teams that want to go deeper on one workflow.",
 };
 
 export default function ProductsPage() {
