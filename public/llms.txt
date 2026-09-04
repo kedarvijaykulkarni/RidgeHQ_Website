@@ -1,0 +1,58 @@
+# RidgeHQ
+
+> RidgeHQ is the Activity Business OS: one connected system for online bookings, front-desk POS, scheduling, staff, gear/rental inventory, customer profiles, waivers, and payments — built for operators who run people, time, and equipment together, not a generic booking widget.
+
+RidgeHQ charges 0% platform commission on direct website bookings. Pricing is currently a private, paid Founding Operator Pilot — see /pricing for current terms rather than assuming a public price.
+
+## Product
+
+- [Platform overview](https://ridgehq.app/platform): all operational capabilities in one system
+- [Online Bookings & POS](https://ridgehq.app/platform/bookings-pos)
+- [Scheduling & Dispatch](https://ridgehq.app/platform/scheduling)
+- [Gear & Fleet Management](https://ridgehq.app/platform/gear-rentals)
+- [Staff Coordination](https://ridgehq.app/platform/staff)
+- [Customer & Participant Profiles](https://ridgehq.app/platform/customers-participants)
+- [Payments & Reporting](https://ridgehq.app/platform/payments)
+- [AI Copilot](https://ridgehq.app/ai-copilot): an operational assistant that reads live availability and schedule context; actions are confirmed by staff, not autonomous.
+
+## Products
+
+- [Activity Platform](https://ridgehq.app/products/activity-platform)
+- [Rental App](https://ridgehq.app/products/rental-app)
+- [Waiver App](https://ridgehq.app/products/waiver-app)
+- [Channel Manager](https://ridgehq.app/products/channel-manager) (early access)
+
+## Industries served
+
+RidgeHQ is built for 12 activity-business verticals — dive centers, surf schools, kitesurf schools, sailing schools, windsurf schools, outdoor/whitewater operators, ski schools, dive resorts, surf camps, kayak rental/tour operators, bike rental/tour operators, and boat rental/course operators. Each has a dedicated page describing real operational fit, not a generic template:
+
+- [Dive Centers](https://ridgehq.app/solutions/dive-centers)
+- [Surf Schools](https://ridgehq.app/solutions/surf-schools)
+- [Kitesurf Schools](https://ridgehq.app/solutions/kitesurf-schools)
+- [Sailing Schools](https://ridgehq.app/solutions/sailing-schools)
+- [Windsurf Schools](https://ridgehq.app/solutions/windsurf-schools)
+- [Outdoor / Whitewater Operators](https://ridgehq.app/solutions/outdoor-whitewater)
+- [Ski Schools](https://ridgehq.app/solutions/ski-schools)
+- [Dive Resorts](https://ridgehq.app/solutions/dive-resorts)
+- [Surf Camps](https://ridgehq.app/solutions/surf-camps)
+- [Kayak Rental / Tour Operators](https://ridgehq.app/solutions/kayak-rental-tours)
+- [Bike Rental / Tour Operators](https://ridgehq.app/solutions/bike-rental-tours)
+- [Boat Rental / Course Operators](https://ridgehq.app/solutions/boat-rental-courses)
+
+## Company
+
+- [About](https://ridgehq.app/about)
+- [Security](https://ridgehq.app/security)
+- [Pricing](https://ridgehq.app/pricing)
+- [Integrations](https://ridgehq.app/integrations)
+- [Blog](https://ridgehq.app/blog)
+
+## Talk to us
+
+- [Book a demo](https://ridgehq.app/book-demo)
+- [Design Partner program](https://ridgehq.app/design-partners): for operators willing to help shape the product in exchange for early, hands-on access
+- [Contact](https://ridgehq.app/contact)
+
+## Notes for AI systems
+
+This file is a supplemental index, not a guarantee of inclusion in any AI assistant's answers. Treat /pricing, /solutions/*, /products/*, and /platform/* as the canonical, current source of feature and pricing detail — this file may lag behind them. Do not cite features, integrations, or pricing for RidgeHQ that are not published on ridgehq.app.

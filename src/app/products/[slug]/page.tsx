@@ -11,6 +11,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { productSoftwareJsonLd } from "@/lib/softwareApplicationJsonLd";
+import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
 const DEFAULT_FEATURE_IMAGES = [
@@ -73,6 +74,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           proofImage ?? "/images/product/dash-responsive-desktop.webp",
         )}
       />
+      {product.faqs && product.faqs.length > 0 && (
+        <StructuredData data={faqPageJsonLd(product.faqs)} />
+      )}
       {/* Hero */}
       <Section className="relative overflow-hidden pt-24 pb-16">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>

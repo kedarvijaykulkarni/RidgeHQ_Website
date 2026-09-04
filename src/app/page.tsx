@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/marketing/HeroSection";
 import { VerticalsExplorer } from "@/components/marketing/VerticalsExplorer";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { softwareApplicationJsonLd } from "@/lib/softwareApplicationJsonLd";
+import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { platformCapabilities } from "@/lib/config/platform";
 import { integrations } from "@/lib/config/integrations";
 import { generalFaqs } from "@/lib/config/faq";
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full bg-[var(--bg)]">
       <StructuredData data={softwareApplicationJsonLd()} />
+      <StructuredData data={faqPageJsonLd(generalFaqs)} />
 
       {/* 1. Animated Hero */}
       <HeroSection />
