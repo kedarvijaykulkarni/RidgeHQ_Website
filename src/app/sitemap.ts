@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/platform',
     '/products',
     '/ai-copilot',
+    '/ai',
     '/integrations',
     '/pricing',
     '/solutions',

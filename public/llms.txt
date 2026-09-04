@@ -39,6 +39,10 @@ RidgeHQ is built for 12 activity-business verticals — dive centers, surf schoo
 - [Bike Rental / Tour Operators](https://ridgehq.app/solutions/bike-rental-tours)
 - [Boat Rental / Course Operators](https://ridgehq.app/solutions/boat-rental-courses)
 
+## Machine-readable summary
+
+- [AI Overview](https://ridgehq.app/ai): one page summarizing product, pricing mode, industries, capabilities, integrations, security, and FAQs — server-rendered, kept in sync with the config that drives the marketing pages.
+
 ## Company
 
 - [About](https://ridgehq.app/about)
