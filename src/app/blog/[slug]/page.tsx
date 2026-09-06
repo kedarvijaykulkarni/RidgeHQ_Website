@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import { pageSeo } from "@/lib/config/seo";
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return blogPosts.filter((post) => !post.draft).map((post) => ({
     slug: post.slug,
   }));
 }
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
-  if (!post) return {};
+  if (!post || post.draft) return {};
 
   return {
     ...pageSeo(`/blog/${post.slug}`),
@@ -29,7 +29,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const resolvedParams = await params;
   const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
   
-  if (!post) {
+  if (!post || post.draft) {
     notFound();
   }
 

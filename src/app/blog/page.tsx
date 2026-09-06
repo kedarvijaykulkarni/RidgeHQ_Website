@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
       <Section className="pt-0 min-h-[50vh]">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post) => (
+            {blogPosts.filter((post) => !post.draft).map((post) => (
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>
