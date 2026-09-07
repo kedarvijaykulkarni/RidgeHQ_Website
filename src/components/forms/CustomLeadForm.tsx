@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import Script from "next/script";
 
@@ -15,13 +16,26 @@ export function CustomLeadForm({
   description = "Fill out the details below and our founding team will be in touch shortly.",
   buttonText = "Apply to Partner Program"
 }: CustomLeadFormProps) {
+  const router = useRouter();
   const [returnUrl, setReturnUrl] = useState("https://ridgehq.app/thank-you");
+  // Tracks whether the user has actually submitted, so the hidden iframe's
+  // initial (about:blank) load event doesn't trigger a premature redirect.
+  const hasSubmitted = useRef(false);
 
   useEffect(() => {
     // Set the return URL dynamically based on the current environment so it works locally and in production.
     // eslint-disable-next-line
     setReturnUrl(`${window.location.origin}/thank-you`);
   }, []);
+
+  // The form POSTs into a hidden iframe so Zoho still receives the lead exactly
+  // as before, but the response never replaces our page. Once Zoho responds
+  // (iframe fires `load`), we send the visitor to our own thank-you page.
+  const handleTargetLoad = () => {
+    if (hasSubmitted.current) {
+      router.push("/thank-you");
+    }
+  };
 
   return (
     <div className="w-full max-w-2xl mx-auto p-8 rounded-2xl bg-[var(--bg-elevated)] border border-[var(--border)] shadow-xl relative overflow-hidden">
@@ -33,11 +47,23 @@ export function CustomLeadForm({
         <p className="text-[var(--ink-secondary)] mt-2">{description}</p>
       </div>
 
-      <form 
-        action="https://crm.zoho.in/crm/WebToLeadForm" 
-        name="WebToLeads1393031000000539006" 
-        method="POST" 
+      {/* Hidden target: Zoho's response loads here instead of navigating away from our site. */}
+      <iframe
+        name="zoho-lead-target"
+        title="Lead form submission handler"
+        aria-hidden="true"
+        tabIndex={-1}
+        className="hidden"
+        onLoad={handleTargetLoad}
+      />
+
+      <form
+        action="https://crm.zoho.in/crm/WebToLeadForm"
+        name="WebToLeads1393031000000539006"
+        method="POST"
         acceptCharset="UTF-8"
+        target="zoho-lead-target"
+        onSubmit={() => { hasSubmitted.current = true; }}
         className="space-y-6"
       >
         {/* Zoho Hidden Fields */}
