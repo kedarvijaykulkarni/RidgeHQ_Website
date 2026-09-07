@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/Button"
 import { ChevronRight } from "lucide-react"
 import { Container } from "@/components/ui/Layout"
@@ -13,6 +14,14 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/images/logo/ridgehq-logo-128x128.png"
+                alt="RidgeHQ"
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-lg"
+                priority
+              />
               <span className="font-mono text-lg font-semibold tracking-tight text-[var(--ink)]">
                 <span className="text-gradient-accent">R</span>idge<span className="text-gradient-accent">HQ</span>
               </span>

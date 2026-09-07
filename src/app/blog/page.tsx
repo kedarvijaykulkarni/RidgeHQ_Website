@@ -1,7 +1,7 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { BlogCard } from "@/components/blog/BlogCard";
-import { blogPosts } from "@/lib/config/blog";
+import { visibleBlogPosts } from "@/lib/config/blog";
 import { CTASection } from "@/components/marketing/CTASection";
 import { pageSeo } from "@/lib/config/seo";
 
@@ -29,7 +29,7 @@ export default function BlogIndexPage() {
       <Section className="pt-0 min-h-[50vh]">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogPosts.map((post) => (
+            {visibleBlogPosts.map((post) => (
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>

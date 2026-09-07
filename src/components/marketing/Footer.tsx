@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Container } from "@/components/ui/Layout"
 import { footerNav } from "@/lib/config/navigation"
 
@@ -55,10 +56,19 @@ export function Footer() {
             <Link
               href="/"
               aria-label="RidgeHQ Home"
-              className="font-mono text-lg font-semibold tracking-tight text-[var(--ink)]"
+              className="flex items-center gap-2 font-mono text-lg font-semibold tracking-tight text-[var(--ink)]"
             >
-              <span className="text-gradient-accent">R</span>idge
-              <span className="text-gradient-accent">HQ</span>
+              <Image
+                src="/images/logo/ridgehq-logo-128x128.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-lg"
+              />
+              <span>
+                <span className="text-gradient-accent">R</span>idge
+                <span className="text-gradient-accent">HQ</span>
+              </span>
             </Link>
             <p className="max-w-xs text-sm text-[var(--ink-tertiary)]">
               Run your entire activity business from one HQ.
