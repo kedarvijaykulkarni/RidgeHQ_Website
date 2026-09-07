@@ -38,7 +38,7 @@ export default function RootLayout({
                 "url": "https://ridgehq.app",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://ridgehq.app/images/brand/logo.png"
+                  "url": "https://ridgehq.app/images/logo/ridgehq-logo-512x512.png"
                 },
                 "sameAs": [
                   "https://twitter.com/ridgehq",
