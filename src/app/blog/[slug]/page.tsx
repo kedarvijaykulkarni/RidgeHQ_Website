@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { blogPosts } from "@/lib/config/blog";
+import { visibleBlogPosts } from "@/lib/config/blog";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -8,15 +8,15 @@ import ReactMarkdown from 'react-markdown';
 import { pageSeo } from "@/lib/config/seo";
 
 export async function generateStaticParams() {
-  return blogPosts.filter((post) => !post.draft).map((post) => ({
+  return visibleBlogPosts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
-  if (!post || post.draft) return {};
+  const post = visibleBlogPosts.find((p) => p.slug === resolvedParams.slug);
+  if (!post) return {};
 
   return {
     ...pageSeo(`/blog/${post.slug}`),
@@ -27,9 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
-  
-  if (!post || post.draft) {
+  const post = visibleBlogPosts.find((p) => p.slug === resolvedParams.slug);
+
+  if (!post) {
     notFound();
   }
 

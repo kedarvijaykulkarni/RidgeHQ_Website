@@ -7,7 +7,11 @@ export interface BlogPost {
   publishedAt: string;
   category: string;
   readingTime: string;
-  /** When true, the post is hidden from the blog index, its route, and the sitemap. */
+  /**
+   * When true, the post is hidden from the blog index, its route, and the
+   * sitemap in production builds. It stays visible in local dev so it can be
+   * previewed before the claims are verified and the flag is removed.
+   */
   draft?: boolean;
 }
 
@@ -92,3 +96,8 @@ By combining best-in-class business logic with newly implemented safety mechanis
     draft: true,
   },
 ];
+
+/** Drafts render in local dev for preview but are excluded from production. */
+export const visibleBlogPosts: BlogPost[] = blogPosts.filter(
+  (post) => process.env.NODE_ENV === "development" || !post.draft
+);
