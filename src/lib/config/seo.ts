@@ -24,6 +24,8 @@ export const defaultSeo: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@ridgehqapp',
+    creator: '@ridgehqapp',
     title: 'RidgeHQ | The Activity Business OS',
     description: 'Run your entire activity business from one HQ. Connect bookings, schedules, staff, customers, gear, rentals, trips, and payments in one live system.',
   },

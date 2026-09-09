@@ -41,7 +41,7 @@ export default function RootLayout({
                   "url": "https://www.ridgehq.app/images/logo/ridgehq-logo-512x512.png"
                 },
                 "sameAs": [
-                  "https://twitter.com/ridgehq",
+                  "https://x.com/ridgehqapp",
                   "https://linkedin.com/company/ridgehq"
                 ]
               },
