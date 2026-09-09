@@ -33,25 +33,29 @@ export default function RootLayout({
             "@graph": [
               {
                 "@type": "Organization",
-                "@id": "https://ridgehq.app/#organization",
+                "@id": "https://www.ridgehq.app/#organization",
                 "name": "RidgeHQ",
-                "url": "https://ridgehq.app",
+                "url": "https://www.ridgehq.app",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://ridgehq.app/images/logo/ridgehq-logo-512x512.png"
+                  "url": "https://www.ridgehq.app/images/logo/ridgehq-logo-512x512.png"
                 },
                 "sameAs": [
-                  "https://twitter.com/ridgehq",
-                  "https://linkedin.com/company/ridgehq"
+                  "https://x.com/ridgehqapp",
+                  "https://www.linkedin.com/company/ridgehq",
+                  "https://www.instagram.com/ridgehqapp/",
+                  "https://www.facebook.com/profile.php?id=61593964984170",
+                  "https://www.youtube.com/@ridgehq-app",
+                  "https://www.reddit.com/user/ridgehq/"
                 ]
               },
               {
                 "@type": "WebSite",
-                "@id": "https://ridgehq.app/#website",
-                "url": "https://ridgehq.app",
+                "@id": "https://www.ridgehq.app/#website",
+                "url": "https://www.ridgehq.app",
                 "name": "RidgeHQ",
                 "publisher": {
-                  "@id": "https://ridgehq.app/#organization"
+                  "@id": "https://www.ridgehq.app/#organization"
                 }
               }
             ]

@@ -17,7 +17,7 @@ export function CustomLeadForm({
   buttonText = "Apply to Partner Program"
 }: CustomLeadFormProps) {
   const router = useRouter();
-  const [returnUrl, setReturnUrl] = useState("https://ridgehq.app/thank-you");
+  const [returnUrl, setReturnUrl] = useState("https://www.ridgehq.app/thank-you");
   // Tracks whether the user has actually submitted, so the hidden iframe's
   // initial (about:blank) load event doesn't trigger a premature redirect.
   const hasSubmitted = useRef(false);

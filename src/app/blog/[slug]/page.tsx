@@ -43,14 +43,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               "@type": "Article",
               "headline": post.title,
               "description": post.excerpt,
-              "image": `https://ridgehq.app/images/brand/og-image.jpg`,
+              "image": `https://www.ridgehq.app/opengraph-image`,
               "datePublished": post.publishedAt,
               "author": {
                 "@type": "Person",
                 "name": post.author
               },
               "publisher": {
-                "@id": "https://ridgehq.app/#organization"
+                "@id": "https://www.ridgehq.app/#organization"
               }
             },
             {
@@ -60,19 +60,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://ridgehq.app/"
+                  "item": "https://www.ridgehq.app/"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Blog",
-                  "item": "https://ridgehq.app/blog"
+                  "item": "https://www.ridgehq.app/blog"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": post.title,
-                  "item": `https://ridgehq.app/blog/${post.slug}`
+                  "item": `https://www.ridgehq.app/blog/${post.slug}`
                 }
               ]
             }
