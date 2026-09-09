@@ -39,7 +39,7 @@ export function softwareApplicationJsonLd() {
     description:
       "Run your entire activity business from one HQ. RidgeHQ connects bookings, schedules, staff, customers, gear, rentals, trips and payments in one live system, with an AI copilot built into the operational core.",
     url: siteUrl,
-    image: abs("/images/brand/og-image.jpg"),
+    image: abs("/opengraph-image"),
     screenshot: abs("/images/product/dash-responsive-desktop.webp"),
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "Booking & Operations Management Software",

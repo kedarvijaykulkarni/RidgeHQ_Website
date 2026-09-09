@@ -8,6 +8,10 @@ import { siteUrl } from '@/lib/config/site'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteUrl
 
+  // `lastModified` is only emitted where we have a real signal for it (blog
+  // posts, below). Stamping `new Date()` on every URL on every build makes
+  // every `<lastmod>` change on every crawl, which Google learns to ignore.
+
   const staticRoutes = [
     '',
     '/platform',
@@ -30,35 +34,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
   }))
 
   const solutionRoutes = verticals.map((v) => ({
     url: `${baseUrl}/solutions/${v.slug}`,
-    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }))
 
   const productRoutes = products.map((p) => ({
     url: `${baseUrl}/products/${p.slug}`,
-    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }))
 
   const platformRoutes = platformCapabilities.map((c) => ({
     url: `${baseUrl}/platform/${c.slug}`,
-    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
 
   const blogRoutes = visibleBlogPosts.map((p) => ({
     url: `${baseUrl}/blog/${p.slug}`,
-    lastModified: new Date(),
+    lastModified: p.publishedAt,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))

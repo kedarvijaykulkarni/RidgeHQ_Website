@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               "@type": "Article",
               "headline": post.title,
               "description": post.excerpt,
-              "image": `https://www.ridgehq.app/images/brand/og-image.jpg`,
+              "image": `https://www.ridgehq.app/opengraph-image`,
               "datePublished": post.publishedAt,
               "author": {
                 "@type": "Person",
