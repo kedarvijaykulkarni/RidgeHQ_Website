@@ -42,7 +42,11 @@ export default function RootLayout({
                 },
                 "sameAs": [
                   "https://x.com/ridgehqapp",
-                  "https://linkedin.com/company/ridgehq"
+                  "https://www.linkedin.com/company/ridgehq",
+                  "https://www.instagram.com/ridgehqapp/",
+                  "https://www.facebook.com/profile.php?id=61593964984170",
+                  "https://www.youtube.com/@ridgehq-app",
+                  "https://www.reddit.com/user/ridgehq/"
                 ]
               },
               {
