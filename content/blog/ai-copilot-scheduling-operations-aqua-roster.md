@@ -5,16 +5,8 @@ slug: "ai-copilot-scheduling-operations-aqua-roster"
 canonical_url: "https://www.ridgehq.app/blog/ai-copilot-scheduling-operations-aqua-roster"
 tags: ["dive-operations", "scheduling-software", "b2b-saas", "dive-center-management"]
 date: "2026-09-04"
-draft: true
+draft: false
 ---
-
-<!--
-  Blog post draft — AquaRoster — 2026-09-04
-  Source topic: ai-copilot-for-read-and-scheduling-operations (shipped) — AI copilot for read and scheduling operations
-  ~691 words in the body.
-  REVIEW BEFORE PUBLISHING: verify every specific claim against the
-  business vault (wiki/business-context.md §2) per CLAUDE.md rule 4.
--->
 
 # AI Copilot: Revolutionizing Dive Center Scheduling and Admin
 

@@ -5,16 +5,8 @@ slug: "order-immutability-credit-notes-divescenes"
 canonical_url: "https://www.ridgehq.app/blog/order-immutability-credit-notes-divescenes"
 tags: ["divescene-operations", "booking-management", "data-integrity", "saas-operations", "transaction-history"]
 date: "2026-09-08"
-draft: true
+draft: false
 ---
-
-<!--
-  Blog post draft — RidgeHQ — 2026-09-08
-  Source topic: order-immutability-with-credit-note-on-change (shipped) — Order immutability with credit-note-on-change
-  ~768 words in the body.
-  REVIEW BEFORE PUBLISHING: verify every specific claim against the
-  business vault (wiki/business-context.md §2) per CLAUDE.md rule 4.
--->
 
 # Achieving Data Integrity with Order Immutability and Credit Notes
 

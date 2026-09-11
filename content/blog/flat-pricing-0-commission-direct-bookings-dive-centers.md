@@ -5,16 +5,8 @@ slug: "flat-pricing-0-commission-direct-bookings-dive-centers"
 canonical_url: "https://www.ridgehq.app/blog/flat-pricing-0-commission-direct-bookings-dive-centers"
 tags: ["dive-center-operations", "operational-efficiency", "saas-pricing", "dive-booking-software"]
 date: "2026-09-07"
-draft: true
+draft: false
 ---
-
-<!--
-  Blog post draft — RidgeHQ — 2026-09-07
-  Source topic: flat-monthly-pricing-zero-commission (shipped) — Flat monthly pricing with 0% commission on direct bookings
-  ~736 words in the body.
-  REVIEW BEFORE PUBLISHING: verify every specific claim against the
-  business vault (wiki/business-context.md §2) per CLAUDE.md rule 4.
--->
 
 # Pricing Structure Built for Operational Scale and Direct Bookings
 

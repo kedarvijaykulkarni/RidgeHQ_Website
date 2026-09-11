@@ -5,16 +5,8 @@ slug: "ai-copilot-operational-core-dive-management"
 canonical_url: "https://www.ridgehq.app/blog/ai-copilot-operational-core-dive-management"
 tags: ["b2b saas", "dive center management", "operations tech", "ai automation", "scheduling software"]
 date: "2026-09-05"
-draft: true
+draft: false
 ---
-
-<!--
-  Blog post draft — RidgeHQ — 2026-09-05
-  Source topic: ai-copilot-in-the-operational-core (shipped) — An AI copilot built into the operational core, not a bolted-on chatbot
-  ~737 words in the body.
-  REVIEW BEFORE PUBLISHING: verify every specific claim against the
-  business vault (wiki/business-context.md §2) per CLAUDE.md rule 4.
--->
 
 # Integrating AI into the Operational Core of Dive Management
 
