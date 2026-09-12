@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { event } from "@/lib/analytics/google-analytics";
+import { calculateNoShowCost } from "@/lib/calculators/noShowCost";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -24,8 +25,12 @@ export function NoShowCostCalculator() {
     event("calculator_completed", { calculator: "no_show_cost" });
   }
 
-  const weeklyLoss = bookingsPerWeek * avgBookingValue * (noShowRate / 100);
-  const annualLoss = weeklyLoss * weeksPerYear;
+  const { weeklyLoss, annualLoss } = calculateNoShowCost({
+    bookingsPerWeek,
+    avgBookingValue,
+    noShowRate,
+    weeksPerYear,
+  });
 
   return (
     <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">

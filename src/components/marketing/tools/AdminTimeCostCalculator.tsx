@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { event } from "@/lib/analytics/google-analytics";
+import { calculateAdminTimeCost } from "@/lib/calculators/adminTimeCost";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -23,8 +24,11 @@ export function AdminTimeCostCalculator() {
     event("calculator_completed", { calculator: "admin_time_cost" });
   }
 
-  const weeklyCost = hoursPerWeek * hourlyCost;
-  const annualCost = weeklyCost * weeksPerYear;
+  const { weeklyCost, annualCost } = calculateAdminTimeCost({
+    hoursPerWeek,
+    hourlyCost,
+    weeksPerYear,
+  });
 
   return (
     <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
