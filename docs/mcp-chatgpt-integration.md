@@ -24,11 +24,18 @@ and `AI-Copilot.md`:
   `/mcp` JSON-RPC (Streamable HTTP) endpoint, authenticated by a Personal
   Access Token (Manager-issued, capped below Owner/SuperAdmin) or an OAuth 2.1
   flow (Better Auth `mcp`/`oidc-provider` plugins, PKCE-mandatory, RFC
-  9728 discovery). Tool visibility is `V1_ALLOWLIST ∩ pat.scopes ∩ risk ∈
-  {read,low,medium} ∩ role`. **No `high`-risk tool (create/cancel booking,
-  refund) is ever reachable over MCP, as a hard product boundary, not a
-  per-tenant setting.** Tenant isolation, rate limiting, and audit-origin
-  labelling (`mcp:<pat.id>` vs `ai:<tenant_id>`) are all implemented.
+  9728 discovery). PATs are SHA-256-hashed at rest, never stored or
+  retrievable in plaintext after issuance. Tool visibility is
+  `V1_ALLOWLIST ∩ pat.scopes ∩ risk ∈ {read,low,medium} ∩ role`. **No
+  `high`-risk tool (create/cancel booking, refund) is ever reachable over
+  MCP, as a hard product boundary, not a per-tenant setting.** Tenant
+  isolation, rate limiting, and audit-origin labelling (`mcp:<pat.id>` vs
+  `ai:<tenant_id>`) are all implemented. (Known limitations documented in the
+  vault itself, not this proposal's concern: registry/directory listing and
+  production deployment are incomplete, its rate limiter is process-local
+  like this repo's own `/api/public/*` one, and an upstream OAuth plugin has
+  a documented HS256/RS256 `id_token` mismatch — none of these affect the
+  auth/isolation/allowlist claims this proposal relies on.)
 
 **What this means for this proposal:** the "authenticated customer tools"
 half the tracking issue asked this document to scope as *future work*
@@ -45,31 +52,67 @@ These would back a ChatGPT-app-style or MCP integration for `ridgehq.app`
 itself — read-only or lead-capture only, no auth, no customer data. Every
 tool traces to an existing data source already shipped in this repo:
 
-| Tool | Backed by |
+| Tool | Backed by (exact source) |
 |---|---|
 | `get_product_information` | `GET /api/public/product` (#13) |
 | `get_supported_industries` | `GET /api/public/industries` (#13) |
 | `get_feature_information` | `GET /api/public/features` (#13) |
 | `get_pricing_information` | `GET /api/public/pricing` (#13) |
-| `calculate_no_show_cost` / `calculate_admin_time_cost` / `calculate_roi` / etc. | `src/lib/calculators/*.ts` (#10) — same formulas the `/tools/*` calculator pages already expose |
-| `request_demo` | Same lead-capture path as `/book-demo`'s `<CustomLeadForm />` |
+| `calculate_no_show_cost` | `src/lib/calculators/noShowCost.ts::calculateNoShowCost` |
+| `calculate_admin_time_cost` | `src/lib/calculators/adminTimeCost.ts::calculateAdminTimeCost` |
+| `calculate_cancellation_cost` | `src/lib/calculators/cancellationCost.ts::calculateCancellationCost` |
+| `calculate_revenue_leakage` | `src/lib/calculators/revenueLeakage.ts::calculateRevenueLeakage` |
+| `calculate_break_even` | `src/lib/calculators/breakEven.ts::calculateBreakEven` |
+| `calculate_roi` | `src/lib/calculators/roi.ts::calculateRoi` |
+| `calculate_cac_ltv` | `src/lib/calculators/cacLtv.ts::calculateCacLtv` |
+| `request_demo` | See below — **not** a thin wrapper, needs new server-side work |
 
-None of these require new backend logic — they'd be thin wrappers over code
-that already exists in this repo (the public API routes and the calculator
-formulas), exposed through whatever protocol (MCP server, ChatGPT App SDK,
-or both) is chosen when this is actually prioritized.
+**Explicitly excluded from this list, by design:** `instructorUtilization.ts`
+and `capacityUtilization.ts` are standalone educational calculators (see
+`docs/ai-discoverability-audit.md`) with no RidgeHQ-feature claim attached —
+exposing them as MCP tools would need the same "does not imply a shipped
+RidgeHQ report" framing the `/tools/*` pages already carry, so they're left
+out of this initial list rather than risk that nuance getting lost in a tool
+description. `readinessAssessment.ts` is a scored quiz, not a single-call
+calculation — a different tool shape (multi-turn or multi-input) not sketched
+here.
+
+The four `/api/public/*`-backed tools and the seven calculator tools above
+genuinely are thin wrappers — no new backend logic, since the calculation
+and the data are already pure functions/JSON endpoints in this repo.
+`request_demo` is different and should not be graded on the same basis:
+
+**`request_demo` — corrected framing.** `src/components/forms/CustomLeadForm.tsx`
+submits directly from the browser to Zoho (`action="https://crm.zoho.in/crm/WebToLeadForm"`
+via a hidden iframe target) — there is no server-side route or reusable
+function in this repo backing lead capture today. An MCP/tool version of
+`request_demo` would need genuinely new server-side work: input validation,
+abuse/rate controls, an explicit Zoho-failure/retry model, and PII handling
+(consent, retention, no sensitive data in tool-call logs) — not a wrapper
+over existing code. Scope this as its own small design pass when it's
+actually prioritized, not as "the same as the other six."
 
 ## 3. Authenticated customer tools — not proposed here, already exists
 
-List/get/create/reschedule booking, check staff availability, etc. — this is
-**not new work to design**. It's the RidgeHQAPP MCP server described in §1,
-already shipped with tenant isolation, role/risk gating, and audit trails
-that meet or exceed what this document would otherwise have had to propose
-from scratch. If this marketing site ever needs to *surface* (not
-re-implement) anything from that server — e.g. linking a signed-in operator
-to their own tenant's MCP access-token settings — that's a cross-repo
-integration question for whoever owns both codebases, not something to
-build here.
+This is **not new work to design**. Per the tracking issue's own request to
+list these "marked future," here is that list — with each row's actual
+status, since every one of them is already implemented in RidgeHQAPP, not
+merely planned:
+
+| Authenticated tool category | Status |
+|---|---|
+| List/get bookings | Already implemented — RidgeHQAPP MCP server, read-risk tools |
+| Reschedule/reassign session, move rental/accommodation block | Already implemented — medium-risk, in `V1_ALLOWLIST`, confirm/execute flow |
+| Create/cancel booking, refund payment | Deliberately **never** MCP-reachable in RidgeHQAPP either — high-risk tools are excluded as a hard product boundary, not a gap to close |
+| Check staff/resource availability | Already implemented — read-risk tools |
+
+All of the above are the RidgeHQAPP MCP server described in §1, already
+shipped with tenant isolation, role/risk gating, and audit trails that meet
+or exceed what this document would otherwise have had to propose from
+scratch. If this marketing site ever needs to *surface* (not re-implement)
+anything from that server — e.g. linking a signed-in operator to their own
+tenant's MCP access-token settings — that's a cross-repo integration
+question for whoever owns both codebases, not something to build here.
 
 ## 4. Hard constraints (non-negotiable if any of this is ever built)
 
@@ -83,6 +126,24 @@ build here.
 - Mirror RidgeHQAPP's precedent: least privilege, explicit allowlisting
   (never "everything not denied"), and an audit trail for anything beyond a
   pure read.
+- **Rate limiting / anti-abuse** on every public tool — an unauthenticated
+  surface is scraper/bot bait by default; see the caveats already documented
+  for `/api/public/*`'s own best-effort limiter (`publicApiRateLimit.ts`) as
+  the floor, not the ceiling, for whatever protects a future tool surface.
+- **Reject any tenant ID, customer identifier, bearer credential, or
+  arbitrary upstream URL as tool input.** A public tool should never accept
+  a parameter shaped like it could reach into authenticated, tenant-scoped
+  territory — that's a design smell independent of whether the handler
+  itself would honor it.
+- **PII handling for `request_demo` specifically**: explicit consent
+  language, defined retention, and tool-call logs that never capture
+  submitted contact details in plaintext.
+- **Input/output size limits** on every tool, consistent with the repo's
+  own `/api/public/*` routes taking no request body today.
+- **Discovery/metadata must never imply this is the same surface as
+  RidgeHQAPP's authenticated `/mcp`** — separate resource identifiers,
+  separate documentation, no shared branding that could confuse a caller
+  into thinking a public tool has authenticated-tier capability.
 
 ## 5. What this issue does NOT do
 
