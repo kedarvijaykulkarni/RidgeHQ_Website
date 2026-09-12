@@ -12,8 +12,8 @@ import { softwareOfferJsonLd } from "@/lib/softwareApplicationJsonLd";
 
 export const metadata = {
   ...pageSeo("/pricing"),
-  title: "Pricing",
-  description: "Transparent subscription. Zero direct booking fees.",
+  title: "Pricing & SaaS Plans",
+  description: "Predictable monthly SaaS subscription for the RidgeHQ software app with 0% platform commission on direct website bookings.",
 };
 
 export default function PricingPage() {
