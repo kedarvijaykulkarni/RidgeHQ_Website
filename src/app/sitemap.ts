@@ -3,6 +3,7 @@ import { verticals } from '@/lib/config/verticals'
 import { products } from '@/lib/config/products'
 import { platformCapabilities } from '@/lib/config/platform'
 import { visibleBlogPosts } from '@/lib/config/blog'
+import { useCases } from '@/lib/config/use-cases'
 import { siteUrl } from '@/lib/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools',
     '/tools/no-show-cost-calculator',
     '/tools/admin-time-cost-calculator',
+    '/use-cases',
     '/integrations',
     '/pricing',
     '/solutions',
@@ -63,11 +65,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  const useCaseRoutes = useCases.map((u) => ({
+    url: `${baseUrl}/use-cases/${u.slug}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
   return [
     ...staticRoutes,
     ...solutionRoutes,
     ...productRoutes,
     ...platformRoutes,
     ...blogRoutes,
+    ...useCaseRoutes,
   ]
 }

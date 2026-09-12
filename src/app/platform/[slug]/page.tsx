@@ -12,6 +12,7 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
+import { useCases } from "@/lib/config/use-cases";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/dash-responsive-desktop.webp",
@@ -225,6 +226,30 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
               <h2 className="text-3xl font-bold mb-4 text-white">Common Questions</h2>
             </div>
             <FAQAccordion items={capability.faqs} />
+          </Container>
+        </Section>
+      )}
+
+      {/* Related operational problems */}
+      {useCases.filter((u) => u.relatedPlatformSlug === capability.slug).length > 0 && (
+        <Section className="border-t border-white/5">
+          <Container>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white">Related operational problems</h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              {useCases
+                .filter((u) => u.relatedPlatformSlug === capability.slug)
+                .map((u) => (
+                  <Link
+                    key={u.slug}
+                    href={`/use-cases/${u.slug}`}
+                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors"
+                  >
+                    {u.title}
+                  </Link>
+                ))}
+            </div>
           </Container>
         </Section>
       )}

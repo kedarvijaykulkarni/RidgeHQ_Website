@@ -12,6 +12,7 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
+import { useCases } from "@/lib/config/use-cases";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/bookings.webp",
@@ -267,6 +268,30 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               <p className="text-slate-400 max-w-2xl mx-auto">How RidgeHQ handles {vertical.name.toLowerCase()} edge cases.</p>
             </div>
             <FAQAccordion items={vertical.faqs} />
+          </Container>
+        </Section>
+      )}
+
+      {/* Related operational problems */}
+      {useCases.filter((u) => u.relatedVerticalSlugs.includes(vertical.slug)).length > 0 && (
+        <Section className="border-t border-white/5">
+          <Container>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white">Related operational problems</h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              {useCases
+                .filter((u) => u.relatedVerticalSlugs.includes(vertical.slug))
+                .map((u) => (
+                  <Link
+                    key={u.slug}
+                    href={`/use-cases/${u.slug}`}
+                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors"
+                  >
+                    {u.title}
+                  </Link>
+                ))}
+            </div>
           </Container>
         </Section>
       )}
