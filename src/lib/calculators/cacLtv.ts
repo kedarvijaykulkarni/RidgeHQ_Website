@@ -8,7 +8,9 @@ export interface CacLtvInputs {
 
 export interface CacLtvResult {
   lifetimeValue: number;
-  ratio: number; // LTV : CAC, e.g. 3 means 3:1
+  /** LTV : CAC, e.g. 3 means 3:1. null when acquisition cost is 0 and lifetime
+   *  value is positive — the ratio is unbounded, not zero, in that case. */
+  ratio: number | null;
 }
 
 /**
@@ -23,6 +25,10 @@ export function calculateCacLtv(inputs: CacLtvInputs): CacLtvResult {
     inputs.ordersPerYear *
     inputs.avgCustomerLifespanYears *
     (inputs.grossMarginPercent / 100);
-  const ratio = inputs.customerAcquisitionCost > 0 ? lifetimeValue / inputs.customerAcquisitionCost : 0;
-  return { lifetimeValue, ratio };
+
+  if (inputs.customerAcquisitionCost <= 0) {
+    return { lifetimeValue, ratio: lifetimeValue > 0 ? null : 0 };
+  }
+
+  return { lifetimeValue, ratio: lifetimeValue / inputs.customerAcquisitionCost };
 }

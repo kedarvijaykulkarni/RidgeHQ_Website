@@ -3,6 +3,7 @@
 import * as React from "react";
 import { event } from "@/lib/analytics/google-analytics";
 import { calculateRevenueLeakage } from "@/lib/calculators/revenueLeakage";
+import { clampPercent } from "@/lib/calculators/clampPercent";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -73,7 +74,7 @@ export function RevenueLeakageCalculator() {
               max={100}
               className={inputClass}
               value={leakageRate}
-              onChange={(e) => { setLeakageRate(Number(e.target.value)); trackCompletionOnce(); }}
+              onChange={(e) => { setLeakageRate(clampPercent(Number(e.target.value))); trackCompletionOnce(); }}
             />
           </div>
           <div>

@@ -3,6 +3,7 @@
 import * as React from "react";
 import { event } from "@/lib/analytics/google-analytics";
 import { calculateCacLtv } from "@/lib/calculators/cacLtv";
+import { clampPercent } from "@/lib/calculators/clampPercent";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -102,7 +103,7 @@ export function CacLtvCalculator() {
               max={100}
               className={inputClass}
               value={grossMarginPercent}
-              onChange={(e) => { setGrossMarginPercent(Number(e.target.value)); trackCompletionOnce(); }}
+              onChange={(e) => { setGrossMarginPercent(clampPercent(Number(e.target.value))); trackCompletionOnce(); }}
             />
           </div>
         </div>
@@ -114,7 +115,9 @@ export function CacLtvCalculator() {
           </div>
           <div>
             <p className="text-sm text-slate-400 mb-1">LTV : CAC ratio</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">{ratio.toFixed(1)}:1</p>
+            <p className="text-4xl font-bold text-[#22D3EE]">
+              {ratio === null ? "Unbounded (zero cost)" : `${ratio.toFixed(1)}:1`}
+            </p>
           </div>
           <p className="text-xs text-slate-500 leading-relaxed">
             Formula: LTV = average order value &times; orders/year &times; lifespan &times; gross margin.

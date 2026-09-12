@@ -3,6 +3,7 @@
 import * as React from "react";
 import { event } from "@/lib/analytics/google-analytics";
 import { calculateNoShowCost } from "@/lib/calculators/noShowCost";
+import { clampPercent } from "@/lib/calculators/clampPercent";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -73,7 +74,7 @@ export function NoShowCostCalculator() {
               max={100}
               className={inputClass}
               value={noShowRate}
-              onChange={(e) => { setNoShowRate(Number(e.target.value)); trackCompletionOnce(); }}
+              onChange={(e) => { setNoShowRate(clampPercent(Number(e.target.value))); trackCompletionOnce(); }}
             />
           </div>
           <div>

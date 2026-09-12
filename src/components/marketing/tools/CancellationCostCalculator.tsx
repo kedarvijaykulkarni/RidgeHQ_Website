@@ -3,6 +3,7 @@
 import * as React from "react";
 import { event } from "@/lib/analytics/google-analytics";
 import { calculateCancellationCost } from "@/lib/calculators/cancellationCost";
+import { clampPercent } from "@/lib/calculators/clampPercent";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -75,7 +76,7 @@ export function CancellationCostCalculator() {
               max={100}
               className={inputClass}
               value={cancellationRate}
-              onChange={(e) => { setCancellationRate(Number(e.target.value)); trackCompletionOnce(); }}
+              onChange={(e) => { setCancellationRate(clampPercent(Number(e.target.value))); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -89,7 +90,7 @@ export function CancellationCostCalculator() {
               max={100}
               className={inputClass}
               value={backfillRate}
-              onChange={(e) => { setBackfillRate(Number(e.target.value)); trackCompletionOnce(); }}
+              onChange={(e) => { setBackfillRate(clampPercent(Number(e.target.value))); trackCompletionOnce(); }}
             />
           </div>
           <div>
