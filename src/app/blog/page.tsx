@@ -8,7 +8,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/blog"),
   title: "Blog & Resources",
-  description: "How dive centers and activity businesses handle multi-tenancy, staff permissions, waivers, pricing, and AI-assisted scheduling — written for operators and the developers who build for them.",
+  description: "Technical deep-dives into how RidgeHQ handles multi-tenancy, staff permissions, waivers, pricing, and AI-assisted scheduling for dive center operations.",
 };
 
 export default function BlogIndexPage() {
