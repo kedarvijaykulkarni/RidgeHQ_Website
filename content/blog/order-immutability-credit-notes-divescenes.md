@@ -5,6 +5,7 @@ slug: "order-immutability-credit-notes-divescenes"
 canonical_url: "https://www.ridgehq.app/blog/order-immutability-credit-notes-divescenes"
 tags: ["divescene-operations", "booking-management", "data-integrity", "saas-operations", "transaction-history"]
 date: "2026-09-08"
+pillar: "Technology"
 draft: false
 ---
 

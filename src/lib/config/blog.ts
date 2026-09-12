@@ -2,6 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
+export type BlogPillar = "Business Economics" | "Operations" | "Technology";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -10,6 +12,8 @@ export interface BlogPost {
   author: string;
   publishedAt: string;
   category: string;
+  /** RidgeHQ Academy topic pillar (Phase 6 of the AI-discoverability initiative). */
+  pillar: BlogPillar;
   readingTime: string;
   /**
    * When true, the post is hidden from the blog index, its route, and the
@@ -39,6 +43,8 @@ function computeReadingTime(content: string): string {
  *   excerpt  | description
  *   publishedAt | date
  * `category` defaults to "Product" and `author` to "RidgeHQ Team" when absent.
+ * `pillar` is required ("Business Economics" | "Operations" | "Technology") —
+ * it groups the /blog index into the RidgeHQ Academy's three topic pillars.
  */
 function loadBlogPosts(): BlogPost[] {
   const files = fs.readdirSync(BLOG_DIR).filter((file) => file.endsWith(".md"));
@@ -57,6 +63,7 @@ function loadBlogPosts(): BlogPost[] {
     if (!data.title) missing.push("title");
     if (!excerpt) missing.push("excerpt (or description)");
     if (!publishedAt) missing.push("publishedAt (or date)");
+    if (!data.pillar) missing.push("pillar");
     if (missing.length > 0) {
       throw new Error(
         `Blog post content/blog/${file} is missing required frontmatter: ${missing.join(", ")}`,
@@ -71,6 +78,7 @@ function loadBlogPosts(): BlogPost[] {
       author: data.author ?? "RidgeHQ Team",
       publishedAt: String(publishedAt).slice(0, 10),
       category: data.category ?? "Product",
+      pillar: data.pillar as BlogPillar,
       readingTime: computeReadingTime(content),
       draft: data.draft ?? false,
     };

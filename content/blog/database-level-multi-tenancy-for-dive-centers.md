@@ -5,6 +5,7 @@ slug: "database-level-multi-tenancy-for-dive-centers"
 canonical_url: "https://www.ridgehq.app/blog/database-level-multi-tenancy-for-dive-centers"
 tags: ["operations management", "data integrity", "b2b saas", "dive center software"]
 date: "2026-09-09"
+pillar: "Technology"
 draft: false
 ---
 

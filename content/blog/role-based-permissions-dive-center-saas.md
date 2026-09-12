@@ -5,6 +5,7 @@ slug: "role-based-permissions-dive-center-saas"
 canonical_url: "https://www.ridgehq.app/blog/role-based-permissions-dive-center-saas"
 tags: ["dive operations", "dive center management", "staff permissions", "saas for dive shops"]
 date: "2026-09-10"
+pillar: "Technology"
 draft: false
 ---
 

@@ -5,6 +5,7 @@ slug: "ai-copilot-operational-core-dive-management"
 canonical_url: "https://www.ridgehq.app/blog/ai-copilot-operational-core-dive-management"
 tags: ["b2b saas", "dive center management", "operations tech", "ai automation", "scheduling software"]
 date: "2026-09-05"
+pillar: "Technology"
 draft: false
 ---
 
