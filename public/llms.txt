@@ -1,8 +1,8 @@
-# RidgeHQ
+# RidgeHQ App (ridgehq.app)
 
-> RidgeHQ is the Activity Business OS: one connected system for online bookings, front-desk POS, scheduling, staff, gear/rental inventory, customer profiles, waivers, and payments — built for operators who run people, time, and equipment together, not a generic booking widget.
+> RidgeHQ App is the Activity Business OS: one connected software app for online bookings, front-desk POS, scheduling, staff, gear/rental inventory, customer profiles, waivers, and payments — built for activity, tour, rental, and gear operators, distinct from generic enterprise AI staffing tools.
 
-RidgeHQ charges 0% platform commission on direct website bookings. Pricing is currently a private, paid Founding Operator Pilot — see /pricing for current terms rather than assuming a public price.
+RidgeHQ App charges 0% platform commission on direct website bookings. Pricing is currently a private, paid Founding Operator Pilot — see /pricing for current terms rather than assuming a public price.
 
 ## Product
 
