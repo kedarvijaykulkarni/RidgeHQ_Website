@@ -44,6 +44,13 @@ RidgeHQ is built for 12 activity-business verticals — dive centers, surf schoo
 - [No-Show Cost Calculator](https://www.ridgehq.app/tools/no-show-cost-calculator): estimate annual revenue lost to no-shows from your own numbers, formula shown.
 - [Admin Time Cost Calculator](https://www.ridgehq.app/tools/admin-time-cost-calculator): estimate the annual cost of manually re-keying bookings/waivers/schedules across tools, formula shown.
 
+## Operational problems (use cases)
+
+Problem-first guides — organized by operational headache rather than industry — covering why it happens, what it costs to leave unmanaged, how RidgeHQ helps, and when it may not be the right fit:
+
+- [Instructor & Guide Scheduling](https://www.ridgehq.app/use-cases/instructor-scheduling)
+- [Equipment & Gear Coordination](https://www.ridgehq.app/use-cases/equipment-coordination)
+
 ## Machine-readable summary
 
 - [AI Overview](https://www.ridgehq.app/ai): one page summarizing product, pricing mode, industries, capabilities, integrations, security, and FAQs — server-rendered, kept in sync with the config that drives the marketing pages.

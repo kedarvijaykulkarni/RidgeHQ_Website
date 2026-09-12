@@ -39,13 +39,13 @@ export const useCases: UseCase[] = [
     whyItHappens:
       "Bookings and staff schedules typically live in separate tools: a booking widget or spreadsheet on one side, a group chat or whiteboard roster on the other. Nothing connects a booking's requirements (level, language, ratio) to who's actually qualified and free at that time, so the match is made by a person from memory.",
     costOfInaction:
-      "Morning rushes (ski school class starts, a wave of dive bookings) are where this fails hardest: an operator matching bookings to instructors one at a time, under time pressure, is exactly where wrong-level or double-booked assignments happen — per the pattern described for ski schools and outdoor/whitewater operators.",
+      "Morning rushes (ski school class starts, a wave of surf lesson bookings) are where this fails hardest: an operator matching bookings to instructors one at a time, under time pressure, is exactly where wrong-level or double-booked assignments happen — per the pattern described for ski schools and surf schools.",
     howRidgeHqHelps:
-      "In RidgeHQ, every booking already carries the participant's level and language, and every instructor/guide is tagged by certification and language — so scheduling is a filtered match against real-time availability, not a manual lookup across two tools. Ratios (instructor-to-diver, guide-to-group) are enforced before a session confirms.",
+      "In RidgeHQ, bookings carry the participant's level and language, and instructors/guides are tagged by certification and language — so scheduling is a filtered match against real-time availability, not a manual lookup across two tools. Ski schools filter the morning rush by level and language; outdoor/whitewater operators reserve guides at their required ratio alongside rafts and shuttle seats for the same trip.",
     whenNotSuitable:
       "If your operation has one or two instructors with no certification/language variation and no ratio requirement to enforce, this specific problem may not be costing you much — a simpler shared calendar may be enough.",
     relatedPlatformSlug: "staff",
-    relatedVerticalSlugs: ["ski-schools", "outdoor-whitewater", "dive-centers", "surf-schools"],
+    relatedVerticalSlugs: ["ski-schools", "outdoor-whitewater", "surf-schools"],
     faqs: [
       {
         question: "Does this replace my existing staff chat/messaging tool?",
@@ -53,9 +53,9 @@ export const useCases: UseCase[] = [
           "It replaces the need to use chat as the scheduling system of record. Bookings and staff qualifications live in the same system, so assignment doesn't depend on someone checking a thread.",
       },
       {
-        question: "Can it enforce ratios like instructor-to-diver or guide-to-group?",
+        question: "Can it enforce a guide-to-group ratio?",
         answer:
-          "Yes — ratio rules per activity/course type are enforced before a session can be confirmed, matching what's described for dive centers and outdoor/whitewater operators today.",
+          "Yes for trips with a headcount-driven ratio requirement — outdoor/whitewater bookings reserve guides at your required ratio alongside rafts and shuttle seats for the same trip, as described on that vertical's page.",
       },
     ],
   },
@@ -66,7 +66,7 @@ export const useCases: UseCase[] = [
     heroTagline:
       "Rentals, lesson gear, and tour equipment drawn from one shared inventory — so a booking never reserves a boat, board, or bike that's already out with someone else.",
     problem:
-      "Gear (boards, boats, bikes, tanks, kites) gets committed twice: once to a lesson or tour booking, and separately to walk-in hire, because the two sales channels don't share one inventory. The conflict is discovered at handover, not at booking time.",
+      "Gear (boards, boats, bikes, kites) gets committed twice: once to a lesson or tour booking, and separately to walk-in hire, because the two sales channels don't share one inventory. The conflict is discovered at handover, not at booking time.",
     whyItHappens:
       "Booking software typically tracks reservations, not physical assets. Without gear tied directly to the booking record, walk-in hire and scheduled lessons/tours draw from what looks like separate pools, even though it's the same physical rack or fleet.",
     costOfInaction:
@@ -76,12 +76,12 @@ export const useCases: UseCase[] = [
     whenNotSuitable:
       "If you only run one sales channel for gear (e.g. lessons only, no separate walk-in hire) with no shared-pool conflict, this specific coordination problem doesn't apply to you.",
     relatedPlatformSlug: "gear-rentals",
-    relatedVerticalSlugs: ["kayak-rental-tours", "windsurf-schools", "bike-rental-tours", "dive-centers"],
+    relatedVerticalSlugs: ["kayak-rental-tours", "windsurf-schools", "bike-rental-tours"],
     faqs: [
       {
         question: "Does this track individual items or just gear categories?",
         answer:
-          "Both, depending on the vertical: bikes are tracked as individual assets with a size and service state; other gear (tanks, boards) is tracked as sized inventory drawn down per booking.",
+          "Both, depending on the vertical: bikes are tracked as individual assets with a size and service state, excluded automatically when flagged for repair; boards and boats are tracked out and back across lessons/tours and walk-in hire from one shared pool.",
       },
       {
         question: "Does it cover both scheduled bookings and walk-in hire?",
