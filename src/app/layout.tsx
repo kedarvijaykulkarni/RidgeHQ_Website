@@ -10,6 +10,8 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
 import { CTAEventTracker } from "@/components/analytics/CTAEventTracker";
 
+import { siteUrl } from "@/lib/config/site";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = defaultSeo;
@@ -33,12 +35,13 @@ export default function RootLayout({
             "@graph": [
               {
                 "@type": "Organization",
-                "@id": "https://www.ridgehq.app/#organization",
-                "name": "RidgeHQ",
-                "url": "https://www.ridgehq.app",
+                "@id": `${siteUrl}/#organization`,
+                "name": "RidgeHQ App",
+                "alternateName": ["RidgeHQ", "RidgeHQ Software"],
+                "url": siteUrl,
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.ridgehq.app/images/logo/ridgehq-logo-512x512.png"
+                  "url": `${siteUrl}/images/logo/ridgehq-logo-512x512.png`
                 },
                 "sameAs": [
                   "https://x.com/ridgehqapp",
@@ -51,11 +54,12 @@ export default function RootLayout({
               },
               {
                 "@type": "WebSite",
-                "@id": "https://www.ridgehq.app/#website",
-                "url": "https://www.ridgehq.app",
-                "name": "RidgeHQ",
+                "@id": `${siteUrl}/#website`,
+                "url": siteUrl,
+                "name": "RidgeHQ App",
+                "alternateName": ["RidgeHQ", "RidgeHQ Software Platform"],
                 "publisher": {
-                  "@id": "https://www.ridgehq.app/#organization"
+                  "@id": `${siteUrl}/#organization`
                 }
               }
             ]

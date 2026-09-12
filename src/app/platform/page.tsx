@@ -10,8 +10,8 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/platform"),
-  title: "Platform",
-  description: "How RidgeHQ connects bookings, sessions, staff, resources, payments, changes, and reporting into one live operational system for activity businesses.",
+  title: "Platform Capabilities",
+  description: "How the RidgeHQ software app connects bookings, sessions, staff, resources, payments, changes, and reporting into one live operational system for activity businesses.",
 };
 
 export default function PlatformPage() {

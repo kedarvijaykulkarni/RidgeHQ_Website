@@ -32,18 +32,18 @@ function ridgeHqOffer() {
 export function softwareApplicationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": ["SoftwareApplication", "WebApplication"],
     "@id": SOFTWARE_ID,
-    name: "RidgeHQ",
-    alternateName: "The Activity Business OS",
+    name: "RidgeHQ App",
+    alternateName: ["RidgeHQ", "RidgeHQ Software", "The Activity Business OS"],
     description:
-      "Run your entire activity business from one HQ. RidgeHQ connects bookings, schedules, staff, customers, gear, rentals, trips and payments in one live system, with an AI copilot built into the operational core.",
+      "Run your entire activity business from one HQ. The RidgeHQ app connects bookings, schedules, staff, customers, gear, rentals, trips and payments in one live software platform, with an AI copilot built into the operational core.",
     url: siteUrl,
     image: abs("/opengraph-image"),
     screenshot: abs("/images/product/dash-responsive-desktop.webp"),
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "Booking & Operations Management Software",
-    operatingSystem: "Web browser",
+    operatingSystem: "Web browser, All",
     browserRequirements: "Requires JavaScript. Requires HTML5.",
     featureList: platformCapabilities.map((c) => c.title),
     audience: {

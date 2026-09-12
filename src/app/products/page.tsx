@@ -11,8 +11,8 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/products"),
-  title: "Products",
-  description: "RidgeHQ's product lineup: the Activity Platform, plus the Rental App, Waiver App, and Channel Manager for teams that want to go deeper on one workflow.",
+  title: "Products & Software Apps",
+  description: "The RidgeHQ software lineup: the Activity Platform, plus the Rental App, Waiver App, and Channel Manager for activity-based businesses.",
 };
 
 export default function ProductsPage() {

@@ -19,15 +19,15 @@ import { generalFaqs } from "./faq";
 import { siteUrl } from "./site";
 
 export const productKnowledge = {
-  lastUpdated: "2026-09-04",
+  lastUpdated: "2026-09-12",
 
   product: {
-    name: "RidgeHQ",
-    category: "Activity Business Operating System (booking, scheduling, staff, resource, and payments platform)",
+    name: "RidgeHQ App",
+    category: "Activity Business Operating System (booking, scheduling, staff, resource, and payments software app)",
     positioning:
       "One connected operational system for activity businesses, replacing the spreadsheet/whiteboard/booking-widget stack most operators run today.",
     description:
-      "RidgeHQ connects online bookings, front-desk POS, scheduling, staff, gear/rental inventory, customer and participant profiles, waivers, and payments into one live system, so a change in one place (a new booking, a cancellation, a gear swap) updates everywhere else automatically.",
+      "The RidgeHQ software app connects online bookings, front-desk POS, scheduling, staff, gear/rental inventory, customer and participant profiles, waivers, and payments into one live system, so a change in one place (a new booking, a cancellation, a gear swap) updates everywhere else automatically.",
     url: siteUrl,
   },
 

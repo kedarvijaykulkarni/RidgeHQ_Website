@@ -104,7 +104,7 @@ export default function Home() {
       {/* Integrations */}
       <Section>
         <Container>
-          <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">Connected to your ecosystem</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">Integrations: Connected to the RidgeHQ Software Ecosystem</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {integrations.map(int => (
               <IntegrationCard key={int.id} integration={int} />
@@ -129,7 +129,7 @@ export default function Home() {
       {/* FAQ */}
       <Section>
         <Container>
-          <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">Frequently asked questions</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">RidgeHQ App Frequently Asked Questions</h2>
           <FAQAccordion items={generalFaqs} />
         </Container>
       </Section>
