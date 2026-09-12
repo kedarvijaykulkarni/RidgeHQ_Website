@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -79,6 +80,14 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                 Where RidgeHQ currently falls short
               </h2>
               <p className="text-slate-400 leading-relaxed">{comparison.ridgehqLimitations}</p>
+              {comparison.relatedToolSlug && (
+                <Link
+                  href={`/tools/${comparison.relatedToolSlug}`}
+                  className="text-[#22D3EE] hover:underline text-sm inline-block"
+                >
+                  Check your own numbers: {comparison.relatedToolTitle} &rarr;
+                </Link>
+              )}
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">

@@ -32,6 +32,9 @@ export interface Comparison {
   rows: ComparisonRow[];
   whoShouldChooseCategory: string;
   whoShouldChooseRidgeHq: string;
+  /** Optional link to a relevant /tools/[slug] calculator, rendered as a real link on the page. */
+  relatedToolSlug?: string;
+  relatedToolTitle?: string;
 }
 
 export const comparisons: Comparison[] = [
@@ -39,23 +42,23 @@ export const comparisons: Comparison[] = [
     slug: "commission-based-booking-platforms",
     title: "RidgeHQ vs. Commission-Based Booking Platforms",
     categoryLabel: "Commission-based platforms",
-    heroHeadline: "0% commission vs. a percentage of every direct booking.",
+    heroHeadline: "An AI copilot built into the operational core, not bolted onto a booking widget.",
     heroTagline:
-      "Many booking platforms charge no monthly fee but take a commission — typically in the 1.5%–6% range — on every booking, often passed to the customer at checkout. RidgeHQ charges a flat subscription and 0% commission on direct bookings.",
+      "Booking platforms in this category range from a $0/month, commission-only model to a $49–$295/month flat fee, and a few charge 0% on direct bookings too — pricing alone isn't a reliable differentiator. What's more consistently different is how deep automation goes: RidgeHQ's AI copilot and connected scheduling operate on the same live data your bookings, staff, and gear already use, rather than a chatbot layered on top of a separate booking tool.",
     lastUpdated: "2026-09-12",
     categoryStrengths:
-      "Commission-based platforms are genuinely easier to start with — no upfront subscription cost, and often broader out-of-the-box marketplace/OTA distribution than a smaller, newer platform can offer. For a low-volume or seasonal operation, a $0-monthly, commission-only model can be the cheaper option in absolute terms.",
+      "Commission-based platforms are genuinely easier to start with — no upfront subscription cost in many cases, and often broader out-of-the-box marketplace/OTA distribution than a smaller, newer platform can offer. For a low-volume or seasonal operation, a low-fixed-cost model can be the cheaper option in absolute terms.",
     ridgehqLimitations:
-      "RidgeHQ launches with fewer built-in OTA/marketplace connectors than an established commission-based platform, and Stripe is currently the only supported payment gateway. If broad third-party marketplace distribution is your primary channel today, that gap is real and worth weighing.",
+      "RidgeHQ launches with fewer built-in OTA/marketplace connectors than an established platform, and Stripe is currently the only supported payment gateway. If broad third-party marketplace distribution is your primary channel today, that gap is real and worth weighing.",
     rows: [
       {
         dimension: "Pricing model",
-        category: "Often $0/month, with a commission (commonly 1.5%–6%) on each booking, sometimes passed to the customer at checkout.",
+        category: "Varies widely: some charge $0/month plus a commission (commonly 1.5%–6%) on each booking; others charge a flat monthly fee ($49–$295 is a common published range) with 0% commission on direct bookings.",
         ridgehq: "Flat monthly subscription, 0% platform commission on direct website bookings.",
       },
       {
         dimension: "Cost at higher booking volume",
-        category: "Cost scales with revenue — the more you sell, the more the platform earns, regardless of your margin.",
+        category: "Where a commission applies, cost scales with revenue — the more you sell, the more the platform earns. Flat-fee competitors in this category don't have this effect.",
         ridgehq: "Cost stays flat regardless of booking volume — your growth doesn't increase what you pay the platform.",
       },
       {
@@ -85,7 +88,7 @@ export const comparisons: Comparison[] = [
     categoryStrengths:
       "Spreadsheets and chat tools are free, familiar, and infinitely flexible — there's no subscription, no learning curve past what your team already knows, and no risk of a vendor going away. For a very small, low-volume operation, this can genuinely be enough.",
     ridgehqLimitations:
-      "RidgeHQ requires a subscription and some setup time that a spreadsheet doesn't. If your booking volume is low enough that reconciling a spreadsheet by hand takes a few minutes a week rather than hours, the switch may not be worth it yet — see the calculators above to check your own numbers rather than assume.",
+      "RidgeHQ requires a subscription and some setup time that a spreadsheet doesn't. If your booking volume is low enough that reconciling a spreadsheet by hand takes a few minutes a week rather than hours, the switch may not be worth it yet — check your own numbers with the Admin Time Cost Calculator rather than assume.",
     rows: [
       {
         dimension: "Setup cost",
@@ -112,5 +115,7 @@ export const comparisons: Comparison[] = [
       "A very low-volume, single-operator business where manual reconciliation genuinely takes minutes, not hours, each week.",
     whoShouldChooseRidgeHq:
       "An operator spending real, recurring staff time reconciling bookings, schedules, and gear across separate tools — quantify it first with the Admin Time Cost Calculator.",
+    relatedToolSlug: "admin-time-cost-calculator",
+    relatedToolTitle: "Admin Time Cost Calculator",
   },
 ];
