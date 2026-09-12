@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { event } from "@/lib/analytics/google-analytics";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -15,6 +16,13 @@ export function NoShowCostCalculator() {
   const [avgBookingValue, setAvgBookingValue] = React.useState(120);
   const [noShowRate, setNoShowRate] = React.useState(8);
   const [weeksPerYear, setWeeksPerYear] = React.useState(48);
+  const hasTrackedCompletion = React.useRef(false);
+
+  function trackCompletionOnce() {
+    if (hasTrackedCompletion.current) return;
+    hasTrackedCompletion.current = true;
+    event("calculator_completed", { calculator: "no_show_cost" });
+  }
 
   const weeklyLoss = bookingsPerWeek * avgBookingValue * (noShowRate / 100);
   const annualLoss = weeklyLoss * weeksPerYear;
@@ -33,7 +41,7 @@ export function NoShowCostCalculator() {
               min={0}
               className={inputClass}
               value={bookingsPerWeek}
-              onChange={(e) => setBookingsPerWeek(Number(e.target.value))}
+              onChange={(e) => { setBookingsPerWeek(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -46,7 +54,7 @@ export function NoShowCostCalculator() {
               min={0}
               className={inputClass}
               value={avgBookingValue}
-              onChange={(e) => setAvgBookingValue(Number(e.target.value))}
+              onChange={(e) => { setAvgBookingValue(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -60,7 +68,7 @@ export function NoShowCostCalculator() {
               max={100}
               className={inputClass}
               value={noShowRate}
-              onChange={(e) => setNoShowRate(Number(e.target.value))}
+              onChange={(e) => { setNoShowRate(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -74,7 +82,7 @@ export function NoShowCostCalculator() {
               max={52}
               className={inputClass}
               value={weeksPerYear}
-              onChange={(e) => setWeeksPerYear(Number(e.target.value))}
+              onChange={(e) => { setWeeksPerYear(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
         </div>

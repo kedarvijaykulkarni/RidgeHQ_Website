@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { event } from "@/lib/analytics/google-analytics";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -14,6 +15,13 @@ export function AdminTimeCostCalculator() {
   const [hoursPerWeek, setHoursPerWeek] = React.useState(8);
   const [hourlyCost, setHourlyCost] = React.useState(35);
   const [weeksPerYear, setWeeksPerYear] = React.useState(50);
+  const hasTrackedCompletion = React.useRef(false);
+
+  function trackCompletionOnce() {
+    if (hasTrackedCompletion.current) return;
+    hasTrackedCompletion.current = true;
+    event("calculator_completed", { calculator: "admin_time_cost" });
+  }
 
   const weeklyCost = hoursPerWeek * hourlyCost;
   const annualCost = weeklyCost * weeksPerYear;
@@ -33,7 +41,7 @@ export function AdminTimeCostCalculator() {
               min={0}
               className={inputClass}
               value={hoursPerWeek}
-              onChange={(e) => setHoursPerWeek(Number(e.target.value))}
+              onChange={(e) => { setHoursPerWeek(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -46,7 +54,7 @@ export function AdminTimeCostCalculator() {
               min={0}
               className={inputClass}
               value={hourlyCost}
-              onChange={(e) => setHourlyCost(Number(e.target.value))}
+              onChange={(e) => { setHourlyCost(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -60,7 +68,7 @@ export function AdminTimeCostCalculator() {
               max={52}
               className={inputClass}
               value={weeksPerYear}
-              onChange={(e) => setWeeksPerYear(Number(e.target.value))}
+              onChange={(e) => { setWeeksPerYear(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
         </div>
