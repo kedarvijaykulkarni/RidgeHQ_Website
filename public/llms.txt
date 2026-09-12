@@ -69,6 +69,7 @@ Problem-first guides — organized by operational headache rather than industry 
 ## Machine-readable summary
 
 - [AI Overview](https://www.ridgehq.app/ai): one page summarizing product, pricing mode, industries, capabilities, integrations, security, and FAQs — server-rendered, kept in sync with the config that drives the marketing pages.
+- Public JSON API (read-only, no auth, same data as the AI Overview page above): `GET /api/public/product`, `GET /api/public/industries`, `GET /api/public/features`, `GET /api/public/pricing`. Excluded from robots.txt crawling/indexing — call these directly, they aren't meant to be discovered by crawling.
 
 ## Company
 

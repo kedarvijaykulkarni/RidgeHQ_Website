@@ -170,6 +170,21 @@ export default function AIInfoPage() {
 
       <Section className="border-t border-white/5">
         <Container>
+          <h2 className="text-xl font-bold text-white mb-3">Public JSON API</h2>
+          <p className="text-slate-400 text-sm leading-relaxed max-w-2xl mb-3">
+            The same facts on this page are available as read-only JSON, no authentication required:
+          </p>
+          <ul className="space-y-1 text-sm font-mono text-slate-400">
+            <li>GET /api/public/product</li>
+            <li>GET /api/public/industries</li>
+            <li>GET /api/public/features</li>
+            <li>GET /api/public/pricing</li>
+          </ul>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-white/5">
+        <Container>
           <h2 className="text-xl font-bold text-white mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
