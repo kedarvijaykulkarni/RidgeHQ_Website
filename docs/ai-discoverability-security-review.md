@@ -40,7 +40,19 @@ input state.
   explicitly documented as not distributed-safe across serverless instances,
   since a real distributed limiter isn't in this stack's scope; acceptable
   for read-only public marketing data with no per-request cost beyond a JSON
-  serialization.
+  serialization. **Two specific limitations, reviewed and accepted rather
+  than solved:** (1) the identifier keying the limiter (`X-Forwarded-For`)
+  is client-influenceable — nothing here validates it against a trusted
+  proxy chain, so a caller that varies the header can get a fresh bucket per
+  request and evade the per-identifier limit; closing this properly would
+  require knowing this deployment's actual edge/proxy configuration, which
+  this repo doesn't control, so it's documented as a known gap rather than
+  silently assumed solved. (2) That same pattern (many single-use
+  identifiers) previously grew the tracker's map without bound — fixed with
+  a periodic sweep that evicts stale identifiers, bounding memory even
+  though the underlying spoofing bypass remains. Accepted severity: low,
+  since the data served is public marketing content with no per-tenant cost
+  and no write path — worth revisiting only if real abuse is observed.
 
 ## 3. Calculators
 
