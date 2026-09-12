@@ -202,6 +202,8 @@ export const footerNav = {
     { title: 'Contact', href: '/contact' },
     { title: 'Design Partners', href: '/design-partners' },
     { title: 'Free Calculators', href: '/tools' },
+    { title: 'Use Cases', href: '/use-cases' },
+    { title: 'Compare', href: '/compare' },
   ],
   legal: [
     { title: 'Security', href: '/security' },

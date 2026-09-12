@@ -5,6 +5,7 @@ slug: "waiver-system-dive-center-operations"
 canonical_url: "https://www.ridgehq.app/blog/waiver-system-dive-center-operations"
 tags: ["dive center operations", "waiver management", "e-signature", "compliance", "operations software"]
 date: "2026-09-11"
+pillar: "Operations"
 draft: false
 ---
 

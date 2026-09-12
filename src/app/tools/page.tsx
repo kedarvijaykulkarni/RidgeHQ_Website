@@ -24,6 +24,46 @@ const tools = [
     slug: "admin-time-cost-calculator",
     description: "Estimate the annual cost of manually re-keying bookings, waivers, and schedules across separate tools.",
   },
+  {
+    title: "Cancellation Cost Calculator",
+    slug: "cancellation-cost-calculator",
+    description: "Estimate what late cancellations cost per year, after accounting for how often you rebook the slot.",
+  },
+  {
+    title: "Revenue Leakage Calculator",
+    slug: "revenue-leakage-calculator",
+    description: "Estimate what missed charges, unbilled add-ons, and pricing errors cost your operation per year.",
+  },
+  {
+    title: "Break-Even Calculator",
+    slug: "break-even-calculator",
+    description: "Estimate how many bookings per month you need to cover your fixed costs.",
+  },
+  {
+    title: "ROI Calculator",
+    slug: "roi-calculator",
+    description: "Estimate the return on investment of a new operational system, from your own cost and savings estimate.",
+  },
+  {
+    title: "CAC:LTV Calculator",
+    slug: "cac-ltv-calculator",
+    description: "Estimate customer lifetime value and the LTV-to-acquisition-cost ratio for your operation.",
+  },
+  {
+    title: "Instructor Utilization Calculator",
+    slug: "instructor-utilization-calculator",
+    description: "Estimate what percentage of your instructors' or guides' available time is actually booked.",
+  },
+  {
+    title: "Capacity Utilization Calculator",
+    slug: "capacity-utilization-calculator",
+    description: "Estimate what percentage of your boats, bikes, rooms, or gear inventory is actually booked.",
+  },
+  {
+    title: "Spreadsheet Readiness Assessment",
+    slug: "spreadsheet-readiness-assessment",
+    description: "A short, scored quiz on how much manual reconciliation your current tools actually require.",
+  },
 ];
 
 export default function ToolsPage() {

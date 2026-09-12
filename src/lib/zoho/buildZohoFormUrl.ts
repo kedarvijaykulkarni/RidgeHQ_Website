@@ -20,24 +20,27 @@ export function buildZohoFormUrl(baseUrl: string, context: ZohoFormContext): str
 
     // Map internal intent to exact choice label in Zoho Forms
     // In Zoho Forms, we map 'How can we help?' field to the 'intent' alias
-    url.searchParams.set('intent', encodeURIComponent(getIntentLabel(context.intent)));
-    
+    // `URLSearchParams.set` already percent-encodes its value — wrapping it
+    // in `encodeURIComponent` first double-encodes (e.g. a space becomes
+    // `%2520` instead of `+`), which Zoho's form doesn't decode correctly.
+    url.searchParams.set('intent', getIntentLabel(context.intent));
+
     if (context.sourcePage) {
-      url.searchParams.set('source_page', encodeURIComponent(context.sourcePage));
+      url.searchParams.set('source_page', context.sourcePage);
     }
-    
+
     if (context.vertical) {
-      url.searchParams.set('vertical', encodeURIComponent(context.vertical));
+      url.searchParams.set('vertical', context.vertical);
     }
 
     if (context.planInterest) {
-      url.searchParams.set('plan_interest', encodeURIComponent(context.planInterest));
+      url.searchParams.set('plan_interest', context.planInterest);
     }
-    
+
     // UTM parameters
-    if (context.utmSource) url.searchParams.set('utm_source', encodeURIComponent(context.utmSource));
-    if (context.utmMedium) url.searchParams.set('utm_medium', encodeURIComponent(context.utmMedium));
-    if (context.utmCampaign) url.searchParams.set('utm_campaign', encodeURIComponent(context.utmCampaign));
+    if (context.utmSource) url.searchParams.set('utm_source', context.utmSource);
+    if (context.utmMedium) url.searchParams.set('utm_medium', context.utmMedium);
+    if (context.utmCampaign) url.searchParams.set('utm_campaign', context.utmCampaign);
     
     // Add referrer if executed on client
     if (typeof window !== 'undefined') {
@@ -54,7 +57,7 @@ export function buildZohoFormUrl(baseUrl: string, context: ZohoFormContext): str
             if (queryIndex > -1) rfr = rfr.substring(0, queryIndex);
             if (rfr.length > 1800) rfr = rfr.substring(0, 1800);
           }
-          url.searchParams.set('referrername', encodeURIComponent(rfr));
+          url.searchParams.set('referrername', rfr);
         }
       } catch {
         // Ignore iframe cross-origin errors

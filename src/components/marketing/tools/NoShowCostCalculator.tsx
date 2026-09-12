@@ -1,6 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { event } from "@/lib/analytics/google-analytics";
+import { calculateNoShowCost } from "@/lib/calculators/noShowCost";
+import { clampPercent } from "@/lib/calculators/clampPercent";
 
 function formatCurrency(n: number) {
   if (!Number.isFinite(n)) return "$0";
@@ -15,9 +18,20 @@ export function NoShowCostCalculator() {
   const [avgBookingValue, setAvgBookingValue] = React.useState(120);
   const [noShowRate, setNoShowRate] = React.useState(8);
   const [weeksPerYear, setWeeksPerYear] = React.useState(48);
+  const hasTrackedCompletion = React.useRef(false);
 
-  const weeklyLoss = bookingsPerWeek * avgBookingValue * (noShowRate / 100);
-  const annualLoss = weeklyLoss * weeksPerYear;
+  function trackCompletionOnce() {
+    if (hasTrackedCompletion.current) return;
+    hasTrackedCompletion.current = true;
+    event("calculator_completed", { calculator: "no_show_cost" });
+  }
+
+  const { weeklyLoss, annualLoss } = calculateNoShowCost({
+    bookingsPerWeek,
+    avgBookingValue,
+    noShowRate,
+    weeksPerYear,
+  });
 
   return (
     <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
@@ -33,7 +47,7 @@ export function NoShowCostCalculator() {
               min={0}
               className={inputClass}
               value={bookingsPerWeek}
-              onChange={(e) => setBookingsPerWeek(Number(e.target.value))}
+              onChange={(e) => { setBookingsPerWeek(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -46,7 +60,7 @@ export function NoShowCostCalculator() {
               min={0}
               className={inputClass}
               value={avgBookingValue}
-              onChange={(e) => setAvgBookingValue(Number(e.target.value))}
+              onChange={(e) => { setAvgBookingValue(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -60,7 +74,7 @@ export function NoShowCostCalculator() {
               max={100}
               className={inputClass}
               value={noShowRate}
-              onChange={(e) => setNoShowRate(Number(e.target.value))}
+              onChange={(e) => { setNoShowRate(clampPercent(Number(e.target.value))); trackCompletionOnce(); }}
             />
           </div>
           <div>
@@ -74,12 +88,15 @@ export function NoShowCostCalculator() {
               max={52}
               className={inputClass}
               value={weeksPerYear}
-              onChange={(e) => setWeeksPerYear(Number(e.target.value))}
+              onChange={(e) => { setWeeksPerYear(Number(e.target.value)); trackCompletionOnce(); }}
             />
           </div>
         </div>
 
-        <div className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0">
+        <div
+          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          aria-live="polite"
+        >
           <div>
             <p className="text-sm text-slate-400 mb-1">Estimated revenue lost per week</p>
             <p className="text-3xl font-bold text-white">{formatCurrency(weeklyLoss)}</p>

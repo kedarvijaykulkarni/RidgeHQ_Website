@@ -3,6 +3,9 @@ import { verticals } from '@/lib/config/verticals'
 import { products } from '@/lib/config/products'
 import { platformCapabilities } from '@/lib/config/platform'
 import { visibleBlogPosts } from '@/lib/config/blog'
+import { useCases } from '@/lib/config/use-cases'
+import { comparisons } from '@/lib/config/comparisons'
+import { caseStudies } from '@/lib/config/case-studies'
 import { siteUrl } from '@/lib/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -21,6 +24,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools',
     '/tools/no-show-cost-calculator',
     '/tools/admin-time-cost-calculator',
+    '/tools/cancellation-cost-calculator',
+    '/tools/revenue-leakage-calculator',
+    '/tools/break-even-calculator',
+    '/tools/roi-calculator',
+    '/tools/cac-ltv-calculator',
+    '/tools/instructor-utilization-calculator',
+    '/tools/capacity-utilization-calculator',
+    '/tools/spreadsheet-readiness-assessment',
+    '/use-cases',
+    '/compare',
     '/integrations',
     '/pricing',
     '/solutions',
@@ -63,11 +76,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  const useCaseRoutes = useCases.map((u) => ({
+    url: `${baseUrl}/use-cases/${u.slug}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  const comparisonRoutes = comparisons.map((c) => ({
+    url: `${baseUrl}/compare/${c.slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  // /case-studies is noindex while caseStudies is empty (see its page.tsx) —
+  // kept out of the sitemap the same way /resources is, and included
+  // automatically the moment a real entry is added, no further code change.
+  const caseStudyRoutes =
+    caseStudies.length > 0
+      ? [
+          { url: `${baseUrl}/case-studies`, changeFrequency: 'weekly' as const, priority: 0.7 },
+          ...caseStudies.map((cs) => ({
+            url: `${baseUrl}/case-studies/${cs.slug}`,
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+          })),
+        ]
+      : []
+
   return [
     ...staticRoutes,
     ...solutionRoutes,
     ...productRoutes,
     ...platformRoutes,
     ...blogRoutes,
+    ...useCaseRoutes,
+    ...comparisonRoutes,
+    ...caseStudyRoutes,
   ]
 }

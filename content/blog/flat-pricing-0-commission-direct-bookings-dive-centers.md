@@ -5,6 +5,7 @@ slug: "flat-pricing-0-commission-direct-bookings-dive-centers"
 canonical_url: "https://www.ridgehq.app/blog/flat-pricing-0-commission-direct-bookings-dive-centers"
 tags: ["dive-center-operations", "operational-efficiency", "saas-pricing", "dive-booking-software"]
 date: "2026-09-07"
+pillar: "Business Economics"
 draft: false
 ---
 

@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/design-partners"),
   title: "Design Partner Program",
-  description: "Help shape the operational workflows that matter most.",
+  description: "Join RidgeHQ's Founding Operator Pilot as a design partner: work directly with the team building your booking, scheduling, and gear-management workflows.",
 };
 
 export default function DesignPartnersPage() {
