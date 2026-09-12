@@ -33,14 +33,20 @@ relevant row here (Status) as each closes.
   not fabricated).
 
 **Answer-first / AI-native surfaces**
-- `public/llms.txt` — product summary, platform/product/industry links, pricing
-  described honestly as a private pilot (no invented price).
-- `/ai` (`src/app/ai/page.tsx`) — human- and LLM-readable product summary rendering
-  `productKnowledge`.
+- `public/llms.txt` — a standalone, hand-written static file (does not import
+  `product-knowledge.ts`) with a product summary, platform/product/industry links,
+  and pricing described honestly as a private pilot (no invented price). Must be
+  checked for drift against `product-knowledge.ts` manually — it does not update
+  automatically when that file changes.
+- `/ai` (`src/app/ai/page.tsx`) — human- and LLM-readable product summary that
+  directly renders `productKnowledge`, including its `faqs` (as a `<dl>`, not the
+  `<FAQAccordion />` other pages use) and its `security.summary` field.
 - `src/lib/config/product-knowledge.ts` — canonical machine-readable aggregation of
   `verticals.ts`/`products.ts`/`platform.ts`/`integrations.ts`/`marketing.ts`/`faq.ts`.
   No new facts are declared there; it re-derives from the source configs plus a few
-  hand-maintained summary fields (positioning, ICP, poor-fit profile).
+  hand-maintained fields not sourced from any config (positioning, ICP, poor-fit
+  profile, and `security.summary`) — these are the fields most likely to drift out
+  of sync with actual product/security decisions since nothing re-derives them.
 
 **Content**
 - 12 industry vertical pages (`/solutions/[slug]`), each with `painPoint`,
@@ -97,13 +103,13 @@ relevant row here (Status) as each closes.
 
 | Recommendation | Evidence | Status | Safe to publish |
 |---|---|---|---|
-| FAQPage JSON-LD | Renders from the same array as the visible `<FAQAccordion />` | Shipped | Yes |
+| FAQPage JSON-LD | Built from the same `faqs` array the page visibly renders (via `<FAQAccordion />` on most pages, a `<dl>` on `/ai`) | Shipped | Yes |
 | `llms.txt` / `/ai` | Sourced from `product-knowledge.ts`, itself derived from published marketing config | Shipped | Yes |
 | Pricing described as private pilot | `marketingConfig.pricingMode === 'pilot'`, no public price list exists | Shipped | Yes |
 | 2 calculators | Client-only, no data submitted, formulas shown in plain text | Shipped | Yes |
 | Industry × problem intent model | Not yet built — no file exists mapping vertical pain points to commercial intent | Missing (#5) | N/A |
 | Comparison pages | Requires sourcing every competitor claim from the Brain vault's `wiki/competitors.md`; not yet built | Missing (#11) | Only once vault-sourced |
-| Case studies | Zero real design-partner outcomes exist; must not be fabricated | Missing (#12), ship with 0 entries | Yes, empty-state only |
+| Case studies | No verified or publishable design-partner outcome evidence exists in this repository or the linked vault as of this writing; must not be fabricated | Missing (#12), ship with 0 entries | Yes, empty-state only |
 | AI referral analytics | GA (`GoogleAnalytics.tsx`, `CTAEventTracker.tsx`) wired in; no AI-referrer segmentation event exists | Missing (#8) | N/A |
 | Automated tests | One Jest test exists repo-wide; nothing covers this initiative's code | Missing (#16) | N/A |
 
