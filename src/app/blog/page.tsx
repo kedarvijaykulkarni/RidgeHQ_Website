@@ -8,7 +8,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/blog"),
   title: "Blog & Resources",
-  description: "Insights, guides, and best practices for running activity businesses.",
+  description: "How dive centers and activity businesses handle multi-tenancy, staff permissions, waivers, pricing, and AI-assisted scheduling — written for operators and the developers who build for them.",
 };
 
 export default function BlogIndexPage() {

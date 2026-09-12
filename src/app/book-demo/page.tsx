@@ -6,7 +6,7 @@ import { pageSeo } from "@/lib/config/seo";
 export const metadata = {
   ...pageSeo("/book-demo"),
   title: "Book a Demo",
-  description: "See how RidgeHQ can connect your operational day.",
+  description: "Book a walkthrough of RidgeHQ with your own bookings, staff schedules, and gear inventory, so you can see whether it fits how your activity business actually runs.",
 };
 
 export default function BookDemoPage() {
