@@ -110,9 +110,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Container>
       </Section>
       
-      <CTASection 
-        headline="Ready to put this into practice?" 
-        description="See how RidgeHQ can help you implement these strategies in your own activity business." 
+      <CTASection
+        headline="See how this looks running on RidgeHQ"
+        description="Explore the platform capability this post describes, or book a demo when you're ready to see your own operation."
+        primaryCtaText="Explore the Platform"
+        primaryCtaHref="/platform"
+        secondaryCtaText="Book a Demo"
+        secondaryCtaHref="/book-demo"
       />
     </div>
   );

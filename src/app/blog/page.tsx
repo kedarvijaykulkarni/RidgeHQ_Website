@@ -36,9 +36,13 @@ export default function BlogIndexPage() {
         </Container>
       </Section>
       
-      <CTASection 
-        headline="Ready to upgrade your operations?" 
-        description="Join leading activity centers using RidgeHQ to manage their bookings, gear, and staff in one place." 
+      <CTASection
+        headline="See how this looks running on RidgeHQ"
+        description="Explore the platform capabilities these posts describe, or book a demo when you're ready to see your own operation."
+        primaryCtaText="Explore the Platform"
+        primaryCtaHref="/platform"
+        secondaryCtaText="Book a Demo"
+        secondaryCtaHref="/book-demo"
       />
     </div>
   );
