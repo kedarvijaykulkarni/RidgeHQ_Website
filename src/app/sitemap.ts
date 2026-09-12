@@ -5,6 +5,7 @@ import { platformCapabilities } from '@/lib/config/platform'
 import { visibleBlogPosts } from '@/lib/config/blog'
 import { useCases } from '@/lib/config/use-cases'
 import { comparisons } from '@/lib/config/comparisons'
+import { caseStudies } from '@/lib/config/case-studies'
 import { siteUrl } from '@/lib/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -87,6 +88,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // /case-studies is noindex while caseStudies is empty (see its page.tsx) —
+  // kept out of the sitemap the same way /resources is, and included
+  // automatically the moment a real entry is added, no further code change.
+  const caseStudyRoutes =
+    caseStudies.length > 0
+      ? [
+          { url: `${baseUrl}/case-studies`, changeFrequency: 'weekly' as const, priority: 0.7 },
+          ...caseStudies.map((cs) => ({
+            url: `${baseUrl}/case-studies/${cs.slug}`,
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+          })),
+        ]
+      : []
+
   return [
     ...staticRoutes,
     ...solutionRoutes,
@@ -95,5 +111,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogRoutes,
     ...useCaseRoutes,
     ...comparisonRoutes,
+    ...caseStudyRoutes,
   ]
 }

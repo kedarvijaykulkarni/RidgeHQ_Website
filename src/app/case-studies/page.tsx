@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
@@ -11,7 +12,10 @@ export const metadata = {
   title: "Case Studies",
   description:
     "Real results from RidgeHQ design partners — published as they happen, never fabricated. Currently onboarding our first Founding Operator Pilot partners.",
-  robots: { index: false, follow: true },
+  // Noindex only while there's nothing real to show — once a design-partner
+  // outcome is added to caseStudies, this flips on with no further code
+  // change needed (see sitemap.ts, which is conditional the same way).
+  robots: caseStudies.length === 0 ? { index: false, follow: true } : { index: true, follow: true },
 };
 
 export default function CaseStudiesIndexPage() {
@@ -45,10 +49,14 @@ export default function CaseStudiesIndexPage() {
           ) : (
             <div className="grid md:grid-cols-2 gap-6">
               {caseStudies.map((cs) => (
-                <div key={cs.slug} className="glass-card rounded-2xl border border-white/10 bg-white/5 p-8">
+                <Link
+                  key={cs.slug}
+                  href={`/case-studies/${cs.slug}`}
+                  className="glass-card rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-[#22D3EE]/40"
+                >
                   <h2 className="text-xl font-bold text-white mb-2">{cs.businessType}</h2>
                   <p className="text-slate-400 text-sm leading-relaxed">{cs.problem}</p>
-                </div>
+                </Link>
               ))}
             </div>
           )}
