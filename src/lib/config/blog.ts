@@ -4,6 +4,8 @@ import matter from "gray-matter";
 
 export type BlogPillar = "Business Economics" | "Operations" | "Technology";
 
+const VALID_PILLARS: BlogPillar[] = ["Business Economics", "Operations", "Technology"];
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -67,6 +69,11 @@ function loadBlogPosts(): BlogPost[] {
     if (missing.length > 0) {
       throw new Error(
         `Blog post content/blog/${file} is missing required frontmatter: ${missing.join(", ")}`,
+      );
+    }
+    if (!VALID_PILLARS.includes(data.pillar)) {
+      throw new Error(
+        `Blog post content/blog/${file} has an invalid pillar "${data.pillar}" — must be one of: ${VALID_PILLARS.join(", ")}`,
       );
     }
 
