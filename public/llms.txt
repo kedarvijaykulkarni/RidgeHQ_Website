@@ -43,6 +43,14 @@ RidgeHQ is built for 12 activity-business verticals — dive centers, surf schoo
 
 - [No-Show Cost Calculator](https://www.ridgehq.app/tools/no-show-cost-calculator): estimate annual revenue lost to no-shows from your own numbers, formula shown.
 - [Admin Time Cost Calculator](https://www.ridgehq.app/tools/admin-time-cost-calculator): estimate the annual cost of manually re-keying bookings/waivers/schedules across tools, formula shown.
+- [Cancellation Cost Calculator](https://www.ridgehq.app/tools/cancellation-cost-calculator): estimate unrecovered revenue from cancellations after accounting for backfill rate.
+- [Revenue Leakage Calculator](https://www.ridgehq.app/tools/revenue-leakage-calculator): estimate revenue lost to missed charges, unbilled add-ons, and pricing errors.
+- [Break-Even Calculator](https://www.ridgehq.app/tools/break-even-calculator): standard contribution-margin break-even math for bookings per month.
+- [ROI Calculator](https://www.ridgehq.app/tools/roi-calculator): estimate return on investment from your own monthly cost and gains estimate.
+- [CAC:LTV Calculator](https://www.ridgehq.app/tools/cac-ltv-calculator): estimate customer lifetime value and the LTV-to-acquisition-cost ratio.
+- [Instructor Utilization Calculator](https://www.ridgehq.app/tools/instructor-utilization-calculator): standalone educational estimate of booked vs. available staff hours — not a RidgeHQ reporting feature.
+- [Capacity Utilization Calculator](https://www.ridgehq.app/tools/capacity-utilization-calculator): standalone educational estimate of booked vs. available equipment/unit hours — not a RidgeHQ reporting feature.
+- [Spreadsheet Readiness Assessment](https://www.ridgehq.app/tools/spreadsheet-readiness-assessment): a short scored quiz on how much manual reconciliation your current tools require.
 
 ## Operational problems (use cases)
 
