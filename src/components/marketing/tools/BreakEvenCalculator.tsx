@@ -80,7 +80,10 @@ export function BreakEvenCalculator() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0">
+        <div
+          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          aria-live="polite"
+        >
           <div>
             <p className="text-sm text-slate-400 mb-1">Contribution margin per booking</p>
             <p className="text-3xl font-bold text-white">{formatCurrency(contributionMargin)}</p>
