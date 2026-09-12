@@ -7,8 +7,9 @@ specifically, as this document's own tracking issue requires once they ship.
 
 ## 1. JSON-LD structured data
 
-`src/components/seo/StructuredData.tsx` escapes `<` to `<` before
-serializing (prevents a `</script>` breakout), and every call site across the
+`src/components/seo/StructuredData.tsx` JSON-serializes its data then escapes
+`<` to `<` in the resulting string (prevents a `</script>` breakout), and
+every call site across the
 codebase (`layout.tsx`, `/ai`, every `/solutions|/products|/platform/[slug]`,
 `/blog/[slug]`, `/use-cases/[slug]`, `/compare/[slug]`, `/case-studies/[slug]`,
 `/tools/*`) passes only statically-known config data (`verticals.ts`,
@@ -48,17 +49,30 @@ input state.
   require knowing this deployment's actual edge/proxy configuration, which
   this repo doesn't control, so it's documented as a known gap rather than
   silently assumed solved. (2) That same pattern (many single-use
-  identifiers) previously grew the tracker's map without bound — fixed with
-  a periodic sweep that evicts stale identifiers, bounding memory even
-  though the underlying spoofing bypass remains. Accepted severity: low,
-  since the data served is public marketing content with no per-tenant cost
-  and no write path — worth revisiting only if real abuse is observed.
+  identifiers) previously grew the tracker's map without bound — a periodic
+  sweep now evicts identifiers whose timestamps have fully aged out of the
+  60-second window, bounding *sustained* growth (a steady trickle of
+  single-use identifiers over time). **This does not bound a burst**: enough
+  spoofed requests inside one 60-second window all read as "fresh" and
+  survive the sweep, so a high-concurrency burst could still grow the map
+  significantly within that window before the next sweep catches up. The
+  underlying spoofing bypass itself remains open regardless. Accepted
+  severity: low, since the data served is public marketing content with no
+  per-tenant cost and no write path — worth revisiting only if real abuse is
+  observed.
 
 ## 3. Calculators
 
-All 10 calculators (`src/components/marketing/tools/*.tsx`) are client-only:
-every input is local `useState`, nothing is submitted to any backend, no new
-form or lead-capture surface was introduced. Percent-typed inputs are clamped
+All 10 calculators (`src/components/marketing/tools/*.tsx`) are client-only
+for their actual inputs and formulas — nothing about a user's entered
+numbers is submitted anywhere, no new form or lead-capture surface was
+introduced. **One caveat this section previously omitted:** each calculator
+fires a `calculator_completed` Google Analytics event on first input change
+(`src/lib/analytics/*`, added in #8) — a completion signal, not the input
+values themselves, is sent to a third-party analytics backend. This is the
+same GA setup already covering the rest of the site (existing consent
+posture, no new cookie), but "nothing is submitted to any backend" was too
+strong a claim; corrected here. Percent-typed inputs are clamped
 (`clampPercent()`) after a code-review finding that an out-of-range value
 could otherwise produce a nonsensical (negative) result — a correctness fix,
 not a security one, since nothing server-side ever saw the value.
