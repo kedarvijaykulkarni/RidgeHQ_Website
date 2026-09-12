@@ -52,6 +52,13 @@ RidgeHQ is built for 12 activity-business verticals — dive centers, surf schoo
 - [Capacity Utilization Calculator](https://www.ridgehq.app/tools/capacity-utilization-calculator): standalone educational estimate of booked vs. available equipment/unit hours — not a RidgeHQ reporting feature.
 - [Spreadsheet Readiness Assessment](https://www.ridgehq.app/tools/spreadsheet-readiness-assessment): a short scored quiz on how much manual reconciliation your current tools require.
 
+## Comparisons
+
+RidgeHQ does not name specific competitors on the site — comparisons are by category, with honest strengths and limitations on both sides:
+
+- [RidgeHQ vs. Commission-Based Booking Platforms](https://www.ridgehq.app/compare/commission-based-booking-platforms)
+- [RidgeHQ vs. Spreadsheets, WhatsApp, and Paper](https://www.ridgehq.app/compare/spreadsheets-and-manual-tools)
+
 ## Operational problems (use cases)
 
 Problem-first guides — organized by operational headache rather than industry — covering why it happens, what it costs to leave unmanaged, how RidgeHQ helps, and when it may not be the right fit:

@@ -4,6 +4,7 @@ import { products } from "@/lib/config/products";
 import { platformCapabilities } from "@/lib/config/platform";
 import { visibleBlogPosts } from "@/lib/config/blog";
 import { useCases } from "@/lib/config/use-cases";
+import { comparisons } from "@/lib/config/comparisons";
 import { siteUrl } from "@/lib/config/site";
 
 describe("sitemap", () => {
@@ -27,6 +28,7 @@ describe("sitemap", () => {
     "/tools/capacity-utilization-calculator",
     "/tools/spreadsheet-readiness-assessment",
     "/use-cases",
+    "/compare",
     "/integrations",
     "/pricing",
     "/solutions",
@@ -73,6 +75,12 @@ describe("sitemap", () => {
   it("includes one entry per use case", () => {
     for (const u of useCases) {
       expect(urls).toContain(`${siteUrl}/use-cases/${u.slug}`);
+    }
+  });
+
+  it("includes one entry per comparison", () => {
+    for (const c of comparisons) {
+      expect(urls).toContain(`${siteUrl}/compare/${c.slug}`);
     }
   });
 });

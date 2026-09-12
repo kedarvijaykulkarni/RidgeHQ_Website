@@ -4,6 +4,7 @@ import { products } from '@/lib/config/products'
 import { platformCapabilities } from '@/lib/config/platform'
 import { visibleBlogPosts } from '@/lib/config/blog'
 import { useCases } from '@/lib/config/use-cases'
+import { comparisons } from '@/lib/config/comparisons'
 import { siteUrl } from '@/lib/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/capacity-utilization-calculator',
     '/tools/spreadsheet-readiness-assessment',
     '/use-cases',
+    '/compare',
     '/integrations',
     '/pricing',
     '/solutions',
@@ -79,6 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const comparisonRoutes = comparisons.map((c) => ({
+    url: `${baseUrl}/compare/${c.slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     ...staticRoutes,
     ...solutionRoutes,
@@ -86,5 +94,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...platformRoutes,
     ...blogRoutes,
     ...useCaseRoutes,
+    ...comparisonRoutes,
   ]
 }
