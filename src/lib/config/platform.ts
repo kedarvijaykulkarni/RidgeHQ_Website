@@ -21,6 +21,8 @@ export interface Capability {
   description: string;
   icon?: string;
   href: string;
+  /** ISO date — bump when this capability's content is meaningfully updated. Used as the sitemap <lastmod>. */
+  lastUpdated: string;
   /**
    * Extended detail-page content. Added progressively per capability — the
    * template renders these sections only when the data is present.
@@ -39,6 +41,7 @@ export const platformCapabilities: Capability[] = [
     id: 'bookings',
     title: 'Online Bookings & POS',
     slug: 'bookings-pos',
+    lastUpdated: '2026-09-02',
     href: '/platform/bookings-pos',
     description: 'Sell without creating a second operation. Keep front-desk and online sales connected to the same operational context.',
     heroHeadline: 'One booking record, whichever way the sale comes in.',
@@ -106,6 +109,7 @@ export const platformCapabilities: Capability[] = [
     id: 'scheduling',
     title: 'Scheduling & Dispatch',
     slug: 'scheduling',
+    lastUpdated: '2026-09-02',
     href: '/platform/scheduling',
     description: 'Plan with the full picture. See sessions, people, capacity, and resources together in one live view.',
   },
@@ -113,6 +117,7 @@ export const platformCapabilities: Capability[] = [
     id: 'resources',
     title: 'Gear & Fleet Management',
     slug: 'gear-rentals',
+    lastUpdated: '2026-09-02',
     href: '/platform/gear-rentals',
     description: 'Protect scarce resources. Know exactly what gear, rooms, boats, or bikes are already committed.',
   },
@@ -120,6 +125,7 @@ export const platformCapabilities: Capability[] = [
     id: 'staff',
     title: 'Staff Coordination',
     slug: 'staff',
+    lastUpdated: '2026-09-02',
     href: '/platform/staff',
     description: 'Assign the right instructors and guides based on qualifications, language, and real-time availability.',
   },
@@ -127,6 +133,7 @@ export const platformCapabilities: Capability[] = [
     id: 'customers',
     title: 'Customer & Participant Profiles',
     slug: 'customers-participants',
+    lastUpdated: '2026-09-02',
     href: '/platform/customers-participants',
     description: 'Know the participant behind the booking. Keep client history, waivers, and preferences attached to the workflow.',
   },
@@ -134,6 +141,7 @@ export const platformCapabilities: Capability[] = [
     id: 'payments',
     title: 'Payments & Reporting',
     slug: 'payments',
+    lastUpdated: '2026-09-02',
     href: '/platform/payments',
     description: 'Close the day with context. Bring deposits, final payments, operational history, and reporting together.',
   },

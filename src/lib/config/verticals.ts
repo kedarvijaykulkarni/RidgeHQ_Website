@@ -18,6 +18,8 @@ export interface Vertical {
   id: string;
   name: string;
   slug: string;
+  /** ISO date — bump when this vertical's content is meaningfully updated. Used as the sitemap <lastmod>. */
+  lastUpdated: string;
   heroHeadline: string;
   heroDescription: string;
   painPoint: string;
@@ -41,6 +43,7 @@ export const verticals: Vertical[] = [
     id: 'dive-centers',
     name: 'Dive Centers',
     slug: 'dive-centers',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'From first click to final dive, on one system.',
     heroDescription: 'Generic booking tools do not understand boats, two-tank days, kit prep, or per-diver medicals. RidgeHQ puts dive-specific rosters, waivers, payments, and multi-channel sales in one place.',
     heroProofPoints: [
@@ -128,6 +131,7 @@ export const verticals: Vertical[] = [
     id: 'surf-schools',
     name: 'Surf Schools',
     slug: 'surf-schools',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Fill more classes and keep the whole day in sync.',
     heroDescription: 'Stop juggling spreadsheets, group chats, and last-minute changes. RidgeHQ brings bookings, tide-aware scheduling, instructor planning, payments, and partner sales into one live system.',
     heroProofPoints: [
@@ -215,6 +219,7 @@ export const verticals: Vertical[] = [
     id: 'kitesurf-schools',
     name: 'Kitesurf Schools',
     slug: 'kitesurf-schools',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Sell more sessions, reschedule fast when the wind shifts.',
     heroDescription: 'Generic tools do not get wind windows, last-minute reshuffles, or multi-session courses. RidgeHQ gives you multichannel sales, bulk messaging, quick scheduling, and forms that adapt.',
     heroProofPoints: [
@@ -302,6 +307,7 @@ export const verticals: Vertical[] = [
     id: 'sailing-schools',
     name: 'Sailing Schools',
     slug: 'sailing-schools',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'From enrolment to the last tack, one system.',
     heroDescription: 'Generic booking tools struggle with summer courses, private coaching, and fleet charter at once. RidgeHQ keeps every service in one place so you sell across channels and keep sessions on time.',
     heroProofPoints: [
@@ -389,6 +395,7 @@ export const verticals: Vertical[] = [
     id: 'windsurf-schools',
     name: 'Windsurf Schools',
     slug: 'windsurf-schools',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Run a high-volume watersports centre at full speed.',
     heroDescription: 'Built for busy lesson and rental floors — windsurf, wingfoil, SUP. Sell through more channels, keep one live schedule for the whole team, and run clean check-ins without spreadsheet chaos.',
     heroProofPoints: [
@@ -476,6 +483,7 @@ export const verticals: Vertical[] = [
     id: 'outdoor-whitewater',
     name: 'Outdoor & Whitewater',
     slug: 'outdoor-whitewater',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Run your outdoor centre in flow.',
     heroDescription: 'Rafting, canyoning, and guided kayak trips move fast, sell in groups, and depend on clean logistics. RidgeHQ keeps website sales, POS, agents, payments, and participant forms connected.',
     heroProofPoints: [
@@ -563,6 +571,7 @@ export const verticals: Vertical[] = [
     id: 'ski-schools',
     name: 'Ski Schools',
     slug: 'ski-schools',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Handle peak season from the first call to the last run.',
     heroDescription: 'Generic tools do not handle ski and snowboard lessons, multi-day courses, meeting points, and constant last-minute changes. RidgeHQ brings bookings, scheduling, payments, and admin into one flow.',
     heroProofPoints: [
@@ -650,6 +659,7 @@ export const verticals: Vertical[] = [
     id: 'dive-resorts',
     name: 'Dive Resorts',
     slug: 'dive-resorts',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'A hotel and a dive centre, running as one.',
     heroDescription: 'RidgeHQ brings website sales, on-site POS, boat operations, guest paperwork, and the daily close into one system — purpose-built for dive operations and flexible for resort stays with add-ons.',
     heroProofPoints: [
@@ -737,6 +747,7 @@ export const verticals: Vertical[] = [
     id: 'surf-camps',
     name: 'Surf Camps',
     slug: 'surf-camps',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'From packages to daily schedules, one flow.',
     heroDescription: 'Beds, meals, daily lessons, and guest prep kept together. RidgeHQ sells week stays with add-ons, collects deposits, captures every guest detail up front, and runs daily rosters without spreadsheets.',
     heroProofPoints: [
@@ -824,6 +835,7 @@ export const verticals: Vertical[] = [
     id: 'kayak-rental-tours',
     name: 'Kayak Rental & Tours',
     slug: 'kayak-rental-tours',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Run your kayak and paddle operation at full speed.',
     heroDescription: 'One booking and operations system for kayak and SUP rentals and guided tours. Availability, payments, customer details, and the daily run stay unified from the front desk to the dock.',
     heroProofPoints: [
@@ -911,6 +923,7 @@ export const verticals: Vertical[] = [
     id: 'bike-rental-tours',
     name: 'Bike Rental & Tours',
     slug: 'bike-rental-tours',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Run your bike rental shop at full speed.',
     heroDescription: 'Stop managing rentals across paper, chat apps, and spreadsheets. RidgeHQ puts rentals, fleet availability, payments, and staff scheduling on one live calendar — for the shop floor and guided tours.',
     heroProofPoints: [
@@ -998,6 +1011,7 @@ export const verticals: Vertical[] = [
     id: 'boat-rental-courses',
     name: 'Boat Rental & Courses',
     slug: 'boat-rental-courses',
+    lastUpdated: '2026-08-11',
     heroHeadline: 'Run charters and skipper courses at full speed.',
     heroDescription: 'Stop juggling boat availability, course sessions, payments, and paperwork. RidgeHQ keeps charters and training in one place so you fill more dates, avoid double-bookings, and run smoother at the dock.',
     heroProofPoints: [

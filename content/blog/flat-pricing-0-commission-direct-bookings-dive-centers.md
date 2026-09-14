@@ -9,8 +9,6 @@ pillar: "Business Economics"
 draft: false
 ---
 
-# Pricing Structure Built for Operational Scale and Direct Bookings
-
 _RidgeHQ provides clear, transparent pricing tiers designed for growing dive centers, eliminating hidden commissions while supporting operational complexity from basic booking to multi-location management._
 
 ## The Operational Drag of Legacy Pricing Models

@@ -17,8 +17,6 @@ draft: false
   business vault (wiki/business-context.md §2) per CLAUDE.md rule 4.
 -->
 
-# AI Copilot for Scheduling and Operational Efficiency at Dive Centers
-
 _RidgeHQ introduces a deeply integrated AI copilot designed to manage and optimize the core operational rhythms of your dive center, moving complex scheduling and administrative tasks beyond the limitations of spreadsheets and legacy tools._
 
 ## Moving Beyond Spreadsheets: The Need for Integrated Scheduling Logic

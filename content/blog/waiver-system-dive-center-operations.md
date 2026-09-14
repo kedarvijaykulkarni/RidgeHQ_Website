@@ -9,8 +9,6 @@ pillar: "Operations"
 draft: false
 ---
 
-# Built-in Waiver Management for Dive Operations
-
 _Dive center operations demand robust, legally defensible tools. RidgeHQ's integrated waiver system provides effortless management, allowing operators to move beyond manual processes and unreliable spreadsheets._
 
 ## The Necessity of Centralized Waiver Management

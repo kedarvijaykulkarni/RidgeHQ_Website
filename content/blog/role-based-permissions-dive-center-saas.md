@@ -9,8 +9,6 @@ pillar: "Technology"
 draft: false
 ---
 
-# Role-Based Permissions: Control Staff Actions in Your Dive Center SaaS
-
 _Effective staff permissions are crucial for maintaining operational integrity and data security. RidgeHQ's built-in role management system ensures that every team member interacts with the platform only to the extent required by their specific job function._
 
 ## Why Role-Based Access Control (RBAC) is Non-Negotiable for Dive Operations

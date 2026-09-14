@@ -17,8 +17,6 @@ draft: false
   business vault (wiki/business-context.md §2) per CLAUDE.md rule 4.
 -->
 
-# Native AI: Operational Intelligence Built into Your Core System
-
 _RidgeHQ integrates a sophisticated AI copilot directly into the operational kernel, ensuring AI capabilities are reliable, secure, and deeply integrated with existing business logic._
 
 ## Beyond the Chatbot: AI Native to the Operational Flow

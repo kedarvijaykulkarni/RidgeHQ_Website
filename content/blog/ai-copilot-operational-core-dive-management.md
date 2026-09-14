@@ -9,8 +9,6 @@ pillar: "Technology"
 draft: false
 ---
 
-# Integrating AI into the Operational Core of Dive Management
-
 _RidgeHQ provides AI copilot capabilities built directly into the operational system, ensuring continuity and reliability across all business functions._
 
 ## The Architectural Difference: Core Integration vs. Surface Chatbots
