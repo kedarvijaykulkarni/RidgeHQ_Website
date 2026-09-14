@@ -5,6 +5,7 @@ slug: "ai-copilot-for-dive-center-scheduling-operations"
 canonical_url: "https://www.ridgehq.app/blog/ai-copilot-for-dive-center-scheduling-operations"
 tags: ["dive center operations", "scheduling software", "saas", "dive logistics", "operational management"]
 date: "2026-09-13"
+pillar: "Technology"
 draft: true
 ---
 
