@@ -6,7 +6,7 @@ canonical_url: "https://www.ridgehq.app/blog/ai-copilot-for-dive-center-scheduli
 tags: ["dive center operations", "scheduling software", "saas", "dive logistics", "operational management"]
 date: "2026-09-13"
 pillar: "Technology"
-draft: true
+draft: false
 ---
 
 <!--
@@ -33,7 +33,7 @@ The AI copilot takes this foundational scheduling robustness and elevates it by 
 
 This function is fully integrated into the existing operational model. The AI doesn't operate in a vacuum; it respects the core rules of your business. If a scheduling change involves a high-risk action, the AI copilot employs built-in permission gating. Before executing the change, it verifies the staff member's role and may require an explicit, second-factor confirmation round-trip, maintaining a verifiable audit trail. For actions that are reversible by nature, such as rescheduling a session, the system ensures that 'undo' is a genuinely actionable function, providing immediate operational safety.
 
-Furthermore, the AI system works in concert with other operational pillars. It can cross-reference required certifications or waivers, ensuring that no activity can be scheduled if mandatory documentation is missing or if the participant's current check-in state prohibits them from participating. This proactive validation significantly reduces the risk of operational failure and improves team confidence in the platform.
+Furthermore, the AI system works in concert with other operational pillars. It can cross-reference required certifications or waivers, ensuring that no activity can be scheduled if mandatory documentation is missing. This proactive validation significantly reduces the risk of operational failure and improves team confidence in the platform.
 
 ## Operational Pillars Under a Single, Controlled System
 
