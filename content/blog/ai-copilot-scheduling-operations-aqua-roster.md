@@ -9,8 +9,6 @@ pillar: "Technology"
 draft: false
 ---
 
-# AI Copilot: Revolutionizing Dive Center Scheduling and Admin
-
 _AquaRoster introduces an AI Copilot designed to streamline complex scheduling and administrative tasks, allowing dive centers to move off inefficient spreadsheets and legacy booking systems today._
 
 ## Moving Beyond Manual Systems: The Need for Intelligent Scheduling

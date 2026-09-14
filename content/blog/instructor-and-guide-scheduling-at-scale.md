@@ -9,8 +9,6 @@ pillar: "Operations"
 draft: false
 ---
 
-# Instructor and Guide Scheduling at Scale
-
 _A single instructor and a shared calendar works fine. The moment you're matching bookings to staff by certification, language, and a ratio requirement — at volume, under time pressure — a whiteboard or a group chat stops being a scheduling system and becomes a source of mistakes._
 
 ## What actually breaks

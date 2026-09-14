@@ -9,8 +9,6 @@ pillar: "Business Economics"
 draft: false
 ---
 
-# The Real Cost of Manual Admin in Activity Businesses
-
 _Every activity business running a booking widget, a spreadsheet, and a group chat as three separate systems is paying a hidden labor cost for the gaps between them. It's rarely tracked, because it's rarely a single line item — it's an hour here, twenty minutes there, every day._
 
 ## Where the cost actually comes from

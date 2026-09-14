@@ -20,8 +20,6 @@ draft: false
   present-tense capability claim.
 -->
 
-# Enhancing Waivers: Future Capabilities for Streamlined Center Operations
-
 _We are developing key enhancements to the waiver system, focusing on modern operational requirements that integrate digital signing, conditional logic, and real-time participant status tracking._
 
 ## The Operational Gap in Manual Waivers

@@ -9,8 +9,6 @@ pillar: "Technology"
 draft: false
 ---
 
-# Ensuring Data Integrity: Multi-Tenancy at the Database Level
-
 _As operations scale and data complexity increases, ensuring strict data separation is critical. RidgeHQ implements multi-tenancy enforced at the database layer, providing dive centers with reliable separation from day one._
 
 ## The Challenge of Operational Data Separation
