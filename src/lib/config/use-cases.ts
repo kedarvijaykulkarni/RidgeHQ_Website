@@ -14,6 +14,8 @@
  */
 export interface UseCase {
   slug: string;
+  /** ISO date — bump when this use case's content is meaningfully updated. Used as the sitemap <lastmod>. */
+  lastUpdated: string;
   title: string;
   heroHeadline: string;
   heroTagline: string;
@@ -30,6 +32,7 @@ export interface UseCase {
 export const useCases: UseCase[] = [
   {
     slug: "instructor-scheduling",
+    lastUpdated: "2026-09-12",
     title: "Instructor & Guide Scheduling",
     heroHeadline: "Assign instructors and guides in seconds, not a morning of messages.",
     heroTagline:
@@ -61,6 +64,7 @@ export const useCases: UseCase[] = [
   },
   {
     slug: "equipment-coordination",
+    lastUpdated: "2026-09-12",
     title: "Equipment & Gear Coordination",
     heroHeadline: "Know what gear is actually available, right now, before you promise it.",
     heroTagline:

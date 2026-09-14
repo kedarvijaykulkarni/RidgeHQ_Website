@@ -11,60 +11,67 @@ import { siteUrl } from '@/lib/config/site'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteUrl
 
-  // `lastModified` is only emitted where we have a real signal for it (blog
-  // posts, below). Stamping `new Date()` on every URL on every build makes
-  // every `<lastmod>` change on every crawl, which Google learns to ignore.
+  // `lastModified` reflects the last commit that actually touched each
+  // route's content (a static page's file, or the config entry's own
+  // `lastUpdated` field) — never `new Date()` at build time, which would
+  // make every `<lastmod>` change on every crawl and teach Google to ignore it.
 
-  const staticRoutes = [
-    '',
-    '/platform',
-    '/products',
-    '/ai-copilot',
-    '/ai',
-    '/tools',
-    '/tools/no-show-cost-calculator',
-    '/tools/admin-time-cost-calculator',
-    '/tools/cancellation-cost-calculator',
-    '/tools/revenue-leakage-calculator',
-    '/tools/break-even-calculator',
-    '/tools/roi-calculator',
-    '/tools/cac-ltv-calculator',
-    '/tools/instructor-utilization-calculator',
-    '/tools/capacity-utilization-calculator',
-    '/tools/spreadsheet-readiness-assessment',
-    '/use-cases',
-    '/compare',
-    '/integrations',
-    '/pricing',
-    '/solutions',
-    '/blog',
-    '/contact',
-    '/book-demo',
-    '/design-partners',
-    '/about',
-    '/security',
-    '/privacy',
-    '/terms',
-  ].map((route) => ({
+  const staticRoutes = (
+    [
+      ['', '2026-09-12'],
+      ['/platform', '2026-09-12'],
+      ['/products', '2026-09-12'],
+      ['/ai-copilot', '2026-09-05'],
+      ['/ai', '2026-09-12'],
+      ['/tools', '2026-09-12'],
+      ['/tools/no-show-cost-calculator', '2026-09-05'],
+      ['/tools/admin-time-cost-calculator', '2026-09-05'],
+      ['/tools/cancellation-cost-calculator', '2026-09-12'],
+      ['/tools/revenue-leakage-calculator', '2026-09-12'],
+      ['/tools/break-even-calculator', '2026-09-12'],
+      ['/tools/roi-calculator', '2026-09-12'],
+      ['/tools/cac-ltv-calculator', '2026-09-12'],
+      ['/tools/instructor-utilization-calculator', '2026-09-12'],
+      ['/tools/capacity-utilization-calculator', '2026-09-12'],
+      ['/tools/spreadsheet-readiness-assessment', '2026-09-12'],
+      ['/use-cases', '2026-09-12'],
+      ['/compare', '2026-09-12'],
+      ['/integrations', '2026-09-05'],
+      ['/pricing', '2026-09-12'],
+      ['/solutions', '2026-09-05'],
+      ['/blog', '2026-09-12'],
+      ['/contact', '2026-09-05'],
+      ['/book-demo', '2026-09-12'],
+      ['/design-partners', '2026-09-12'],
+      ['/about', '2026-09-02'],
+      ['/security', '2026-09-05'],
+      ['/privacy', '2026-09-05'],
+      ['/terms', '2026-09-05'],
+    ] as const
+  ).map(([route, lastModified]) => ({
     url: `${baseUrl}${route}`,
+    lastModified,
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
   }))
 
   const solutionRoutes = verticals.map((v) => ({
     url: `${baseUrl}/solutions/${v.slug}`,
+    lastModified: v.lastUpdated,
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }))
 
   const productRoutes = products.map((p) => ({
     url: `${baseUrl}/products/${p.slug}`,
+    lastModified: p.lastUpdated,
     changeFrequency: 'weekly' as const,
     priority: 0.9,
   }))
 
   const platformRoutes = platformCapabilities.map((c) => ({
     url: `${baseUrl}/platform/${c.slug}`,
+    lastModified: c.lastUpdated,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
@@ -78,12 +85,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const useCaseRoutes = useCases.map((u) => ({
     url: `${baseUrl}/use-cases/${u.slug}`,
+    lastModified: u.lastUpdated,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
 
   const comparisonRoutes = comparisons.map((c) => ({
     url: `${baseUrl}/compare/${c.slug}`,
+    lastModified: c.lastUpdated,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))

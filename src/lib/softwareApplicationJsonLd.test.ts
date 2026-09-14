@@ -14,6 +14,7 @@ const sampleProduct: Product = {
   slug: "sample-product",
   href: "/products/sample-product",
   status: "available",
+  lastUpdated: "2026-01-01",
   description: "A sample product for testing.",
   heroHeadline: "Sample headline",
   heroTagline: "Sample tagline",

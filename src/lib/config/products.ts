@@ -22,6 +22,8 @@ export interface Product {
   slug: string;
   href: string;
   status: ProductStatus;
+  /** ISO date — bump when this product's content is meaningfully updated. Used as the sitemap <lastmod>. */
+  lastUpdated: string;
   /** Short card description used on the /products index. */
   description: string;
   heroHeadline: string;
@@ -41,6 +43,7 @@ export const products: Product[] = [
     id: "activity-platform",
     title: "Activity Platform",
     slug: "activity-platform",
+    lastUpdated: "2026-09-02",
     href: "/products/activity-platform",
     status: "available",
     description:
@@ -116,6 +119,7 @@ export const products: Product[] = [
     id: "rental-app",
     title: "Rental App",
     slug: "rental-app",
+    lastUpdated: "2026-09-02",
     href: "/products/rental-app",
     status: "available",
     description:
@@ -188,6 +192,7 @@ export const products: Product[] = [
     id: "waiver-app",
     title: "Waiver App",
     slug: "waiver-app",
+    lastUpdated: "2026-09-02",
     href: "/products/waiver-app",
     status: "available",
     description:
@@ -258,6 +263,7 @@ export const products: Product[] = [
     id: "channel-manager",
     title: "Channel Manager",
     slug: "channel-manager",
+    lastUpdated: "2026-09-02",
     href: "/products/channel-manager",
     status: "early-access",
     description:
