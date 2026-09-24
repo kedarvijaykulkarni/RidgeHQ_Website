@@ -25,6 +25,15 @@ const nextConfig: NextConfig = {
     // Next 16 default and must stay listed for everything else.
     qualities: [75, 90],
   },
+  // Paths real visitors have hit (seen in GA) that aren't pages — no in-repo
+  // link points at them, so they come from outside (typed URLs, external
+  // links, crawlers guessing). Permanent so search engines consolidate them.
+  async redirects() {
+    return [
+      { source: "/demo", destination: "/book-demo", permanent: true },
+      { source: "/llm.txt", destination: "/llms.txt", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
