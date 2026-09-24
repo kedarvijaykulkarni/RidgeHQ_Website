@@ -1,4 +1,5 @@
 import fs from "fs";
+import type { Metadata } from "next";
 import path from "path";
 import { verticals } from "@/lib/config/verticals";
 import { comparisons } from "@/lib/config/comparisons";
@@ -18,11 +19,11 @@ interface PageMeta {
 async function collect(): Promise<PageMeta[]> {
   const pages: PageMeta[] = [];
   for (const v of verticals) {
-    const m = await solutionMetadata({ params: Promise.resolve({ slug: v.slug }) });
+    const m: Metadata = await solutionMetadata({ params: Promise.resolve({ slug: v.slug }) });
     pages.push({ path: `/solutions/${v.slug}`, title: String(m.title), description: String(m.description), keyword: v.searchKeyword });
   }
   for (const c of comparisons) {
-    const m = await compareMetadata({ params: Promise.resolve({ slug: c.slug }) });
+    const m: Metadata = await compareMetadata({ params: Promise.resolve({ slug: c.slug }) });
     pages.push({ path: `/compare/${c.slug}`, title: String(m.title), description: String(m.description), keyword: c.title.replace(/^RidgeHQ vs\. /, "") });
   }
   for (const t of tools) {
