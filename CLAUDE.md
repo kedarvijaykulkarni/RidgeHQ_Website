@@ -48,3 +48,26 @@ it. The relationship runs both ways and both sides are logged, not silent:
 
 See `docs/vault-sync-log.md` for the running history and the `ai-discoverability-sync`
 skill for the full procedure.
+
+## Sitemap & Search Console checklist (always follow this)
+
+Whenever a change in this repo adds, removes, renames, moves, or materially
+edits a page or a piece of indexable content (a route, a blog post, a /solutions, /tools,
+/compare, or /products page, etc.):
+
+1. Re-check `src/app/sitemap.ts` (or wherever the sitemap is generated) and make
+   sure the change is reflected there — new pages added, removed pages taken
+   out, renamed pages updated. For edits to an existing page, bump its
+   `lastModified` (or the config entry's `lastUpdated`) so `<lastmod>` stays true.
+2. Run a local build and fetch the generated sitemap.xml to confirm the
+   change actually appears in the output, not just in source.
+3. After deploying the change to production, tell me explicitly:
+   "This change affects the sitemap — please request indexing / resubmit the
+   sitemap in Google Search Console for: <list the affected URLs>."
+   Do not skip this step even for small content edits, and do not assume I
+   will remember to do it — always ask.
+4. Never remove a page from the live site without first checking whether it
+   has existing Search Console impressions/clicks (I can check this) — a page
+   with real search traffic should permanently redirect to its replacement
+   rather than 404 (`redirects()` in `next.config.ts` with `permanent: true`,
+   which Next serves as a 308 — search engines treat it like a 301).
