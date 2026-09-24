@@ -10,6 +10,9 @@ import { VerticalsExplorer } from "@/components/marketing/VerticalsExplorer";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { softwareApplicationJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
+import { videoObjectJsonLd } from "@/lib/videoObjectJsonLd";
+import { YouTubeEmbed } from "@/components/marketing/YouTubeEmbed";
+import { homeVideo } from "@/lib/config/videos";
 import { platformCapabilities } from "@/lib/config/platform";
 import { integrations } from "@/lib/config/integrations";
 import { generalFaqs } from "@/lib/config/faq";
@@ -31,6 +34,7 @@ export default function Home() {
     <div className="flex flex-col w-full bg-[var(--bg)]">
       <StructuredData data={softwareApplicationJsonLd()} />
       <StructuredData data={faqPageJsonLd(generalFaqs)} />
+      <StructuredData data={videoObjectJsonLd(homeVideo)} />
 
       {/* 1. Animated Hero */}
       <HeroSection />
@@ -94,6 +98,21 @@ export default function Home() {
               </Button>
             </div>
             <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.webp" alt="RidgeHQ Copilot summarizing what needs attention today" />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Copilot demo video */}
+      <Section className="bg-[var(--bg-alt)]">
+        <Container>
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--ink)]">See the Copilot run a dive center&apos;s schedule.</h2>
+            <p className="text-lg text-[var(--ink-secondary)]">
+              A one-minute look at moving off spreadsheets: the Copilot reads the day&apos;s bookings and handles scheduling inside RidgeHQ.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <YouTubeEmbed video={homeVideo} />
           </div>
         </Container>
       </Section>
