@@ -6,6 +6,7 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { AdminTimeCostCalculator } from "@/components/marketing/tools/AdminTimeCostCalculator";
+import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
 
 export const metadata = {
   ...pageSeo("/tools/admin-time-cost-calculator"),
@@ -65,6 +66,8 @@ export default function AdminTimeCostCalculatorPage() {
           </div>
         </Container>
       </Section>
+
+      <ToolRelatedSolutions slug="admin-time-cost-calculator" />
 
       <CTASection
         headline="See how RidgeHQ connects the operation"
