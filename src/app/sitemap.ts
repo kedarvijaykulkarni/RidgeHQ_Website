@@ -7,6 +7,7 @@ import { useCases } from '@/lib/config/use-cases'
 import { comparisons } from '@/lib/config/comparisons'
 import { caseStudies } from '@/lib/config/case-studies'
 import { siteUrl } from '@/lib/config/site'
+import { homeVideo, youtubeEmbedUrl, youtubeThumbnailUrl } from '@/lib/config/videos'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteUrl
@@ -18,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = (
     [
-      ['', '2026-09-12'],
+      ['', '2026-09-25'],
       ['/platform', '2026-09-12'],
       ['/products', '2026-09-12'],
       ['/ai-copilot', '2026-09-05'],
@@ -53,6 +54,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
+    // Video sitemap entry for the home page's embedded demo — same record as
+    // its VideoObject JSON-LD, so Search Console sees one consistent video.
+    ...(route === ''
+      ? {
+          videos: [
+            {
+              title: homeVideo.title,
+              description: homeVideo.description,
+              thumbnail_loc: youtubeThumbnailUrl(homeVideo),
+              player_loc: youtubeEmbedUrl(homeVideo),
+              duration: homeVideo.durationSeconds,
+              publication_date: homeVideo.uploadDate,
+              family_friendly: 'yes' as const,
+            },
+          ],
+        }
+      : {}),
   }))
 
   const solutionRoutes = verticals.map((v) => ({
