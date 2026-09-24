@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/cac-ltv-calculator"),
-  title: "CAC:LTV Calculator",
+  title: "CAC:LTV Calculator for Activity Businesses",
   description:
-    "Estimate customer lifetime value and the LTV-to-acquisition-cost ratio for your activity business, from your own order value, repeat rate, and margin.",
+    "Free CAC:LTV calculator: estimate customer lifetime value and the LTV-to-acquisition-cost ratio for your activity business from your own numbers.",
 };
 
 export default function CacLtvCalculatorPage() {

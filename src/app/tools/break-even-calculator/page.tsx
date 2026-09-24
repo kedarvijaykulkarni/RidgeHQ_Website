@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/break-even-calculator"),
-  title: "Break-Even Calculator",
+  title: "Break-Even Calculator for Activity Businesses",
   description:
-    "Estimate how many bookings per month your activity business needs to cover its fixed costs, using your own fixed costs, price, and variable cost per booking.",
+    "Free break-even calculator for activity businesses: how many bookings per month you need to cover fixed costs, from your own price and costs.",
 };
 
 export default function BreakEvenCalculatorPage() {

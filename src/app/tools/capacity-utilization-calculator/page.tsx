@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/capacity-utilization-calculator"),
-  title: "Capacity Utilization Calculator",
+  title: "Capacity Utilization Calculator for Rental Fleets",
   description:
-    "Estimate what percentage of your boats, bikes, rooms, or gear inventory's available time is actually booked, from your own unit count and hours.",
+    "Free capacity utilization calculator: estimate what share of your boats, bikes, rooms, or gear inventory's available time is actually booked.",
 };
 
 export default function CapacityUtilizationCalculatorPage() {

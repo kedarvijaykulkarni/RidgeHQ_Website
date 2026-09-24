@@ -10,9 +10,9 @@ import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSo
 
 export const metadata = {
   ...pageSeo("/tools/no-show-cost-calculator"),
-  title: "No-Show Cost Calculator",
+  title: "No-Show Cost Calculator for Activity Businesses",
   description:
-    "Estimate what no-shows cost your activity business per year, from your own booking volume, average booking value, and no-show rate.",
+    "Free no-show cost calculator: estimate what no-shows cost your activity business per year, from your own booking volume and no-show rate.",
 };
 
 export default function NoShowCostCalculatorPage() {

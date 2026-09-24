@@ -26,6 +26,8 @@ export interface Comparison {
   categoryLabel: string;
   heroHeadline: string;
   heroTagline: string;
+  /** Meta description (the heroTagline is too long for search results). Keep within 160 characters. */
+  metaDescription: string;
   lastUpdated: string; // ISO date — comparison content ages, date it
   categoryStrengths: string; // honest: what this category does well
   ridgehqLimitations: string; // honest: where RidgeHQ currently falls short
@@ -45,6 +47,8 @@ export const comparisons: Comparison[] = [
     heroHeadline: "An AI copilot built into the operational core, not bolted onto a booking widget.",
     heroTagline:
       "Booking platforms in this category range from a $0/month, commission-only model to a $49–$295/month flat fee, and a few charge 0% on direct bookings too — pricing alone isn't a reliable differentiator. What's more consistently different is how deep automation goes: RidgeHQ's AI copilot and connected scheduling operate on the same live data your bookings, staff, and gear already use, rather than a chatbot layered on top of a separate booking tool.",
+    metaDescription:
+      "RidgeHQ vs. commission-based booking platforms: a flat subscription with 0% commission on direct bookings, and an AI copilot built into scheduling.",
     lastUpdated: "2026-09-12",
     categoryStrengths:
       "Commission-based platforms are genuinely easier to start with — no upfront subscription cost in many cases, and often broader out-of-the-box marketplace/OTA distribution than a smaller, newer platform can offer. For a low-volume or seasonal operation, a low-fixed-cost model can be the cheaper option in absolute terms.",
@@ -84,6 +88,8 @@ export const comparisons: Comparison[] = [
     heroHeadline: "The tools most activity businesses actually run on today.",
     heroTagline:
       "Most activity businesses aren't switching from a competing platform — they're switching from a booking widget, a spreadsheet, a group chat, and a whiteboard, each updated by hand. This comparison is about that gap, not a specific vendor.",
+    metaDescription:
+      "RidgeHQ vs. spreadsheets, WhatsApp, and paper: where a booking widget, group chat, and whiteboard updated by hand break down, and what connecting them changes.",
     lastUpdated: "2026-09-12",
     categoryStrengths:
       "Spreadsheets and chat tools are free, familiar, and infinitely flexible — there's no subscription, no learning curve past what your team already knows, and no risk of a vendor going away. For a very small, low-volume operation, this can genuinely be enough.",

@@ -20,6 +20,12 @@ export interface Vertical {
   slug: string;
   /** ISO date — bump when this vertical's content is meaningfully updated. Used as the sitemap <lastmod>. */
   lastUpdated: string;
+  /** The buyer search phrase this page targets (from Search Console queries). Shown as the hero eyebrow. */
+  searchKeyword: string;
+  /** Page <title>, leading with searchKeyword. The site template appends " | RidgeHQ App". */
+  seoTitle: string;
+  /** Meta description. Must contain searchKeyword and stay within 160 characters. */
+  metaDescription: string;
   heroHeadline: string;
   heroDescription: string;
   painPoint: string;
@@ -43,7 +49,10 @@ export const verticals: Vertical[] = [
     id: 'dive-centers',
     name: 'Dive Centers',
     slug: 'dive-centers',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Dive center software',
+    seoTitle: 'Dive Center Software: Bookings, Boats & Waivers',
+    metaDescription: 'Dive center software that runs bookings, boat manifests, kit sizing, and digital waivers from one schedule, with 0% commission on direct bookings.',
     heroHeadline: 'From first click to final dive, on one system.',
     heroDescription: 'Generic booking tools do not understand boats, two-tank days, kit prep, or per-diver medicals. RidgeHQ puts dive-specific rosters, waivers, payments, and multi-channel sales in one place.',
     heroProofPoints: [
@@ -117,6 +126,7 @@ export const verticals: Vertical[] = [
       'Tide windows, visibility, and water temperature for each site',
     ],
     faqs: [
+      { question: 'What does RidgeHQ replace as dive center software?', answer: 'Usually the booking widget, the whiteboard boat plan, the kit-sizing folder, and the course-progress spreadsheet. Bookings, boat manifests, rental kit, waivers, and payments run from one schedule, so a course that sells online lands on the manifest without being re-typed.' },
       { question: 'Does it replace my PADI or SSI portal?', answer: 'No. RidgeHQ is your operational system of record — it tracks certification level and course completion for your manifests and hands you the record you need, while the certification itself is still issued through your agency.' },
       { question: 'Can it run more than one boat?', answer: 'Yes. Each vessel has its own manifest, capacity, crew roster, and departure time, and the day plan shows them side by side.' },
       { question: 'How do the digital waivers work?', answer: 'A waiver goes out with every booking and is signed per participant with a typed e-signature. You can add conditional medical questions that only expand when a diver answers yes. It is part of the platform, not a paid extra.' },
@@ -131,7 +141,10 @@ export const verticals: Vertical[] = [
     id: 'surf-schools',
     name: 'Surf Schools',
     slug: 'surf-schools',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Surf school software',
+    seoTitle: 'Surf School Software: Lessons, Rentals & Camps',
+    metaDescription: 'Surf school software for private lessons, group classes, and camps, with board and wetsuit rental, student progression, and forecast-aware rescheduling.',
     heroHeadline: 'Fill more classes and keep the whole day in sync.',
     heroDescription: 'Stop juggling spreadsheets, group chats, and last-minute changes. RidgeHQ brings bookings, tide-aware scheduling, instructor planning, payments, and partner sales into one live system.',
     heroProofPoints: [
@@ -205,6 +218,7 @@ export const verticals: Vertical[] = [
       'Multi-day camp blocks that span several sessions',
     ],
     faqs: [
+      { question: 'What makes RidgeHQ surf school software rather than a generic booking tool?', answer: 'It is built around a surf day. Each session carries the tide and swell context for your break, private lessons, group classes, and camps share one calendar, boards and wetsuits come from the same rental fleet, and a whole group can be rescheduled in one step when conditions turn.' },
       { question: 'How does it handle a bad forecast?', answer: 'Each session carries the tide and swell context for your spot. When conditions turn, you bulk-reschedule the affected sessions or a whole day and every participant is notified in one step.' },
       { question: 'Can it manage private and group lessons together?', answer: 'Yes. The calendar handles private sessions, open group classes, and multi-day camps at once, each with its own capacity and instructor ratio.' },
       { question: 'Does it track student progression?', answer: 'Yes. Progress is logged per student against your progression steps, so the next instructor picks up exactly where the last one left off.' },
@@ -219,7 +233,10 @@ export const verticals: Vertical[] = [
     id: 'kitesurf-schools',
     name: 'Kitesurf Schools',
     slug: 'kitesurf-schools',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Kitesurf school booking system',
+    seoTitle: 'Kitesurf School Booking System & Lesson Software',
+    metaDescription: 'Kitesurf school booking system: students book lessons online, sessions carry the wind forecast, and kites and harnesses are reserved by weight.',
     heroHeadline: 'Sell more sessions, reschedule fast when the wind shifts.',
     heroDescription: 'Generic tools do not get wind windows, last-minute reshuffles, or multi-session courses. RidgeHQ gives you multichannel sales, bulk messaging, quick scheduling, and forms that adapt.',
     heroProofPoints: [
@@ -293,6 +310,7 @@ export const verticals: Vertical[] = [
       'Pre-paid instruction hours tracked per student',
     ],
     faqs: [
+      { question: 'Can students book kitesurf lessons online?', answer: 'Yes. Lesson blocks, courses, and taster sessions sell through your online booking widget with a deposit or full payment, and land on the same schedule as desk bookings. Each session carries the forecast wind for your spot, and confirming it reserves a kite and harness sized to each student\'s weight.' },
       { question: 'Can we manage boat-assisted lessons?', answer: 'Yes. Safety-boat availability is scheduled alongside your instructors, so a lesson that needs the boat cannot confirm when the boat is already out.' },
       { question: 'Does it track student levels?', answer: 'Yes. Progress is logged against IKO or VDWS progression steps, so the next instructor knows exactly where to pick up.' },
       { question: 'How does it handle the wind call?', answer: 'Sessions carry the forecast wind speed and direction for your spot and stay flagged wind-dependent until you confirm. Confirming or postponing a session messages every student in one step.' },
@@ -307,7 +325,10 @@ export const verticals: Vertical[] = [
     id: 'sailing-schools',
     name: 'Sailing Schools',
     slug: 'sailing-schools',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Sailing school software',
+    seoTitle: 'Sailing School Software: Courses, Fleet & Charters',
+    metaDescription: 'Sailing school software that books multi-day courses and charters against one fleet, tracks vessel inspection dates, and schedules only cleared skippers.',
     heroHeadline: 'From enrolment to the last tack, one system.',
     heroDescription: 'Generic booking tools struggle with summer courses, private coaching, and fleet charter at once. RidgeHQ keeps every service in one place so you sell across channels and keep sessions on time.',
     heroProofPoints: [
@@ -381,6 +402,7 @@ export const verticals: Vertical[] = [
       'Multi-day course blocks spanning consecutive days',
     ],
     faqs: [
+      { question: 'What does sailing school software need to handle that a booking tool doesn\'t?', answer: 'The fleet. RidgeHQ keeps each vessel\'s capacity, inspection and licence dates, and cleared crew inside the same calendar as your courses, so a multi-day course holds the boat and the skipper together, and a charter can never be booked onto the same boat for overlapping dates.' },
       { question: 'Can we handle bareboat charters as well as courses?', answer: 'Yes. Taught courses and bareboat or skippered charters draw from the same fleet availability, so the two can never book the same boat for overlapping dates.' },
       { question: 'How are multi-day courses shown?', answer: 'A multi-day course appears as a single block on the agenda that holds both the vessel and the instructor for the whole run.' },
       { question: 'Does it track vessel compliance?', answer: 'Each vessel records its registration and its inspection, licence, and insurance expiry dates, and is flagged as those dates approach.' },
@@ -395,7 +417,10 @@ export const verticals: Vertical[] = [
     id: 'windsurf-schools',
     name: 'Windsurf Schools',
     slug: 'windsurf-schools',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Windsurf school booking software',
+    seoTitle: 'Windsurf School Booking Software & Rental POS',
+    metaDescription: 'Windsurf school booking software for lessons, fast walk-in board and rig hire, and client storage racks, all from one shared fleet with live status per unit.',
     heroHeadline: 'Run a high-volume watersports centre at full speed.',
     heroDescription: 'Built for busy lesson and rental floors — windsurf, wingfoil, SUP. Sell through more channels, keep one live schedule for the whole team, and run clean check-ins without spreadsheet chaos.',
     heroProofPoints: [
@@ -469,6 +494,7 @@ export const verticals: Vertical[] = [
       'Physical storage rack availability and recurring billing',
     ],
     faqs: [
+      { question: 'Does RidgeHQ work as booking software for a windsurf school and rental centre?', answer: 'Yes. Lessons and walk-in hire share one fleet, so a board committed to a lesson is not offered at the desk. The POS assigns a specific board and rig in a few taps, lessons carry the forecast wind for your spot, and client storage racks are billed on a recurring schedule.' },
       { question: 'Can we manage long-term gear storage for clients?', answer: 'Yes. Storage racks are tracked per client and billed on a recurring schedule, alongside the rest of the operation.' },
       { question: 'Does it work for fast walk-in rentals?', answer: 'Yes. The POS is built for rapid walk-in processing — assign a specific board and rig, start the return clock, and take payment in a few taps.' },
       { question: 'Can it stop a lesson and a walk-in taking the same board?', answer: 'Yes. The fleet is shared, so a unit committed to a lesson is removed from the walk-in pool and the reverse.' },
@@ -483,7 +509,10 @@ export const verticals: Vertical[] = [
     id: 'outdoor-whitewater',
     name: 'Outdoor & Whitewater',
     slug: 'outdoor-whitewater',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Rafting booking software',
+    seoTitle: 'Rafting Booking Software for Outdoor Centres',
+    metaDescription: 'Rafting booking software where a group\'s headcount sizes the rafts, guides, and shuttle seats together, and every participant signs a digital waiver first.',
     heroHeadline: 'Run your outdoor centre in flow.',
     heroDescription: 'Rafting, canyoning, and guided kayak trips move fast, sell in groups, and depend on clean logistics. RidgeHQ keeps website sales, POS, agents, payments, and participant forms connected.',
     heroProofPoints: [
@@ -557,6 +586,7 @@ export const verticals: Vertical[] = [
       'Waiver completion for every participant before departure',
     ],
     faqs: [
+      { question: 'How does RidgeHQ work as rafting booking software?', answer: 'A group books once and the headcount reserves the rafts, guides at your guide-to-client ratio, and shuttle seats together. Waivers go out automatically with the booking and are signed per participant, and guides are assigned only to the river sections they are qualified for.' },
       { question: 'How are digital waivers handled?', answer: 'Waivers are sent automatically when a booking is made and signed per participant. Their status is tracked on the booking, so the desk can see who still needs to sign before the trip.' },
       { question: 'Can we manage shuttle transport?', answer: 'Yes. Attach a vehicle to a trip and its seat capacity is enforced, so you cannot commit more passengers to a shuttle run than it can carry.' },
       { question: 'Does it handle large corporate groups?', answer: 'Yes. A group books once and the system sizes the rafts, guides, and shuttle seats from the headcount, keeping your guide-to-client ratio.' },
@@ -571,7 +601,10 @@ export const verticals: Vertical[] = [
     id: 'ski-schools',
     name: 'Ski Schools',
     slug: 'ski-schools',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Ski school software',
+    seoTitle: 'Ski School Software: Bookings, Instructors & Tracking',
+    metaDescription: 'Ski school software that tracks every student\'s level, language, and progress, matches instructors by certification, and handles the morning walk-in rush.',
     heroHeadline: 'Handle peak season from the first call to the last run.',
     heroDescription: 'Generic tools do not handle ski and snowboard lessons, multi-day courses, meeting points, and constant last-minute changes. RidgeHQ brings bookings, scheduling, payments, and admin into one flow.',
     heroProofPoints: [
@@ -645,6 +678,7 @@ export const verticals: Vertical[] = [
       'Student ability level captured before assignment',
     ],
     faqs: [
+      { question: 'Can RidgeHQ track ski school students and instructors?', answer: 'Yes. Every booking carries the student\'s level and language, and a missing level is flagged before anyone is assigned. Instructors are tagged by certification and language, progress and end-of-week awards are logged per student, and reporting breaks bookings and revenue down by instructor, product, or period.' },
       { question: 'Can we filter instructors by language?', answer: 'Yes. Instructors are tagged with languages and certifications, and sessions carry a language, so bookings and instructors are matched on both.' },
       { question: 'Does it handle the morning walk-in rush?', answer: 'Yes. The POS is built for fast booking and assignment, so desk staff can place walk-ins during the rush without leaving the screen.' },
       { question: 'What if a booking is missing the student\'s level?', answer: 'The booking is flagged and the level is requested, so nobody is assigned to a class that does not fit them.' },
@@ -659,7 +693,10 @@ export const verticals: Vertical[] = [
     id: 'dive-resorts',
     name: 'Dive Resorts',
     slug: 'dive-resorts',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Dive resort software',
+    seoTitle: 'Dive Resort Software: Rooms, Dives & One Folio',
+    metaDescription: 'Dive resort software that runs accommodation and the dive schedule on one system, with Stay & Dive packages drawn down per dive and one guest folio.',
     heroHeadline: 'A hotel and a dive centre, running as one.',
     heroDescription: 'RidgeHQ brings website sales, on-site POS, boat operations, guest paperwork, and the daily close into one system — purpose-built for dive operations and flexible for resort stays with add-ons.',
     heroProofPoints: [
@@ -733,6 +770,7 @@ export const verticals: Vertical[] = [
       'Tide, visibility, and water temperature for each site',
     ],
     faqs: [
+      { question: 'Why use dive resort software instead of a hotel system plus a dive tool?', answer: 'Because the two keep disagreeing. In RidgeHQ a Stay & Dive package books the room and credits the dives, each day on the boat draws the package down, and dives, rentals, retail, and the bar tab post to one guest folio that settles on a single invoice at checkout.' },
       { question: 'Can we bill everything to one folio?', answer: 'Yes. Dives, courses, rentals, retail, and the bar tab all post to the guest\'s folio and settle on a single invoice at checkout.' },
       { question: 'How are package dives tracked?', answer: 'A package credits a set number of dives to the guest\'s profile, and each logged dive day draws one down, so the balance is always current.' },
       { question: 'Can day guests dive with resort guests?', answer: 'Yes. Day guests book onto the same boats as resort guests, up to the vessel\'s capacity and crew limits.' },
@@ -747,7 +785,10 @@ export const verticals: Vertical[] = [
     id: 'surf-camps',
     name: 'Surf Camps',
     slug: 'surf-camps',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Surf camp booking software',
+    seoTitle: 'Surf Camp Booking Software: Beds, Lessons & Transfers',
+    metaDescription: 'Surf camp booking software where one package books the bed, the week of lessons, board hire, and the airport transfer, and captures dietary needs.',
     heroHeadline: 'From packages to daily schedules, one flow.',
     heroDescription: 'Beds, meals, daily lessons, and guest prep kept together. RidgeHQ sells week stays with add-ons, collects deposits, captures every guest detail up front, and runs daily rosters without spreadsheets.',
     heroProofPoints: [
@@ -821,6 +862,7 @@ export const verticals: Vertical[] = [
       'Rental board and wetsuit stock reserved for the week',
     ],
     faqs: [
+      { question: 'What should surf camp booking software handle?', answer: 'The whole week, not just the bed. In RidgeHQ one package books the dorm bed or private room, the lessons, board hire, and the arrival transfer, with transfer runs sized to the vehicle\'s seats and dietary needs captured for the kitchen.' },
       { question: 'Can we manage shared dorms?', answer: 'Yes. You can sell and assign by the bed in shared dormitories as well as booking whole private rooms.' },
       { question: 'Can we track dietary requirements?', answer: 'Yes. Dietary and allergy needs are captured on the booking and can be reported per week for the kitchen.' },
       { question: 'How are airport transfers handled?', answer: 'Guests are added to arrival and departure manifests sized against the vehicle\'s seat capacity, so a transfer run is never overbooked.' },
@@ -835,7 +877,10 @@ export const verticals: Vertical[] = [
     id: 'kayak-rental-tours',
     name: 'Kayak Rental & Tours',
     slug: 'kayak-rental-tours',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Kayak rental software',
+    seoTitle: 'Kayak Rental Software for Kayak & Canoe Tours',
+    metaDescription: 'Kayak rental software for kayak and canoe tours and walk-in hire: one boat inventory, guides scheduled at your ratio, and per-participant waivers at the desk.',
     heroHeadline: 'Run your kayak and paddle operation at full speed.',
     heroDescription: 'One booking and operations system for kayak and SUP rentals and guided tours. Availability, payments, customer details, and the daily run stay unified from the front desk to the dock.',
     heroProofPoints: [
@@ -909,6 +954,7 @@ export const verticals: Vertical[] = [
       'Waiver completion for every participant before launch',
     ],
     faqs: [
+      { question: 'Does RidgeHQ work as kayak and canoe tour software, or only for rentals?', answer: 'Both. Guided tours and walk-in hire draw from one boat inventory, so a kayak or canoe held for a tour is not on the rental rack, and each boat type (single, double, or canoe) is its own stock with live availability. Guides are scheduled against the tour headcount at your ratio.' },
       { question: 'Does it prevent double-booking gear?', answer: 'Yes. Boats assigned to a scheduled tour are removed from the walk-in pool for that window, so the same kayak cannot be hired out from under a departure.' },
       { question: 'How are waivers handled for walk-ins?', answer: 'Waivers are signed per participant on a device at the desk, with a typed e-signature. The booking shows who has signed and who is still outstanding.' },
       { question: 'Can it track single and double kayaks separately?', answer: 'Yes. Each is its own stock with live availability, so a tour needing doubles does not draw down your singles.' },
@@ -923,7 +969,10 @@ export const verticals: Vertical[] = [
     id: 'bike-rental-tours',
     name: 'Bike Rental & Tours',
     slug: 'bike-rental-tours',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Bike rental software',
+    seoTitle: 'Bike Rental Software: Fleet, Sizes & Tours',
+    metaDescription: 'Bike rental software that tracks every bike by frame size and service state, reserves a specific bike at booking, and pre-authorises deposits.',
     heroHeadline: 'Run your bike rental shop at full speed.',
     heroDescription: 'Stop managing rentals across paper, chat apps, and spreadsheets. RidgeHQ puts rentals, fleet availability, payments, and staff scheduling on one live calendar — for the shop floor and guided tours.',
     heroProofPoints: [
@@ -997,6 +1046,7 @@ export const verticals: Vertical[] = [
       'Security deposit pre-authorisation and release',
     ],
     faqs: [
+      { question: 'What should bike rental software track?', answer: 'Each bike as its own asset. RidgeHQ records every bike\'s type, frame size, and service history, so a booking reserves a specific frame in the right size and a bike flagged for repair is never offered. Multi-day and seasonal pricing apply automatically at booking.' },
       { question: 'Can we track maintenance per bike?', answer: 'Yes. Service history and safety checks are logged per bike, and flagging one out of service removes it from availability immediately.' },
       { question: 'Does it handle multi-day and seasonal pricing?', answer: 'Yes. Products support multi-day rules, half-days, and seasonal pricing, applied automatically at booking.' },
       { question: 'Can it reserve a specific frame size?', answer: 'Yes. Bookings reserve a specific bike by type and frame size, so the right bike is set aside before the customer arrives.' },
@@ -1011,7 +1061,10 @@ export const verticals: Vertical[] = [
     id: 'boat-rental-courses',
     name: 'Boat Rental & Courses',
     slug: 'boat-rental-courses',
-    lastUpdated: '2026-08-11',
+    lastUpdated: '2026-09-25',
+    searchKeyword: 'Boat rental software',
+    seoTitle: 'Boat Rental Software for Charters & Courses',
+    metaDescription: 'Boat rental software that collects licence and ID before the charter, pre-authorises deposits, and runs charters and courses on one fleet.',
     heroHeadline: 'Run charters and skipper courses at full speed.',
     heroDescription: 'Stop juggling boat availability, course sessions, payments, and paperwork. RidgeHQ keeps charters and training in one place so you fill more dates, avoid double-bookings, and run smoother at the dock.',
     heroProofPoints: [
@@ -1085,6 +1138,7 @@ export const verticals: Vertical[] = [
       'Security deposit pre-authorisation and release',
     ],
     faqs: [
+      { question: 'What does boat rental software need to check before a charter?', answer: 'The skipper and the money. RidgeHQ collects the client\'s licence and ID with the booking for your staff to verify, pre-authorises the security deposit with supported gateways, and holds the specific vessel, so nothing is handed over until the checks clear.' },
       { question: 'Can clients upload documents before arriving?', answer: 'Yes. The client uploads their licence and ID with the booking, and it stays unverified until your staff have checked them.' },
       { question: 'How are security deposits handled?', answer: 'With supported payment gateways, the deposit is pre-authorised at booking and released after the post-charter inspection.' },
       { question: 'Can we run charters and courses on the same boats?', answer: 'Yes. Bareboat, skippered, and instruction bookings draw from the same fleet availability, so the two cannot book a vessel for overlapping dates.' },

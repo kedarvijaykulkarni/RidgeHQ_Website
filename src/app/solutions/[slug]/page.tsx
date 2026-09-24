@@ -60,8 +60,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     ...pageSeo(`/solutions/${vertical.slug}`),
-    title: `${vertical.name} Operations Software`,
-    description: vertical.heroDescription,
+    title: vertical.seoTitle,
+    description: vertical.metaDescription,
   };
 }
 
@@ -99,7 +99,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 items={[{ label: "Built For", href: "/solutions" }, { label: vertical.name }]}
               />
               <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#22D3EE] font-medium">
-                Built for {vertical.name}
+                {vertical.searchKeyword}
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                 {vertical.heroHeadline}

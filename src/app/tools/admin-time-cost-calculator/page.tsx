@@ -10,9 +10,9 @@ import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSo
 
 export const metadata = {
   ...pageSeo("/tools/admin-time-cost-calculator"),
-  title: "Admin Time Cost Calculator",
+  title: "Admin Time Cost Calculator for Activity Businesses",
   description:
-    "Estimate the annual cost of manually re-keying bookings, waivers, and schedules across separate tools, from your own hours and hourly cost.",
+    "Free admin time cost calculator: estimate the annual cost of manually re-keying bookings, waivers, and schedules across separate tools.",
 };
 
 export default function AdminTimeCostCalculatorPage() {

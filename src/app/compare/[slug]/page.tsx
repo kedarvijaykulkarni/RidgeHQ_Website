@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     ...pageSeo(`/compare/${comparison.slug}`),
     title: comparison.title,
-    description: comparison.heroTagline,
+    description: comparison.metaDescription,
   };
 }
 
