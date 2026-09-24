@@ -5,6 +5,8 @@ import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { VideoFrame } from "@/components/marketing/VideoFrame";
 import { CheckCircle2 } from "lucide-react";
 import { pageSeo } from "@/lib/config/seo";
+import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export const metadata = {
   ...pageSeo("/ai-copilot"),
@@ -24,8 +26,16 @@ export default function AICopilotPage() {
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">AI that works inside the operation.</h1>
             <p className="text-xl text-slate-400">
-              The Copilot isn&rsquo;t just a chatbot answering FAQs. It understands your live operational context, capacity, and schedule.
+              RidgeHQ is the operations platform for dive centers, surf schools, and other activity businesses. Its AI Copilot isn&rsquo;t a chatbot answering FAQs &mdash; it reads your live bookings, staff schedule, and capacity, and confirms with you before it changes anything.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <Button size="lg" asChild>
+                <Link href="/book-demo">Book a Demo</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/platform">Explore the Platform</Link>
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>

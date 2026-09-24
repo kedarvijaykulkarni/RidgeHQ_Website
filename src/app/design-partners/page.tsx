@@ -16,11 +16,11 @@ export default function DesignPartnersPage() {
         <Breadcrumbs className="mb-8 justify-center" items={[{ label: "Design Partners" }]} />
         <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium mb-4">
-            Early Access Validation
+            Founding Operator Pilot
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Design Partner Program</h1>
           <p className="text-lg text-slate-400">
-            Help shape the operational workflows that matter most. We are validating fit and packaging with real operators before broad self-service launch.
+            RidgeHQ runs bookings, scheduling, staff, gear, and payments for dive centers, surf schools, and other activity businesses in one system. We&rsquo;re onboarding a small group of operators before the broad launch and working with each one directly &mdash; apply below.
           </p>
         </div>
 
