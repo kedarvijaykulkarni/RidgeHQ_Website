@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
 
 interface CalculatorPageShellProps {
   slug: string;
@@ -72,6 +73,8 @@ export function CalculatorPageShell({
           </div>
         </Container>
       </Section>
+
+      <ToolRelatedSolutions slug={slug} />
 
       <CTASection
         headline={ctaHeadline}

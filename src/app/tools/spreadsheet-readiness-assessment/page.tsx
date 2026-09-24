@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/spreadsheet-readiness-assessment"),
-  title: "Spreadsheet-to-Operations-System Readiness Assessment",
+  title: "Spreadsheet Readiness Assessment for Operators",
   description:
-    "A short, scored quiz on how much manual reconciliation your booking, staff, and gear tools actually require today — and whether a connected system is worth investigating.",
+    "Free spreadsheet readiness assessment: a short, scored quiz on how much manual reconciliation your booking, staff, and gear tools require today.",
 };
 
 export default function ReadinessAssessmentPage() {

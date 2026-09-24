@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/instructor-utilization-calculator"),
-  title: "Instructor Utilization Calculator",
+  title: "Instructor Utilization Calculator for Schools",
   description:
-    "Estimate what percentage of your instructors' or guides' available time is actually booked, from your own staff count and hours.",
+    "Free instructor utilization calculator: estimate what share of your instructors' or guides' available time is actually booked.",
 };
 
 export default function InstructorUtilizationCalculatorPage() {

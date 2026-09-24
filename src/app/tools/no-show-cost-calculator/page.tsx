@@ -6,12 +6,13 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { NoShowCostCalculator } from "@/components/marketing/tools/NoShowCostCalculator";
+import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
 
 export const metadata = {
   ...pageSeo("/tools/no-show-cost-calculator"),
-  title: "No-Show Cost Calculator",
+  title: "No-Show Cost Calculator for Activity Businesses",
   description:
-    "Estimate what no-shows cost your activity business per year, from your own booking volume, average booking value, and no-show rate.",
+    "Free no-show cost calculator: estimate what no-shows cost your activity business per year, from your own booking volume and no-show rate.",
 };
 
 export default function NoShowCostCalculatorPage() {
@@ -65,6 +66,8 @@ export default function NoShowCostCalculatorPage() {
           </div>
         </Container>
       </Section>
+
+      <ToolRelatedSolutions slug="no-show-cost-calculator" />
 
       <CTASection
         headline="See how RidgeHQ handles bookings and reminders"

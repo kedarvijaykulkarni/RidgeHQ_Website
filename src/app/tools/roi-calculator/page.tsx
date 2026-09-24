@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/roi-calculator"),
-  title: "ROI Calculator",
+  title: "ROI Calculator for Activity Businesses",
   description:
-    "Estimate the return on investment of a new operational system, from your own monthly cost and your own estimate of monthly savings or gains.",
+    "Free ROI calculator for activity businesses: estimate the return on a new operational system from your own monthly cost and savings estimate.",
 };
 
 export default function RoiCalculatorPage() {

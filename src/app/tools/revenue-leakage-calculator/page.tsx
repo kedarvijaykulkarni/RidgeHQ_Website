@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/revenue-leakage-calculator"),
-  title: "Revenue Leakage Calculator",
+  title: "Revenue Leakage Calculator for Activity Businesses",
   description:
-    "Estimate what missed charges, unbilled add-ons, and manual pricing errors cost your activity business per year, from your own booking volume and an estimated leakage rate.",
+    "Free revenue leakage calculator: estimate what missed charges, unbilled add-ons, and pricing errors cost your activity business per year.",
 };
 
 export default function RevenueLeakageCalculatorPage() {

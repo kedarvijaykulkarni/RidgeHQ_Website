@@ -13,6 +13,8 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
+import { tools } from "@/lib/config/tools";
+import { comparisons } from "@/lib/config/comparisons";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/bookings.webp",
@@ -58,8 +60,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     ...pageSeo(`/solutions/${vertical.slug}`),
-    title: `${vertical.name} Operations Software`,
-    description: vertical.heroDescription,
+    title: vertical.seoTitle,
+    description: vertical.metaDescription,
   };
 }
 
@@ -73,6 +75,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
 
   const featureImages = FEATURE_IMAGES_BY_SLUG[vertical.slug] ?? DEFAULT_FEATURE_IMAGES;
   const proofImage = PROOF_IMAGE_BY_SLUG[vertical.slug] ?? "/images/product/dash-responsive-desktop.webp";
+  const relatedTools = tools.filter((t) => t.relatedVerticalSlugs.includes(vertical.slug));
 
   return (
     <div className="flex flex-col w-full">
@@ -96,7 +99,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 items={[{ label: "Built For", href: "/solutions" }, { label: vertical.name }]}
               />
               <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#22D3EE] font-medium">
-                Built for {vertical.name}
+                {vertical.searchKeyword}
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                 {vertical.heroHeadline}
@@ -295,6 +298,31 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           </Container>
         </Section>
       )}
+
+      {/* Run the numbers: calculators, pricing, and comparisons */}
+      <Section className="border-t border-white/5">
+        <Container>
+          <div className="text-center mb-8 space-y-2">
+            <h2 className="text-2xl font-bold text-white">Run the numbers for your {vertical.name.toLowerCase()}</h2>
+            <p className="text-slate-400">Free calculators with the formulas shown, plus how RidgeHQ is priced and how it compares.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {relatedTools.map((t) => (
+              <Link key={t.slug} href={`/tools/${t.slug}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors">
+                {t.title}
+              </Link>
+            ))}
+            <Link href="/pricing" className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors">
+              Pricing
+            </Link>
+            {comparisons.map((c) => (
+              <Link key={c.slug} href={`/compare/${c.slug}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors">
+                {c.title}
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* Book a demo */}
       <Section id="book-demo" className="relative overflow-hidden border-t border-white/5 scroll-mt-24">

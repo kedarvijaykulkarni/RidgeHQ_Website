@@ -4,9 +4,9 @@ import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
   ...pageSeo("/tools/cancellation-cost-calculator"),
-  title: "Cancellation Cost Calculator",
+  title: "Cancellation Cost Calculator for Activity Businesses",
   description:
-    "Estimate what late cancellations cost your activity business per year, from your own booking volume, cancellation rate, and how often you manage to rebook the slot.",
+    "Free cancellation cost calculator: estimate what late cancellations cost your activity business per year, after the slots you manage to rebook.",
 };
 
 export default function CancellationCostCalculatorPage() {

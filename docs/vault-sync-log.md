@@ -116,3 +116,15 @@ corresponding write-back (this same pricing-gap flag, phrased for that side).
 
 **Next sync should start from:** the `[2026-09-04]` competitive/positioning ingest and
 anything dated after it in `wiki/index.md` / `wiki/log.md`.
+
+## 2026-09-25 — SEO content + internal-linking pass (push only)
+
+No pull this pass (no vault changes read beyond claim checks). Claims checked against the
+vault before publishing: gear types are tenant-defined (`Modules/Gear.md`), so "kayak and
+canoe" copy is accurate; waivers implemented (`Modules/Bookings.md`: templates,
+requirements, captures). All 7 surfaces walked: product-knowledge, llms.txt and /ai already
+in sync; vertical FAQs, page metadata and sitemap lastmod updated on this branch.
+
+**Pushed to vault:** `wiki/log.md` `[2026-09-25] query` entry. It covers the Search Console
+buyer phrases now targeted, the open question of what "ski school tracking software"
+searchers expect, and the /ai-copilot and /design-partners bounce diagnosis.
