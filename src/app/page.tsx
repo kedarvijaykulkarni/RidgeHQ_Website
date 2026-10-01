@@ -93,9 +93,14 @@ export default function Home() {
                   Powered by Anthropic, OpenAI, or Ollama depending on configuration.
                 </li>
               </ul>
-              <Button variant="outline" asChild className="mt-4 border-[var(--border)] text-[var(--ink)] hover:border-[var(--accent)] bg-[var(--bg-elevated)]">
-                <Link href="/ai-copilot">Learn about the Copilot</Link>
-              </Button>
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <Button variant="outline" asChild className="border-[var(--border)] text-[var(--ink)] hover:border-[var(--accent)] bg-[var(--bg-elevated)]">
+                  <Link href="/ai-copilot">Learn about the Copilot</Link>
+                </Button>
+                <Link href="/docs" className="text-sm text-[var(--accent)] hover:underline">
+                  Prefer Claude or ChatGPT directly? Connect an AI assistant over MCP &rarr;
+                </Link>
+              </div>
             </div>
             <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.webp" alt="RidgeHQ Copilot summarizing what needs attention today" />
           </div>
