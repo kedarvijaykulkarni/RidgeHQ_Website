@@ -93,5 +93,6 @@ export const productKnowledge = {
     designPartners: `${siteUrl}/design-partners`,
     contact: `${siteUrl}/contact`,
     pricing: `${siteUrl}/pricing`,
+    mcpDocs: `${siteUrl}/docs`,
   },
 } as const;

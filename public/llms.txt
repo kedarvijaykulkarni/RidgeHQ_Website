@@ -14,6 +14,7 @@ RidgeHQ App charges 0% platform commission on direct website bookings. Pricing i
 - [Customer & Participant Profiles](https://www.ridgehq.app/platform/customers-participants)
 - [Payments & Reporting](https://www.ridgehq.app/platform/payments)
 - [AI Copilot](https://www.ridgehq.app/ai-copilot): an operational assistant that reads live availability and schedule context; actions are confirmed by staff, not autonomous.
+- [Connect an AI Assistant (MCP)](https://www.ridgehq.app/docs): connect Claude, ChatGPT, or Claude Code to your own RidgeHQ account over MCP. Requires a RidgeHQ account on the Grow or Scale plan — not a public, no-account service.
 
 ## Products
 

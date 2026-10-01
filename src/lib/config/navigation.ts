@@ -81,6 +81,12 @@ const platformGroups: NavGroup[] = [
         description: 'Payment gateways and the tools you already run, connected to the operational core.',
         icon: 'Plug',
       },
+      {
+        title: 'Connect an AI Assistant',
+        href: '/docs',
+        description: 'Run Claude, ChatGPT, or Claude Code against your own RidgeHQ account over MCP.',
+        icon: 'Terminal',
+      },
     ],
   },
 ];
@@ -204,6 +210,7 @@ export const footerNav = {
     { title: 'Free Calculators', href: '/tools' },
     { title: 'Use Cases', href: '/use-cases' },
     { title: 'Compare', href: '/compare' },
+    { title: 'Connect an AI Assistant', href: '/docs' },
   ],
   legal: [
     { title: 'Security', href: '/security' },
