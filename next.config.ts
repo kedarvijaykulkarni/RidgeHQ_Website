@@ -32,6 +32,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/demo", destination: "/book-demo", permanent: true },
       { source: "/llm.txt", destination: "/llms.txt", permanent: true },
+      { source: "/mcp", destination: "/docs", permanent: true },
     ];
   },
   async headers() {

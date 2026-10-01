@@ -148,9 +148,14 @@ export default function AIInfoPage() {
         <Container>
           <h2 className="text-xl font-bold text-white mb-3">Security</h2>
           <p className="text-slate-400 text-sm leading-relaxed max-w-2xl">{k.security.summary}</p>
-          <Link href="/security" className="text-[#22D3EE] hover:underline text-sm inline-block mt-4">
-            Full security page &rarr;
-          </Link>
+          <div className="flex flex-col gap-1 mt-4">
+            <Link href="/security" className="text-[#22D3EE] hover:underline text-sm inline-block">
+              Full security page &rarr;
+            </Link>
+            <Link href="/docs" className="text-[#22D3EE] hover:underline text-sm inline-block">
+              Connect an AI assistant over MCP &rarr;
+            </Link>
+          </div>
         </Container>
       </Section>
 
@@ -187,6 +192,9 @@ export default function AIInfoPage() {
         <Container>
           <h2 className="text-xl font-bold text-white mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/docs" className="text-[#22D3EE] hover:underline">Connect an AI assistant (MCP)</Link>
+            </li>
             <li>
               <Link href="/book-demo" className="text-[#22D3EE] hover:underline">Book a demo</Link>
             </li>

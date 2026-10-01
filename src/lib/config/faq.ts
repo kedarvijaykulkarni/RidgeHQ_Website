@@ -20,4 +20,8 @@ export const generalFaqs: FAQ[] = [
     question: 'Is my business type supported?',
     answer: 'RidgeHQ is designed for operators who manage complex combinations of people, time, and gear. This includes dive centers, surf schools, boat and bike rentals, outdoor tours, and activity resorts.',
   },
+  {
+    question: 'Can I use RidgeHQ from Claude, ChatGPT, or Claude Code?',
+    answer: 'Yes. RidgeHQ supports MCP (Model Context Protocol), so you can connect your own AI assistant to your account and ask for things like today’s brief, bookings, or availability, with everyday scheduling changes confirmed before they run. It requires a RidgeHQ account on the Grow or Scale plan — see /docs for setup.',
+  },
 ];

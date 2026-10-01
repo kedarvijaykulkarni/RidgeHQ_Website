@@ -29,6 +29,7 @@ import {
   Snowflake,
   Ship,
   LifeBuoy,
+  Terminal,
   type LucideIcon,
 } from "lucide-react";
 import { mainNav, type NavItem, type NavLink, type NavGroup } from "@/lib/config/navigation";
@@ -57,6 +58,7 @@ const ICONS: Record<string, LucideIcon> = {
   Snowflake,
   Ship,
   LifeBuoy,
+  Terminal,
 };
 
 function Icon({ name, className }: { name?: string; className?: string }) {

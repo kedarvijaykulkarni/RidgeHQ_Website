@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
@@ -26,6 +27,14 @@ export default function SecurityPage() {
             
             <h2 className="text-2xl font-bold text-white mt-8 mb-4">AI Copilot Safety</h2>
             <p>Our AI Copilot operates within a strict permission boundary. It uses the exact same access constraints as your human team members, and high-risk actions require explicit operator confirmation before execution.</p>
+            <p>
+              The same boundary applies when you connect an outside AI assistant to your account over
+              MCP &mdash; see{" "}
+              <Link href="/docs" className="text-[#22D3EE] hover:underline">
+                Connect an AI assistant
+              </Link>{" "}
+              for how that access is scoped, confirmed, and logged.
+            </p>
           </div>
         </div>
       </Container>
