@@ -52,6 +52,13 @@ export default function PricingPage() {
                 <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" /> Integrated AI Copilot</li>
                 <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" /> Direct founder onboarding and support</li>
               </ul>
+              <p className="text-sm text-slate-400">
+                Want to run RidgeHQ from Claude, ChatGPT, or Claude Code too? See{" "}
+                <Link href="/docs" className="text-[#22D3EE] hover:underline">
+                  how to connect an AI assistant
+                </Link>
+                .
+              </p>
             </div>
             {isPilot ? (
               <Button size="lg" className="w-full" asChild>

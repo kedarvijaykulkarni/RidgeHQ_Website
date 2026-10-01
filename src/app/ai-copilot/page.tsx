@@ -91,9 +91,23 @@ export default function AICopilotPage() {
               </ul>
             </div>
           </div>
+
+          <div className="mt-24 glass-card p-8 md:p-12 grid md:grid-cols-[2fr_1fr] gap-8 items-center">
+            <div className="space-y-3">
+              <h2 className="text-2xl font-bold">Prefer to use it from Claude or ChatGPT directly?</h2>
+              <p className="text-slate-400">
+                The same tools are available over MCP, so you can ask Claude, ChatGPT, or Claude Code
+                to work with your RidgeHQ account from the assistant you already use &mdash; same
+                permissions, same confirmation step, same audit log.
+              </p>
+            </div>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/docs">Connect an AI assistant &rarr;</Link>
+            </Button>
+          </div>
         </Container>
       </Section>
-      
+
       <CTASection headline="Ready to test the Copilot?" description="Join our Design Partner program to help shape AI workflows for activity operations." primaryCtaText="Request Early Access" primaryCtaHref="/design-partners" />
     </div>
   );
