@@ -28,7 +28,7 @@ const pressFaqs = [
   {
     question: "Where can I download the RidgeHQ logo?",
     answer:
-      "Logo files (SVG and PNG, several sizes) are linked on this page under Brand Assets. For additional formats, screenshots, or an interview request, contact press@ridgehq.com.",
+      "Logo files (SVG and PNG, several sizes) are linked on this page under Brand Assets. For additional formats, screenshots, or an interview request, contact social@ridgehq.app.",
   },
   {
     question: "Is RidgeHQ publicly available yet?",
@@ -176,8 +176,8 @@ export default function PressPage() {
             <h2 className="text-2xl font-bold text-white mb-4">Media contact</h2>
             <p className="text-slate-400 leading-relaxed">
               For logos, screenshots, interviews, or product walkthroughs, email{" "}
-              <a href="mailto:press@ridgehq.com" className="text-[#22D3EE] hover:underline">
-                press@ridgehq.com
+              <a href="mailto:social@ridgehq.app" className="text-[#22D3EE] hover:underline">
+                social@ridgehq.app
               </a>{" "}
               or reach out through the{" "}
               <Link href="/contact" className="text-[#22D3EE] hover:underline">
