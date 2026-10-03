@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ['/book-demo', '2026-09-12'],
       ['/design-partners', '2026-09-25'],
       ['/about', '2026-09-02'],
+      ['/press', '2026-10-03'],
       ['/security', '2026-09-05'],
       ['/privacy', '2026-09-05'],
       ['/terms', '2026-09-05'],

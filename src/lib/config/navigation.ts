@@ -205,6 +205,7 @@ export const footerNav = {
   ],
   company: [
     { title: 'About', href: '/about' },
+    { title: 'Press', href: '/press' },
     { title: 'Contact', href: '/contact' },
     { title: 'Design Partners', href: '/design-partners' },
     { title: 'Free Calculators', href: '/tools' },

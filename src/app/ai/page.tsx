@@ -161,6 +161,29 @@ export default function AIInfoPage() {
 
       <Section className="border-t border-white/5">
         <Container>
+          <h2 className="text-xl font-bold text-white mb-3">Company</h2>
+          <p className="text-slate-400 text-sm leading-relaxed max-w-2xl">
+            Founder: {k.company.founder} ({k.company.founderModel}). Headquarters:{" "}
+            {k.company.headquarters}.
+          </p>
+          <div className="flex flex-col gap-1 mt-4">
+            <Link href="/press" className="text-[#22D3EE] hover:underline text-sm inline-block">
+              Press kit &rarr;
+            </Link>
+            <a
+              href={k.company.founderLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#22D3EE] hover:underline text-sm inline-block"
+            >
+              Founder on LinkedIn &rarr;
+            </a>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-white/5">
+        <Container>
           <h2 className="text-xl font-bold text-white mb-6">Frequently asked</h2>
           <dl className="space-y-6 max-w-3xl">
             {k.faqs.map((faq) => (
