@@ -128,3 +128,30 @@ in sync; vertical FAQs, page metadata and sitemap lastmod updated on this branch
 **Pushed to vault:** `wiki/log.md` `[2026-09-25] query` entry. It covers the Search Console
 buyer phrases now targeted, the open question of what "ski school tracking software"
 searchers expect, and the /ai-copilot and /design-partners bounce diagnosis.
+
+## 2026-10-03 — Six new blog drafts published (pull-verification only)
+
+Six AI-generated blog drafts landed in `content/blog/` missing required `pillar`
+frontmatter (build-breaking — `loadBlogPosts()` throws without it) and still flagged
+`draft: true`. Before flipping `draft: false`, checked each post's claims against the
+vault per its own `REVIEW BEFORE PUBLISHING` note and `business-context.md` §2:
+
+- `ai-risk-confirmation-dive-center-operations` — AI permission gating + risk-tiered
+  confirmation is shipped (`Modules/AI-Copilot.md`), but the draft's framing ("every
+  executed action" is reversible) overgeneralized a scoped capability — undo only
+  applies to reversible-by-nature actions (reschedule, assign/unassign, move a rental/
+  accommodation block), not every action. Reworded the frontmatter description and
+  opening paragraph to state the scope; left the rest of the post (which already
+  qualified this correctly) unchanged.
+- `database-level-multi-tenancy-data-security`, `integrated-waiver-system-dive-operations`,
+  `operational-core-dive-center-management`, `order-immutability-credit-note-on-change`,
+  `role-based-permissions-dive-center-operations` — claims matched
+  `business-context.md` §2 and the relevant `Modules/*.md` docs as written; no wording
+  changes needed beyond adding `pillar` and un-drafting.
+
+All 7 AI-discoverability surfaces walked: sitemap/llms.txt/`/ai`/JSON-LD are all derived
+from `visibleBlogPosts` or link to `/blog` generically, so no hand-edit was needed beyond
+bumping `/blog`'s sitemap `lastModified`. Verified with `next build` that all 6 posts
+render, appear in `sitemap.xml`, and carry correct `Article` JSON-LD.
+
+**No push to vault this pass** — nothing new surfaced; all claims already supported.
