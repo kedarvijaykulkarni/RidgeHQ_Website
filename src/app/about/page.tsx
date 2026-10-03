@@ -188,8 +188,15 @@ export default function AboutPage() {
               <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
                 RidgeHQ is being developed around real operational workflows rather than a generic booking-software template. Early operators help us understand where the daily friction really lives — and which problems are worth solving first.
               </p>
+              <p className="text-sm text-slate-500 mt-6">
+                RidgeHQ is built and run by solo founder Kedar Vijay Kulkarni. See the{" "}
+                <Link href="/press" className="text-[#22D3EE] hover:underline">
+                  press kit
+                </Link>{" "}
+                for founder background and brand assets.
+              </p>
             </div>
-            
+
             <h3 className="text-xl font-semibold mb-6 text-center">Join the Design Partner Program</h3>
             <CustomLeadForm 
               title="Work with us"

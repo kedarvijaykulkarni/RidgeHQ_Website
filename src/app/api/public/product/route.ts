@@ -9,6 +9,7 @@ export function GET(request: NextRequest) {
     idealCustomerProfile: productKnowledge.idealCustomerProfile,
     poorFitCustomerProfile: productKnowledge.poorFitCustomerProfile,
     security: productKnowledge.security,
+    company: productKnowledge.company,
     routes: productKnowledge.routes,
   });
 }

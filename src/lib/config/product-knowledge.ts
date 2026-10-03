@@ -80,6 +80,15 @@ export const productKnowledge = {
     description: i.description,
   })),
 
+  /** Hand-maintained — founder/company facts for press and AI-assistant lookups. */
+  company: {
+    founder: "Kedar Vijay Kulkarni",
+    founderModel: "Solo founder, building with AI coding assistants rather than a team",
+    headquarters: "Thane, Mumbai, India",
+    founderLinkedIn: "https://www.linkedin.com/in/kedarvijaykulkarni/",
+    pressKitUrl: `${siteUrl}/press`,
+  },
+
   security: {
     summary:
       "Data encrypted in transit and at rest, role-based access control across systems, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
@@ -94,5 +103,6 @@ export const productKnowledge = {
     contact: `${siteUrl}/contact`,
     pricing: `${siteUrl}/pricing`,
     mcpDocs: `${siteUrl}/docs`,
+    press: `${siteUrl}/press`,
   },
 } as const;

@@ -51,7 +51,19 @@ export default function RootLayout({
                   "https://www.facebook.com/profile.php?id=61593964984170",
                   "https://www.youtube.com/@ridgehq-app",
                   "https://www.reddit.com/user/ridgehq/"
-                ]
+                ],
+                "founder": {
+                  "@id": `${siteUrl}/press#founder`
+                }
+              },
+              {
+                "@type": "Person",
+                "@id": `${siteUrl}/press#founder`,
+                "name": "Kedar Vijay Kulkarni",
+                "jobTitle": "Founder",
+                "worksFor": { "@id": `${siteUrl}/#organization` },
+                "url": "https://www.linkedin.com/in/kedarvijaykulkarni/",
+                "sameAs": ["https://www.linkedin.com/in/kedarvijaykulkarni/"]
               },
               {
                 "@type": "WebSite",

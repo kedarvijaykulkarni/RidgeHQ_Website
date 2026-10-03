@@ -75,6 +75,7 @@ Problem-first guides — organized by operational headache rather than industry 
 ## Company
 
 - [About](https://www.ridgehq.app/about)
+- [Press Kit](https://www.ridgehq.app/press): boilerplate, fact sheet, founder bio, and brand assets. RidgeHQ is built and operated by solo founder Kedar Vijay Kulkarni (https://www.linkedin.com/in/kedarvijaykulkarni/), based in Thane, Mumbai, India.
 - [Security](https://www.ridgehq.app/security)
 - [Pricing](https://www.ridgehq.app/pricing)
 - [Integrations](https://www.ridgehq.app/integrations)

@@ -155,3 +155,20 @@ bumping `/blog`'s sitemap `lastModified`. Verified with `next build` that all 6 
 render, appear in `sitemap.xml`, and carry correct `Article` JSON-LD.
 
 **No push to vault this pass** — nothing new surfaced; all claims already supported.
+
+## 2026-10-03 — Press kit page + founder attribution (push)
+
+Added `/press` (boilerplate, fact sheet, founder bio, brand assets, media contact) and
+founder (Kedar Vijay Kulkarni, LinkedIn) attribution to the Organization JSON-LD
+(`layout.tsx`), `/ai` page, `product-knowledge.ts`'s new `company` field, the public
+`/api/public/product` endpoint, `llms.txt`, and `/about`. All facts sourced from
+`business-context.md` §"Founder model" (solo founder, Thane/Mumbai, AI-assisted
+development) — no new facts invented. `diveops.ai/press` (a competitor's press page)
+was used only as structural inspiration for section layout, per the standing
+no-competitor-copy rule — no text or stats were copied, and no competitor is named on
+the site. Updated `sitemap.ts` (`/press` static route) and `navigation.ts` footer.
+
+**Pushed to vault:** `wiki/log.md` entry noting the site now has a public press kit at
+`ridgehq.app/press` with founder attribution, in case that changes how founder-identity
+questions should be answered elsewhere (e.g. if the founder later wants to stay
+pseudonymous for a specific channel, this page would need to be reconsidered).
