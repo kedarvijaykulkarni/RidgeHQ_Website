@@ -13,6 +13,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
+import { verticals } from "@/lib/config/verticals";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/dash-responsive-desktop.webp",
@@ -65,6 +66,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
   const featureImages = FEATURE_IMAGES_BY_SLUG[capability.slug] ?? DEFAULT_FEATURE_IMAGES;
   const proofImage = PROOF_IMAGE_BY_SLUG[capability.slug] ?? "/images/product/dash-responsive-desktop.webp";
+  const relatedVerticals = verticals.filter((v) => v.relatedPlatformSlugs.includes(capability.slug));
 
   return (
     <div className="flex flex-col w-full">
@@ -249,6 +251,34 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
                     {u.title}
                   </Link>
                 ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* Businesses that use this */}
+      {relatedVerticals.length > 0 && (
+        <Section className="border-t border-white/5">
+          <Container>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white">Businesses that run on this</h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              {relatedVerticals.map((v) => (
+                <Link
+                  key={v.slug}
+                  href={`/solutions/${v.slug}`}
+                  className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                >
+                  {v.name}
+                </Link>
+              ))}
+              <Link
+                href="/pricing"
+                className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+              >
+                Pricing
+              </Link>
             </div>
           </Container>
         </Section>

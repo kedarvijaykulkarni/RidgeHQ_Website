@@ -15,6 +15,7 @@ import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
 import { tools } from "@/lib/config/tools";
 import { comparisons } from "@/lib/config/comparisons";
+import { platformCapabilities } from "@/lib/config/platform";
 
 const DEFAULT_FEATURE_IMAGES = [
   "/images/product/bookings.webp",
@@ -76,6 +77,9 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
   const featureImages = FEATURE_IMAGES_BY_SLUG[vertical.slug] ?? DEFAULT_FEATURE_IMAGES;
   const proofImage = PROOF_IMAGE_BY_SLUG[vertical.slug] ?? "/images/product/dash-responsive-desktop.webp";
   const relatedTools = tools.filter((t) => t.relatedVerticalSlugs.includes(vertical.slug));
+  const relatedCapabilities = platformCapabilities.filter((c) =>
+    vertical.relatedPlatformSlugs.includes(c.slug)
+  );
 
   return (
     <div className="flex flex-col w-full">
@@ -271,6 +275,28 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               <p className="text-ink-secondary max-w-2xl mx-auto">How RidgeHQ handles {vertical.name.toLowerCase()} edge cases.</p>
             </div>
             <FAQAccordion items={vertical.faqs} />
+          </Container>
+        </Section>
+      )}
+
+      {/* Related platform capabilities */}
+      {relatedCapabilities.length > 0 && (
+        <Section className="border-t border-white/5">
+          <Container>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-white">Platform capabilities behind this</h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              {relatedCapabilities.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/platform/${c.slug}`}
+                  className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                >
+                  {c.title}
+                </Link>
+              ))}
+            </div>
           </Container>
         </Section>
       )}
