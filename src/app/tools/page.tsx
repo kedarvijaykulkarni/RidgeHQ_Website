@@ -25,7 +25,7 @@ export default function ToolsPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
               Free calculators for activity businesses.
             </h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               Educational tools with the formulas exposed and every input editable — these estimate the
               cost of a problem, they don&rsquo;t claim a guaranteed RidgeHQ saving.
             </p>
@@ -40,11 +40,11 @@ export default function ToolsPage() {
               <Link
                 key={tool.slug}
                 href={`/tools/${tool.slug}`}
-                className="glass-card group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-[#22D3EE]/40"
+                className="glass-card group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-accent/40"
               >
                 <h2 className="text-xl font-bold text-white mb-2">{tool.title}</h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">{tool.description}</p>
-                <span className="inline-flex items-center gap-1 text-sm text-[#22D3EE]">
+                <p className="text-ink-secondary text-sm leading-relaxed mb-4">{tool.description}</p>
+                <span className="inline-flex items-center gap-1 text-sm text-accent">
                   Open calculator <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>

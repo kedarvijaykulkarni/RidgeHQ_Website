@@ -27,7 +27,7 @@ export default function UseCasesIndexPage() {
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
               Solve the specific problem, not just the industry
             </h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               These pages start from an operational headache — not a business type — and walk
               through why it happens, what it costs to leave unmanaged, and how RidgeHQ addresses
               it (including when it may not be the right fit).
@@ -46,8 +46,8 @@ export default function UseCasesIndexPage() {
                 className="glass-card p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors group"
               >
                 <h2 className="text-2xl font-bold text-white mb-3">{useCase.title}</h2>
-                <p className="text-slate-400 leading-relaxed mb-4">{useCase.heroTagline}</p>
-                <span className="inline-flex items-center gap-1 text-[#22D3EE] text-sm font-medium">
+                <p className="text-ink-secondary leading-relaxed mb-4">{useCase.heroTagline}</p>
+                <span className="inline-flex items-center gap-1 text-accent text-sm font-medium">
                   Read more
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>

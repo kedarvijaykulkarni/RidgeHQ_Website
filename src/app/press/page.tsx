@@ -59,32 +59,32 @@ export default function PressPage() {
       <Section className="pt-24 pb-12">
         <Container className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Press" }]} />
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium mb-8 mt-6">
+          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium mb-8 mt-6">
             Press Kit
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             RidgeHQ press &amp; media resources
           </h1>
-          <p className="text-xl text-slate-400 leading-relaxed">
+          <p className="text-xl text-ink-secondary leading-relaxed">
             Boilerplate copy, a fact sheet, founder background, and brand assets for
             journalists and partners writing about RidgeHQ.
           </p>
         </Container>
       </Section>
 
-      <Section className="bg-slate-900/30">
+      <Section className="bg-bg-elevated/30">
         <Container className="max-w-3xl space-y-12">
           <div>
             <h2 className="text-2xl font-bold text-white mb-4">Boilerplate</h2>
-            <p className="text-sm uppercase tracking-widest text-slate-500 mb-2">Short</p>
-            <p className="text-slate-400 leading-relaxed mb-6">
+            <p className="text-sm uppercase tracking-widest text-ink-tertiary mb-2">Short</p>
+            <p className="text-ink-secondary leading-relaxed mb-6">
               RidgeHQ is an activity business operating system that connects bookings,
               scheduling, staff, resources, and payments into one live platform for dive
               centers, surf schools, ski schools, and other activity operators. It is built
               and run by a solo founder using AI-assisted development.
             </p>
-            <p className="text-sm uppercase tracking-widest text-slate-500 mb-2">Long</p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-sm uppercase tracking-widest text-ink-tertiary mb-2">Long</p>
+            <p className="text-ink-secondary leading-relaxed">
               Activity businesses — dive centers, surf and ski schools, outdoor and rental
               operators — typically run on a patchwork of a booking widget, a spreadsheet,
               a messaging app, and a whiteboard. RidgeHQ replaces that patchwork with one
@@ -114,8 +114,8 @@ export default function PressPage() {
                 ["Commission on direct bookings", "0%"],
               ].map(([label, value]) => (
                 <div key={label} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 py-4">
-                  <dt className="text-sm font-medium text-slate-500 sm:w-56 shrink-0">{label}</dt>
-                  <dd className="text-slate-300">{value}</dd>
+                  <dt className="text-sm font-medium text-ink-tertiary sm:w-56 shrink-0">{label}</dt>
+                  <dd className="text-ink-secondary">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -123,13 +123,13 @@ export default function PressPage() {
 
           <div>
             <h2 className="text-2xl font-bold text-white mb-4">Founder</h2>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-ink-secondary leading-relaxed">
               RidgeHQ is built and operated by{" "}
               <strong className="text-white">Kedar Vijay Kulkarni</strong>, a software
               engineer with 20+ years of experience based in Thane, Mumbai, India. Kedar
               builds and ships RidgeHQ as a solo founder, using AI coding assistants
               rather than a team, and works directly with early operators through the{" "}
-              <Link href="/design-partners" className="text-[#22D3EE] hover:underline">
+              <Link href="/design-partners" className="text-accent hover:underline">
                 Design Partner Program
               </Link>
               .
@@ -139,7 +139,7 @@ export default function PressPage() {
                 href="https://www.linkedin.com/in/kedarvijaykulkarni/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#22D3EE] hover:underline"
+                className="text-accent hover:underline"
               >
                 Connect with Kedar on LinkedIn →
               </a>
@@ -148,12 +148,12 @@ export default function PressPage() {
 
           <div>
             <h2 className="text-2xl font-bold text-white mb-4">Brand assets</h2>
-            <p className="text-slate-400 leading-relaxed mb-6">
+            <p className="text-ink-secondary leading-relaxed mb-6">
               The product name is written as one word, <strong className="text-white">RidgeHQ</strong>{" "}
               (capital R and H). Please don&apos;t alter the logo&apos;s colors or
               proportions.
             </p>
-            <div className="flex flex-wrap items-center gap-6 bg-slate-950/50 border border-white/5 rounded-xl p-6">
+            <div className="flex flex-wrap items-center gap-6 bg-bg-elevated/50 border border-white/5 rounded-xl p-6">
               <Image
                 src="/images/logo/ridgehq-logo-512x512.png"
                 alt="RidgeHQ logo"
@@ -162,10 +162,10 @@ export default function PressPage() {
                 className="rounded-lg"
               />
               <div className="flex flex-col gap-2 text-sm">
-                <a href="/images/logo/RidgeHQ-logo-responsive.svg" download className="text-[#22D3EE] hover:underline">
+                <a href="/images/logo/RidgeHQ-logo-responsive.svg" download className="text-accent hover:underline">
                   Download logo (SVG)
                 </a>
-                <a href="/images/logo/ridgehq-logo-512x512.png" download className="text-[#22D3EE] hover:underline">
+                <a href="/images/logo/ridgehq-logo-512x512.png" download className="text-accent hover:underline">
                   Download logo (PNG, 512×512)
                 </a>
               </div>
@@ -174,13 +174,13 @@ export default function PressPage() {
 
           <div>
             <h2 className="text-2xl font-bold text-white mb-4">Media contact</h2>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-ink-secondary leading-relaxed">
               For logos, screenshots, interviews, or product walkthroughs, email{" "}
-              <a href="mailto:social@ridgehq.app" className="text-[#22D3EE] hover:underline">
+              <a href="mailto:social@ridgehq.app" className="text-accent hover:underline">
                 social@ridgehq.app
               </a>{" "}
               or reach out through the{" "}
-              <Link href="/contact" className="text-[#22D3EE] hover:underline">
+              <Link href="/contact" className="text-accent hover:underline">
                 contact page
               </Link>
               .

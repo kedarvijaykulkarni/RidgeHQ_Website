@@ -15,11 +15,11 @@ export default function DesignPartnersPage() {
       <Container>
         <Breadcrumbs className="mb-8 justify-center" items={[{ label: "Design Partners" }]} />
         <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium mb-4">
+          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium mb-4">
             Founding Operator Pilot
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Design Partner Program</h1>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-ink-secondary">
             RidgeHQ runs bookings, scheduling, staff, gear, and payments for dive centers, surf schools, and other activity businesses in one system. We&rsquo;re onboarding a small group of operators before the broad launch and working with each one directly &mdash; apply below.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function DesignPartnersPage() {
         <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-12 mb-16">
           <div className="space-y-4">
             <h3 className="text-xl font-bold">What to expect</h3>
-            <ul className="space-y-3 text-slate-400">
+            <ul className="space-y-3 text-ink-secondary">
               <li>• Direct access to the founding team</li>
               <li>• Hands-on setup and data migration help</li>
               <li>• Priority feature requests for your workflows</li>
@@ -36,7 +36,7 @@ export default function DesignPartnersPage() {
           </div>
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Who we&rsquo;re looking for</h3>
-            <ul className="space-y-3 text-slate-400">
+            <ul className="space-y-3 text-ink-secondary">
               <li>• Operators with complex scheduling/resource needs</li>
               <li>• Willing to provide structured, honest feedback</li>
               <li>• Ready to test new AI Copilot workflows safely</li>

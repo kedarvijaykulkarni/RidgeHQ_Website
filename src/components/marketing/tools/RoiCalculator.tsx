@@ -15,7 +15,7 @@ function formatPercent(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#22D3EE]";
+  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function RoiCalculator() {
   const [monthlyCost, setMonthlyCost] = React.useState(300);
@@ -35,7 +35,7 @@ export function RoiCalculator() {
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
-            <label htmlFor="roi-monthly-cost" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="roi-monthly-cost" className="block text-sm font-medium text-ink-secondary mb-2">
               Monthly cost of the system/process being evaluated (USD)
             </label>
             <input
@@ -48,7 +48,7 @@ export function RoiCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="roi-monthly-gains" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="roi-monthly-gains" className="block text-sm font-medium text-ink-secondary mb-2">
               Your own estimate of monthly savings or gains (USD) &mdash; e.g. from the calculators above
             </label>
             <input
@@ -67,14 +67,14 @@ export function RoiCalculator() {
           aria-live="polite"
         >
           <div>
-            <p className="text-sm text-slate-400 mb-1">Net value per month</p>
+            <p className="text-sm text-ink-secondary mb-1">Net value per month</p>
             <p className="text-3xl font-bold text-white">{formatCurrency(netMonthlyValue)}</p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-1">Annual ROI</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">{formatPercent(annualRoiPercent)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Annual ROI</p>
+            <p className="text-4xl font-bold text-accent">{formatPercent(annualRoiPercent)}</p>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-ink-tertiary leading-relaxed">
             Formula: ROI% = (annual gains &minus; annual cost) &divide; annual cost &times; 100. The
             monthly-gains figure is your own estimate — plug in a number from the No-Show, Admin Time,
             Cancellation, or Revenue Leakage calculators above, not a RidgeHQ-guaranteed saving.

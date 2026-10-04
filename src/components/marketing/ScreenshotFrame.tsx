@@ -25,17 +25,17 @@ export function ScreenshotFrame({ src, alt, priority = false, sizes = "column", 
     sizes === "column" ? SIZES_COLUMN : sizes === "full" ? SIZES_FULL : sizes
 
   return (
-    <div className={cn("relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900/50 backdrop-blur-sm", className)} {...props}>
+    <div className={cn("relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-bg-elevated/50 backdrop-blur-sm", className)} {...props}>
       {/* Fake Browser/App Header */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-slate-950/50">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-bg-elevated/50">
         <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-border"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-border"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-border"></div>
         </div>
       </div>
       {/* Content */}
-      <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950">
+      <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-bg-elevated">
         <Image
           src={src}
           alt={alt}

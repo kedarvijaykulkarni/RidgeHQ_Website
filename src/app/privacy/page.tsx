@@ -116,18 +116,18 @@ export default function PrivacyPage() {
         <div className="max-w-3xl mx-auto space-y-8">
           <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
-          <p className="mt-2 text-sm text-slate-400">Last updated: July 2026</p>
+          <p className="mt-2 text-sm text-ink-secondary">Last updated: July 2026</p>
           <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
             This policy is written to reflect how RidgeHQ actually collects and uses data during our
             design partner and early access phase. It should still be reviewed by qualified legal counsel
             before general availability.
           </p>
           
-          <div className="mt-8 flex flex-col gap-8 text-slate-300">
+          <div className="mt-8 flex flex-col gap-8 text-ink-secondary">
             {sections.map((section) => (
               <div key={section.heading}>
                 <h2 className="text-2xl font-bold text-white mb-4">{section.heading}</h2>
-                <div className="flex flex-col gap-4 text-slate-400">
+                <div className="flex flex-col gap-4 text-ink-secondary">
                   {section.body.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}

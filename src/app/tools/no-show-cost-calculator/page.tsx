@@ -34,7 +34,7 @@ export default function NoShowCostCalculatorPage() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               No-Show Cost Calculator
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-ink-secondary leading-relaxed">
               A booking that no-shows still held a seat, a slot, an instructor, or a boat spot that
               someone else could have taken. Enter your own numbers below to see what that adds up to
               over a year.
@@ -51,7 +51,7 @@ export default function NoShowCostCalculatorPage() {
 
       <Section className="border-t border-white/5">
         <Container>
-          <div className="max-w-3xl space-y-4 text-slate-400 text-sm leading-relaxed">
+          <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
             <h2 className="text-xl font-bold text-white">Why this happens</h2>
             <p>
               No-shows are more common when there is friction between booking and arrival — no deposit,
@@ -80,8 +80,8 @@ export default function NoShowCostCalculatorPage() {
 
       <Section className="pt-0 pb-16">
         <Container>
-          <p className="text-center text-sm text-slate-500">
-            <Link href="/tools" className="text-[#22D3EE] hover:underline">
+          <p className="text-center text-sm text-ink-tertiary">
+            <Link href="/tools" className="text-accent hover:underline">
               See all calculators &rarr;
             </Link>
           </p>

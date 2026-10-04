@@ -11,7 +11,7 @@ function formatCurrency(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#22D3EE]";
+  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function CacLtvCalculator() {
   const [customerAcquisitionCost, setCustomerAcquisitionCost] = React.useState(80);
@@ -40,7 +40,7 @@ export function CacLtvCalculator() {
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
-            <label htmlFor="cl-cac" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="cl-cac" className="block text-sm font-medium text-ink-secondary mb-2">
               Customer acquisition cost (USD)
             </label>
             <input
@@ -53,7 +53,7 @@ export function CacLtvCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="cl-avg-order" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="cl-avg-order" className="block text-sm font-medium text-ink-secondary mb-2">
               Average order/booking value (USD)
             </label>
             <input
@@ -66,7 +66,7 @@ export function CacLtvCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="cl-orders-per-year" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="cl-orders-per-year" className="block text-sm font-medium text-ink-secondary mb-2">
               Orders/bookings per customer per year
             </label>
             <input
@@ -79,7 +79,7 @@ export function CacLtvCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="cl-lifespan" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="cl-lifespan" className="block text-sm font-medium text-ink-secondary mb-2">
               Average customer lifespan (years)
             </label>
             <input
@@ -93,7 +93,7 @@ export function CacLtvCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="cl-margin" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="cl-margin" className="block text-sm font-medium text-ink-secondary mb-2">
               Gross margin (%)
             </label>
             <input
@@ -113,16 +113,16 @@ export function CacLtvCalculator() {
           aria-live="polite"
         >
           <div>
-            <p className="text-sm text-slate-400 mb-1">Estimated customer lifetime value</p>
+            <p className="text-sm text-ink-secondary mb-1">Estimated customer lifetime value</p>
             <p className="text-3xl font-bold text-white">{formatCurrency(lifetimeValue)}</p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-1">LTV : CAC ratio</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">
+            <p className="text-sm text-ink-secondary mb-1">LTV : CAC ratio</p>
+            <p className="text-4xl font-bold text-accent">
               {ratio === null ? "Unbounded (zero cost)" : `${ratio.toFixed(1)}:1`}
             </p>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-ink-tertiary leading-relaxed">
             Formula: LTV = average order value &times; orders/year &times; lifespan &times; gross margin.
             A commonly cited healthy benchmark is 3:1 or higher — a generic subscription-business
             heuristic, not a RidgeHQ claim.

@@ -22,7 +22,7 @@ export default function IntegrationsPage() {
           <Breadcrumbs className="mb-8" items={[{ label: "Integrations" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Connected to your ecosystem.</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               RidgeHQ is designed to be your operational center, integrating with the payment gateways and certification authorities you already use.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function IntegrationsPage() {
                   <IntegrationCard key={int.id} integration={int} />
                 ))}
                 {implemented.length === 0 && (
-                  <p className="text-slate-400 col-span-full">No active integrations found in configuration.</p>
+                  <p className="text-ink-secondary col-span-full">No active integrations found in configuration.</p>
                 )}
               </div>
             </div>

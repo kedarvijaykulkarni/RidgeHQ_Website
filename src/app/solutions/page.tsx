@@ -22,7 +22,7 @@ export default function SolutionsIndexPage() {
           <Breadcrumbs className="mb-8" items={[{ label: "Built For" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Built for how your operation runs.</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               One operational model, mapped to the constraints of your industry. Find the workflows that match your day.
             </p>
           </div>
