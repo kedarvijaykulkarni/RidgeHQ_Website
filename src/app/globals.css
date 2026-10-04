@@ -13,6 +13,7 @@
   --color-bg-alt: var(--bg-alt);
   --color-bg-elevated: var(--bg-elevated);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-ink: var(--ink);
   --color-ink-secondary: var(--ink-secondary);
   --color-ink-tertiary: var(--ink-tertiary);
@@ -32,6 +33,10 @@
     --bg-alt: oklch(95% 0.006 250);
     --bg-elevated: oklch(92% 0.008 250);
     --border: oklch(85% 0.012 250);
+    /* Meets WCAG 1.4.11 (3:1) against --bg — use for form-input and
+       outline-button boundaries, where the border is the sole affordance.
+       --border stays softer for decorative dividers/card outlines. */
+    --border-strong: oklch(65% 0.012 250);
     --ink: oklch(15% 0.015 250);
     --ink-secondary: oklch(35% 0.02 250);
     --ink-tertiary: oklch(48% 0.018 250);
@@ -52,6 +57,8 @@
     --bg-alt: oklch(11% 0.013 250);
     --bg-elevated: oklch(14% 0.015 250);
     --border: oklch(26% 0.02 250);
+    /* Meets WCAG 1.4.11 (3:1) against --bg — see light theme comment above. */
+    --border-strong: oklch(47% 0.02 250);
     --ink: oklch(97% 0.004 250);
     --ink-secondary: oklch(72% 0.02 250);
     --ink-tertiary: oklch(63% 0.018 250);
