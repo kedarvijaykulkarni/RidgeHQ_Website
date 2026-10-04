@@ -55,8 +55,10 @@ revamp. Generated 2026-10-04 from `gh issue list` + each issue's `## Related` se
    fires here since `develop` isn't the repo's default branch**, so always close manually
    with `gh issue close <n> -c "<note>"` — and `git pull origin develop` locally before
    starting the next issue.
-8. Update the checkbox below for the issue you're starting/finishing **before committing**, so the
-   next session (human or AI) can see what's already done and pick up the next unblocked issue.
+8. Update the checkbox below for the issue you're starting/finishing **before committing, and as a
+   commit on the same issue branch/PR** — never as a separate follow-up commit pushed after the
+   fact. This keeps the TODOS status change in the same review unit as the code it describes, so
+   the next session (human or AI) can see what's already done and pick up the next unblocked issue.
 
 **Stop conditions:** if session usage hits ~95%, stop and wait for reset rather than starting a new
 issue. If a task turns out to need a product/business decision (pricing, positioning, scope) that
