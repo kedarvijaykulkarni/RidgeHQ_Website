@@ -67,7 +67,7 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
 - [ ] [#47](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/47) — Reorganize footer IA to match two-axis navigation *(part of #45; no component dependency — just links)*
 - [ ] [#48](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/48) — Systematic cross-linking across solutions/platform/use-cases/pricing pages *(part of #45; data-schema work, no component dependency)*
 - [ ] [#51](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/51) — Add AI Copilot Q&A transcript example to homepage *(part of #49; content-only, no token/component dependency — mind the no-money-moving-AI claim boundary)*
-- [ ] [#46](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/46) — Redesign header mega-menu — branch `feat/header-solutions-mega-menu`, combined Platform+Built For into one "Solutions" two-axis menu (verticals primary, platform secondary, per Kedar's confirmation 2026-10-04); PR not yet opened
+- [ ] [#46](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/46) — Redesign header mega-menu *(combined Platform+Built For into one "Solutions" two-axis menu, verticals primary/platform secondary per Kedar's confirmation 2026-10-04)* — **PR [#79](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/79) open against `develop`, awaiting Kedar's review**
 - [ ] [#50](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/50) — Re-sequence/re-theme homepage sections *(unblocked now that #44 merged — part of #41)*
 
 ## Blocked by another open issue
