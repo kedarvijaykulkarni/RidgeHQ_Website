@@ -117,6 +117,30 @@ function GroupColumn({ group }: { group: NavGroup }) {
   );
 }
 
+/** One axis of a (possibly two-axis) mega-menu: a labeled, grouped set of columns. */
+function MenuAxis({ label, groups }: { label?: string; groups: NavGroup[] }) {
+  const singleGroup = groups.length === 1;
+  const headingId = label ? `nav-axis-${label.toLowerCase().replace(/\s+/g, "-")}` : undefined;
+
+  return (
+    <div role="group" aria-labelledby={headingId}>
+      {label && (
+        <h3
+          id={headingId}
+          className="mb-2 px-3 text-[0.7rem] font-semibold uppercase tracking-wide text-[var(--ink-tertiary)]"
+        >
+          {label}
+        </h3>
+      )}
+      <div className={cn("grid gap-x-6 gap-y-5", singleGroup ? "grid-cols-2" : "grid-cols-3")}>
+        {groups.map((group, gi) => (
+          <GroupColumn key={group.title ?? gi} group={group} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function NavMenu() {
   const pathname = usePathname() ?? "/";
 
@@ -147,6 +171,8 @@ export function NavMenu() {
           }
 
           const singleGroup = groups.length === 1;
+          const secondaryGroups = item.secondaryGroups ?? [];
+          const hasSecondaryAxis = secondaryGroups.length > 0;
 
           return (
             <NavigationMenu.Item key={item.href} className="relative">
@@ -165,16 +191,32 @@ export function NavMenu() {
 
               <NavigationMenu.Content className="absolute left-0 top-full z-50 pt-3">
                 <div className="glass-card rounded-2xl border border-[var(--border)] bg-[var(--bg-elevated)] p-4 shadow-2xl shadow-black/30">
-                  <div
-                    className={cn(
-                      "grid gap-x-6 gap-y-5",
-                      singleGroup ? "grid-cols-2 w-[36rem]" : "grid-cols-3 w-[48rem]"
-                    )}
-                  >
-                    {groups.map((group, gi) => (
-                      <GroupColumn key={group.title ?? gi} group={group} />
-                    ))}
-                  </div>
+                  {hasSecondaryAxis ? (
+                    <div className="flex items-start gap-6 w-[64rem]">
+                      <div className="flex-1">
+                        <MenuAxis label={item.groupsLabel} groups={groups} />
+                      </div>
+                      <div
+                        className="w-px self-stretch bg-[var(--border)]"
+                        role="separator"
+                        aria-orientation="vertical"
+                      />
+                      <div className="flex-1">
+                        <MenuAxis label={item.secondaryGroupsLabel} groups={secondaryGroups} />
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      className={cn(
+                        "grid gap-x-6 gap-y-5",
+                        singleGroup ? "grid-cols-2 w-[36rem]" : "grid-cols-3 w-[48rem]"
+                      )}
+                    >
+                      {groups.map((group, gi) => (
+                        <GroupColumn key={group.title ?? gi} group={group} />
+                      ))}
+                    </div>
+                  )}
                   <div className="mt-3 border-t border-[var(--border)] pt-3">
                     <NavigationMenu.Link asChild>
                       <Link
