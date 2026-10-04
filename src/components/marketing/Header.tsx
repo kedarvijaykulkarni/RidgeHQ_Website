@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react"
 import { Container } from "@/components/ui/Layout"
 import { NavMenu } from "@/components/marketing/NavMenu"
 import { MobileNav } from "@/components/marketing/MobileNav"
+import { ThemeToggle } from "@/components/marketing/ThemeToggle"
 
 export function Header() {
   return (
@@ -29,6 +30,7 @@ export function Header() {
             <NavMenu />
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <Button variant="ghost" className="hidden sm:inline-flex text-[var(--ink)] hover:text-[var(--accent)]" asChild>
               <Link href="/contact">Contact</Link>
             </Button>
