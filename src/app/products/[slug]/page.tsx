@@ -87,16 +87,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 className="mb-2"
                 items={[{ label: "Products", href: "/products" }, { label: product.title }]}
               />
-              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#22D3EE] font-medium">
+              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent font-medium">
                 Product{isEarlyAccess ? " — In development" : ""}
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                 {product.heroHeadline}
               </h1>
-              <p className="text-xl text-slate-400">{product.heroTagline}</p>
+              <p className="text-xl text-ink-secondary">{product.heroTagline}</p>
 
               {isEarlyAccess && product.roadmapNote && (
-                <div className="flex gap-3 rounded-2xl border border-amber-400/20 bg-amber-400/5 p-4 text-sm text-slate-300">
+                <div className="flex gap-3 rounded-2xl border border-amber-400/20 bg-amber-400/5 p-4 text-sm text-ink-secondary">
                   <Clock className="w-5 h-5 text-amber-400 shrink-0" />
                   <p>{product.roadmapNote}</p>
                 </div>
@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   {product.heroProofPoints.map((point, i) => (
                     <li
                       key={i}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-ink-secondary"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                       {point}
@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <h3 className="text-xl font-bold text-white">
                   {isEarlyAccess ? "Tell us about your channels" : "See it on your operation"}
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-ink-secondary">
                   {isEarlyAccess
                     ? `Bring your channel mix and volume to a short call — it factors into what we build first.`
                     : `A short walkthrough of how ${product.title} works in RidgeHQ and connects to the rest of the operational day.`}
@@ -132,7 +132,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <p className="text-xs text-slate-500 text-center">Takes about two minutes to request.</p>
+                <p className="text-xs text-ink-tertiary text-center">Takes about two minutes to request.</p>
               </div>
             </div>
           </div>
@@ -156,10 +156,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   )}
                   <div className={`space-y-5 ${isEarlyAccess ? "lg:col-span-2 max-w-3xl" : ""}`}>
                     <h2 className="text-2xl md:text-3xl font-bold text-white">{feature.heading}</h2>
-                    <p className="text-lg text-slate-400 leading-relaxed">{feature.body}</p>
+                    <p className="text-lg text-ink-secondary leading-relaxed">{feature.body}</p>
                     <ul className="space-y-3">
                       {feature.points.map((point, j) => (
-                        <li key={j} className="flex gap-3 text-sm text-slate-300">
+                        <li key={j} className="flex gap-3 text-sm text-ink-secondary">
                           <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                           {point}
                         </li>
@@ -175,22 +175,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* How it connects */}
       {product.connections && product.connections.length > 0 && (
-        <Section className="bg-slate-900/50 border-t border-b border-white/5">
+        <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
           <Container>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-white">How it connects to the rest of the system</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
+              <p className="text-ink-secondary max-w-2xl mx-auto">
                 Nothing in RidgeHQ works in isolation. {product.title} feeds &mdash; and is fed by &mdash; every other part of the operational day.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {product.connections.map((connection, i) => (
                 <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
-                  <div className="flex items-center gap-2 text-[#22D3EE] font-semibold mb-2">
+                  <div className="flex items-center gap-2 text-accent font-semibold mb-2">
                     <ArrowRight className="w-4 h-4 shrink-0" />
                     {connection.to}
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed">{connection.detail}</p>
+                  <p className="text-sm text-ink-secondary leading-relaxed">{connection.detail}</p>
                 </div>
               ))}
             </div>
@@ -211,7 +211,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {product.outcomes.map((outcome, i) => (
                 <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-2">{outcome.label}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{outcome.detail}</p>
+                  <p className="text-sm text-ink-secondary leading-relaxed">{outcome.detail}</p>
                 </div>
               ))}
             </div>
@@ -221,12 +221,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Product Proof (available products only) */}
       {!isEarlyAccess && proofImage && (
-        <Section className="bg-slate-900/50 border-t border-b border-white/5">
+        <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
           <Container>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-white">One system for the operational day</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
-                <Link href="/platform" className="text-[#22D3EE] hover:underline">See how every capability fits together &rarr;</Link>
+              <p className="text-ink-secondary max-w-2xl mx-auto">
+                <Link href="/platform" className="text-accent hover:underline">See how every capability fits together &rarr;</Link>
               </p>
             </div>
             <ScreenshotFrame src={proofImage} alt={`${product.title} in RidgeHQ`} />
@@ -254,7 +254,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               {isEarlyAccess ? `Help shape ${product.title}` : `See ${product.title} in RidgeHQ`}
             </h2>
-            <p className="text-lg text-slate-400">
+            <p className="text-lg text-ink-secondary">
               {isEarlyAccess
                 ? "Tell us how you sell today and which channels matter. Design partners get the first connectors and a direct line to the build."
                 : "Book a demo and we'll walk through your real operational workflows — bookings, schedule, resources, and the day close."}
@@ -266,7 +266,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             buttonText={isEarlyAccess ? "Request a Call" : "Book a Demo"}
           />
           <p className="text-center mt-8">
-            <Link href="/products" className="text-[#22D3EE] hover:underline text-sm">
+            <Link href="/products" className="text-accent hover:underline text-sm">
               Or see all products &rarr;
             </Link>
           </p>

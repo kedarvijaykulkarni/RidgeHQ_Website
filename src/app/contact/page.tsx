@@ -16,7 +16,7 @@ export default function ContactPage() {
         <Breadcrumbs className="mb-8 justify-center" items={[{ label: "Contact" }]} />
         <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Contact Us</h1>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-ink-secondary">
             Have a question about RidgeHQ, our pilot program, or a potential partnership? Reach out below.
           </p>
         </div>

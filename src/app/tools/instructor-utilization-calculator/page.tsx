@@ -24,7 +24,7 @@ export default function InstructorUtilizationCalculatorPage() {
             rough guess rather than an actual number, since nothing forces it to be tracked precisely.
           </p>
           <p>
-            <strong className="text-slate-300">This is a standalone educational calculator.</strong>{" "}
+            <strong className="text-ink-secondary">This is a standalone educational calculator.</strong>{" "}
             RidgeHQ does not currently publish an automated instructor-utilization report as a product
             feature — this tool estimates the ratio from numbers you supply, it isn&rsquo;t pulling from
             or representing a RidgeHQ dashboard.

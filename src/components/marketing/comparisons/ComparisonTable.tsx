@@ -14,10 +14,10 @@ export function ComparisonTable({ rows, categoryLabel }: ComparisonTableProps) {
             <th scope="col" className="px-5 py-4 font-semibold text-white">
               Dimension
             </th>
-            <th scope="col" className="px-5 py-4 font-semibold text-slate-300">
+            <th scope="col" className="px-5 py-4 font-semibold text-ink-secondary">
               {categoryLabel}
             </th>
-            <th scope="col" className="px-5 py-4 font-semibold text-[#22D3EE]">
+            <th scope="col" className="px-5 py-4 font-semibold text-accent">
               RidgeHQ
             </th>
           </tr>
@@ -28,8 +28,8 @@ export function ComparisonTable({ rows, categoryLabel }: ComparisonTableProps) {
               <th scope="row" className="px-5 py-4 font-medium text-white align-top">
                 {row.dimension}
               </th>
-              <td className="px-5 py-4 text-slate-400 align-top">{row.category}</td>
-              <td className="px-5 py-4 text-slate-300 align-top">{row.ridgehq}</td>
+              <td className="px-5 py-4 text-ink-secondary align-top">{row.category}</td>
+              <td className="px-5 py-4 text-ink-secondary align-top">{row.ridgehq}</td>
             </tr>
           ))}
         </tbody>

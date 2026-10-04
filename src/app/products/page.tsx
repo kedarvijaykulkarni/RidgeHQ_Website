@@ -25,7 +25,7 @@ export default function ProductsPage() {
           <Breadcrumbs className="mb-8" items={[{ label: "Products" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">The RidgeHQ product line.</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               One connected platform for the whole operational day &mdash; and named parts of it you can focus on: rentals, waivers, and channel distribution.
             </p>
           </div>
@@ -49,9 +49,9 @@ export default function ProductsPage() {
 
       <Section className="pt-0">
         <Container>
-          <p className="text-center text-slate-400">
+          <p className="text-center text-ink-secondary">
             Looking for how the capabilities fit together?{" "}
-            <Link href="/platform" className="text-[#22D3EE] hover:underline">Explore the platform &rarr;</Link>
+            <Link href="/platform" className="text-accent hover:underline">Explore the platform &rarr;</Link>
           </p>
         </Container>
       </Section>

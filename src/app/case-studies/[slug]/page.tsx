@@ -64,14 +64,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               {caseStudy.businessType}
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">{caseStudy.problem}</p>
+            <p className="text-lg text-ink-secondary leading-relaxed">{caseStudy.problem}</p>
           </div>
         </Container>
       </Section>
 
       <Section className="pt-0">
         <Container>
-          <div className="max-w-3xl mx-auto space-y-12 text-slate-300">
+          <div className="max-w-3xl mx-auto space-y-12 text-ink-secondary">
             <div className="space-y-3">
               <h2 className="text-xl font-bold text-white">Previous workflow</h2>
               <p>{caseStudy.previousWorkflow}</p>
@@ -92,7 +92,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <h2 className="text-xl font-bold text-white">Observed result</h2>
               <p>{caseStudy.observedResult}</p>
               {caseStudy.customerQuote && (
-                <blockquote className="border-l-2 border-[#22D3EE] pl-4 italic text-slate-400">
+                <blockquote className="border-l-2 border-accent pl-4 italic text-ink-secondary">
                   &ldquo;{caseStudy.customerQuote}&rdquo;
                 </blockquote>
               )}
@@ -105,7 +105,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                     <Link
                       key={c.slug}
                       href={`/platform/${c.slug}`}
-                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors"
+                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
                     >
                       {c.title}
                     </Link>

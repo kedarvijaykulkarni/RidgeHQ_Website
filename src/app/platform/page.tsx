@@ -23,7 +23,7 @@ export default function PlatformPage() {
           <Breadcrumbs className="mb-8" items={[{ label: "Platform" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">One system for the entire operational day.</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               The booking is the starting point. RidgeHQ connects it to sessions, participants, staff, resources, payments, changes, and reporting.
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function PlatformPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold">Activity-aware resource coordination</h2>
-                <p className="text-lg text-slate-400">
+                <p className="text-lg text-ink-secondary">
                   The operational day combines time, capacity, staff capability, locations, equipment, fleet, accommodation, and changing conditions. RidgeHQ ensures you never double-book a resource or assign an unqualified instructor.
                 </p>
               </div>
@@ -62,7 +62,7 @@ export default function PlatformPage() {
               </div>
               <div className="space-y-6 order-1 lg:order-2">
                 <h2 className="text-3xl font-bold">Move when the day changes</h2>
-                <p className="text-lg text-slate-400">
+                <p className="text-lg text-ink-secondary">
                   Coordinate rescheduling and its operational impact instead of rebuilding the plan manually. When weather shifts or customers cancel, the schedule, resources, and staff assignments update across the entire business.
                 </p>
               </div>

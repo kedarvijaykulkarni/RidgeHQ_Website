@@ -24,7 +24,7 @@ export default function CapacityUtilizationCalculatorPage() {
             separately, for example, makes &ldquo;available hours&rdquo; a guess rather than a real number.
           </p>
           <p>
-            <strong className="text-slate-300">This is a standalone educational calculator.</strong>{" "}
+            <strong className="text-ink-secondary">This is a standalone educational calculator.</strong>{" "}
             Check the current platform and product pages for what RidgeHQ tracks and reports today,
             rather than assuming this figure represents a built-in RidgeHQ report.
           </p>

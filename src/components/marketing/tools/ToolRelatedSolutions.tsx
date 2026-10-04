@@ -24,7 +24,7 @@ export function ToolRelatedSolutions({ slug }: { slug: string }) {
             <Link
               key={v.slug}
               href={`/solutions/${v.slug}`}
-              className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors"
+              className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
             >
               {v.name}
             </Link>

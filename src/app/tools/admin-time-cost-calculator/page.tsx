@@ -34,7 +34,7 @@ export default function AdminTimeCostCalculatorPage() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               Admin Time Cost Calculator
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-ink-secondary leading-relaxed">
               When a booking widget, a spreadsheet, and a schedule don&rsquo;t talk to each other,
               someone becomes the API between them — retyping the same booking two or three times.
               Estimate what that time is actually worth.
@@ -51,7 +51,7 @@ export default function AdminTimeCostCalculatorPage() {
 
       <Section className="border-t border-white/5">
         <Container>
-          <div className="max-w-3xl space-y-4 text-slate-400 text-sm leading-relaxed">
+          <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
             <h2 className="text-xl font-bold text-white">What counts as this time</h2>
             <p>
               Typical examples: copying an online booking onto a whiteboard or manifest, checking gear
@@ -80,8 +80,8 @@ export default function AdminTimeCostCalculatorPage() {
 
       <Section className="pt-0 pb-16">
         <Container>
-          <p className="text-center text-sm text-slate-500">
-            <Link href="/tools" className="text-[#22D3EE] hover:underline">
+          <p className="text-center text-sm text-ink-tertiary">
+            <Link href="/tools" className="text-accent hover:underline">
               See all calculators &rarr;
             </Link>
           </p>

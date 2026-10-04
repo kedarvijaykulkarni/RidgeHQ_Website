@@ -76,13 +76,13 @@ export default function DocsPage() {
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "Docs" }]} />
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#8B5CF6] font-medium">
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium">
               Model Context Protocol (MCP)
             </div>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               Connect your AI assistant to RidgeHQ
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-ink-secondary leading-relaxed">
               Connect an AI assistant you already use &mdash; Claude, ChatGPT, or Claude Code &mdash;
               to your RidgeHQ account and operate day-to-day scheduling from the assistant. Ask it
               things like &ldquo;What&rsquo;s on today&rsquo;s morning brief?&rdquo; or &ldquo;Who&rsquo;s on Saturday&rsquo;s
@@ -102,7 +102,7 @@ export default function DocsPage() {
         <Container>
           <div className="max-w-3xl space-y-4">
             <h2 className="text-2xl font-bold text-white">How to connect</h2>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-ink-secondary leading-relaxed">
               An Owner or Manager sets this up in RidgeHQ under <strong className="text-white">Settings,
               Access tokens, Connect an AI assistant</strong>. That page shows your server address
               (the MCP URL) with a copy button and the exact steps for your assistant.
@@ -112,11 +112,11 @@ export default function DocsPage() {
           <div className="mt-10 grid md:grid-cols-2 gap-8">
             <div className="glass-card p-8">
               <h3 className="text-xl font-bold mb-3 text-white">Claude or ChatGPT (recommended)</h3>
-              <p className="text-slate-400 mb-4 text-sm leading-relaxed">
+              <p className="text-ink-secondary mb-4 text-sm leading-relaxed">
                 No token to handle. Add a custom connector with the server address shown on the
                 Connect page, then sign in with your own RidgeHQ staff account.
               </p>
-              <ol className="space-y-2 text-sm text-slate-400 list-decimal list-inside">
+              <ol className="space-y-2 text-sm text-ink-secondary list-decimal list-inside">
                 <li>In your assistant, add a custom connector / custom MCP server.</li>
                 <li>Enter the server address from Settings, Access tokens.</li>
                 <li>Choose Connect, then sign in to RidgeHQ with your staff account.</li>
@@ -125,7 +125,7 @@ export default function DocsPage() {
                   press Allow.
                 </li>
               </ol>
-              <p className="mt-4 text-xs text-slate-500">
+              <p className="mt-4 text-xs text-ink-tertiary">
                 The assistant gets exactly your permissions &mdash; a platform administrator account
                 can&rsquo;t be used, because it belongs to no single business.
               </p>
@@ -133,17 +133,17 @@ export default function DocsPage() {
 
             <div className="glass-card p-8">
               <h3 className="text-xl font-bold mb-3 text-white">Claude Code &amp; CLI clients</h3>
-              <p className="text-slate-400 mb-4 text-sm leading-relaxed">
+              <p className="text-ink-secondary mb-4 text-sm leading-relaxed">
                 Create a personal access token (PAT) in Settings, Access tokens. Name it for the
                 person and tool, and choose the lowest role that does the job.
               </p>
-              <ol className="space-y-2 text-sm text-slate-400 list-decimal list-inside">
+              <ol className="space-y-2 text-sm text-ink-secondary list-decimal list-inside">
                 <li>Settings, Access tokens, Create token.</li>
                 <li>Name it (for example, &ldquo;Sam, Claude Code&rdquo;) and pick a role.</li>
                 <li>Copy the token &mdash; it&rsquo;s shown once and can&rsquo;t be shown again.</li>
                 <li>Add it to your client with an Authorization header, for example a one-line <code>claude mcp add</code> command for Claude Code.</li>
               </ol>
-              <p className="mt-4 text-xs text-slate-500">
+              <p className="mt-4 text-xs text-ink-tertiary">
                 Treat a token like a password: it is never put in chats, tickets, or shared
                 documents. One token per person or tool makes it easy to revoke just one later.
               </p>
@@ -160,13 +160,13 @@ export default function DocsPage() {
               <h3 className="text-lg font-bold mb-4 text-white">It can</h3>
               <ul className="space-y-3">
                 {canDo.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-slate-400">
-                    <CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" />
+                  <li key={item} className="flex gap-3 text-sm text-ink-secondary">
+                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs text-slate-500">
+              <p className="mt-4 text-xs text-ink-tertiary">
                 Reads never change anything. Low-risk actions run straight away and are logged;
                 everyday scheduling changes ask you to confirm first, every time.
               </p>
@@ -175,13 +175,13 @@ export default function DocsPage() {
               <h3 className="text-lg font-bold mb-4 text-white">It will never</h3>
               <ul className="space-y-3">
                 {cannotDo.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-slate-400">
+                  <li key={item} className="flex gap-3 text-sm text-ink-secondary">
                     <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs text-slate-500">
+              <p className="mt-4 text-xs text-ink-tertiary">
                 These stay in the normal RidgeHQ screens, by design, whatever role or token is used.
               </p>
             </div>
@@ -193,16 +193,16 @@ export default function DocsPage() {
         <Container>
           <div className="max-w-3xl space-y-4">
             <h2 className="text-2xl font-bold text-white">Security &amp; privacy</h2>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <ul className="space-y-3 text-sm text-ink-secondary">
               <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                 <span>
                   Every request is scoped to one tenant; isolation is enforced at the database
                   level on dedicated least-privilege roles, not just in application code.
                 </span>
               </li>
               <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                 <span>
                   Sign-in uses OAuth 2.1 with PKCE and a consent screen that always shows the exact
                   redirect address, or a personal access token stored as a hash, never in plain
@@ -210,28 +210,28 @@ export default function DocsPage() {
                 </span>
               </li>
               <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                 <span>
                   Every change made through an assistant is recorded in your audit log with the
                   assistant as the origin, and most changes can be undone from there.
                 </span>
               </li>
               <li className="flex gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                 <span>
                   You can revoke a token or disconnect a connector at any time; access stops on the
                   very next request.
                 </span>
               </li>
             </ul>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-ink-tertiary">
               Tool results pass through the assistant you chose, under that provider&rsquo;s terms &mdash;
               only send what you&rsquo;re comfortable sharing with them. See the full{" "}
-              <Link href="/security" className="text-[#22D3EE] hover:underline">
+              <Link href="/security" className="text-accent hover:underline">
                 security page
               </Link>{" "}
               and{" "}
-              <Link href="/privacy" className="text-[#22D3EE] hover:underline">
+              <Link href="/privacy" className="text-accent hover:underline">
                 privacy policy
               </Link>
               .
@@ -244,7 +244,7 @@ export default function DocsPage() {
         <Container>
           <div className="max-w-3xl space-y-4">
             <h2 className="text-2xl font-bold text-white">Listings &amp; directories</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-ink-secondary text-sm leading-relaxed">
               {/* TODO(#166): once the MCP Registry and third-party directory listings
                   (Glama, PulseMCP, MCP Market, mcp.so, Claude/ChatGPT connector
                   directories) are live, link them here. Do not add placeholder or
@@ -263,7 +263,7 @@ export default function DocsPage() {
             {faqs.map((faq) => (
               <div key={faq.question}>
                 <dt className="text-white font-semibold text-sm">{faq.question}</dt>
-                <dd className="text-slate-400 text-sm mt-1">{faq.answer}</dd>
+                <dd className="text-ink-secondary text-sm mt-1">{faq.answer}</dd>
               </div>
             ))}
           </dl>
@@ -275,17 +275,17 @@ export default function DocsPage() {
           <h2 className="text-xl font-bold text-white mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/ai-copilot" className="text-[#22D3EE] hover:underline">
+              <Link href="/ai-copilot" className="text-accent hover:underline">
                 See the AI Copilot inside RidgeHQ
               </Link>
             </li>
             <li>
-              <Link href="/pricing" className="text-[#22D3EE] hover:underline">
+              <Link href="/pricing" className="text-accent hover:underline">
                 Check current plans and pricing
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-[#22D3EE] hover:underline">
+              <Link href="/contact" className="text-accent hover:underline">
                 Contact RidgeHQ
               </Link>
             </li>

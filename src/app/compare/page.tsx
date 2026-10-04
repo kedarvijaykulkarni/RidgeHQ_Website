@@ -25,7 +25,7 @@ export default function ComparePage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
               How RidgeHQ compares
             </h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               Comparisons by category — how a typical commission-based booking platform or a
               spreadsheet-and-chat setup works, versus RidgeHQ — with honest strengths and limitations
               on both sides, not a one-sided pitch.
@@ -41,11 +41,11 @@ export default function ComparePage() {
               <Link
                 key={c.slug}
                 href={`/compare/${c.slug}`}
-                className="glass-card group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-[#22D3EE]/40"
+                className="glass-card group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-accent/40"
               >
                 <h2 className="text-xl font-bold text-white mb-2">{c.title}</h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">{c.heroTagline}</p>
-                <span className="inline-flex items-center gap-1 text-sm text-[#22D3EE]">
+                <p className="text-ink-secondary text-sm leading-relaxed mb-4">{c.heroTagline}</p>
+                <span className="inline-flex items-center gap-1 text-sm text-accent">
                   Read comparison <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>

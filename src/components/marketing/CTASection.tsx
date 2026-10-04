@@ -30,7 +30,7 @@ export function CTASection({
       <Container className="relative text-center">
         <div className="max-w-2xl mx-auto space-y-8">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">{headline}</h2>
-          <p className="text-lg md:text-xl text-slate-400">{description}</p>
+          <p className="text-lg md:text-xl text-ink-secondary">{description}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" asChild>
               <Link href={primaryCtaHref} data-ga-event="cta_primary_click">

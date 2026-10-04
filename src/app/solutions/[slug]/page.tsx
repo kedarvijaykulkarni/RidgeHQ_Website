@@ -98,13 +98,13 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 className="mb-2"
                 items={[{ label: "Built For", href: "/solutions" }, { label: vertical.name }]}
               />
-              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-[#22D3EE] font-medium">
+              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent font-medium">
                 {vertical.searchKeyword}
               </div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                 {vertical.heroHeadline}
               </h1>
-              <p className="text-xl text-slate-400">
+              <p className="text-xl text-ink-secondary">
                 {vertical.heroDescription}
               </p>
               {vertical.heroProofPoints && vertical.heroProofPoints.length > 0 && (
@@ -112,7 +112,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                   {vertical.heroProofPoints.map((point, i) => (
                     <li
                       key={i}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-ink-secondary"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                       {point}
@@ -124,7 +124,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             <div className="lg:pl-8">
               <div className="glass-card p-8 space-y-5 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
                 <h3 className="text-xl font-bold text-white">See it on your operation</h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-ink-secondary">
                   A short walkthrough of RidgeHQ mapped to how {vertical.name.toLowerCase()} actually run the day &mdash; bookings, schedule, resources, and the close.
                 </p>
                 <Button size="lg" asChild className="w-full">
@@ -133,7 +133,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                     <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <p className="text-xs text-slate-500 text-center">Takes about two minutes to request.</p>
+                <p className="text-xs text-ink-tertiary text-center">Takes about two minutes to request.</p>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold text-white">The operational reality</h2>
-              <p className="text-slate-400 leading-relaxed text-lg">
+              <p className="text-ink-secondary leading-relaxed text-lg">
                 {vertical.painPoint}
               </p>
               
@@ -154,7 +154,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 <h3 className="text-xl font-bold text-white mb-4">Core Constraints Managed</h3>
                 <ul className="space-y-3">
                   {vertical.constraints.map((constraint, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-slate-400">
+                    <li key={i} className="flex gap-3 text-sm text-ink-secondary">
                       <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                       {constraint}
                     </li>
@@ -163,9 +163,9 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               </div>
             </div>
             
-            <div className="glass-card p-8 border-l-4 border-l-[#22D3EE] bg-white/5 rounded-2xl">
+            <div className="glass-card p-8 border-l-4 border-l-accent bg-white/5 rounded-2xl">
               <h3 className="text-xl font-bold mb-3 text-white">How RidgeHQ helps</h3>
-              <p className="text-[#22D3EE] font-medium text-lg mb-6">{vertical.keyCapability}</p>
+              <p className="text-accent font-medium text-lg mb-6">{vertical.keyCapability}</p>
               
               <div className="space-y-6">
                 <h4 className="font-semibold text-white">From booking to day close:</h4>
@@ -176,7 +176,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                           <div className="w-6 h-6 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] flex items-center justify-center shrink-0 text-sm font-bold">
                             {i + 1}
                           </div>
-                          <p className="text-sm text-slate-300">
+                          <p className="text-sm text-ink-secondary">
                             <span className="font-semibold text-white">{step.title}.</span>{" "}
                             {step.detail}
                           </p>
@@ -187,7 +187,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                           <div className="w-6 h-6 rounded-full bg-[var(--accent)]/20 text-[var(--accent)] flex items-center justify-center shrink-0 text-sm font-bold">
                             {i + 1}
                           </div>
-                          <p className="text-sm text-slate-300">{step}</p>
+                          <p className="text-sm text-ink-secondary">{step}</p>
                         </div>
                       ))}
                 </div>
@@ -215,10 +215,10 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                   </div>
                   <div className="space-y-5">
                     <h2 className="text-2xl md:text-3xl font-bold text-white">{feature.heading}</h2>
-                    <p className="text-lg text-slate-400 leading-relaxed">{feature.body}</p>
+                    <p className="text-lg text-ink-secondary leading-relaxed">{feature.body}</p>
                     <ul className="space-y-3">
                       {feature.points.map((point, j) => (
-                        <li key={j} className="flex gap-3 text-sm text-slate-300">
+                        <li key={j} className="flex gap-3 text-sm text-ink-secondary">
                           <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                           {point}
                         </li>
@@ -234,7 +234,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
 
       {/* Outcomes */}
       {vertical.outcomes && vertical.outcomes.length > 0 && (
-        <Section className="bg-slate-900/50 border-t border-b border-white/5">
+        <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
           <Container>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-white">What changes when the operation is connected</h2>
@@ -243,7 +243,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               {vertical.outcomes.map((outcome, i) => (
                 <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
                   <h3 className="text-lg font-bold text-white mb-2">{outcome.label}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{outcome.detail}</p>
+                  <p className="text-sm text-ink-secondary leading-relaxed">{outcome.detail}</p>
                 </div>
               ))}
             </div>
@@ -256,7 +256,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-white">Built around the work</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">Stop acting as the manual API between your booking engine and your team.</p>
+            <p className="text-ink-secondary max-w-2xl mx-auto">Stop acting as the manual API between your booking engine and your team.</p>
           </div>
           <ScreenshotFrame src={proofImage} alt={`${vertical.name} operations in RidgeHQ`} />
         </Container>
@@ -268,7 +268,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           <Container>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-white">Common Questions</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">How RidgeHQ handles {vertical.name.toLowerCase()} edge cases.</p>
+              <p className="text-ink-secondary max-w-2xl mx-auto">How RidgeHQ handles {vertical.name.toLowerCase()} edge cases.</p>
             </div>
             <FAQAccordion items={vertical.faqs} />
           </Container>
@@ -289,7 +289,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                   <Link
                     key={u.slug}
                     href={`/use-cases/${u.slug}`}
-                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors"
+                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
                   >
                     {u.title}
                   </Link>
@@ -304,19 +304,19 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         <Container>
           <div className="text-center mb-8 space-y-2">
             <h2 className="text-2xl font-bold text-white">Run the numbers for your {vertical.name.toLowerCase()}</h2>
-            <p className="text-slate-400">Free calculators with the formulas shown, plus how RidgeHQ is priced and how it compares.</p>
+            <p className="text-ink-secondary">Free calculators with the formulas shown, plus how RidgeHQ is priced and how it compares.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {relatedTools.map((t) => (
-              <Link key={t.slug} href={`/tools/${t.slug}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors">
+              <Link key={t.slug} href={`/tools/${t.slug}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors">
                 {t.title}
               </Link>
             ))}
-            <Link href="/pricing" className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors">
+            <Link href="/pricing" className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors">
               Pricing
             </Link>
             {comparisons.map((c) => (
-              <Link key={c.slug} href={`/compare/${c.slug}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors">
+              <Link key={c.slug} href={`/compare/${c.slug}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors">
                 {c.title}
               </Link>
             ))}
@@ -330,7 +330,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         <Container className="relative z-10">
           <div className="max-w-2xl mx-auto text-center mb-10 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-white">See RidgeHQ for {vertical.name.toLowerCase()}</h2>
-            <p className="text-lg text-slate-400">
+            <p className="text-lg text-ink-secondary">
               Book a demo and we&apos;ll walk through your real operational workflows &mdash; bookings, schedule, resources, and the day close.
             </p>
           </div>
@@ -340,7 +340,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             buttonText="Book a Demo"
           />
           <p className="text-center mt-8">
-            <Link href="/platform" className="text-[#22D3EE] hover:underline text-sm">
+            <Link href="/platform" className="text-accent hover:underline text-sm">
               Or explore the platform &rarr;
             </Link>
           </p>

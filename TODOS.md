@@ -59,7 +59,7 @@ isn't Kedar's to make reflexively, flag it — don't guess.
 These have no open `depends on #N` and aren't gated by a pending owner decision. Pick any one.
 
 - [x] [#38](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/38) — Define light+dark design tokens and ThemeToggle component — merged via PR #76 2026-10-04, issue closed
-- [ ] [#39](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/39) — Migrate hardcoded color usages site-wide to theme-aware tokens *(unblocked now that #38 merged)*
+- [ ] [#39](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/39) — Migrate hardcoded color usages site-wide to theme-aware tokens — PR [#80](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/80) open against `develop`, awaiting Kedar's review
 - [ ] [#42](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/42) — Build Card, Stat/metric tile, and Tabs primitives *(part of #41; unblocked now that #38 merged)*
 - [ ] [#43](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/43) — Build Testimonial and Logo-band components (real content only) *(part of #41; unblocked now that #38 merged)*
 - [ ] [#64](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/64) — Theme-toggle keyboard and screen-reader accessibility audit *(unblocked now that #38 merged)*

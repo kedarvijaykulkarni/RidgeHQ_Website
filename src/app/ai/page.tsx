@@ -29,8 +29,8 @@ export default function AIInfoPage() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               RidgeHQ, for AI assistants and researchers
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">{k.product.description}</p>
-            <p className="text-sm text-slate-500">
+            <p className="text-lg text-ink-secondary leading-relaxed">{k.product.description}</p>
+            <p className="text-sm text-ink-tertiary">
               Last verified {k.lastUpdated}. This page summarizes facts published elsewhere on{" "}
               {k.product.url.replace(/^https?:\/\//, "")} — treat the linked pages as the canonical,
               current source if anything here appears out of date.
@@ -44,28 +44,28 @@ export default function AIInfoPage() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-3">
               <h2 className="text-xl font-bold text-white">What RidgeHQ is</h2>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-ink-secondary text-sm leading-relaxed">
                 <strong className="text-white">Category:</strong> {k.product.category}
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-ink-secondary text-sm leading-relaxed">
                 <strong className="text-white">Positioning:</strong> {k.product.positioning}
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-ink-secondary text-sm leading-relaxed">
                 <strong className="text-white">Good fit:</strong> {k.idealCustomerProfile}
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-ink-secondary text-sm leading-relaxed">
                 <strong className="text-white">Poor fit:</strong> {k.poorFitCustomerProfile}
               </p>
             </div>
 
             <div className="space-y-3">
               <h2 className="text-xl font-bold text-white">Pricing</h2>
-              <p className="text-slate-400 text-sm leading-relaxed">{k.pricing.note}</p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-ink-secondary text-sm leading-relaxed">{k.pricing.note}</p>
+              <p className="text-ink-secondary text-sm leading-relaxed">
                 <strong className="text-white">Commission on direct bookings:</strong>{" "}
                 {k.pricing.commissionOnDirectBookings}
               </p>
-              <Link href="/pricing" className="text-[#22D3EE] hover:underline text-sm inline-block">
+              <Link href="/pricing" className="text-accent hover:underline text-sm inline-block">
                 Current pricing terms &rarr;
               </Link>
             </div>
@@ -79,7 +79,7 @@ export default function AIInfoPage() {
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
             {k.industries.map((v) => (
               <li key={v.slug}>
-                <Link href={`/solutions/${v.slug}`} className="text-slate-300 hover:text-[#22D3EE] text-sm">
+                <Link href={`/solutions/${v.slug}`} className="text-ink-secondary hover:text-accent text-sm">
                   {v.name}
                 </Link>
               </li>
@@ -95,11 +95,11 @@ export default function AIInfoPage() {
             {k.platformCapabilities.map((c) => (
               <div key={c.slug}>
                 <dt className="text-white font-semibold text-sm">
-                  <Link href={`/platform/${c.slug}`} className="hover:text-[#22D3EE]">
+                  <Link href={`/platform/${c.slug}`} className="hover:text-accent">
                     {c.title}
                   </Link>
                 </dt>
-                <dd className="text-slate-400 text-sm">{c.description}</dd>
+                <dd className="text-ink-secondary text-sm">{c.description}</dd>
               </div>
             ))}
           </dl>
@@ -113,14 +113,14 @@ export default function AIInfoPage() {
             {k.products.map((p) => (
               <div key={p.slug}>
                 <dt className="text-white font-semibold text-sm">
-                  <Link href={`/products/${p.slug}`} className="hover:text-[#22D3EE]">
+                  <Link href={`/products/${p.slug}`} className="hover:text-accent">
                     {p.title}
                   </Link>{" "}
                   {p.status === "early-access" && (
                     <span className="text-xs text-amber-400 font-normal">(early access)</span>
                   )}
                 </dt>
-                <dd className="text-slate-400 text-sm">{p.description}</dd>
+                <dd className="text-ink-secondary text-sm">{p.description}</dd>
               </div>
             ))}
           </dl>
@@ -132,13 +132,13 @@ export default function AIInfoPage() {
           <h2 className="text-xl font-bold text-white mb-6">Integrations</h2>
           <ul className="space-y-2">
             {k.integrations.map((i) => (
-              <li key={i.name} className="text-sm text-slate-400">
+              <li key={i.name} className="text-sm text-ink-secondary">
                 <span className="text-white font-medium">{i.name}</span> ({i.category}) —{" "}
                 {i.state === "implemented" ? "available today" : i.state === "partial" ? "partially available" : "planned"}
               </li>
             ))}
           </ul>
-          <Link href="/integrations" className="text-[#22D3EE] hover:underline text-sm inline-block mt-4">
+          <Link href="/integrations" className="text-accent hover:underline text-sm inline-block mt-4">
             Full integrations page &rarr;
           </Link>
         </Container>
@@ -147,12 +147,12 @@ export default function AIInfoPage() {
       <Section className="border-t border-white/5">
         <Container>
           <h2 className="text-xl font-bold text-white mb-3">Security</h2>
-          <p className="text-slate-400 text-sm leading-relaxed max-w-2xl">{k.security.summary}</p>
+          <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl">{k.security.summary}</p>
           <div className="flex flex-col gap-1 mt-4">
-            <Link href="/security" className="text-[#22D3EE] hover:underline text-sm inline-block">
+            <Link href="/security" className="text-accent hover:underline text-sm inline-block">
               Full security page &rarr;
             </Link>
-            <Link href="/docs" className="text-[#22D3EE] hover:underline text-sm inline-block">
+            <Link href="/docs" className="text-accent hover:underline text-sm inline-block">
               Connect an AI assistant over MCP &rarr;
             </Link>
           </div>
@@ -162,19 +162,19 @@ export default function AIInfoPage() {
       <Section className="border-t border-white/5">
         <Container>
           <h2 className="text-xl font-bold text-white mb-3">Company</h2>
-          <p className="text-slate-400 text-sm leading-relaxed max-w-2xl">
+          <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl">
             Founder: {k.company.founder} ({k.company.founderModel}). Headquarters:{" "}
             {k.company.headquarters}.
           </p>
           <div className="flex flex-col gap-1 mt-4">
-            <Link href="/press" className="text-[#22D3EE] hover:underline text-sm inline-block">
+            <Link href="/press" className="text-accent hover:underline text-sm inline-block">
               Press kit &rarr;
             </Link>
             <a
               href={k.company.founderLinkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#22D3EE] hover:underline text-sm inline-block"
+              className="text-accent hover:underline text-sm inline-block"
             >
               Founder on LinkedIn &rarr;
             </a>
@@ -189,7 +189,7 @@ export default function AIInfoPage() {
             {k.faqs.map((faq) => (
               <div key={faq.question}>
                 <dt className="text-white font-semibold text-sm">{faq.question}</dt>
-                <dd className="text-slate-400 text-sm mt-1">{faq.answer}</dd>
+                <dd className="text-ink-secondary text-sm mt-1">{faq.answer}</dd>
               </div>
             ))}
           </dl>
@@ -199,10 +199,10 @@ export default function AIInfoPage() {
       <Section className="border-t border-white/5">
         <Container>
           <h2 className="text-xl font-bold text-white mb-3">Public JSON API</h2>
-          <p className="text-slate-400 text-sm leading-relaxed max-w-2xl mb-3">
+          <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl mb-3">
             The same facts on this page are available as read-only JSON, no authentication required:
           </p>
-          <ul className="space-y-1 text-sm font-mono text-slate-400">
+          <ul className="space-y-1 text-sm font-mono text-ink-secondary">
             <li>GET /api/public/product</li>
             <li>GET /api/public/industries</li>
             <li>GET /api/public/features</li>
@@ -216,16 +216,16 @@ export default function AIInfoPage() {
           <h2 className="text-xl font-bold text-white mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/docs" className="text-[#22D3EE] hover:underline">Connect an AI assistant (MCP)</Link>
+              <Link href="/docs" className="text-accent hover:underline">Connect an AI assistant (MCP)</Link>
             </li>
             <li>
-              <Link href="/book-demo" className="text-[#22D3EE] hover:underline">Book a demo</Link>
+              <Link href="/book-demo" className="text-accent hover:underline">Book a demo</Link>
             </li>
             <li>
-              <Link href="/design-partners" className="text-[#22D3EE] hover:underline">Join the Design Partner program</Link>
+              <Link href="/design-partners" className="text-accent hover:underline">Join the Design Partner program</Link>
             </li>
             <li>
-              <Link href="/contact" className="text-[#22D3EE] hover:underline">Contact RidgeHQ</Link>
+              <Link href="/contact" className="text-accent hover:underline">Contact RidgeHQ</Link>
             </li>
           </ul>
         </Container>

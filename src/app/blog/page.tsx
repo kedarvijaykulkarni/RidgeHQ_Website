@@ -21,7 +21,7 @@ export default function BlogIndexPage() {
           <Breadcrumbs className="mb-8" items={[{ label: "Blog" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">RidgeHQ Academy</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               Guides organized around three pillars: the business economics of running an activity
               operation, the operational workflows behind it, and the technology that connects them.
             </p>

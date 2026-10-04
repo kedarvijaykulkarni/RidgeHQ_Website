@@ -60,7 +60,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
               {useCase.heroHeadline}
             </h1>
-            <p className="text-xl text-slate-400">{useCase.heroTagline}</p>
+            <p className="text-xl text-ink-secondary">{useCase.heroTagline}</p>
           </div>
         </Container>
       </Section>
@@ -70,26 +70,26 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
           <div className="max-w-3xl mx-auto space-y-16">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-white">The problem</h2>
-              <p className="text-lg text-slate-300 leading-relaxed">{useCase.problem}</p>
+              <p className="text-lg text-ink-secondary leading-relaxed">{useCase.problem}</p>
             </div>
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-white">Why it happens</h2>
-              <p className="text-lg text-slate-300 leading-relaxed">{useCase.whyItHappens}</p>
+              <p className="text-lg text-ink-secondary leading-relaxed">{useCase.whyItHappens}</p>
             </div>
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-white">The cost of leaving it unmanaged</h2>
-              <p className="text-lg text-slate-300 leading-relaxed">{useCase.costOfInaction}</p>
+              <p className="text-lg text-ink-secondary leading-relaxed">{useCase.costOfInaction}</p>
             </div>
             <div className="space-y-4 glass-card p-8 rounded-2xl bg-white/5 border border-white/10">
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                 <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0" />
                 How RidgeHQ helps
               </h2>
-              <p className="text-lg text-slate-300 leading-relaxed">{useCase.howRidgeHqHelps}</p>
+              <p className="text-lg text-ink-secondary leading-relaxed">{useCase.howRidgeHqHelps}</p>
               {relatedCapability && (
                 <Link
                   href={`/platform/${relatedCapability.slug}`}
-                  className="text-[#22D3EE] hover:underline text-sm inline-block"
+                  className="text-accent hover:underline text-sm inline-block"
                 >
                   See the {relatedCapability.title} capability &rarr;
                 </Link>
@@ -100,7 +100,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
                 <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0" />
                 When RidgeHQ may not be the right fit
               </h2>
-              <p className="text-lg text-slate-300 leading-relaxed">{useCase.whenNotSuitable}</p>
+              <p className="text-lg text-ink-secondary leading-relaxed">{useCase.whenNotSuitable}</p>
             </div>
 
             {relatedVerticals.length > 0 && (
@@ -111,7 +111,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
                     <Link
                       key={v.slug}
                       href={`/solutions/${v.slug}`}
-                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 hover:border-white/20 hover:text-white transition-colors"
+                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
                     >
                       {v.name}
                     </Link>
