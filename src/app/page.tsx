@@ -12,6 +12,7 @@ import { softwareApplicationJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { videoObjectJsonLd } from "@/lib/videoObjectJsonLd";
 import { YouTubeEmbed } from "@/components/marketing/YouTubeEmbed";
+import { CopilotTranscript } from "@/components/marketing/CopilotTranscript";
 import { homeVideo } from "@/lib/config/videos";
 import { platformCapabilities } from "@/lib/config/platform";
 import { integrations } from "@/lib/config/integrations";
@@ -102,7 +103,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.webp" alt="RidgeHQ Copilot summarizing what needs attention today" />
+            <CopilotTranscript />
           </div>
         </Container>
       </Section>
