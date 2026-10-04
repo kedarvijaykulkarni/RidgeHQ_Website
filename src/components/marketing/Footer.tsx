@@ -47,11 +47,15 @@ const linkColumns: { heading: string; links: { title: string; href: string }[] }
 export function Footer() {
   return (
     <footer
-      className="relative isolate border-t border-[var(--border)] bg-[#0D1116] bg-cover bg-center bg-no-repeat"
+      className="relative isolate border-t border-[var(--border)] bg-[var(--bg-elevated)] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url(/images/footer.svg)" }}
     >
       <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(13,17,22,0.45)_0%,rgba(13,17,22,0.7)_45%,rgba(13,17,22,0.88)_100%)]"
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, color-mix(in oklch, var(--bg-elevated) 45%, transparent) 0%, color-mix(in oklch, var(--bg-elevated) 70%, transparent) 45%, color-mix(in oklch, var(--bg-elevated) 88%, transparent) 100%)",
+        }}
         aria-hidden="true"
       />
 

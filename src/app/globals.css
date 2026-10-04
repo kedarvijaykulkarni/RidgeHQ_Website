@@ -1,25 +1,53 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/*
+ * Theme tokens: light is the default (no stored preference, no OS bias —
+ * see issue #37); dark is opt-in via [data-theme="dark"], set by ThemeToggle.
+ * The @theme block proxies to the plain --* vars below so both Tailwind's
+ * generated utilities (bg-bg, text-ink, ...) and direct var(--bg) usage in
+ * this file stay theme-aware from a single source of truth.
+ */
 @theme {
-  --color-bg: oklch(8% 0.012 250);
-  --color-bg-alt: oklch(11% 0.013 250);
-  --color-bg-elevated: oklch(14% 0.015 250);
-  --color-border: oklch(26% 0.02 250);
-  --color-ink: oklch(97% 0.004 250);
-  --color-ink-secondary: oklch(72% 0.02 250);
-  --color-ink-tertiary: oklch(63% 0.018 250);
-  --color-accent: oklch(75% 0.15 235);
-  --color-accent-2: oklch(72% 0.2 300);
-  --color-accent-soft: oklch(75% 0.15 235 / 0.14);
-  --color-accent-border: oklch(75% 0.15 235 / 0.3);
-  --color-cta: oklch(75% 0.16 55);
-  --color-cta-hover: oklch(70% 0.17 55);
-  --color-cta-text: oklch(18% 0.02 55);
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-tertiary: var(--ink-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-border: var(--accent-border);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-text: var(--cta-text);
 }
 
 @layer base {
-  :root {
+  :root,
+  [data-theme="light"] {
+    --bg: oklch(98% 0.004 250);
+    --bg-alt: oklch(95% 0.006 250);
+    --bg-elevated: oklch(92% 0.008 250);
+    --border: oklch(85% 0.012 250);
+    --ink: oklch(15% 0.015 250);
+    --ink-secondary: oklch(35% 0.02 250);
+    --ink-tertiary: oklch(48% 0.018 250);
+    --accent: oklch(50% 0.17 235);
+    --accent-2: oklch(48% 0.2 300);
+    --accent-soft: oklch(50% 0.17 235 / 0.12);
+    --accent-border: oklch(50% 0.17 235 / 0.3);
+    --cta: oklch(55% 0.18 55);
+    --cta-hover: oklch(50% 0.19 55);
+    --cta-text: oklch(98% 0.01 55);
+    --glow: oklch(50% 0.17 235 / 0.12);
+    --grid-line: oklch(0% 0 0 / 0.035);
+    --glass-bg: linear-gradient(180deg, oklch(0% 0 0 / 0.03), oklch(0% 0 0 / 0.01));
+  }
+
+  [data-theme="dark"] {
     --bg: oklch(8% 0.012 250);
     --bg-alt: oklch(11% 0.013 250);
     --bg-elevated: oklch(14% 0.015 250);
@@ -37,11 +65,13 @@
     --glow: oklch(75% 0.15 235 / 0.14);
     --grid-line: oklch(100% 0 0 / 0.035);
     --glass-bg: linear-gradient(180deg, oklch(100% 0 0 / 0.03), oklch(100% 0 0 / 0.01));
-    
+  }
+
+  :root {
     --background: var(--bg);
     --foreground: var(--ink);
   }
-  
+
   body {
     background-color: var(--background);
     color: var(--foreground);
