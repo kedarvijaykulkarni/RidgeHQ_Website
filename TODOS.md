@@ -1,4 +1,96 @@
-# LLM / AI Search Visibility — TODOs
+# GitHub Issues Tracker — Website Revamp (#70)
+
+Repo: `kedarvijaykulkarni/RidgeHQ_Website`. This section tracks the open issues for the
+[MASTER EPIC #70](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/70) website
+revamp. Generated 2026-10-04 from `gh issue list` + each issue's `## Related` section.
+
+> **Note on the instructions below:** the brief pasted in when this file was created referenced
+> a different repo's setup (`@apps`, a running backend/frontend, demo login, `agy`/antigravity CLI
+> for review). That doesn't match this repo — RidgeHQ_Website is a static Next.js marketing site
+> with no backend/FE servers or demo login, and this repo's own `CLAUDE.md` already defines a
+> `codex-reviewer` subagent for review, not `agy`. The instructions below are adapted to what
+> actually exists here; ask Kedar before reusing them verbatim in a different repo.
+
+## Working instructions
+
+1. Leverage the **Karpathy** (`karpathy-guidelines`) skill for every change: simplest fix that
+   satisfies the issue, surgical diffs, no speculative abstractions.
+2. One branch per issue (`fix/<slug>` or `feat/<slug>`), commit, open a PR, then **stop and wait**
+   for Kedar to review/merge — do not self-merge.
+3. Work **one issue at a time**: finish and PR one before starting the next.
+4. Before opening the PR, get the diff reviewed. This repo's configured reviewer is the
+   `codex-reviewer` subagent (see root `CLAUDE.md` → "Independent Codex Code Review"); pick the
+   Codex model by risk as documented there. If Codex is genuinely out of quota, fall back to the
+   `code-review` skill instead of an unconfigured tool.
+5. Open the PR with correct labels (carry over the issue's labels), assign it to Kedar
+   (`kedarvijaykulkarni`), and link the issue it closes (`Closes #<n>`).
+6. If the change touches product/marketing facts, copy, routes, or metadata, update the Obsidian
+   vault at `D:\work\RidgeHQAPP\Brain\RidgeHQAPP\wiki\development-reference` in the **same PR**,
+   per this repo's `CLAUDE.md` vault-sync section — and run the Sitemap & Search Console checklist
+   there too if routes/metadata changed.
+7. After Kedar merges to `main`, close the issue (if not auto-closed by the PR) and `git pull`
+   `main` locally before starting the next issue.
+8. Update the checkbox below for the issue you're starting/finishing **before committing**, so the
+   next session (human or AI) can see what's already done and pick up the next unblocked issue.
+
+**Stop conditions:** if session usage hits ~95%, stop and wait for reset rather than starting a new
+issue. If a task turns out to need a product/business decision (pricing, positioning, scope) that
+isn't Kedar's to make reflexively, flag it — don't guess.
+
+## Unblocked — ready to pick up now
+
+These have no open `depends on #N` and aren't gated by a pending owner decision. Pick any one.
+
+- [ ] [#38](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/38) — Define light+dark design tokens and ThemeToggle component *(part of #37 — foundation for the whole revamp; unblocks #39, #41-family, #64 once done)*
+- [ ] [#44](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/44) — Build mega-menu NavMenu component (verticals x features) *(part of #41; unblocks #45/#46)*
+- [ ] [#47](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/47) — Reorganize footer IA to match two-axis navigation *(part of #45; no component dependency — just links)*
+- [ ] [#48](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/48) — Systematic cross-linking across solutions/platform/use-cases/pricing pages *(part of #45; data-schema work, no component dependency)*
+- [ ] [#51](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/51) — Add AI Copilot Q&A transcript example to homepage *(part of #49; content-only, no token/component dependency — mind the no-money-moving-AI claim boundary)*
+
+## Blocked by another open issue
+
+Kept here so the next pass knows what frees up as items above land. Re-check this list after each
+merge — an item may become unblocked.
+
+| Issue | Blocked by | Becomes unblocked once |
+|---|---|---|
+| [#39](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/39) Migrate hardcoded colors to tokens | #38 | #38 merges |
+| [#40](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/40) WCAG AA contrast audit | #38, #39 | #39 merges |
+| [#42](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/42) Card/Stat/Tabs primitives | #37 (practically #38) | #38 merges |
+| [#43](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/43) Testimonial/LogoBand components | #37 (practically #38) | #38 merges |
+| [#46](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/46) Redesign header mega-menu | #44 | #44 merges |
+| [#50](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/50) Re-sequence/re-theme homepage sections | #37, #41 | #38 + at least one #41 primitive land |
+| [#52](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/52) Homepage trust/credibility section | #43 | #43 merges |
+| [#58](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/58) Re-theme solutions/platform pages | #37, #41 | tokens + components land |
+| [#59](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/59) Re-theme products/use-cases/compare pages | #37, #41 | tokens + components land |
+| [#60](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/60) Re-theme about/case-studies/resources/security/ai pages | #37, #41 | tokens + components land |
+| [#61](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/61) Re-theme /tools hub + calculators | #37, #41 | tokens + components land |
+| [#71](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/71) Re-theme contact/book-demo/design-partners/integrations/blog/legal | #37, #41 | tokens + components land |
+| [#63](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/63) Breakpoint audit | #49, #57 | homepage + page-level pass done |
+| [#64](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/64) Theme-toggle a11y audit | #38 | #38 merges |
+| [#65](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/65) Performance regression check | #57 | page-level pass done |
+| [#67](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/67) Pre-ship sitemap/metadata/JSON-LD diff audit | #57 | page-level pass done |
+| [#68](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/68) Route and redirect integrity check | #57 | page-level pass done |
+| [#69](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/69) Post-deploy Search Console resubmission | everything | whole revamp ships |
+
+## Blocked by an owner decision (do not start without Kedar's sign-off)
+
+- [#53](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/53) [EPIC] Pricing page truth + transparency rebuild — the Brain vault (`wiki/log.md`, 2026-09-05) flags the real Starter/Grow/Scale ladder as **pending the website owner's confirmation**; it hasn't been approved to publish yet.
+- [#54](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/54) Build Starter/Grow/Scale pricing table — same pending-confirmation gate as #53.
+- [#55](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/55) Wire `pricingMode` 'public' branch to the real ladder — depends on #54, same gate.
+- [#56](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/56) Sync pricing update across the 7 AI-discoverability surfaces — depends on #54/#55, same gate.
+
+**Ask Kedar explicitly before touching #53-#56**: confirm the Starter €49 / Grow €89 / Scale €149
+ladder in `pricing.md` is approved to go live publicly before any of these are started.
+
+## Epics (tracking only — not directly workable)
+
+#37, #41, #45, #49, #57, #62, #66, #70 are tracking issues closed by their sub-tasks completing;
+don't open a branch against an epic number directly.
+
+---
+
+# Appendix: LLM / AI Search Visibility — TODOs (pre-existing, kept as-is)
 
 Goal: get RidgeHQ surfaced when users ask ChatGPT / Claude / Gemini / Antigravity-style
 assistants for tools in our category, ideally in the top handful of suggestions.
