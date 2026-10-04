@@ -11,25 +11,42 @@ revamp. Generated 2026-10-04 from `gh issue list` + each issue's `## Related` se
 > `codex-reviewer` subagent for review, not `agy`. The instructions below are adapted to what
 > actually exists here; ask Kedar before reusing them verbatim in a different repo.
 
+## Branching model (as of 2026-10-04)
+
+- **`develop` is the integration branch for the whole website revamp (#70) — it is not a
+  production release.** All issue branches are cut from `develop`, and all issue PRs target
+  `develop`, not `main`.
+- **`main` only moves once, at the very end**, as a single one-shot merge from `develop` once
+  every issue under the revamp is done. Do not open an issue PR against `main` and do not merge
+  `develop` into `main` yourself — that final cutover is Kedar's call.
+- Before cutting a new branch, make sure local `develop` is up to date:
+  `git checkout develop && git pull origin develop`, then branch from there
+  (`git checkout -b feat/<slug> develop`).
+
 ## Working instructions
 
 1. Leverage the **Karpathy** (`karpathy-guidelines`) skill for every change: simplest fix that
    satisfies the issue, surgical diffs, no speculative abstractions.
-2. One branch per issue (`fix/<slug>` or `feat/<slug>`), commit, open a PR, then **stop and wait**
-   for Kedar to review/merge — do not self-merge.
+2. One branch per issue (`fix/<slug>` or `feat/<slug>`), cut from `develop` (see branching model
+   above), commit, open a PR **against `develop`**, then **stop and wait** for Kedar to
+   review/merge — do not self-merge.
 3. Work **one issue at a time**: finish and PR one before starting the next.
-4. Before opening the PR, get the diff reviewed. This repo's configured reviewer is the
-   `codex-reviewer` subagent (see root `CLAUDE.md` → "Independent Codex Code Review"); pick the
-   Codex model by risk as documented there. If Codex is genuinely out of quota, fall back to the
-   `code-review` skill instead of an unconfigured tool.
-5. Open the PR with correct labels (carry over the issue's labels), assign it to Kedar
-   (`kedarvijaykulkarni`), and link the issue it closes (`Closes #<n>`).
+4. Per-issue PRs do **not** need a `codex-reviewer` pass — run the standard local verification
+   instead (`npx tsc --noEmit`, `npx eslint` on changed files, `npx next build`, plus a manual
+   browser check for anything visual). **Only invoke `codex-reviewer`** (see root `CLAUDE.md` →
+   "Independent Codex Code Review") once all sub-issues under an epic (#37, #41, #45, #49, #57,
+   #62, #66) have merged into `develop` — run it then as a single consolidated review of that
+   epic's full cumulative diff on `develop` before moving on to the next epic. Pick the Codex
+   model by risk as documented in `CLAUDE.md`; fall back to the `code-review` skill if Codex is
+   genuinely out of quota.
+5. Open the PR against `develop` with correct labels (carry over the issue's labels), assign it
+   to Kedar (`kedarvijaykulkarni`), and link the issue it closes (`Closes #<n>`).
 6. If the change touches product/marketing facts, copy, routes, or metadata, update the Obsidian
    vault at `D:\work\RidgeHQAPP\Brain\RidgeHQAPP\wiki\development-reference` in the **same PR**,
    per this repo's `CLAUDE.md` vault-sync section — and run the Sitemap & Search Console checklist
    there too if routes/metadata changed.
-7. After Kedar merges to `main`, close the issue (if not auto-closed by the PR) and `git pull`
-   `main` locally before starting the next issue.
+7. After Kedar merges to `develop`, close the issue (if not auto-closed by the PR) and
+   `git pull origin develop` locally before starting the next issue.
 8. Update the checkbox below for the issue you're starting/finishing **before committing**, so the
    next session (human or AI) can see what's already done and pick up the next unblocked issue.
 
@@ -86,7 +103,9 @@ ladder in `pricing.md` is approved to go live publicly before any of these are s
 ## Epics (tracking only — not directly workable)
 
 #37, #41, #45, #49, #57, #62, #66, #70 are tracking issues closed by their sub-tasks completing;
-don't open a branch against an epic number directly.
+don't open a branch against an epic number directly. When the last sub-issue under one of these
+merges into `develop`, run the consolidated `codex-reviewer` pass described in the working
+instructions above before picking up the next epic's issues.
 
 ---
 
