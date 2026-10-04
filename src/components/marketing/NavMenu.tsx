@@ -118,7 +118,17 @@ function GroupColumn({ group }: { group: NavGroup }) {
 }
 
 /** One axis of a (possibly two-axis) mega-menu: a labeled, grouped set of columns. */
-function MenuAxis({ label, groups }: { label?: string; groups: NavGroup[] }) {
+function MenuAxis({
+  label,
+  groups,
+  viewAllHref,
+  viewAllLabel,
+}: {
+  label?: string;
+  groups: NavGroup[];
+  viewAllHref?: string;
+  viewAllLabel?: string;
+}) {
   const singleGroup = groups.length === 1;
   const headingId = label ? `nav-axis-${label.toLowerCase().replace(/\s+/g, "-")}` : undefined;
 
@@ -137,6 +147,19 @@ function MenuAxis({ label, groups }: { label?: string; groups: NavGroup[] }) {
           <GroupColumn key={group.title ?? gi} group={group} />
         ))}
       </div>
+      {viewAllHref && (
+        <div className="mt-3 border-t border-[var(--border)] pt-3">
+          <NavigationMenu.Link asChild>
+            <Link
+              href={viewAllHref}
+              className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)] transition-colors"
+            >
+              {viewAllLabel ?? "See all"}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </NavigationMenu.Link>
+        </div>
+      )}
     </div>
   );
 }
@@ -194,7 +217,12 @@ export function NavMenu() {
                   {hasSecondaryAxis ? (
                     <div className="flex items-start gap-6 w-[64rem]">
                       <div className="flex-1">
-                        <MenuAxis label={item.groupsLabel} groups={groups} />
+                        <MenuAxis
+                          label={item.groupsLabel}
+                          groups={groups}
+                          viewAllHref={item.groupsViewAllHref ?? item.href}
+                          viewAllLabel={item.groupsViewAllLabel ?? item.viewAllLabel}
+                        />
                       </div>
                       <div
                         className="w-px self-stretch bg-[var(--border)]"
@@ -202,32 +230,39 @@ export function NavMenu() {
                         aria-orientation="vertical"
                       />
                       <div className="flex-1">
-                        <MenuAxis label={item.secondaryGroupsLabel} groups={secondaryGroups} />
+                        <MenuAxis
+                          label={item.secondaryGroupsLabel}
+                          groups={secondaryGroups}
+                          viewAllHref={item.secondaryGroupsViewAllHref}
+                          viewAllLabel={item.secondaryGroupsViewAllLabel}
+                        />
                       </div>
                     </div>
                   ) : (
-                    <div
-                      className={cn(
-                        "grid gap-x-6 gap-y-5",
-                        singleGroup ? "grid-cols-2 w-[36rem]" : "grid-cols-3 w-[48rem]"
-                      )}
-                    >
-                      {groups.map((group, gi) => (
-                        <GroupColumn key={group.title ?? gi} group={group} />
-                      ))}
-                    </div>
-                  )}
-                  <div className="mt-3 border-t border-[var(--border)] pt-3">
-                    <NavigationMenu.Link asChild>
-                      <Link
-                        href={item.href}
-                        className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)] transition-colors"
+                    <>
+                      <div
+                        className={cn(
+                          "grid gap-x-6 gap-y-5",
+                          singleGroup ? "grid-cols-2 w-[36rem]" : "grid-cols-3 w-[48rem]"
+                        )}
                       >
-                        {item.viewAllLabel ?? `All ${item.title.toLowerCase()}`}
-                        <ArrowRight className="h-4 w-4" aria-hidden />
-                      </Link>
-                    </NavigationMenu.Link>
-                  </div>
+                        {groups.map((group, gi) => (
+                          <GroupColumn key={group.title ?? gi} group={group} />
+                        ))}
+                      </div>
+                      <div className="mt-3 border-t border-[var(--border)] pt-3">
+                        <NavigationMenu.Link asChild>
+                          <Link
+                            href={item.href}
+                            className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)] transition-colors"
+                          >
+                            {item.viewAllLabel ?? `All ${item.title.toLowerCase()}`}
+                            <ArrowRight className="h-4 w-4" aria-hidden />
+                          </Link>
+                        </NavigationMenu.Link>
+                      </div>
+                    </>
+                  )}
                 </div>
               </NavigationMenu.Content>
             </NavigationMenu.Item>

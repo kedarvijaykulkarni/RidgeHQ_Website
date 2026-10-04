@@ -103,6 +103,16 @@ export function MobileNav() {
                           </div>
                         ))}
 
+                        {item.groups && item.secondaryGroups && item.secondaryGroups.length > 0 && (
+                          <Link
+                            href={item.groupsViewAllHref ?? item.href}
+                            onClick={close}
+                            className="mt-1 block rounded-lg px-1 py-2 text-sm font-semibold text-[var(--accent)]"
+                          >
+                            {item.groupsViewAllLabel ?? item.viewAllLabel ?? "See all"}
+                          </Link>
+                        )}
+
                         {item.secondaryGroups && item.secondaryGroups.length > 0 && (
                           <>
                             <div className="my-2 border-t border-[var(--border)]" />
@@ -133,6 +143,15 @@ export function MobileNav() {
                                 </ul>
                               </div>
                             ))}
+                            {item.secondaryGroupsViewAllHref && (
+                              <Link
+                                href={item.secondaryGroupsViewAllHref}
+                                onClick={close}
+                                className="mt-1 block rounded-lg px-1 py-2 text-sm font-semibold text-[var(--accent)]"
+                              >
+                                {item.secondaryGroupsViewAllLabel ?? "See all"}
+                              </Link>
+                            )}
                           </>
                         )}
                       </div>

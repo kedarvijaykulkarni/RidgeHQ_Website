@@ -31,6 +31,12 @@ export interface NavItem {
   secondaryGroups?: NavGroup[];
   /** Accessible label for the `secondaryGroups` axis. */
   secondaryGroupsLabel?: string;
+  /** "See all" link for the `groups` axis in a two-axis menu. Defaults to `href`/`viewAllLabel` when absent. */
+  groupsViewAllHref?: string;
+  groupsViewAllLabel?: string;
+  /** "See all" link for the `secondaryGroups` axis in a two-axis menu. */
+  secondaryGroupsViewAllHref?: string;
+  secondaryGroupsViewAllLabel?: string;
   disabled?: boolean;
 }
 
@@ -187,9 +193,19 @@ const builtForGroups: NavGroup[] = builtForGroupSlugs.map((group) => ({
 // ---------------------------------------------------------------------------
 
 export const mainNav: NavItem[] = [
-  { title: 'Platform', href: '/platform', viewAllLabel: 'See the full platform', groups: platformGroups },
+  {
+    title: 'Solutions',
+    href: '/solutions',
+    groupsLabel: 'Built For',
+    groups: builtForGroups,
+    groupsViewAllHref: '/solutions',
+    groupsViewAllLabel: 'All industries',
+    secondaryGroupsLabel: 'Platform',
+    secondaryGroups: platformGroups,
+    secondaryGroupsViewAllHref: '/platform',
+    secondaryGroupsViewAllLabel: 'See the full platform',
+  },
   { title: 'Products', href: '/products', viewAllLabel: 'All products', groups: productGroups },
-  { title: 'Built For', href: '/solutions', viewAllLabel: 'All industries', groups: builtForGroups },
   { title: 'Blog', href: '/blog' },
   { title: 'Pricing', href: '/pricing' },
 ];
