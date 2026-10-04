@@ -25,6 +25,12 @@ export interface NavItem {
   children?: NavLink[];
   /** Multi-column mega-menu. Takes precedence over `children`. */
   groups?: NavGroup[];
+  /** Accessible label for the `groups` axis when a `secondaryGroups` axis is also present. */
+  groupsLabel?: string;
+  /** Second axis of a two-axis mega-menu, rendered alongside `groups` (e.g. verticals next to capabilities). */
+  secondaryGroups?: NavGroup[];
+  /** Accessible label for the `secondaryGroups` axis. */
+  secondaryGroupsLabel?: string;
   disabled?: boolean;
 }
 

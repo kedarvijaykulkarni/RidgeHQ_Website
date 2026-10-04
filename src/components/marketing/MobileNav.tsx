@@ -75,6 +75,11 @@ export function MobileNav() {
 
                     {hasMenu && isExpanded && (
                       <div className="pb-2 pl-3">
+                        {item.groupsLabel && (
+                          <p className="px-1 pt-2 pb-1 text-xs font-bold uppercase tracking-wide text-[var(--ink-secondary)]">
+                            {item.groupsLabel}
+                          </p>
+                        )}
                         {groups.map((group, gi) => (
                           <div key={group.title || gi} className="mb-2 last:mb-0">
                             {group.title && (
@@ -97,6 +102,39 @@ export function MobileNav() {
                             </ul>
                           </div>
                         ))}
+
+                        {item.secondaryGroups && item.secondaryGroups.length > 0 && (
+                          <>
+                            <div className="my-2 border-t border-[var(--border)]" />
+                            {item.secondaryGroupsLabel && (
+                              <p className="px-1 pt-2 pb-1 text-xs font-bold uppercase tracking-wide text-[var(--ink-secondary)]">
+                                {item.secondaryGroupsLabel}
+                              </p>
+                            )}
+                            {item.secondaryGroups.map((group, gi) => (
+                              <div key={group.title || gi} className="mb-2 last:mb-0">
+                                {group.title && (
+                                  <p className="px-1 pt-2 pb-1 text-xs font-semibold uppercase tracking-wide text-[var(--ink-tertiary)]">
+                                    {group.title}
+                                  </p>
+                                )}
+                                <ul>
+                                  {group.items.map((link) => (
+                                    <li key={link.href}>
+                                      <Link
+                                        href={link.href}
+                                        onClick={close}
+                                        className="block rounded-lg px-1 py-2 text-sm text-[var(--ink-secondary)] hover:text-[var(--accent)]"
+                                      >
+                                        {link.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </>
+                        )}
                       </div>
                     )}
                   </li>
