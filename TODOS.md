@@ -55,8 +55,10 @@ revamp. Generated 2026-10-04 from `gh issue list` + each issue's `## Related` se
    fires here since `develop` isn't the repo's default branch**, so always close manually
    with `gh issue close <n> -c "<note>"` — and `git pull origin develop` locally before
    starting the next issue.
-8. Update the checkbox below for the issue you're starting/finishing **before committing**, so the
-   next session (human or AI) can see what's already done and pick up the next unblocked issue.
+8. Update the checkbox below for the issue you're starting/finishing **before committing, and as a
+   commit on the same issue branch/PR** — never as a separate follow-up commit pushed after the
+   fact. This keeps the TODOS status change in the same review unit as the code it describes, so
+   the next session (human or AI) can see what's already done and pick up the next unblocked issue.
 
 **Stop conditions:** if session usage hits ~95%, stop and wait for reset rather than starting a new
 issue. If a task turns out to need a product/business decision (pricing, positioning, scope) that
@@ -69,7 +71,7 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
 - [x] [#38](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/38) — Define light+dark design tokens and ThemeToggle component — merged via PR #76 2026-10-04, issue closed
 - [x] [#39](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/39) — Migrate hardcoded color usages site-wide to theme-aware tokens — merged via PR #80 2026-10-04 (closed manually: auto-close doesn't fire on PRs merged into `develop` since it isn't the repo's default branch)
 - [x] [#42](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/42) — Build Card, Stat/metric tile, and Tabs primitives — merged via PR #82 2026-10-04, closed manually (same auto-close gap — confirmed via `gh pr view --json closingIssuesReferences` that GitHub never links/auto-closes issues for PRs targeting a non-default branch, even with "Closes #N" in the body; keep writing "Closes #N" for documentation, but always close manually with `gh issue close <n>` right after merge)
-- [ ] [#43](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/43) — Build Testimonial and Logo-band components (real content only) *(part of #41; unblocked now that #38 merged)*
+- [ ] [#43](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/43) — Build Testimonial and Logo-band components (real content only) — PR [#83](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/83) open against `develop`, awaiting Kedar's review
 - [ ] [#64](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/64) — Theme-toggle keyboard and screen-reader accessibility audit *(unblocked now that #38 merged)*
 - [x] [#44](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/44) — Build mega-menu NavMenu component (verticals x features) — merged via PR #78 2026-10-04, closed manually 2026-10-04 (same `develop`-isn't-default-branch auto-close gap)
 - [x] [#47](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/47) — Reorganize footer IA to match two-axis navigation — merged via PR #81 2026-10-04, closed manually (same auto-close gap; confirmed Vercel CI stays off on develop PRs — no checks reported, `develop` has no branch protection requiring any status check)
