@@ -63,7 +63,7 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
 - [ ] [#42](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/42) — Build Card, Stat/metric tile, and Tabs primitives *(part of #41; unblocked now that #38 merged)*
 - [ ] [#43](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/43) — Build Testimonial and Logo-band components (real content only) *(part of #41; unblocked now that #38 merged)*
 - [ ] [#64](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/64) — Theme-toggle keyboard and screen-reader accessibility audit *(unblocked now that #38 merged)*
-- [ ] [#44](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/44) — Build mega-menu NavMenu component (verticals x features) *(part of #41; unblocks #45/#46)*
+- [ ] [#44](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/44) — Build mega-menu NavMenu component (verticals x features) *(part of #41; unblocks #45/#46)* — **PR [#78](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/78) open against `develop`, awaiting Kedar's review**
 - [ ] [#47](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/47) — Reorganize footer IA to match two-axis navigation *(part of #45; no component dependency — just links)*
 - [ ] [#48](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/48) — Systematic cross-linking across solutions/platform/use-cases/pricing pages *(part of #45; data-schema work, no component dependency)*
 - [ ] [#51](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/51) — Add AI Copilot Q&A transcript example to homepage *(part of #49; content-only, no token/component dependency — mind the no-money-moving-AI claim boundary)*
