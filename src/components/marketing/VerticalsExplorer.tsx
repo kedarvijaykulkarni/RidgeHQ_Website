@@ -6,6 +6,7 @@ import { verticals } from "@/lib/config/verticals";
 import { VerticalCard } from "@/components/marketing/VerticalCard";
 import { Container } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import Link from "next/link";
 
 const TABS = ["Water Sports", "Snow & Mountains", "Rentals & Tours"] as const;
@@ -44,21 +45,15 @@ export function VerticalsExplorer() {
 
         {/* Tab switcher */}
         <div className="flex justify-center mb-12">
-          <div className="glass-panel inline-flex items-center rounded-full p-1 bg-[var(--bg-elevated)]/50">
-            {TABS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-[var(--accent)] text-[var(--bg)] shadow-md"
-                    : "text-[var(--ink-tertiary)] hover:text-[var(--ink)] hover:bg-[var(--border)]"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as Tab)}>
+            <TabsList>
+              {TABS.map((tab) => (
+                <TabsTrigger key={tab} value={tab}>
+                  {tab}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
         </div>
 
         <div className="min-h-[400px]">
