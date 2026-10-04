@@ -22,6 +22,12 @@ revamp. Generated 2026-10-04 from `gh issue list` + each issue's `## Related` se
 - Before cutting a new branch, make sure local `develop` is up to date:
   `git checkout develop && git pull origin develop`, then branch from there
   (`git checkout -b feat/<slug> develop`).
+- **Vercel auto-deploys are disabled for every branch except `main`** (`vercel.json` →
+  `git.deploymentEnabled`). Note the glob pattern must be `"**"`, not `"*"` — minimatch's
+  `*` doesn't cross `/`, so it silently misses any `feat/...`/`fix/...` branch name (fixed
+  2026-10-04, commit `9657c39`, after PRs #79/#80 were confirmed still triggering Vercel
+  checks despite the first attempt in `0cdd4dc`). If a future PR shows a Vercel check
+  again, check this glob first before assuming the dashboard settings changed.
 
 ## Working instructions
 
@@ -45,8 +51,10 @@ revamp. Generated 2026-10-04 from `gh issue list` + each issue's `## Related` se
    vault at `D:\work\RidgeHQAPP\Brain\RidgeHQAPP\wiki\development-reference` in the **same PR**,
    per this repo's `CLAUDE.md` vault-sync section — and run the Sitemap & Search Console checklist
    there too if routes/metadata changed.
-7. After Kedar merges to `develop`, close the issue (if not auto-closed by the PR) and
-   `git pull origin develop` locally before starting the next issue.
+7. After Kedar merges to `develop`, close the issue — **GitHub's "Closes #N" auto-close never
+   fires here since `develop` isn't the repo's default branch**, so always close manually
+   with `gh issue close <n> -c "<note>"` — and `git pull origin develop` locally before
+   starting the next issue.
 8. Update the checkbox below for the issue you're starting/finishing **before committing**, so the
    next session (human or AI) can see what's already done and pick up the next unblocked issue.
 
@@ -59,16 +67,17 @@ isn't Kedar's to make reflexively, flag it — don't guess.
 These have no open `depends on #N` and aren't gated by a pending owner decision. Pick any one.
 
 - [x] [#38](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/38) — Define light+dark design tokens and ThemeToggle component — merged via PR #76 2026-10-04, issue closed
-- [ ] [#39](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/39) — Migrate hardcoded color usages site-wide to theme-aware tokens — PR [#80](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/80) open against `develop`, awaiting Kedar's review
+- [x] [#39](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/39) — Migrate hardcoded color usages site-wide to theme-aware tokens — merged via PR #80 2026-10-04 (closed manually: auto-close doesn't fire on PRs merged into `develop` since it isn't the repo's default branch)
 - [ ] [#42](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/42) — Build Card, Stat/metric tile, and Tabs primitives *(part of #41; unblocked now that #38 merged)*
 - [ ] [#43](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/43) — Build Testimonial and Logo-band components (real content only) *(part of #41; unblocked now that #38 merged)*
 - [ ] [#64](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/64) — Theme-toggle keyboard and screen-reader accessibility audit *(unblocked now that #38 merged)*
-- [x] [#44](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/44) — Build mega-menu NavMenu component (verticals x features) — merged via PR #78 2026-10-04; **issue still open on GitHub, needs manual close** (gh write blocked by auto-mode permissions this session)
+- [x] [#44](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/44) — Build mega-menu NavMenu component (verticals x features) — merged via PR #78 2026-10-04, closed manually 2026-10-04 (same `develop`-isn't-default-branch auto-close gap)
 - [ ] [#47](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/47) — Reorganize footer IA to match two-axis navigation *(part of #45; no component dependency — just links)*
 - [ ] [#48](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/48) — Systematic cross-linking across solutions/platform/use-cases/pricing pages *(part of #45; data-schema work, no component dependency)*
 - [ ] [#51](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/51) — Add AI Copilot Q&A transcript example to homepage *(part of #49; content-only, no token/component dependency — mind the no-money-moving-AI claim boundary)*
-- [ ] [#46](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/46) — Redesign header mega-menu *(combined Platform+Built For into one "Solutions" two-axis menu, verticals primary/platform secondary per Kedar's confirmation 2026-10-04)* — **PR [#79](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/79) open against `develop`, awaiting Kedar's review**
+- [x] [#46](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/46) — Redesign header mega-menu *(combined Platform+Built For into one "Solutions" two-axis menu, verticals primary/platform secondary per Kedar's confirmation 2026-10-04)* — merged via PR #79 2026-10-04, closed manually (same auto-close gap; PR body said "Closes #46" but GitHub only auto-links that against the default branch)
 - [ ] [#50](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/50) — Re-sequence/re-theme homepage sections *(unblocked now that #44 merged — part of #41)*
+- [ ] [#40](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/40) — WCAG AA contrast audit *(unblocked now that #39 merged — moved up from "Blocked" list below)*
 
 ## Blocked by another open issue
 
@@ -77,7 +86,6 @@ merge — an item may become unblocked.
 
 | Issue | Blocked by | Becomes unblocked once |
 |---|---|---|
-| [#40](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/40) WCAG AA contrast audit | #39 | #39 merges |
 | [#52](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/52) Homepage trust/credibility section | #43 | #43 merges |
 | [#58](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/58) Re-theme solutions/platform pages | #41 | components land |
 | [#59](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/59) Re-theme products/use-cases/compare pages | #41 | components land |
