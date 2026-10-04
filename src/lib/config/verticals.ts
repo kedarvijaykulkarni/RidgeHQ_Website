@@ -42,6 +42,8 @@ export interface Vertical {
   featureSections?: VerticalFeatureSection[];
   workflow?: VerticalWorkflowStep[];
   outcomes?: VerticalOutcome[];
+  /** src/lib/config/platform.ts slugs this vertical's content most directly draws on. */
+  relatedPlatformSlugs: string[];
 }
 
 export const verticals: Vertical[] = [
@@ -62,6 +64,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A typical dive center sells on a booking widget, plans the boat on a whiteboard, keeps kit sizing in a folder, and logs course progress in a spreadsheet. Every course that fills online is re-typed onto the manifest by hand, every gear swap is checked from memory, and no screen shows the whole day at once.',
     keyCapability: 'Every booking arrives on the day plan with the diver, their certification level, and their stored kit sizing attached — so the manifest, the ratio check, and the gear draw-down build themselves instead of being copied across three tools.',
+    relatedPlatformSlugs: ['scheduling', 'gear-rentals', 'customers-participants'],
     representativeFlow: [
       'A diver books an Open Water course online and answers the medical questions.',
       'RidgeHQ reserves cylinders and rental kit in the diver\'s sizes.',
@@ -154,6 +157,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'Surf timetables move with the tide and the forecast, and most schools re-plan by hand — messaging instructors, chasing wetsuit sizes, rebooking groups one reply at a time. The booking site, the board rack, and the progression sheet never quite agree.',
     keyCapability: 'The day plan carries the tide window and swell forecast for your break alongside wetsuit and board sizing and instructor level — so when conditions turn you reschedule a whole group and the resources and messages follow.',
+    relatedPlatformSlugs: ['scheduling', 'gear-rentals', 'staff'],
     representativeFlow: [
       'A group books a three-day beginner camp online.',
       'RidgeHQ checks instructor availability against the incoming swell.',
@@ -246,6 +250,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'Kite lessons only run inside a wind window, so schools lose the morning to "wind is on" messages and then a hunt for a kite in the right size. The booking tool, the gear board, and the progression cards sit in three places, and none of them read the forecast.',
     keyCapability: 'Sessions hold the wind forecast for your spot, and confirming one reserves the right kite size and harness for each student\'s weight — so a wind window becomes a full, kitted, briefed lesson in minutes.',
+    relatedPlatformSlugs: ['scheduling', 'gear-rentals'],
     representativeFlow: [
       'A student books a block of six instruction hours.',
       'Lessons are scheduled but flagged wind-dependent.',
@@ -338,6 +343,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A sailing school is a scheduling puzzle: a five-day course needs the right boat for five days, a qualified skipper for the same five days, and no clash with a maintenance haul-out or a weekend charter. Run that across a fleet on a spreadsheet and something gets double-booked.',
     keyCapability: 'The fleet — each vessel\'s capacity, inspection and licence dates, and assigned crew — sits inside the same calendar as your courses, so a multi-day course reserves the boat and the skipper together and refuses to clash.',
+    relatedPlatformSlugs: ['gear-rentals', 'scheduling', 'staff'],
     representativeFlow: [
       'A client books a five-day Competent Crew course.',
       'RidgeHQ reserves a specific keelboat for the duration.',
@@ -430,6 +436,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A busy windsurf centre turns over gear all day and rents storage racks all season, while also teaching wind-dependent lessons. On paper you never quite know what is on the water, what is due back, or whether the board a lesson needs is already out with a walk-in.',
     keyCapability: 'One shared fleet across lessons and walk-in hire, with each board and rig tracked out and back and every storage rack billed on schedule — so the desk always knows what is available right now.',
+    relatedPlatformSlugs: ['gear-rentals', 'payments'],
     representativeFlow: [
       'A client walks in for a two-hour equipment rental.',
       'Staff assign a specific board and rig on the POS.',
@@ -522,6 +529,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A single rafting or canyoning trip is a logistics chain: enough boats for the headcount, enough guides for the ratio, enough shuttle seats to reach the put-in, and a signed waiver for every person. Miss one link and the trip runs short-handed or leaves someone at the depot.',
     keyCapability: 'A booking\'s headcount drives the whole chain — rafts, guides at your ratio, and shuttle seats are reserved together, and nobody boards without a signed waiver on file.',
+    relatedPlatformSlugs: ['gear-rentals', 'staff', 'customers-participants'],
     representativeFlow: [
       'A corporate group of 30 books a half-day rafting trip.',
       'RidgeHQ sizes the trip to five rafts and six guides.',
@@ -614,6 +622,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'Ski school demand arrives in a wall at 8:45 a.m.: families wanting privates and group classes at different levels, in different languages, all for the same slot. Matching every booking to the right instructor by hand, at that speed, is where the mistakes happen.',
     keyCapability: 'Every booking carries the student\'s level and language, and instructors are tagged by certification and language — so assignment for the morning rush is a filtered match, not a guessing game.',
+    relatedPlatformSlugs: ['scheduling', 'staff'],
     representativeFlow: [
       'A family books private lessons and group classes for children at different levels.',
       'RidgeHQ flags any missing ability levels and requests them.',
@@ -706,6 +715,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A dive resort runs a hotel and a dive centre at once. When the beds live in one system and the boats in another, package dives get miscounted, a guest gets billed twice, and reception and the dive desk spend the week reconciling by hand.',
     keyCapability: 'Accommodation and the dive schedule share one system and one guest folio — a Stay & Dive package books the room and credits the dives, and each day on the boat draws the package down automatically.',
+    relatedPlatformSlugs: ['scheduling', 'payments', 'customers-participants'],
     representativeFlow: [
       'A guest books a seven-night Stay & Dive package.',
       'A room is held for the stay in the accommodation calendar.',
@@ -798,6 +808,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A surf camp week has a lot of moving parts per guest: a bed, an airport pickup, a lesson group at their level, and a note for the kitchen. Run that on a booking tool plus three spreadsheets and every changeover day is a fire drill.',
     keyCapability: 'One weekly package books the bed, adds the guest to the arrival transfer, places them in the right surf group, and captures dietary needs — so the changeover list builds itself.',
+    relatedPlatformSlugs: ['bookings-pos', 'scheduling', 'customers-participants'],
     representativeFlow: [
       'A guest books a one-week camp package with airport transfer.',
       'RidgeHQ adds them to the arrival transfer manifest.',
@@ -890,6 +901,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A kayak operation sells guided tours and hires boats by the hour from the same rack. Without one shared inventory, a tour turns up needing ten doubles that walked out the door an hour earlier, and the desk finds out at the water.',
     keyCapability: 'Tours and walk-in hire draw from one boat inventory, so a kayak reserved for the 6 p.m. tour is not on the walk-in rack at 5 — and guides are scheduled against the tour headcount at your ratio.',
+    relatedPlatformSlugs: ['gear-rentals', 'staff'],
     representativeFlow: [
       'A group books a guided sunset tour online.',
       'RidgeHQ reserves ten doubles and assigns a guide.',
@@ -982,6 +994,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'A bike fleet is not interchangeable stock — it is individual assets, each with a frame size, a service history, and a battery that needs turnaround time. Booking "an e-bike" and sorting out which one on the morning of pickup is how you hand over a bike with a flagged brake.',
     keyCapability: 'Every bike is its own tracked asset with a size and a service state, so a booking reserves a specific frame in the right size and a bike flagged for repair is simply not offered.',
+    relatedPlatformSlugs: ['gear-rentals', 'bookings-pos'],
     representativeFlow: [
       'A customer books an e-MTB rental for three days.',
       'RidgeHQ reserves a specific size Large bike.',
@@ -1074,6 +1087,7 @@ export const verticals: Vertical[] = [
     ],
     painPoint: 'Handing over a boat worth six figures depends on two things going right: the right licence on file for a bareboat charter, and a security deposit that is actually held. Chase both by email and one of them slips — the client arrives without the paperwork, or the deposit was never taken.',
     keyCapability: 'The booking collects the licence and ID up front for staff to verify, pre-authorises the deposit through your gateway, and holds the specific vessel — so nothing is handed over until the checks clear.',
+    relatedPlatformSlugs: ['payments', 'customers-participants', 'gear-rentals'],
     representativeFlow: [
       'A client books a bareboat charter online.',
       'RidgeHQ prompts them to upload their licence and ID.',
