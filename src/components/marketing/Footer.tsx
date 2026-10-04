@@ -40,6 +40,7 @@ const socialLinks: { label: string; href: string; path: string }[] = [
 const linkColumns: { heading: string; links: { title: string; href: string }[] }[] = [
   { heading: "Products", links: footerNav.products },
   { heading: "Built For", links: footerNav.builtFor },
+  { heading: "Platform", links: footerNav.platform },
   { heading: "Company", links: footerNav.company },
   { heading: "Legal", links: footerNav.legal },
 ]
@@ -60,7 +61,7 @@ export function Footer() {
       />
 
       <Container className="py-16">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-7">
           <div className="col-span-2 flex flex-col gap-4">
             <Link
               href="/"
@@ -132,7 +133,6 @@ export function Footer() {
             <Link href="/privacy" className="transition-colors hover:text-[var(--accent)]">Privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-[var(--accent)]">Terms</Link>
             <Link href="/security" className="transition-colors hover:text-[var(--accent)]">Security</Link>
-            <Link href="/ai" className="transition-colors hover:text-[var(--accent)]">AI Overview</Link>
           </div>
         </div>
       </Container>
