@@ -93,6 +93,7 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
   - **P2 blog sitemap gap** (also surfaced, lower severity): `/blog/[slug]`'s template changed in #71 but its sitemap `lastmod` uses `publishedAt` with no separate "template last touched" field, so the change couldn't surface without misrepresenting the post's actual publish date. Added an optional `updatedAt` frontmatter field (falls back to `publishedAt`) to all 18 real published posts, set to `2026-10-05`; `sitemap.ts` now reads `p.updatedAt ?? p.publishedAt`. Confirmed via served `sitemap.xml` fetch.
   - Codex's claimed criterion-4 status ("tsc/eslint/build not run by a static review") was correctly flagged as unverified by Codex itself — ran all three here, all pass.
   - PR pending against `develop` (branch `fix/57-epic-review-remediation`, based on `develop` post-#96 — **not** a new issue number, this is epic #57's own review-gate remediation).
+- [x] [#63](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/63) — Mobile/tablet/desktop breakpoint audit *(unblocked by the epic-#57 review pass above)* — automated Playwright sweep of every sitemap route plus `/thank-you` and `/pricing` (76 routes) at 375/768/1280px in both themes (456 checks), testing document horizontal scroll, unclipped elements past the viewport edge, and text wider than its own box. One failure found: `/blog/integrated-waiver-system-dive-operations` at 375px — the in-body markdown H1 begins with "Operationalizing", a single word wider than the 343px column at `prose-lg`'s 48px H1 size, causing 35px of page scroll in both themes. Fixed in the blog post template (`max-sm:prose-h1:text-3xl` → 30px on phones only, desktop unchanged at 48px; plus `prose-headings:break-words` as a safety net for future long-word titles). Re-ran all 19 blog routes × 6 combos: 0 failures. Noted, not changed (out of scope): that post renders its title twice (page header + markdown `# ` H1). No sitemap change needed — all posts' `updatedAt` is already `2026-10-05` from the #57 remediation. PR pending against `develop`.
 
 ## Blocked by another open issue
 
@@ -101,10 +102,9 @@ merge — an item may become unblocked.
 
 | Issue | Blocked by | Becomes unblocked once |
 |---|---|---|
-| [#63](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/63) Breakpoint audit | codex-reviewer pass on epic #57 | #71 merges, then the required consolidated epic-#57 review runs (per working instructions §4 — all 5 sub-issues #58/#59/#60/#61/#71 will have landed) |
-| [#65](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/65) Performance regression check | codex-reviewer pass on epic #57 | same as #63 |
-| [#67](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/67) Pre-ship sitemap/metadata/JSON-LD diff audit | codex-reviewer pass on epic #57 | same as #63 |
-| [#68](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/68) Route and redirect integrity check | codex-reviewer pass on epic #57 | same as #63 |
+| [#65](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/65) Performance regression check | ~~codex-reviewer pass on epic #57~~ (done) | **unblocked now** — the epic-#57 review pass has landed |
+| [#67](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/67) Pre-ship sitemap/metadata/JSON-LD diff audit | ~~codex-reviewer pass on epic #57~~ (done) | **unblocked now** — the epic-#57 review pass has landed |
+| [#68](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/68) Route and redirect integrity check | ~~codex-reviewer pass on epic #57~~ (done) | **unblocked now** — the epic-#57 review pass has landed |
 | [#69](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/69) Post-deploy Search Console resubmission | everything | whole revamp ships |
 
 ## Blocked by an owner decision (do not start without Kedar's sign-off)
