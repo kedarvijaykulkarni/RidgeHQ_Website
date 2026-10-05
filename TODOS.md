@@ -81,6 +81,7 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
 - [x] [#50](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/50) — Re-sequence/re-theme homepage sections — re-theming was already complete (full CSS-var token migration from #39 covers every homepage section); moved Pricing Philosophy section up to position 3 (right after hero + screenshot proof), ahead of Problem/Solution, per eola-pattern of surfacing pricing early. All 10 sections preserved, structured data untouched. PR pending against `develop`.
 - [x] [#40](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/40) — WCAG AA contrast audit — all text pairings pass AA in both themes with margin (documented in `docs/wcag-contrast-audit.md`); one real fail found on non-text UI (`--border`/`--bg` only 1.3-1.5:1, needs 3:1 per 1.4.11) where it's the sole boundary of form inputs and the outline Button variant — added `--border-strong` token and switched only those two call sites, decorative dividers/card outlines keep the original softer `--border`. PR pending against `develop`.
 - [x] [#89](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/89) — Tabs ARIA linkage, onClick overwrite bug, and mega-menu responsive/focus-trap gaps found by the consolidated codex-reviewer pass on epic #41's cumulative diff — fixed all 4: `Tabs` now generates paired `id`/`aria-controls`/`aria-labelledby` per instance via `useId()` (also wired into `VerticalsExplorer`'s results panel, which uses `Tabs`/`TabsList`/`TabsTrigger` without `TabsContent`); `TabsTrigger` composes a consumer `onClick` instead of letting prop-spread silently overwrite the internal handler; two-axis mega-menu and mobile drawer breakpoint moved from `md`(768px) to `lg`(1024px) so the overflow-prone two-axis layout never renders below its fitting width, falling back to the (now focus-trapped) mobile nav instead; `MobileNav` drawer gained a real Tab-key focus trap and restores focus to the toggle button on close/Escape. All verified live in-browser (ARIA ids, tab switching, tablet-width no-overflow, focus wrap, focus-return). PR pending against `develop`.
+- [x] [#52](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/52) — Add honest trust/credibility section to homepage *(unblocked now that #43 merged)* — new section placed right before FAQ/Final CTA; 3-card grid (Design Partner Program, Security & data ownership, Founder-led onboarding), every claim paraphrased verbatim from the real `/design-partners` and `/security` pages, no invented numbers; `Testimonial`/`LogoBand` wired in below (both ship empty, render nothing per #43's empty-safe design, future-ready). Verified in both themes live in-browser. PR pending against `develop`.
 
 ## Blocked by another open issue
 
@@ -89,12 +90,11 @@ merge — an item may become unblocked.
 
 | Issue | Blocked by | Becomes unblocked once |
 |---|---|---|
-| [#52](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/52) Homepage trust/credibility section | #43 | #43 merges |
-| [#58](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/58) Re-theme solutions/platform pages | #41 | components land |
-| [#59](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/59) Re-theme products/use-cases/compare pages | #41 | components land |
-| [#60](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/60) Re-theme about/case-studies/resources/security/ai pages | #41 | components land |
-| [#61](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/61) Re-theme /tools hub + calculators | #41 | components land |
-| [#71](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/71) Re-theme contact/book-demo/design-partners/integrations/blog/legal | #41 | components land |
+| [#58](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/58) Re-theme solutions/platform pages | — | unblocked, #41 components landed — not yet started |
+| [#59](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/59) Re-theme products/use-cases/compare pages | — | unblocked, #41 components landed — not yet started |
+| [#60](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/60) Re-theme about/case-studies/resources/security/ai pages | — | unblocked, #41 components landed — not yet started |
+| [#61](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/61) Re-theme /tools hub + calculators | — | unblocked, #41 components landed — not yet started |
+| [#71](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/71) Re-theme contact/book-demo/design-partners/integrations/blog/legal | — | unblocked, #41 components landed — not yet started |
 | [#63](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/63) Breakpoint audit | #49, #57 | homepage + page-level pass done |
 | [#65](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/65) Performance regression check | #57 | page-level pass done |
 | [#67](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/67) Pre-ship sitemap/metadata/JSON-LD diff audit | #57 | page-level pass done |
