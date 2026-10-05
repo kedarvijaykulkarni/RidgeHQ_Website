@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 interface TabsContextValue {
   value: string
   setValue: (value: string) => void
+  idPrefix: string
 }
 
 const TabsContext = React.createContext<TabsContextValue | null>(null)
@@ -27,6 +28,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     const [internalValue, setInternalValue] = React.useState(defaultValue ?? "")
     const isControlled = value !== undefined
     const currentValue = isControlled ? value : internalValue
+    const idPrefix = React.useId()
 
     const setValue = React.useCallback(
       (next: string) => {
@@ -37,7 +39,7 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     )
 
     return (
-      <TabsContext.Provider value={{ value: currentValue, setValue }}>
+      <TabsContext.Provider value={{ value: currentValue, setValue, idPrefix }}>
         <div ref={ref} className={cn(className)} {...props}>
           {children}
         </div>
@@ -92,8 +94,8 @@ export interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonE
 }
 
 const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
-  ({ value, className, children, ...props }, ref) => {
-    const { value: activeValue, setValue } = useTabsContext()
+  ({ value, className, children, onClick, ...props }, ref) => {
+    const { value: activeValue, setValue, idPrefix } = useTabsContext()
     const isActive = activeValue === value
 
     return (
@@ -101,9 +103,14 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
         ref={ref}
         type="button"
         role="tab"
+        id={`${idPrefix}-trigger-${value}`}
+        aria-controls={`${idPrefix}-panel-${value}`}
         aria-selected={isActive}
         tabIndex={isActive ? 0 : -1}
-        onClick={() => setValue(value)}
+        onClick={(event) => {
+          setValue(value)
+          onClick?.(event)
+        }}
         className={cn(
           "px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-all duration-300",
           isActive
@@ -126,11 +133,18 @@ export interface TabsContentProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
   ({ value, className, children, ...props }, ref) => {
-    const { value: activeValue } = useTabsContext()
+    const { value: activeValue, idPrefix } = useTabsContext()
     if (activeValue !== value) return null
 
     return (
-      <div ref={ref} role="tabpanel" className={cn(className)} {...props}>
+      <div
+        ref={ref}
+        role="tabpanel"
+        id={`${idPrefix}-panel-${value}`}
+        aria-labelledby={`${idPrefix}-trigger-${value}`}
+        className={cn(className)}
+        {...props}
+      >
         {children}
       </div>
     )

@@ -168,7 +168,7 @@ export function NavMenu() {
   const pathname = usePathname() ?? "/";
 
   return (
-    <NavigationMenu.Root className="hidden md:block" delayDuration={100}>
+    <NavigationMenu.Root className="hidden lg:block" delayDuration={100}>
       <NavigationMenu.List className="flex items-center gap-7">
         {mainNav.map((item: NavItem) => {
           const active = isActive(pathname, item.href);
@@ -215,7 +215,7 @@ export function NavMenu() {
               <NavigationMenu.Content className="absolute left-0 top-full z-50 pt-3">
                 <div className="glass-card rounded-2xl border border-[var(--border)] bg-[var(--bg-elevated)] p-4 shadow-2xl shadow-black/30">
                   {hasSecondaryAxis ? (
-                    <div className="flex items-start gap-6 w-[64rem]">
+                    <div className="flex items-start gap-6 w-[min(64rem,calc(100vw-2rem))]">
                       <div className="flex-1">
                         <MenuAxis
                           label={item.groupsLabel}

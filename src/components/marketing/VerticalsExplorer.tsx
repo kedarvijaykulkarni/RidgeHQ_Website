@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { verticals } from "@/lib/config/verticals";
 import { VerticalCard } from "@/components/marketing/VerticalCard";
@@ -14,6 +14,7 @@ type Tab = typeof TABS[number];
 
 export function VerticalsExplorer() {
   const [activeTab, setActiveTab] = useState<Tab>("Water Sports");
+  const idPrefix = useId();
 
   const filteredVerticals = verticals.filter((v) => {
     if (activeTab === "Water Sports") return ["dive-centers", "surf-schools", "kitesurf-schools", "sailing-schools", "windsurf-schools", "dive-resorts", "surf-camps"].includes(v.id);
@@ -48,7 +49,12 @@ export function VerticalsExplorer() {
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as Tab)}>
             <TabsList>
               {TABS.map((tab) => (
-                <TabsTrigger key={tab} value={tab}>
+                <TabsTrigger
+                  key={tab}
+                  value={tab}
+                  id={`${idPrefix}-trigger-${tab}`}
+                  aria-controls={`${idPrefix}-panel-${tab}`}
+                >
                   {tab}
                 </TabsTrigger>
               ))}
@@ -56,7 +62,12 @@ export function VerticalsExplorer() {
           </Tabs>
         </div>
 
-        <div className="min-h-[400px]">
+        <div
+          className="min-h-[400px]"
+          role="tabpanel"
+          id={`${idPrefix}-panel-${activeTab}`}
+          aria-labelledby={`${idPrefix}-trigger-${activeTab}`}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
