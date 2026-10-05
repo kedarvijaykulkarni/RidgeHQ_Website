@@ -88,8 +88,9 @@ size, not exact CDN bytes.
 
 Every route grows by about 1.3 KB, which matches the shared header (theme toggle plus the
 two-axis mega-menu). The homepage grows a little more because of the `CopilotTranscript` and
-trust sections. The CSS grows because of the light/dark token set. All changes are under 1%.
-No action is needed.
+trust sections. The CSS grows because of the light/dark token set. JS grows under 1% on every route; CSS grows
+0.5 KB, which is 3.9% of a small 12.9 KB file (corrected 2026-10-05 after the epic #62 review —
+this line first said all changes were under 1%). No action is needed.
 
 ### Not measured
 
