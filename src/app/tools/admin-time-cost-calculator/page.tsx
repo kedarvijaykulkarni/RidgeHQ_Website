@@ -31,7 +31,7 @@ export default function AdminTimeCostCalculatorPage() {
             items={[{ label: "Tools", href: "/tools" }, { label: "Admin Time Cost Calculator" }]}
           />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               Admin Time Cost Calculator
             </h1>
             <p className="text-lg text-ink-secondary leading-relaxed">
@@ -49,10 +49,10 @@ export default function AdminTimeCostCalculatorPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
-            <h2 className="text-xl font-bold text-white">What counts as this time</h2>
+            <h2 className="text-xl font-bold text-ink">What counts as this time</h2>
             <p>
               Typical examples: copying an online booking onto a whiteboard or manifest, checking gear
               sizing from a separate spreadsheet, chasing a waiver by email, or reconciling the day&rsquo;s

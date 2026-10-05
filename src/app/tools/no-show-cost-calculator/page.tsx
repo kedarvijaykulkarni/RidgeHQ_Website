@@ -31,7 +31,7 @@ export default function NoShowCostCalculatorPage() {
             items={[{ label: "Tools", href: "/tools" }, { label: "No-Show Cost Calculator" }]}
           />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               No-Show Cost Calculator
             </h1>
             <p className="text-lg text-ink-secondary leading-relaxed">
@@ -49,10 +49,10 @@ export default function NoShowCostCalculatorPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
-            <h2 className="text-xl font-bold text-white">Why this happens</h2>
+            <h2 className="text-xl font-bold text-ink">Why this happens</h2>
             <p>
               No-shows are more common when there is friction between booking and arrival — no deposit,
               no reminder, or a booking that lives in a system your team never actually looks at day to

@@ -28,7 +28,7 @@ export function ReadinessAssessment() {
   }
 
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10 space-y-10">
+    <div className="glass-card rounded-2xl border border-[var(--border)] p-6 md:p-10 space-y-10">
       <div className="space-y-8">
         {readinessQuestions.map((q, qIndex) => (
           <fieldset key={q.id}>
@@ -43,8 +43,8 @@ export function ReadinessAssessment() {
                     htmlFor={inputId}
                     className={`flex items-center gap-3 rounded-lg border px-4 py-2.5 cursor-pointer transition-colors ${
                       checked
-                        ? "border-accent bg-accent/10 text-white"
-                        : "border-white/10 bg-white/5 text-ink-secondary hover:border-white/20"
+                        ? "border-accent bg-accent/10 text-ink"
+                        : "border-[var(--border-strong)] bg-[var(--bg-elevated)] text-ink-secondary hover:border-[var(--accent-border)]"
                     }`}
                   >
                     <input
@@ -64,7 +64,7 @@ export function ReadinessAssessment() {
         ))}
       </div>
 
-      <div className="border-t border-white/10 pt-8" aria-live="polite">
+      <div className="border-t border-[var(--border)] pt-8" aria-live="polite">
         {band ? (
           <div className="space-y-2">
             <p className="text-sm text-ink-secondary">Your result</p>

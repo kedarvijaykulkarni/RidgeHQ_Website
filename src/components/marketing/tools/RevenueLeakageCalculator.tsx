@@ -11,7 +11,7 @@ function formatCurrency(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
+  "w-full rounded-lg border border-[var(--border-strong)] bg-bg-elevated px-4 py-2.5 text-ink placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function RevenueLeakageCalculator() {
   const [bookingsPerWeek, setBookingsPerWeek] = React.useState(60);
@@ -34,7 +34,7 @@ export function RevenueLeakageCalculator() {
   });
 
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <div className="glass-card rounded-2xl border border-[var(--border)] p-6 md:p-10">
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
@@ -94,12 +94,12 @@ export function RevenueLeakageCalculator() {
         </div>
 
         <div
-          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          className="flex flex-col justify-center space-y-6 border-t border-border pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
           aria-live="polite"
         >
           <div>
             <p className="text-sm text-ink-secondary mb-1">Estimated revenue leaked per week</p>
-            <p className="text-3xl font-bold text-white">{formatCurrency(weeklyLeakage)}</p>
+            <p className="text-3xl font-bold text-ink">{formatCurrency(weeklyLeakage)}</p>
           </div>
           <div>
             <p className="text-sm text-ink-secondary mb-1">Estimated revenue leaked per year</p>
