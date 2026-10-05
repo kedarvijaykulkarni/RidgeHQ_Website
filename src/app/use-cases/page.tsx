@@ -24,7 +24,7 @@ export default function UseCasesIndexPage() {
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "Use Cases" }]} />
           <div className="max-w-3xl space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink">
               Solve the specific problem, not just the industry
             </h1>
             <p className="text-xl text-ink-secondary">
@@ -36,16 +36,16 @@ export default function UseCasesIndexPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="grid md:grid-cols-2 gap-6">
             {useCases.map((useCase) => (
               <Link
                 key={useCase.slug}
                 href={`/use-cases/${useCase.slug}`}
-                className="glass-card p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors group"
+                className="glass-card p-8 rounded-2xl border border-[var(--border)] hover:border-[var(--accent-border)] transition-colors group"
               >
-                <h2 className="text-2xl font-bold text-white mb-3">{useCase.title}</h2>
+                <h2 className="text-2xl font-bold text-ink mb-3">{useCase.title}</h2>
                 <p className="text-ink-secondary leading-relaxed mb-4">{useCase.heroTagline}</p>
                 <span className="inline-flex items-center gap-1 text-accent text-sm font-medium">
                   Read more

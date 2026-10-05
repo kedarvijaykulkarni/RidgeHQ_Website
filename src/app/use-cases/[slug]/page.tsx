@@ -57,7 +57,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
             items={[{ label: "Use Cases", href: "/use-cases" }, { label: useCase.title }]}
           />
           <div className="max-w-3xl space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink">
               {useCase.heroHeadline}
             </h1>
             <p className="text-xl text-ink-secondary">{useCase.heroTagline}</p>
@@ -65,23 +65,23 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl mx-auto space-y-16">
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-white">The problem</h2>
+              <h2 className="text-2xl font-bold text-ink">The problem</h2>
               <p className="text-lg text-ink-secondary leading-relaxed">{useCase.problem}</p>
             </div>
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-white">Why it happens</h2>
+              <h2 className="text-2xl font-bold text-ink">Why it happens</h2>
               <p className="text-lg text-ink-secondary leading-relaxed">{useCase.whyItHappens}</p>
             </div>
             <div className="space-y-4">
-              <h2 className="text-2xl font-bold text-white">The cost of leaving it unmanaged</h2>
+              <h2 className="text-2xl font-bold text-ink">The cost of leaving it unmanaged</h2>
               <p className="text-lg text-ink-secondary leading-relaxed">{useCase.costOfInaction}</p>
             </div>
-            <div className="space-y-4 glass-card p-8 rounded-2xl bg-white/5 border border-white/10">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+            <div className="space-y-4 glass-card p-8 rounded-2xl border border-[var(--border)]">
+              <h2 className="text-2xl font-bold text-ink flex items-center gap-2">
                 <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0" />
                 How RidgeHQ helps
               </h2>
@@ -96,7 +96,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
               )}
             </div>
             <div className="space-y-4 glass-card p-8 rounded-2xl bg-amber-500/5 border border-amber-500/20">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-ink flex items-center gap-2">
                 <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0" />
                 When RidgeHQ may not be the right fit
               </h2>
@@ -105,20 +105,20 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
 
             {relatedVerticals.length > 0 && (
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-white">Businesses that run into this</h2>
+                <h2 className="text-2xl font-bold text-ink">Businesses that run into this</h2>
                 <div className="flex flex-wrap gap-3">
                   {relatedVerticals.map((v) => (
                     <Link
                       key={v.slug}
                       href={`/solutions/${v.slug}`}
-                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                      className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-[var(--accent-border)] hover:text-ink transition-colors"
                     >
                       {v.name}
                     </Link>
                   ))}
                   <Link
                     href="/pricing"
-                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                    className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-[var(--accent-border)] hover:text-ink transition-colors"
                   >
                     Pricing
                   </Link>
@@ -130,10 +130,10 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
       </Section>
 
       {useCase.faqs.length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-white text-center">Common Questions</h2>
+              <h2 className="text-3xl font-bold mb-8 text-ink text-center">Common Questions</h2>
               <FAQAccordion items={useCase.faqs} />
             </div>
           </Container>

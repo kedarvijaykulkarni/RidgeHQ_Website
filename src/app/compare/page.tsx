@@ -22,7 +22,7 @@ export default function ComparePage() {
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "Compare" }]} />
           <div className="max-w-3xl space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink">
               How RidgeHQ compares
             </h1>
             <p className="text-xl text-ink-secondary">
@@ -34,16 +34,16 @@ export default function ComparePage() {
         </Container>
       </Section>
 
-      <Section className="pt-0 border-t border-white/5">
+      <Section className="pt-0 border-t border-border">
         <Container>
           <div className="grid md:grid-cols-2 gap-6">
             {comparisons.map((c) => (
               <Link
                 key={c.slug}
                 href={`/compare/${c.slug}`}
-                className="glass-card group rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-accent/40"
+                className="glass-card group rounded-2xl border border-[var(--border)] p-8 transition-colors hover:border-accent/40"
               >
-                <h2 className="text-xl font-bold text-white mb-2">{c.title}</h2>
+                <h2 className="text-xl font-bold text-ink mb-2">{c.title}</h2>
                 <p className="text-ink-secondary text-sm leading-relaxed mb-4">{c.heroTagline}</p>
                 <span className="inline-flex items-center gap-1 text-sm text-accent">
                   Read comparison <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

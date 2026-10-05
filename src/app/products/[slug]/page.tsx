@@ -87,10 +87,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 className="mb-2"
                 items={[{ label: "Products", href: "/products" }, { label: product.title }]}
               />
-              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent font-medium">
+              <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent font-medium">
                 Product{isEarlyAccess ? " — In development" : ""}
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink">
                 {product.heroHeadline}
               </h1>
               <p className="text-xl text-ink-secondary">{product.heroTagline}</p>
@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   {product.heroProofPoints.map((point, i) => (
                     <li
                       key={i}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-ink-secondary"
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated px-3 py-1.5 text-sm text-ink-secondary"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                       {point}
@@ -117,8 +117,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               )}
             </div>
             <div className="lg:pl-8">
-              <div className="glass-card p-8 space-y-5 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
-                <h3 className="text-xl font-bold text-white">
+              <div className="glass-card p-8 space-y-5 border border-[var(--border)] rounded-2xl">
+                <h3 className="text-xl font-bold text-ink">
                   {isEarlyAccess ? "Tell us about your channels" : "See it on your operation"}
                 </h3>
                 <p className="text-sm text-ink-secondary">
@@ -141,7 +141,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Feature Sections */}
       {product.featureSections && product.featureSections.length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="space-y-20 md:space-y-28">
               {product.featureSections.map((feature, i) => (
@@ -155,7 +155,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     </div>
                   )}
                   <div className={`space-y-5 ${isEarlyAccess ? "lg:col-span-2 max-w-3xl" : ""}`}>
-                    <h2 className="text-2xl md:text-3xl font-bold text-white">{feature.heading}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-ink">{feature.heading}</h2>
                     <p className="text-lg text-ink-secondary leading-relaxed">{feature.body}</p>
                     <ul className="space-y-3">
                       {feature.points.map((point, j) => (
@@ -175,17 +175,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* How it connects */}
       {product.connections && product.connections.length > 0 && (
-        <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
+        <Section className="bg-bg-elevated/50 border-t border-b border-border">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">How it connects to the rest of the system</h2>
+              <h2 className="text-3xl font-bold mb-4 text-ink">How it connects to the rest of the system</h2>
               <p className="text-ink-secondary max-w-2xl mx-auto">
                 Nothing in RidgeHQ works in isolation. {product.title} feeds &mdash; and is fed by &mdash; every other part of the operational day.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {product.connections.map((connection, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div key={i} className="glass-card p-6 rounded-2xl border border-[var(--border)]">
                   <div className="flex items-center gap-2 text-accent font-semibold mb-2">
                     <ArrowRight className="w-4 h-4 shrink-0" />
                     {connection.to}
@@ -200,17 +200,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Outcomes */}
       {product.outcomes && product.outcomes.length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">
+              <h2 className="text-3xl font-bold mb-4 text-ink">
                 {isEarlyAccess ? "What it is built toward" : "What it changes day to day"}
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {product.outcomes.map((outcome, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
-                  <h3 className="text-lg font-bold text-white mb-2">{outcome.label}</h3>
+                <div key={i} className="glass-card p-6 rounded-2xl border border-[var(--border)]">
+                  <h3 className="text-lg font-bold text-ink mb-2">{outcome.label}</h3>
                   <p className="text-sm text-ink-secondary leading-relaxed">{outcome.detail}</p>
                 </div>
               ))}
@@ -221,10 +221,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Product Proof (available products only) */}
       {!isEarlyAccess && proofImage && (
-        <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
+        <Section className="bg-bg-elevated/50 border-t border-b border-border">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">One system for the operational day</h2>
+              <h2 className="text-3xl font-bold mb-4 text-ink">One system for the operational day</h2>
               <p className="text-ink-secondary max-w-2xl mx-auto">
                 <Link href="/platform" className="text-accent hover:underline">See how every capability fits together &rarr;</Link>
               </p>
@@ -239,7 +239,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <Section>
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">Common Questions</h2>
+              <h2 className="text-3xl font-bold mb-4 text-ink">Common Questions</h2>
             </div>
             <FAQAccordion items={product.faqs} />
           </Container>
@@ -247,11 +247,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* Book a demo */}
-      <Section id="book-demo" className="relative overflow-hidden border-t border-white/5 scroll-mt-24">
+      <Section id="book-demo" className="relative overflow-hidden border-t border-border scroll-mt-24">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10">
           <div className="max-w-2xl mx-auto text-center mb-10 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-ink">
               {isEarlyAccess ? `Help shape ${product.title}` : `See ${product.title} in RidgeHQ`}
             </h2>
             <p className="text-lg text-ink-secondary">
