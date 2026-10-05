@@ -47,8 +47,21 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* Pricing Philosophy */}
+      <Section className="bg-[var(--bg-alt)] border-t border-b border-[var(--border)]">
+        <Container className="text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[var(--ink)]">Transparent subscription. Zero direct booking fees.</h2>
+          <p className="text-lg text-[var(--ink-secondary)] mb-8">
+            RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn&rsquo;t be penalized for your own marketing success.
+          </p>
+          <Button asChild className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none">
+            <Link href="/pricing">View Pilot Pricing Details</Link>
+          </Button>
+        </Container>
+      </Section>
+
       {/* Problem & Solution */}
-      <Section className="bg-[var(--bg-alt)]">
+      <Section>
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--ink)]">Your operation is connected. Your tools aren&apos;t.</h2>
@@ -56,7 +69,7 @@ export default function Home() {
               When online booking, front desk, schedules, staff, inventory, and reporting behave like separate businesses, you spend your day acting as the API between them.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {platformCapabilities.map(cap => (
               <FeatureCard
