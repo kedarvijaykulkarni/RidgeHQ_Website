@@ -55,7 +55,7 @@ export function CalculatorPageShell({
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "Tools", href: "/tools" }, { label: title }]} />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">{title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">{title}</h1>
             <p className="text-lg text-ink-secondary leading-relaxed">{intro}</p>
           </div>
         </Container>
@@ -65,10 +65,10 @@ export function CalculatorPageShell({
         <Container>{calculator}</Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
-            <h2 className="text-xl font-bold text-white">{whyHeading}</h2>
+            <h2 className="text-xl font-bold text-ink">{whyHeading}</h2>
             {whyBody}
           </div>
         </Container>
