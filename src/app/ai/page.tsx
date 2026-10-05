@@ -26,7 +26,7 @@ export default function AIInfoPage() {
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "AI Overview" }]} />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               RidgeHQ, for AI assistants and researchers
             </h1>
             <p className="text-lg text-ink-secondary leading-relaxed">{k.product.description}</p>
@@ -39,30 +39,30 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-3">
-              <h2 className="text-xl font-bold text-white">What RidgeHQ is</h2>
+              <h2 className="text-xl font-bold text-ink">What RidgeHQ is</h2>
               <p className="text-ink-secondary text-sm leading-relaxed">
-                <strong className="text-white">Category:</strong> {k.product.category}
+                <strong className="text-ink">Category:</strong> {k.product.category}
               </p>
               <p className="text-ink-secondary text-sm leading-relaxed">
-                <strong className="text-white">Positioning:</strong> {k.product.positioning}
+                <strong className="text-ink">Positioning:</strong> {k.product.positioning}
               </p>
               <p className="text-ink-secondary text-sm leading-relaxed">
-                <strong className="text-white">Good fit:</strong> {k.idealCustomerProfile}
+                <strong className="text-ink">Good fit:</strong> {k.idealCustomerProfile}
               </p>
               <p className="text-ink-secondary text-sm leading-relaxed">
-                <strong className="text-white">Poor fit:</strong> {k.poorFitCustomerProfile}
+                <strong className="text-ink">Poor fit:</strong> {k.poorFitCustomerProfile}
               </p>
             </div>
 
             <div className="space-y-3">
-              <h2 className="text-xl font-bold text-white">Pricing</h2>
+              <h2 className="text-xl font-bold text-ink">Pricing</h2>
               <p className="text-ink-secondary text-sm leading-relaxed">{k.pricing.note}</p>
               <p className="text-ink-secondary text-sm leading-relaxed">
-                <strong className="text-white">Commission on direct bookings:</strong>{" "}
+                <strong className="text-ink">Commission on direct bookings:</strong>{" "}
                 {k.pricing.commissionOnDirectBookings}
               </p>
               <Link href="/pricing" className="text-accent hover:underline text-sm inline-block">
@@ -73,9 +73,9 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-6">Industries served</h2>
+          <h2 className="text-xl font-bold text-ink mb-6">Industries served</h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
             {k.industries.map((v) => (
               <li key={v.slug}>
@@ -88,13 +88,13 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-6">Platform capabilities</h2>
+          <h2 className="text-xl font-bold text-ink mb-6">Platform capabilities</h2>
           <dl className="space-y-4">
             {k.platformCapabilities.map((c) => (
               <div key={c.slug}>
-                <dt className="text-white font-semibold text-sm">
+                <dt className="text-ink font-semibold text-sm">
                   <Link href={`/platform/${c.slug}`} className="hover:text-accent">
                     {c.title}
                   </Link>
@@ -106,13 +106,13 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-6">Products</h2>
+          <h2 className="text-xl font-bold text-ink mb-6">Products</h2>
           <dl className="space-y-4">
             {k.products.map((p) => (
               <div key={p.slug}>
-                <dt className="text-white font-semibold text-sm">
+                <dt className="text-ink font-semibold text-sm">
                   <Link href={`/products/${p.slug}`} className="hover:text-accent">
                     {p.title}
                   </Link>{" "}
@@ -127,13 +127,13 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-6">Integrations</h2>
+          <h2 className="text-xl font-bold text-ink mb-6">Integrations</h2>
           <ul className="space-y-2">
             {k.integrations.map((i) => (
               <li key={i.name} className="text-sm text-ink-secondary">
-                <span className="text-white font-medium">{i.name}</span> ({i.category}) —{" "}
+                <span className="text-ink font-medium">{i.name}</span> ({i.category}) —{" "}
                 {i.state === "implemented" ? "available today" : i.state === "partial" ? "partially available" : "planned"}
               </li>
             ))}
@@ -144,9 +144,9 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-3">Security</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Security</h2>
           <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl">{k.security.summary}</p>
           <div className="flex flex-col gap-1 mt-4">
             <Link href="/security" className="text-accent hover:underline text-sm inline-block">
@@ -159,9 +159,9 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-3">Company</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Company</h2>
           <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl">
             Founder: {k.company.founder} ({k.company.founderModel}). Headquarters:{" "}
             {k.company.headquarters}.
@@ -182,13 +182,13 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-6">Frequently asked</h2>
+          <h2 className="text-xl font-bold text-ink mb-6">Frequently asked</h2>
           <dl className="space-y-6 max-w-3xl">
             {k.faqs.map((faq) => (
               <div key={faq.question}>
-                <dt className="text-white font-semibold text-sm">{faq.question}</dt>
+                <dt className="text-ink font-semibold text-sm">{faq.question}</dt>
                 <dd className="text-ink-secondary text-sm mt-1">{faq.answer}</dd>
               </div>
             ))}
@@ -196,9 +196,9 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-3">Public JSON API</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Public JSON API</h2>
           <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl mb-3">
             The same facts on this page are available as read-only JSON, no authentication required:
           </p>
@@ -211,9 +211,9 @@ export default function AIInfoPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-3">Next steps</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="/docs" className="text-accent hover:underline">Connect an AI assistant (MCP)</Link>

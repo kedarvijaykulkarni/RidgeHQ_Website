@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10 text-center max-w-4xl">
           <Breadcrumbs className="mb-8 justify-center" items={[{ label: "About" }]} />
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium mb-8">
+          <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium mb-8">
             About RidgeHQ
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
@@ -52,7 +52,7 @@ export default function AboutPage() {
             <div className="text-lg text-ink-secondary leading-relaxed text-left space-y-4">
               <p>Customers see the lesson, the dive, the surf session, the guided trip, the rental, or the camp. But behind every successful activity is a complex operational system:</p>
               
-              <div className="bg-bg-elevated p-6 rounded-xl border border-white/5 text-sm font-mono text-accent flex flex-wrap gap-2 items-center justify-center my-8">
+              <div className="bg-bg-elevated p-6 rounded-xl border border-border text-sm font-mono text-accent flex flex-wrap gap-2 items-center justify-center my-8">
                 <span>Booking</span> <span className="text-ink-tertiary">→</span>
                 <span>Participant</span> <span className="text-ink-tertiary">→</span>
                 <span>Session</span> <span className="text-ink-tertiary">→</span>
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </div>
               
               <p>When those elements live in different systems, the operator becomes the integration layer. You spend your day bridging the gaps manually instead of running the business.</p>
-              <p className="text-white font-medium text-xl mt-8 text-center">
+              <p className="text-ink font-medium text-xl mt-8 text-center">
                 A booking should start an operational workflow, not another round of manual coordination.
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                 <Navigation className="w-24 h-24 text-accent-2" />
               </div>
               <h3 className="text-sm font-bold tracking-widest uppercase text-accent-2 mb-4">Our Vision</h3>
-              <p className="text-2xl font-bold text-white mb-6 leading-tight">
+              <p className="text-2xl font-bold text-ink mb-6 leading-tight">
                 To become the operating system behind the world&rsquo;s activity businesses — helping operators run with greater clarity, control and confidence, wherever their business takes place.
               </p>
               <p className="text-ink-secondary">
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 <Target className="w-24 h-24 text-accent" />
               </div>
               <h3 className="text-sm font-bold tracking-widest uppercase text-accent mb-4">Our Mission</h3>
-              <p className="text-2xl font-bold text-white mb-6 leading-tight">
+              <p className="text-2xl font-bold text-ink mb-6 leading-tight">
                 To give activity businesses one intelligent, trusted system for running the day — connecting bookings, schedules, people, resources, payments and operational decisions so operators can protect their time, adapt faster and grow sustainably.
               </p>
               <p className="text-ink-secondary">
@@ -170,7 +170,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {verticals.map((v) => (
-              <div key={v.id} className="p-4 border border-white/5 rounded-xl bg-bg-elevated/50 flex items-center gap-3">
+              <div key={v.id} className="p-4 border border-border rounded-xl bg-bg-elevated/50 flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-[var(--accent)]/50"></div>
                 <span className="font-medium text-ink-secondary text-sm">{v.name}</span>
               </div>

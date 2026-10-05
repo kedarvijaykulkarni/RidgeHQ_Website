@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             items={[{ label: "Case Studies", href: "/case-studies" }, { label: caseStudy.businessType }]}
           />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               {caseStudy.businessType}
             </h1>
             <p className="text-lg text-ink-secondary leading-relaxed">{caseStudy.problem}</p>
@@ -73,23 +73,23 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <Container>
           <div className="max-w-3xl mx-auto space-y-12 text-ink-secondary">
             <div className="space-y-3">
-              <h2 className="text-xl font-bold text-white">Previous workflow</h2>
+              <h2 className="text-xl font-bold text-ink">Previous workflow</h2>
               <p>{caseStudy.previousWorkflow}</p>
             </div>
             <div className="space-y-3">
-              <h2 className="text-xl font-bold text-white">The operational challenge</h2>
+              <h2 className="text-xl font-bold text-ink">The operational challenge</h2>
               <p>{caseStudy.operationalChallenge}</p>
             </div>
             <div className="space-y-3">
-              <h2 className="text-xl font-bold text-white">Why RidgeHQ was evaluated</h2>
+              <h2 className="text-xl font-bold text-ink">Why RidgeHQ was evaluated</h2>
               <p>{caseStudy.whyEvaluated}</p>
             </div>
             <div className="space-y-3">
-              <h2 className="text-xl font-bold text-white">Implementation</h2>
+              <h2 className="text-xl font-bold text-ink">Implementation</h2>
               <p>{caseStudy.implementation}</p>
             </div>
-            <div className="space-y-3 glass-card p-8 rounded-2xl bg-white/5 border border-white/10">
-              <h2 className="text-xl font-bold text-white">Observed result</h2>
+            <div className="space-y-3 glass-card p-8 rounded-2xl border border-[var(--border)]">
+              <h2 className="text-xl font-bold text-ink">Observed result</h2>
               <p>{caseStudy.observedResult}</p>
               {caseStudy.customerQuote && (
                 <blockquote className="border-l-2 border-accent pl-4 italic text-ink-secondary">
@@ -99,13 +99,13 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </div>
             {capabilities.length > 0 && (
               <div className="space-y-3">
-                <h2 className="text-xl font-bold text-white">Relevant capabilities</h2>
+                <h2 className="text-xl font-bold text-ink">Relevant capabilities</h2>
                 <div className="flex flex-wrap gap-3">
                   {capabilities.map((c) => (
                     <Link
                       key={c.slug}
                       href={`/platform/${c.slug}`}
-                      className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                      className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-[var(--accent-border)] hover:text-ink transition-colors"
                     >
                       {c.title}
                     </Link>
