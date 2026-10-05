@@ -34,3 +34,65 @@ pass against the master prompt's own list — not a formal WCAG audit — coveri
 
 - Site-wide color contrast, typography scale, and animation conventions predate this initiative and weren't touched — this audit is scoped to `/ai`, `/tools`, and the calculators, not a full-site pass.
 - This is a lightweight checklist pass, not a full WCAG 2.1 AA audit with assistive-technology testing. Revisit with real screen-reader testing if a genuine accessibility complaint arises.
+
+---
+
+## 2026-10-05 update — performance regression check after the visual revamp (#65)
+
+Re-checked the performance posture above after the full website revamp (epics #37, #41, #45,
+#49, #57) landed on `develop`. **Baseline** was `main` at `312b376`, before the revamp.
+**Candidate** was `develop` at `e5dd8b5`. Both were built with `next build` (Next 16.3.0,
+Turbopack) from a clean `pnpm install --frozen-lockfile`.
+
+### Rendering mode — no regression
+
+The route tables from the two builds match exactly, with 66 routes on each:
+
+| Marker | `main` | `develop` |
+|---|---|---|
+| `○` Static | 41 | 41 |
+| `●` SSG (`generateStaticParams`) | 21 | 21 |
+| `ƒ` Dynamic | 4 | 4 |
+
+The only dynamic routes are the four `/api/public/*` handlers, the same as before. Every page
+that was prerendered is still prerendered. That includes `/ai`, `/tools` and all
+`/tools/[slug]` calculators from the original checklist.
+
+### Dependencies — no new packages
+
+`package.json` is unchanged between `main` and `develop`. The revamp added two client
+components:
+- `ThemeToggle`: imports only `react` and `lucide-react`, which was already a dependency.
+- `ui/Tabs`: imports only `react` and the local `cn` helper.
+
+The `NavMenu`/`MobileNav` mega-menu work changed no imports. The no-flash theme script in
+`layout.tsx` is a single inline line (about 130 bytes) that reads `localStorage`. It is
+render-blocking on purpose, so dark-theme users don't see a flash of the light theme.
+
+### Client payload — small, expected growth
+
+The sizes below are the sums of the `/_next/static/chunks/*.js` files referenced by each
+route's prerendered HTML. They are compressed with `gzip -9`, so they approximate transfer
+size, not exact CDN bytes.
+
+| Route | `main` gz | `develop` gz | Δ |
+|---|---|---|---|
+| `/` | 288.6 KB | 290.5 KB | +1.9 KB |
+| `/solutions/dive-centers` | 246.7 KB | 247.9 KB | +1.3 KB |
+| `/platform/scheduling` | 246.7 KB | 247.9 KB | +1.3 KB |
+| `/tools/roi-calculator` | 243.1 KB | 244.4 KB | +1.3 KB |
+| `/contact`, `/pricing` | 244.1 KB | 245.4 KB | +1.3 KB |
+| `/blog`, `/ai` | 241.9 KB | 243.2 KB | +1.3 KB |
+| All JS chunks | 297.7 KB | 299.7 KB | +2.0 KB |
+| Site CSS (single file) | 12.9 KB | 13.4 KB | +0.5 KB |
+
+Every route grows by about 1.3 KB, which matches the shared header (theme toggle plus the
+two-axis mega-menu). The homepage grows a little more because of the `CopilotTranscript` and
+trust sections. The CSS grows because of the light/dark token set. All changes are under 1%.
+No action is needed.
+
+### Not measured
+
+This was a build-artifact comparison only. No Lighthouse or field Core Web Vitals (CrUX) run
+was done, because `develop` isn't deployed. Run a PageSpeed/CrUX check on production after
+the `develop` → `main` cutover as part of #69.
