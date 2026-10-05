@@ -15,17 +15,17 @@ export default function SecurityPage() {
       <Container>
         <div className="max-w-3xl mx-auto space-y-8">
           <Breadcrumbs items={[{ label: "Security" }]} />
-          <h1 className="text-4xl font-bold">Security</h1>
-          <div className="prose prose-invert max-w-none text-ink-secondary">
+          <h1 className="text-4xl font-bold text-ink">Security</h1>
+          <div className="prose prose-invert max-w-none prose-headings:text-[var(--ink)] prose-a:text-[var(--accent)] hover:prose-a:text-[var(--accent-2)] prose-p:text-[var(--ink-secondary)]">
             <p>At RidgeHQ, the security of your operational data is our top priority. We employ industry-standard practices to protect your information.</p>
-            
-            <h2 className="text-2xl font-bold text-white mt-8 mb-4">Infrastructure Security</h2>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">Infrastructure Security</h2>
             <p>Our platform is hosted on secure, compliant infrastructure. We use role-based access control (RBAC) across all systems.</p>
-            
-            <h2 className="text-2xl font-bold text-white mt-8 mb-4">Data Protection</h2>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">Data Protection</h2>
             <p>All data is encrypted in transit and at rest using modern cryptographic standards.</p>
-            
-            <h2 className="text-2xl font-bold text-white mt-8 mb-4">AI Copilot Safety</h2>
+
+            <h2 className="text-2xl font-bold mt-8 mb-4">AI Copilot Safety</h2>
             <p>Our AI Copilot operates within a strict permission boundary. It uses the exact same access constraints as your human team members, and high-risk actions require explicit operator confirmation before execution.</p>
             <p>
               The same boundary applies when you connect an outside AI assistant to your account over

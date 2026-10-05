@@ -21,7 +21,7 @@ export default function AICopilotPage() {
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "AI Copilot" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium">
+            <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium">
               Intelligence built for operations
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">AI that works inside the operation.</h1>
