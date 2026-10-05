@@ -100,7 +100,8 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
   - **P2 `ThemeToggle` `aria-pressed` wrong before hydration**: real but transient. For a stored dark theme, the server HTML said `aria-pressed="false"` until React hydrated. The server snapshot is now `null`, so no pressed state renders until the real theme is read. Also fixed an issue the review agent noticed: the `aria-label` changed with state ("Switch to light theme" + pressed is a confusing announcement), so it's now a fixed "Dark theme" label with `aria-pressed`, the standard toggle-button pattern.
   - **P2 #65 doc said all changes were under 1%**: wrong for CSS (0.5 / 12.9 KB = 3.9%). Corrected in the doc and above.
   - **P3 #65 still marked pending**: fixed above.
-  - PR pending against `develop` (branch `fix/62-epic-review-remediation`).
+  - Merged via PR #100 2026-10-05; epic #62 closed.
+- [x] [#67](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/67) — Pre-ship sitemap/metadata/JSON-LD diff audit — compared the `next start` HTTP output of `main` (`312b376`, before the revamp) with `develop` (`7c55daa`) on 76 routes (all 75 sitemap URLs plus `/thank-you`). Titles, meta, canonicals, H1s and JSON-LD were identical on every route, all routes returned 200, and no sitemap URL was added or removed. The 68 changed sitemap entries were all intended forward `lastmod` bumps. **Gap fixed:** 7 static routes changed in the revamp but kept stale `lastmod` dates (`/` still said 2026-09-25 despite #50/#51/#52), so each was bumped to its page file's last-commit date and confirmed in the served `sitemap.xml`. One page per JSON-LD template (14) passed `validator.schema.org` with 0 errors and 0 warnings. The Google Rich Results Test is deferred to production after cutover (#69), because it's interactive-only and `develop` isn't deployed. Full write-up in `docs/seo-revamp-diff-audit.md`. PR pending against `develop`.
 
 ## Blocked by another open issue
 
@@ -109,7 +110,6 @@ merge — an item may become unblocked.
 
 | Issue | Blocked by | Becomes unblocked once |
 |---|---|---|
-| [#67](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/67) Pre-ship sitemap/metadata/JSON-LD diff audit | ~~codex-reviewer pass on epic #57~~ (done) | **unblocked now** — the epic-#57 review pass has landed |
 | [#68](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/68) Route and redirect integrity check | ~~codex-reviewer pass on epic #57~~ (done) | **unblocked now** — the epic-#57 review pass has landed |
 | [#69](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/69) Post-deploy Search Console resubmission | everything | whole revamp ships |
 
