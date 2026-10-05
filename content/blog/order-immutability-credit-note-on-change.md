@@ -5,6 +5,7 @@ slug: "order-immutability-credit-note-on-change"
 canonical_url: "https://www.ridgehq.app/blog/order-immutability-credit-note-on-change"
 tags: ["dive center operations", "data integrity", "booking management", "financial record keeping", "SaaS"]
 date: "2026-09-18"
+updatedAt: "2026-10-05"
 pillar: "Technology"
 draft: false
 ---

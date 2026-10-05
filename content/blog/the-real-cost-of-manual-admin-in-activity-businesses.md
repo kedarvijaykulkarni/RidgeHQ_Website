@@ -5,6 +5,7 @@ slug: "the-real-cost-of-manual-admin-in-activity-businesses"
 canonical_url: "https://www.ridgehq.app/blog/the-real-cost-of-manual-admin-in-activity-businesses"
 tags: ["business economics", "operational efficiency", "activity business software", "admin cost"]
 date: "2026-09-12"
+updatedAt: "2026-10-05"
 pillar: "Business Economics"
 draft: false
 ---

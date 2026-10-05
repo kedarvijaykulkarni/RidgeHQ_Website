@@ -13,6 +13,13 @@ export interface BlogPost {
   content: string;
   author: string;
   publishedAt: string;
+  /**
+   * Optional — set when a post's rendered template/markup changes without its
+   * content changing (e.g. a site-wide re-theme), so the sitemap's lastmod can
+   * reflect that without overwriting the real publish date. Falls back to
+   * `publishedAt` when absent.
+   */
+  updatedAt?: string;
   category: string;
   /** RidgeHQ Academy topic pillar (Phase 6 of the AI-discoverability initiative). */
   pillar: BlogPillar;
@@ -84,6 +91,7 @@ function loadBlogPosts(): BlogPost[] {
       content: content.trim(),
       author: data.author ?? "RidgeHQ Team",
       publishedAt: String(publishedAt).slice(0, 10),
+      updatedAt: data.updatedAt ? String(data.updatedAt).slice(0, 10) : undefined,
       category: data.category ?? "Product",
       pillar: data.pillar as BlogPillar,
       readingTime: computeReadingTime(content),

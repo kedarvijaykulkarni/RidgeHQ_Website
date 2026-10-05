@@ -5,6 +5,7 @@ slug: "role-based-permissions-dive-center-operations"
 canonical_url: "https://www.ridgehq.app/blog/role-based-permissions-dive-center-operations"
 tags: ["operations management", "staff permissions", "dive center software", "operational security", "saas"]
 date: "2026-10-01"
+updatedAt: "2026-10-05"
 pillar: "Technology"
 draft: false
 ---
