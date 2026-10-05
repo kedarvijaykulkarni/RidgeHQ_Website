@@ -89,10 +89,10 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
                 className="mb-2"
                 items={[{ label: "Platform", href: "/platform" }, { label: capability.title }]}
               />
-              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent font-medium">
+              <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent font-medium">
                 Platform &mdash; {capability.title}
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink">
                 {capability.heroHeadline ?? capability.title}
               </h1>
               <p className="text-xl text-ink-secondary">
@@ -103,7 +103,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
                   {capability.heroProofPoints.map((point, i) => (
                     <li
                       key={i}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-ink-secondary"
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated px-3 py-1.5 text-sm text-ink-secondary"
                     >
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                       {point}
@@ -113,8 +113,8 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
               )}
             </div>
             <div className="lg:pl-8">
-              <div className="glass-card p-8 space-y-5 border border-white/10 bg-white/5 backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
-                <h3 className="text-xl font-bold text-white">See it on your operation</h3>
+              <div className="glass-card p-8 space-y-5 border border-border bg-bg-elevated backdrop-blur-md rounded-2xl shadow-xl shadow-black/50">
+                <h3 className="text-xl font-bold text-ink">See it on your operation</h3>
                 <p className="text-sm text-ink-secondary">
                   A short walkthrough of how {capability.title.toLowerCase()} works in RidgeHQ and connects to the rest of the operational day.
                 </p>
@@ -133,7 +133,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
       {/* Feature Sections */}
       {capability.featureSections && capability.featureSections.length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="space-y-20 md:space-y-28">
               {capability.featureSections.map((feature, i) => (
@@ -145,7 +145,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
                     />
                   </div>
                   <div className="space-y-5">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white">{feature.heading}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-ink">{feature.heading}</h2>
                     <p className="text-lg text-ink-secondary leading-relaxed">{feature.body}</p>
                     <ul className="space-y-3">
                       {feature.points.map((point, j) => (
@@ -165,17 +165,17 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
       {/* How it connects */}
       {capability.connections && capability.connections.length > 0 && (
-        <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
+        <Section className="bg-bg-elevated/50 border-t border-b border-border">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">How it connects to the rest of the system</h2>
+              <h2 className="text-3xl font-bold mb-4 text-ink">How it connects to the rest of the system</h2>
               <p className="text-ink-secondary max-w-2xl mx-auto">
                 Nothing in RidgeHQ works in isolation. {capability.title} feeds &mdash; and is fed by &mdash; every other part of the operational day.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {capability.connections.map((connection, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div key={i} className="glass-card p-6 rounded-2xl bg-bg-elevated border border-border">
                   <div className="flex items-center gap-2 text-accent font-semibold mb-2">
                     <ArrowRight className="w-4 h-4 shrink-0" />
                     {connection.to}
@@ -190,15 +190,15 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
       {/* Outcomes */}
       {capability.outcomes && capability.outcomes.length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">What it changes day to day</h2>
+              <h2 className="text-3xl font-bold mb-4 text-ink">What it changes day to day</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {capability.outcomes.map((outcome, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-white/5 border border-white/10">
-                  <h3 className="text-lg font-bold text-white mb-2">{outcome.label}</h3>
+                <div key={i} className="glass-card p-6 rounded-2xl bg-bg-elevated border border-border">
+                  <h3 className="text-lg font-bold text-ink mb-2">{outcome.label}</h3>
                   <p className="text-sm text-ink-secondary leading-relaxed">{outcome.detail}</p>
                 </div>
               ))}
@@ -208,10 +208,10 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
       )}
 
       {/* Product Proof */}
-      <Section className="bg-bg-elevated/50 border-t border-b border-white/5">
+      <Section className="bg-bg-elevated/50 border-t border-b border-border">
         <Container>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-white">One system for the operational day</h2>
+            <h2 className="text-3xl font-bold mb-4 text-ink">One system for the operational day</h2>
             <p className="text-ink-secondary max-w-2xl mx-auto">
               <Link href="/platform" className="text-accent hover:underline">See how every capability fits together &rarr;</Link>
             </p>
@@ -225,7 +225,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
         <Section>
           <Container>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-white">Common Questions</h2>
+              <h2 className="text-3xl font-bold mb-4 text-ink">Common Questions</h2>
             </div>
             <FAQAccordion items={capability.faqs} />
           </Container>
@@ -234,10 +234,10 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
       {/* Related operational problems */}
       {useCases.filter((u) => u.relatedPlatformSlug === capability.slug).length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white">Related operational problems</h2>
+              <h2 className="text-2xl font-bold text-ink">Related operational problems</h2>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
               {useCases
@@ -246,7 +246,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
                   <Link
                     key={u.slug}
                     href={`/use-cases/${u.slug}`}
-                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                    className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors"
                   >
                     {u.title}
                   </Link>
@@ -258,24 +258,24 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
       {/* Businesses that use this */}
       {relatedVerticals.length > 0 && (
-        <Section className="border-t border-white/5">
+        <Section className="border-t border-border">
           <Container>
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-white">Businesses that run on this</h2>
+              <h2 className="text-2xl font-bold text-ink">Businesses that run on this</h2>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
               {relatedVerticals.map((v) => (
                 <Link
                   key={v.slug}
                   href={`/solutions/${v.slug}`}
-                  className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                  className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors"
                 >
                   {v.name}
                 </Link>
               ))}
               <Link
                 href="/pricing"
-                className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-ink-secondary hover:border-white/20 hover:text-white transition-colors"
+                className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors"
               >
                 Pricing
               </Link>
@@ -285,11 +285,11 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
       )}
 
       {/* Book a demo */}
-      <Section id="book-demo" className="relative overflow-hidden border-t border-white/5 scroll-mt-24">
+      <Section id="book-demo" className="relative overflow-hidden border-t border-border scroll-mt-24">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10">
           <div className="max-w-2xl mx-auto text-center mb-10 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">See {capability.title} in RidgeHQ</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink">See {capability.title} in RidgeHQ</h2>
             <p className="text-lg text-ink-secondary">
               Book a demo and we&apos;ll walk through your real operational workflows &mdash; bookings, schedule, resources, and the day close.
             </p>
