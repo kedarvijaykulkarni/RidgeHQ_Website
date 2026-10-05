@@ -43,7 +43,7 @@ export const products: Product[] = [
     id: "activity-platform",
     title: "Activity Platform",
     slug: "activity-platform",
-    lastUpdated: "2026-09-02",
+    lastUpdated: "2026-10-05",
     href: "/products/activity-platform",
     status: "available",
     description:
@@ -119,7 +119,7 @@ export const products: Product[] = [
     id: "rental-app",
     title: "Rental App",
     slug: "rental-app",
-    lastUpdated: "2026-09-02",
+    lastUpdated: "2026-10-05",
     href: "/products/rental-app",
     status: "available",
     description:
@@ -192,7 +192,7 @@ export const products: Product[] = [
     id: "waiver-app",
     title: "Waiver App",
     slug: "waiver-app",
-    lastUpdated: "2026-09-02",
+    lastUpdated: "2026-10-05",
     href: "/products/waiver-app",
     status: "available",
     description:
@@ -263,7 +263,7 @@ export const products: Product[] = [
     id: "channel-manager",
     title: "Channel Manager",
     slug: "channel-manager",
-    lastUpdated: "2026-09-02",
+    lastUpdated: "2026-10-05",
     href: "/products/channel-manager",
     status: "early-access",
     description:
