@@ -5,6 +5,7 @@ slug: "operational-core-dive-center-management"
 canonical_url: "https://www.ridgehq.app/blog/operational-core-dive-center-management"
 tags: ["dive center software", "operations management", "booking system", "point of sale", "dive shop"]
 date: "2026-09-16"
+updatedAt: "2026-10-05"
 pillar: "Operations"
 draft: false
 ---

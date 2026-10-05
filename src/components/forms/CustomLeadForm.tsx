@@ -82,7 +82,7 @@ export function CustomLeadForm({
               id="First_Name" 
               name="First Name" 
               maxLength={40}
-              className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+              className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
             />
           </div>
           
@@ -94,7 +94,7 @@ export function CustomLeadForm({
               name="Last Name" 
               required
               maxLength={80}
-              className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+              className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
             />
           </div>
         </div>
@@ -108,7 +108,7 @@ export function CustomLeadForm({
               name="Email" 
               required
               maxLength={100}
-              className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+              className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
             />
           </div>
 
@@ -119,7 +119,7 @@ export function CustomLeadForm({
               id="Phone" 
               name="Phone" 
               maxLength={30}
-              className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+              className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
             />
           </div>
         </div>
@@ -132,7 +132,7 @@ export function CustomLeadForm({
             name="Company" 
             required
             maxLength={200}
-            className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+            className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
           />
         </div>
 
@@ -143,7 +143,7 @@ export function CustomLeadForm({
             id="Website" 
             name="Website" 
             maxLength={255}
-            className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+            className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
           />
         </div>
 
@@ -159,7 +159,7 @@ export function CustomLeadForm({
                 name="Address - City" 
                 required
                 maxLength={255}
-                className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
+                className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
               />
             </div>
 
@@ -170,7 +170,7 @@ export function CustomLeadForm({
                 name="Address - Country / Region" 
                 required
                 defaultValue="-None-"
-                className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all appearance-none"
+                className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all appearance-none"
               >
                 <option value="-None-" disabled>- Select Country -</option>
                 <option value="United States">United States</option>
@@ -189,7 +189,7 @@ export function CustomLeadForm({
               id="Description" 
               name="Description" 
               rows={4}
-              className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-md px-4 py-3 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all resize-y"
+              className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-3 text-[var(--ink)] placeholder:text-[var(--ink-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all resize-y"
             ></textarea>
           </div>
         </div>

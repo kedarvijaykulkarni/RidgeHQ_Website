@@ -5,6 +5,7 @@ slug: "integrated-waiver-system-dive-operations"
 canonical_url: "https://www.ridgehq.app/blog/integrated-waiver-system-dive-operations"
 tags: ["dive operations", "compliance", "risk management", "saas for dive shops", "e-signatures"]
 date: "2026-10-02"
+updatedAt: "2026-10-05"
 pillar: "Operations"
 draft: false
 ---
