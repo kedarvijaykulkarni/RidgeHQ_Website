@@ -38,7 +38,7 @@ export default function BlogIndexPage() {
 
               return (
                 <div key={pillar}>
-                  <h2 className="text-2xl font-bold text-white mb-6">{pillar}</h2>
+                  <h2 className="text-2xl font-bold text-ink mb-6">{pillar}</h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {posts.map((post) => (
                       <BlogCard key={post.slug} post={post} />

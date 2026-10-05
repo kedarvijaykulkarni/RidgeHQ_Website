@@ -79,10 +79,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           ]
         }}
       />
-      <Section className="pb-8 pt-24 border-b border-white/5">
+      <Section className="pb-8 pt-24 border-b border-border">
         <Container className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.category }]} />
-          <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-ink mb-6">
             {post.title}
           </h1>
           

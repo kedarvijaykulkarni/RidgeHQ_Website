@@ -126,7 +126,7 @@ export default function PrivacyPage() {
           <div className="mt-8 flex flex-col gap-8 text-ink-secondary">
             {sections.map((section) => (
               <div key={section.heading}>
-                <h2 className="text-2xl font-bold text-white mb-4">{section.heading}</h2>
+                <h2 className="text-2xl font-bold text-ink mb-4">{section.heading}</h2>
                 <div className="flex flex-col gap-4 text-ink-secondary">
                   {section.body.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>

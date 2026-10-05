@@ -32,7 +32,7 @@ export interface UseCase {
 export const useCases: UseCase[] = [
   {
     slug: "instructor-scheduling",
-    lastUpdated: "2026-09-12",
+    lastUpdated: "2026-10-05",
     title: "Instructor & Guide Scheduling",
     heroHeadline: "Assign instructors and guides in seconds, not a morning of messages.",
     heroTagline:
@@ -64,7 +64,7 @@ export const useCases: UseCase[] = [
   },
   {
     slug: "equipment-coordination",
-    lastUpdated: "2026-09-12",
+    lastUpdated: "2026-10-05",
     title: "Equipment & Gear Coordination",
     heroHeadline: "Know what gear is actually available, right now, before you promise it.",
     heroTagline:
