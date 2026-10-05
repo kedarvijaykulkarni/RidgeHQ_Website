@@ -13,8 +13,10 @@ function getSnapshot(): "light" | "dark" {
   return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
 }
 
-function getServerSnapshot(): "light" | "dark" {
-  return "light";
+// null = not hydrated yet: the server can't know a stored dark theme, so it renders
+// no pressed state rather than a possibly-wrong one.
+function getServerSnapshot(): null {
+  return null;
 }
 
 export function ThemeToggle() {
@@ -33,8 +35,8 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-      aria-pressed={theme === "dark"}
+      aria-label="Dark theme"
+      aria-pressed={theme === null ? undefined : theme === "dark"}
       onClick={toggle}
       className="inline-flex items-center justify-center rounded-lg p-2 text-[var(--ink)] hover:text-[var(--accent)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
     >
