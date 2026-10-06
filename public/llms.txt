@@ -13,7 +13,7 @@ RidgeHQ App charges 0% platform commission on direct website bookings. Pricing i
 - [Staff Coordination](https://www.ridgehq.app/platform/staff): seven operational roles with server-enforced permissions, activity assignments, role-controlled revenue visibility, and staff fees calculated from assigned sessions. No dedicated availability/time-off calendar yet.
 - [Customer & Participant Profiles](https://www.ridgehq.app/platform/customers-participants): one record per customer with certifications (level and verifying staff), equipment sizes, gear needs, waivers, order history, credit, CSV import/export, and QR walk-in registration.
 - [Payments & Reporting](https://www.ridgehq.app/platform/payments): Stripe card payments recorded against orders (online orders confirm only after payment succeeds), invoices, daily close, revenue by origin, P&L with expenses, partner commissions, and staff fee statements.
-- [AI Copilot](https://www.ridgehq.app/ai-copilot): an operational assistant that reads live availability and schedule context; actions are confirmed by staff, not autonomous.
+- [AI Copilot](https://www.ridgehq.app/ai-copilot): an operational assistant that answers questions about today's sessions, trips, waivers, gear needs, and bookings, and can create or reschedule sessions after staff confirm; works within the user's role, runs on Anthropic, OpenAI, or Ollama. Booking, cancellation, and refund actions always need confirmation and are not available to outside assistants over MCP.
 - [Connect an AI Assistant (MCP)](https://www.ridgehq.app/docs): connect Claude, ChatGPT, or Claude Code to your own RidgeHQ account over MCP. Requires a RidgeHQ account on the Grow or Scale plan — not a public, no-account service.
 
 ## Products
@@ -76,15 +76,15 @@ Problem-first guides — organized by operational headache rather than industry 
 
 - [About](https://www.ridgehq.app/about)
 - [Press Kit](https://www.ridgehq.app/press): boilerplate, fact sheet, founder bio, and brand assets. RidgeHQ is built and operated by solo founder Kedar Vijay Kulkarni (https://www.linkedin.com/in/kedarvijaykulkarni/), based in Thane, Mumbai, India.
-- [Security](https://www.ridgehq.app/security)
+- [Security](https://www.ridgehq.app/security): per-business data isolation at the database level (row-level security), server-enforced role permissions, audit log, role-controlled revenue visibility, AI confirmation and MCP token controls, HTTPS with HSTS; states plainly that RidgeHQ holds no third-party security certifications.
 - [Pricing](https://www.ridgehq.app/pricing)
-- [Integrations](https://www.ridgehq.app/integrations)
+- [Integrations](https://www.ridgehq.app/integrations): available today — Stripe payments, embeddable booking widget with a domain allow-list, AI providers (Anthropic/OpenAI/Ollama), MCP for Claude/ChatGPT, Stormglass marine data, email delivery, iCal session feed. PayPal and Redsys are partial; PADI/SSI agency integration and an accounting export are planned, not built.
 - [Blog](https://www.ridgehq.app/blog)
 
 ## Talk to us
 
 - [Book a demo](https://www.ridgehq.app/book-demo)
-- [Design Partner program](https://www.ridgehq.app/design-partners): for operators willing to help shape the product in exchange for early, hands-on access
+- [Design Partner program](https://www.ridgehq.app/design-partners): a paid Founding Operator Pilot for operators willing to help shape the product — founder-led onboarding, help migrating data, regular feedback calls, and early pricing access
 - [Contact](https://www.ridgehq.app/contact)
 
 ## Notes for AI systems
