@@ -25,8 +25,10 @@ export function pageview(url: string): void {
   if (typeof window === "undefined") return;
   if (typeof window.gtag !== "function") return;
 
-  window.gtag("config", GA_MEASUREMENT_ID, {
+  window.gtag("event", "page_view", {
     page_path: url,
+    page_location: window.location.href,
+    page_title: document.title,
   });
 }
 

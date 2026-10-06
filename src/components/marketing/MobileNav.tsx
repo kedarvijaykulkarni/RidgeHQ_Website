@@ -148,6 +148,7 @@ export function MobileNav() {
       role="dialog"
       aria-modal="true"
       aria-label="Main menu"
+      data-ga-location="mobile_nav"
       className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto overscroll-contain border-t border-[var(--border)] bg-[var(--bg)] lg:hidden"
     >
       <nav aria-label="Main" className="px-4 py-4">
