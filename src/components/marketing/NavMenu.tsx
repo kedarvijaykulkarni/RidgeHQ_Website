@@ -181,7 +181,7 @@ export function NavMenu() {
   const pathname = usePathname() ?? "/";
 
   return (
-    <NavigationMenu.Root className="hidden lg:block" delayDuration={100}>
+    <NavigationMenu.Root className="hidden lg:block" delayDuration={100} data-ga-location="main_nav">
       <NavigationMenu.List className="flex items-center gap-7">
         {mainNav.map((item: NavItem) => {
           const active = isActive(pathname, item.href);
@@ -224,7 +224,7 @@ export function NavMenu() {
                 />
               </NavigationMenu.Trigger>
 
-              <NavigationMenu.Content className="absolute left-0 top-0">
+              <NavigationMenu.Content className="absolute left-0 top-0" data-ga-location="mega_menu">
                 <div className="max-h-[calc(100dvh-6rem)] overflow-y-auto">
                   {secondaryGroups.length > 0 ? (
                     <TwoAxisPanel

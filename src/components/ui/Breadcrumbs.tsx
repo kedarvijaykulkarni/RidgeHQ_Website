@@ -17,7 +17,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   const trail: BreadcrumbItem[] = [{ label: "Home", href: "/" }, ...items];
 
   return (
-    <nav aria-label="Breadcrumb" className={cn("flex items-center text-sm text-[var(--ink-secondary)]", className)}>
+    <nav aria-label="Breadcrumb" data-ga-location="breadcrumb" className={cn("flex items-center text-sm text-[var(--ink-secondary)]", className)}>
       <ol className="flex min-w-0 flex-wrap items-center gap-y-1">
         {trail.map((item, index) => {
           const isLast = index === trail.length - 1;

@@ -9,6 +9,7 @@ import { defaultSeo } from "@/lib/config/seo";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
 import { CTAEventTracker } from "@/components/analytics/CTAEventTracker";
+import { ClickTracker } from "@/components/analytics/ClickTracker";
 import { AIReferralTracker } from "@/components/analytics/AIReferralTracker";
 
 import { siteUrl } from "@/lib/config/site";
@@ -89,6 +90,7 @@ export default function RootLayout({
           <GoogleAnalyticsPageView />
         </Suspense>
         <CTAEventTracker />
+        <ClickTracker />
         <AIReferralTracker />
         <GoogleAnalytics />
       </body>
