@@ -173,6 +173,26 @@ the site. Updated `sitemap.ts` (`/press` static route) and `navigation.ts` foote
 questions should be answered elsewhere (e.g. if the founder later wants to stay
 pseudonymous for a specific channel, this page would need to be reconsidered).
 
+## 2026-10-06 — Content-depth pass, batch 1: platform capabilities (pull + push)
+
+**Pulled:** vault `wiki/log.md` entries 2026-09-17 → 2026-09-29 (SLA table, product decisions #97–#99, first production deploy and sync release, Easyriders prospect findings, currency fix), `public-page-source-brief.md` (2026-09-21), and the module docs for Staff, Event Planner, Weather, Gear, Fleet, Rooms, Clients, Bookings, Reports, Partners, Settings, and AI-Copilot.
+
+**Applied (copy/claim accuracy, safe):**
+- `/platform/scheduling`, `/gear-rentals`, `/staff`, `/customers-participants`, `/payments` went from 160–185 words with no FAQs to 697–821 words with 5–6 FAQs each (FAQPage JSON-LD). Every statement is traced to a module doc; honest limits are stated as FAQs (no availability/time-off calendar; bookings blocked on bad weather only if you opt in, and never when forecast data is missing).
+- **False claim removed:** "real-time availability" staff matching (Staff nav description, the instructor-scheduling use case, and the `instructor-and-guide-scheduling-at-scale` post). The vault has no availability/time-off feature. The use case's ratio FAQ now says ratios aren't enforced automatically.
+- **False claim removed:** "encrypted … at rest" (home trust card, `/security`, `product-knowledge.ts` security summary). Replaced with what's documented: TLS/HSTS and per-business isolation at the database level (row-level security, enforced in production since 2026-09-30 per `Production-Deployment.md`). GAP-004 records no at-rest encryption. **Correction (same day):** an earlier draft also claimed "encrypted off-server backups"; removed, because `operations.md` (2026-09-26) says backups are unverified, restore is untested, and backups are deferred by owner decision until real tenants exist.
+- The `llms.txt` platform links gained one-line factual descriptions.
+- Sitemap `lastmod` set to 2026-10-06 for `/`, `/ai`, `/security`, the 5 capability pages, and the use case.
+
+**Flagged, not applied (consequential or unverified):**
+- **Ratio enforcement** ("instructor-to-diver ratios enforced per course type before a session can confirm", and guide ratios on outdoor/whitewater) on vertical pages: no vault support. To be fixed in the solutions-page claim audit (next batch).
+- **Stripe Connect**: unclear whether each business uses its own Stripe account (`stripe_connect_status` exists, Development-Index says post-MVP). New copy avoids saying so; the existing `bookings-pos` phrase "through your own gateway" is left for owner confirmation.
+- **Pricing**: the source brief lists Starter €49 / Grow €89 / Scale €149 as public, and decision #97 removes AI from Starter. The site stays in pilot mode until the owner approves (#53).
+
+**Pushed to vault:** `wiki/log.md` `[2026-10-06] query` entry with the corrections and the three open questions above.
+
+All 7 surfaces walked: `platform.ts` (source) → nav menu descriptions (derived), `product-knowledge.ts` (derived capabilities + hand-edited security summary), `/ai` (derived), FAQPage JSON-LD (new capability FAQs), sitemap (config dates + 3 static routes), page metadata (capability pages use the new hero taglines; `/security` description corrected), `llms.txt` (descriptions added).
+
 ## 2026-10-06 — Content-depth pass, batch 2: trust, index, and conversion pages (pull only)
 
 **Pulled:** Brain vault `Modules/AI-Copilot.md`, `MCP-Server.md`, `Logs.md`, `Courses.md`, `Settings.md`; `Architecture/Integration-Architecture.md`; `Operations/Production-Deployment.md`, `Tenant-Onboarding.md`; `operations.md`; `business-context.md`; `launch-plan.md`; `public-page-source-brief.md`.
@@ -190,5 +210,5 @@ pseudonymous for a specific channel, this page would need to be reconsidered).
 - Sitemap `lastmod` set to 2026-10-06 for `/`, `/ai`, `/use-cases`, and `/compare`; the other touched routes were already 2026-10-06.
 
 **Flagged for the owner (not applied):**
-- **Production RLS is not enforced** (Production-Deployment.md, "Still owed": the RUNBOOK §2.3 steps 4–5 roles exist but aren't used). Any wording like "isolated at the database level" is premature until that's done. Batch 1 (PR #119) added that phrase plus "encrypted off-server backups". Backups are deferred by owner decision and no restore has been tested (operations.md), so that wording also overclaims. This branch's wording should win on conflict.
+- **RLS wording (resolved when merging develop into this branch):** this entry originally said production RLS isn't enforced, citing Production-Deployment.md's "Still owed" list. That line is stale: the same page's header records RLS enforced in production since 2026-09-30 (#683 cutover; api/worker on `ridgehqapp_app`, web on `ridgehqapp_web`), and batch 1 relied on it. Per-business isolation at the database level is restored on `/security`, the home trust card, and `product-knowledge.ts`. Batch 1 had already removed the "encrypted off-server backups" claim.
 - `products.ts` (owned by the solutions/products claim audit) still has unsupported claims: staff mobile use, accounting-ready exports, security-deposit pre-authorisation and damage charges, automatic seasonal pricing, per-unit utilisation reporting, waiver answers carried forward, guardian signing for minors, and "isolated to your account at the database level".

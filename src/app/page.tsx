@@ -200,7 +200,7 @@ export default function Home() {
                 <Lock className="w-6 h-6 text-[var(--accent)] mb-3" aria-hidden />
                 <CardTitle>Security &amp; data ownership</CardTitle>
                 <CardDescription>
-                  Role-based permissions enforced on the server, HTTPS everywhere, an audit log of every change, and an AI Copilot that shares your staff&rsquo;s permission boundaries &mdash; high-risk actions require explicit operator confirmation before execution.
+                  Role-based permissions enforced on the server, each business&rsquo;s data isolated at the database level, HTTPS everywhere, an audit log of every change, and an AI Copilot that shares your staff&rsquo;s permission boundaries &mdash; high-risk actions require explicit operator confirmation before execution.
                 </CardDescription>
               </CardHeader>
               <CardFooter>

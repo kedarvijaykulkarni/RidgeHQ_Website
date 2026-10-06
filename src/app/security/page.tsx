@@ -13,7 +13,7 @@ export const metadata = {
   ...pageSeo("/security"),
   title: "Security",
   description:
-    "How RidgeHQ protects an activity business's data: HTTPS everywhere, role-based permissions enforced on the server, a full audit log, role-controlled revenue visibility, and an AI Copilot that confirms before it acts.",
+    "How RidgeHQ protects an activity business's data: HTTPS everywhere, per-business data isolation at the database level, role-based permissions enforced on the server, a full audit log, role-controlled revenue visibility, and an AI Copilot that confirms before it acts.",
 };
 
 const sections = [
@@ -59,6 +59,14 @@ const sections = [
       "Tokens stored hashed; the full token is shown only when it's created",
       "Token roles capped at Manager — never Owner",
       "Revocation takes effect on the very next request",
+    ],
+  },
+  {
+    heading: "Each business's data kept separate in the database",
+    body: "RidgeHQ is one system shared by many businesses, so separation is enforced by the database itself, not only by the application. Every business's records carry its own identifier, and row-level security in PostgreSQL means a query made on behalf of one business can't return another business's rows — even if the application code asking were wrong.",
+    points: [
+      "Row-level security on business data tables, enforced in production",
+      "Application connections use database roles that can't bypass it",
     ],
   },
   {

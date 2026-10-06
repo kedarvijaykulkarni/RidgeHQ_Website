@@ -91,7 +91,7 @@ export const productKnowledge = {
 
   security: {
     summary:
-      "HTTPS (TLS, HSTS preload) on every page and API call, role-based permissions enforced on the server, an audit log of changes by staff and the AI Copilot, role-controlled visibility of revenue figures, and an AI Copilot that works within the user's role and requires confirmation for medium- and high-risk actions. RidgeHQ holds no third-party security certifications today.",
+      "HTTPS (TLS, HSTS preload) on every page and API call, per-business data isolation at the database level (row-level security), role-based permissions enforced on the server, an audit log of changes by staff and the AI Copilot, role-controlled visibility of revenue figures, and an AI Copilot that works within the user's role and requires confirmation for medium- and high-risk actions. RidgeHQ holds no third-party security certifications today.",
     url: `${siteUrl}/security`,
   },
 
