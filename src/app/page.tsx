@@ -59,7 +59,7 @@ export default function Home() {
           <p className="text-lg text-[var(--ink-secondary)] mb-8">
             RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn&rsquo;t be penalized for your own marketing success.
           </p>
-          <Button asChild className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none">
+          <Button asChild>
             <Link href="/pricing">View Pilot Pricing Details</Link>
           </Button>
         </Container>
@@ -113,7 +113,7 @@ export default function Home() {
                 </li>
               </ul>
               <div className="flex flex-wrap items-center gap-4 pt-4">
-                <Button variant="outline" asChild className="border-[var(--border)] text-[var(--ink)] hover:border-[var(--accent)] bg-[var(--bg-elevated)]">
+                <Button variant="outline" asChild>
                   <Link href="/ai-copilot">Learn about the Copilot</Link>
                 </Button>
                 <Link href="/docs" className="text-sm text-[var(--accent)] hover:underline">
@@ -163,7 +163,7 @@ export default function Home() {
           <p className="text-lg text-[var(--ink-secondary)] mb-8">
             RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn&rsquo;t be penalized for your own marketing success.
           </p>
-          <Button asChild className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none">
+          <Button asChild>
             <Link href="/pricing">View Pilot Pricing Details</Link>
           </Button>
         </Container>

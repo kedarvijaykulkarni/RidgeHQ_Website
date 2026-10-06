@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Script from "next/script";
 
@@ -165,21 +166,24 @@ export function CustomLeadForm({
 
             <div className="space-y-2">
               <label htmlFor="Address_-_Country_/_Region" className="text-sm font-medium text-[var(--ink)]">Country / Region <span className="text-red-500">*</span></label>
-              <select 
-                id="Address_-_Country_/_Region" 
-                name="Address - Country / Region" 
-                required
-                defaultValue="-None-"
-                className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all appearance-none"
-              >
-                <option value="-None-" disabled>- Select Country -</option>
-                <option value="United States">United States</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Canada">Canada</option>
-                <option value="Australia">Australia</option>
-                <option value="New Zealand">New Zealand</option>
-                <option value="Other">Other</option>
-              </select>
+              <div className="relative">
+                <select 
+                  id="Address_-_Country_/_Region" 
+                  name="Address - Country / Region" 
+                  required
+                  defaultValue="-None-"
+                  className="w-full bg-[var(--bg)] border border-[var(--border-strong)] rounded-md px-4 py-2 text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all appearance-none pr-10"
+                >
+                  <option value="-None-" disabled>- Select Country -</option>
+                  <option value="United States">United States</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="New Zealand">New Zealand</option>
+                  <option value="Other">Other</option>
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--ink-secondary)]" aria-hidden />
+              </div>
             </div>
           </div>
 
