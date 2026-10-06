@@ -228,3 +228,13 @@ All 7 surfaces walked: `platform.ts` (source) → nav menu descriptions (derived
 - **Backups:** an earlier batch-1 draft said "encrypted off-server backups"; removed (backups unverified/deferred per `operations.md`). **RLS:** `operations.md` says not enforced, while the newer `Production-Deployment.md` says enforced since 2026-09-30. The website follows the newer page. Both pushed to vault `log.md`.
 
 **Flagged for the owner:** `comparisons.ts` says "Stripe is currently the only supported payment gateway", but PayPal/Redsys adapters exist (Integration-Architecture says "Partial"). This understates rather than overclaims, so it's left for the owner to confirm.
+
+## 2026-10-06 — Post-deploy Search Console pass (#69)
+
+Release PR #118 (`develop` → `main`, 49 commits, 38 PRs) merged as `5163214`; the Vercel production deploy succeeded.
+
+**Verified on production:** `sitemap.xml` has 75 URLs, byte-for-byte the same URL/`lastmod` set as the verified `develop` build. All 75 return 200, and `robots.txt` references the sitemap. The new copy is live (for example the `/security` database-isolation section and the `/platform/staff` Owner-role FAQ).
+
+**Diff against the pre-release production sitemap:** no URLs added or removed (no redirects needed), and every URL has a new `lastmod` (2026-10-05 or 2026-10-06).
+
+**Asked of the owner:** resubmit `sitemap.xml` in Google Search Console and request indexing, materially changed pages first: `/`, `/security`, `/ai`, `/ai-copilot`, `/integrations`, `/platform` and its 6 capability pages, `/solutions` and its 12 verticals, `/products` and its 4 products, `/use-cases` (+2), `/compare` (+2), `/contact`, `/book-demo`, `/design-partners`, and `/tools/no-show-cost-calculator`. The remaining URLs (blog, tools, legal, about, press, docs, pricing) changed visually only; the sitemap resubmission covers them.
