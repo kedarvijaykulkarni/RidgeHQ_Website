@@ -4,68 +4,10 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import {
-  ChevronDown,
-  ArrowRight,
-  ShoppingCart,
-  CalendarClock,
-  CalendarRange,
-  Boxes,
-  Users,
-  IdCard,
-  BarChart3,
-  Store,
-  Workflow,
-  Sparkles,
-  Plug,
-  LayoutGrid,
-  Package,
-  FileSignature,
-  GraduationCap,
-  Building2,
-  Bike,
-  Waves,
-  Sailboat,
-  Snowflake,
-  Ship,
-  LifeBuoy,
-  Terminal,
-  type LucideIcon,
-} from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { mainNav, type NavItem, type NavLink, type NavGroup } from "@/lib/config/navigation";
+import { NavIcon as Icon } from "@/components/marketing/nav-icons";
 import { cn } from "@/lib/utils";
-
-const ICONS: Record<string, LucideIcon> = {
-  ShoppingCart,
-  CalendarClock,
-  CalendarRange,
-  Boxes,
-  Users,
-  IdCard,
-  BarChart3,
-  Store,
-  Workflow,
-  Sparkles,
-  Plug,
-  LayoutGrid,
-  Package,
-  FileSignature,
-  GraduationCap,
-  Building2,
-  Bike,
-  Waves,
-  Sailboat,
-  Snowflake,
-  Ship,
-  LifeBuoy,
-  Terminal,
-};
-
-function Icon({ name, className }: { name?: string; className?: string }) {
-  const Cmp = name ? ICONS[name] : undefined;
-  if (!Cmp) return null;
-  return <Cmp className={className} aria-hidden />;
-}
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
