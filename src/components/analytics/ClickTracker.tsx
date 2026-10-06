@@ -35,7 +35,7 @@ export function ClickTracker() {
       // links stack a title over a description, so take the first rendered
       // line rather than textContent, which runs the two together.
       const heading = el.tagName === "A" ? el.querySelector("h1, h2, h3, h4") : null;
-      const text = heading?.textContent ?? el.innerText.split("\n").find((line) => line.trim()) ?? "";
+      const text = heading?.textContent ?? (el.innerText ?? el.textContent ?? "").split("\n").find((line) => line.trim()) ?? "";
 
       event(
         "ui_click",
