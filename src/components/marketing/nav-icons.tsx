@@ -23,6 +23,10 @@ import {
   LifeBuoy,
   Terminal,
   Tent,
+  Fish,
+  Wind,
+  Anchor,
+  Kayak,
   type LucideIcon,
 } from "lucide-react";
 
@@ -52,6 +56,10 @@ const ICONS: Record<string, LucideIcon> = {
   LifeBuoy,
   Terminal,
   Tent,
+  Fish,
+  Wind,
+  Anchor,
+  Kayak,
 };
 
 export function NavIcon({ name, className }: { name?: string; className?: string }) {
