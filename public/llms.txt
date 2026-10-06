@@ -27,18 +27,18 @@ RidgeHQ App charges 0% platform commission on direct website bookings. Pricing i
 
 RidgeHQ is built for 12 activity-business verticals — dive centers, surf schools, kitesurf schools, sailing schools, windsurf schools, outdoor/whitewater operators, ski schools, dive resorts, surf camps, kayak rental/tour operators, bike rental/tour operators, and boat rental/course operators. Each has a dedicated page describing real operational fit, not a generic template:
 
-- [Dive Centers](https://www.ridgehq.app/solutions/dive-centers)
-- [Surf Schools](https://www.ridgehq.app/solutions/surf-schools)
-- [Kitesurf Schools](https://www.ridgehq.app/solutions/kitesurf-schools)
-- [Sailing Schools](https://www.ridgehq.app/solutions/sailing-schools)
-- [Windsurf Schools](https://www.ridgehq.app/solutions/windsurf-schools)
-- [Outdoor / Whitewater Operators](https://www.ridgehq.app/solutions/outdoor-whitewater)
-- [Ski Schools](https://www.ridgehq.app/solutions/ski-schools)
-- [Dive Resorts](https://www.ridgehq.app/solutions/dive-resorts)
-- [Surf Camps](https://www.ridgehq.app/solutions/surf-camps)
-- [Kayak Rental / Tour Operators](https://www.ridgehq.app/solutions/kayak-rental-tours)
-- [Bike Rental / Tour Operators](https://www.ridgehq.app/solutions/bike-rental-tours)
-- [Boat Rental / Course Operators](https://www.ridgehq.app/solutions/boat-rental-courses)
+- [Dive Centers](https://www.ridgehq.app/solutions/dive-centers): trips with pilot and dive site, boat manifests generated from confirmed divers (certification + kit sizes), certification records, course completion, dive log, waivers with medical forms.
+- [Surf Schools](https://www.ridgehq.app/solutions/surf-schools): tide and swell context per session with per-activity thresholds, boards and wetsuits tracked by size, lessons and camps on one calendar.
+- [Kitesurf Schools](https://www.ridgehq.app/solutions/kitesurf-schools): wind speed/direction against minimum, maximum, and direction limits; kites and harnesses tracked by unit and size; student weight on the profile.
+- [Sailing Schools](https://www.ridgehq.app/solutions/sailing-schools): multi-day courses with completion records, vessel register with inspection/licence/insurance alerts, skipper overlap checks.
+- [Windsurf Schools](https://www.ridgehq.app/solutions/windsurf-schools): walk-in hire and lessons on one unit-level inventory, timed rentals, maintenance records that remove damaged gear from availability.
+- [Outdoor / Whitewater Operators](https://www.ridgehq.app/solutions/outdoor-whitewater): group trips with driver and destination, guide overlap checks, per-participant waivers, vehicles tracked as fleet assets.
+- [Ski Schools](https://www.ridgehq.app/solutions/ski-schools): skill-level requirements, student levels on rosters, multi-day courses, instructor fees from assigned sessions.
+- [Dive Resorts](https://www.ridgehq.app/solutions/dive-resorts): room calendar plus dive planner, Stay & Dive package products bundling accommodation and rental components, boat manifests.
+- [Surf Camps](https://www.ridgehq.app/solutions/surf-camps): camp packages bundling bed and gear, add-ons such as transfers, room calendar, conditional waiver questions.
+- [Kayak Rental / Tour Operators](https://www.ridgehq.app/solutions/kayak-rental-tours): tours and hourly hire from one unit-level inventory, timed rentals, guide overlap checks.
+- [Bike Rental / Tour Operators](https://www.ridgehq.app/solutions/bike-rental-tours): every bike tracked as a unit with frame size and service state, timed rentals of a specific bike, guided tours.
+- [Boat Rental / Course Operators](https://www.ridgehq.app/solutions/boat-rental-courses): charters and courses on one fleet, licence details collected where a product requires them, vessel compliance alerts.
 
 ## Free calculators
 

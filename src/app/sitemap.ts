@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ['/ai', '2026-10-06'],
       ['/docs', '2026-10-06'],
       ['/tools', '2026-10-05'],
-      ['/tools/no-show-cost-calculator', '2026-10-05'],
+      ['/tools/no-show-cost-calculator', '2026-10-06'],
       ['/tools/admin-time-cost-calculator', '2026-10-05'],
       ['/tools/cancellation-cost-calculator', '2026-10-05'],
       ['/tools/revenue-leakage-calculator', '2026-10-05'],

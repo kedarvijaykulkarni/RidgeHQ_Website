@@ -58,7 +58,7 @@ export const platformCapabilities: Capability[] = [
         points: [
           "Live availability drawn from the same calendar your team works from",
           "Deposit or full payment, with the balance scheduled and tracked against the order",
-          "Medical, experience, and dietary questions collected at checkout",
+          "Waiver, medical, and your own custom questions collected per participant at checkout",
           "Promotional codes that apply to the actual charged total, not just the displayed price",
           "0% platform commission on direct bookings — you pay only your gateway fee",
         ],
@@ -86,7 +86,7 @@ export const platformCapabilities: Capability[] = [
     ],
     connections: [
       { to: "Scheduling & Dispatch", detail: "A confirmed booking lands on the day plan with its participants, so the schedule is built from real demand, not re-keyed." },
-      { to: "Gear & Fleet Management", detail: "Booking a session or a rental draws the required gear and capacity down automatically." },
+      { to: "Gear & Fleet Management", detail: "Rentals and room bookings reserve a specific unit for their dates, so the desk and the website read the same inventory." },
       { to: "Customer & Participant Profiles", detail: "Each booking is attached to a customer record, carrying history, sizing, and waiver status." },
       { to: "Payments & Reporting", detail: "Deposits, balances, and credit notes flow straight into the daily close and revenue-by-origin reporting." },
     ],
@@ -303,7 +303,7 @@ export const platformCapabilities: Capability[] = [
       { label: "Fewer \"what's my schedule?\" messages", detail: "Staff see their next session and hours on their own profile." },
     ],
     faqs: [
-      { question: "Which staff roles does RidgeHQ support?", answer: "Owner, Manager, Head Instructor, Instructor, Assistant, Divemaster, and Pilot. Permissions are enforced on the server for each role, and the Owner role is protected from being removed by accident." },
+      { question: "Which staff roles does RidgeHQ support?", answer: "Owner, Manager, Head Instructor, Instructor, Assistant, Divemaster, and Pilot. Permissions are enforced on the server for each role, and only an Owner can grant or change the Owner role." },
       { question: "Can instructors see revenue figures?", answer: "Only if you allow it. A per-business setting decides which roles may see money figures, and that rule applies everywhere — reports, dashboards, and AI Copilot answers alike." },
       { question: "How are instructor fees calculated?", answer: "You define fee groups with per-session, per-hour, or commission rates for each activity, plus optional bonuses. RidgeHQ calculates each person's fees from the sessions they were assigned to, notes any session missing a rate, and lets you export a statement and mark fees as paid." },
       { question: "Does RidgeHQ track staff availability or time off?", answer: "Not as a dedicated availability calendar today. It prevents overlapping assignments and shows each person's upcoming sessions and monthly hours; leave and days off are still planned by your team." },
