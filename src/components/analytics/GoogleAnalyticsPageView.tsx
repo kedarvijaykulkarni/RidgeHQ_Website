@@ -1,17 +1,24 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { isGoogleAnalyticsEnabled, pageview } from "@/lib/analytics/google-analytics";
 
-// Fires a GA pageview on every App Router client-side navigation. A no-op
-// in development, on localhost, or when GA isn't configured — see
-// lib/analytics/google-analytics.ts.
+// Fires a GA pageview on every App Router client-side navigation. The
+// landing page view is already sent by the `config` call in GoogleAnalytics'
+// init script, so the first run is skipped — otherwise every visit would
+// count its landing page twice. A no-op in development, on localhost, or
+// when GA isn't configured — see lib/analytics/google-analytics.ts.
 export function GoogleAnalyticsPageView() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const isLanding = useRef(true);
 
   useEffect(() => {
+    if (isLanding.current) {
+      isLanding.current = false;
+      return;
+    }
     if (!isGoogleAnalyticsEnabled()) return;
     if (!pathname) return;
 
