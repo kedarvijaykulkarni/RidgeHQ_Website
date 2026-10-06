@@ -138,7 +138,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each diver signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -231,7 +231,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each participant signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -324,7 +324,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each student signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -417,7 +417,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each participant signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -509,7 +509,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each participant signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -601,7 +601,7 @@ export const verticals: Vertical[] = [
       { question: 'Can we track our vehicles\' paperwork?', answer: 'Yes. Vehicles are fleet assets with registration, crew, an inspection log, and alerts when licences or insurance expire within 30 days.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -694,7 +694,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each participant signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -786,7 +786,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each diver signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -878,7 +878,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each guest signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -970,7 +970,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each participant signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -1062,7 +1062,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each rider signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
   {
@@ -1154,7 +1154,7 @@ export const verticals: Vertical[] = [
       { question: 'How do digital waivers work?', answer: 'Each client signs your waiver with a typed signature, attached to their booking. You can add a medical questionnaire and conditional questions that only appear when an earlier answer requires them. Waivers are part of the platform, not a paid add-on.' },
       { question: 'Do you charge commission on our bookings?', answer: 'No. Direct bookings through your own website carry 0% RidgeHQ commission. You pay your payment provider\'s normal processing fee and a flat subscription.' },
       { question: 'What happens to the money when a paid booking changes?', answer: 'The paid order is never silently rewritten. A change or cancellation produces a credit note against it, so your daily close and your accounts still reconcile.' },
-      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out a small set of scheduling actions, such as rescheduling a session or moving a participant, each behind a confirm step; reversible scheduling actions can be undone. It does not move money.' },
+      { question: 'What can the AI Copilot actually do?', answer: 'It reads your day — sessions, bookings, conditions — and answers questions about it. It can carry out actions such as rescheduling a session or moving a participant, each behind a confirm step, and reversible scheduling actions can be undone. Higher-risk actions — creating or cancelling a booking, or refunding a payment — are limited to managers and always need explicit confirmation; assistants connected over MCP cannot use them at all.' },
     ],
   },
 ];

@@ -303,7 +303,7 @@ export const platformCapabilities: Capability[] = [
       { label: "Fewer \"what's my schedule?\" messages", detail: "Staff see their next session and hours on their own profile." },
     ],
     faqs: [
-      { question: "Which staff roles does RidgeHQ support?", answer: "Owner, Manager, Head Instructor, Instructor, Assistant, Divemaster, and Pilot. Permissions are enforced on the server for each role, and the Owner role is protected from being removed by accident." },
+      { question: "Which staff roles does RidgeHQ support?", answer: "Owner, Manager, Head Instructor, Instructor, Assistant, Divemaster, and Pilot. Permissions are enforced on the server for each role, and only an Owner can grant or change the Owner role." },
       { question: "Can instructors see revenue figures?", answer: "Only if you allow it. A per-business setting decides which roles may see money figures, and that rule applies everywhere — reports, dashboards, and AI Copilot answers alike." },
       { question: "How are instructor fees calculated?", answer: "You define fee groups with per-session, per-hour, or commission rates for each activity, plus optional bonuses. RidgeHQ calculates each person's fees from the sessions they were assigned to, notes any session missing a rate, and lets you export a statement and mark fees as paid." },
       { question: "Does RidgeHQ track staff availability or time off?", answer: "Not as a dedicated availability calendar today. It prevents overlapping assignments and shows each person's upcoming sessions and monthly hours; leave and days off are still planned by your team." },
