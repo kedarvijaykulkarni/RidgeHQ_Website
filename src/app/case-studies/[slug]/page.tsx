@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { caseStudies } from "@/lib/config/case-studies";
 import { platformCapabilities } from "@/lib/config/platform";
@@ -40,12 +39,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <div className="flex flex-col w-full">
       <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Case Studies", path: "/case-studies" },
-          { name: caseStudy.businessType, path: `/case-studies/${caseStudy.slug}` },
-        ])}
-      />
-      <StructuredData
         data={{
           "@context": "https://schema.org",
           "@type": "Article",
@@ -56,10 +49,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       />
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[{ label: "Case Studies", href: "/case-studies" }, { label: caseStudy.businessType }]}
-          />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Case Studies", href: "/case-studies" }, { label: caseStudy.businessType, href: `/case-studies/${caseStudy.slug}` }]} />
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               {caseStudy.businessType}

@@ -5,7 +5,7 @@ slug: "native-ai-operational-intelligence-ridgehq"
 canonical_url: "https://www.ridgehq.app/blog/native-ai-operational-intelligence-ridgehq"
 tags: ["dive center operations", "saas", "business intelligence", "operations management", "ai copilot"]
 date: "2026-09-14"
-updatedAt: "2026-10-05"
+updatedAt: "2026-10-06"
 pillar: "Technology"
 draft: false
 ---

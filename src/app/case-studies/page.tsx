@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 import { caseStudies } from "@/lib/config/case-studies";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -21,10 +19,9 @@ export const metadata = {
 export default function CaseStudiesIndexPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Case Studies", path: "/case-studies" }])} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Case Studies" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Case Studies", href: "/case-studies" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink">Case Studies</h1>
             <p className="text-xl text-ink-secondary">

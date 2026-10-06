@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 import { tools } from "@/lib/config/tools";
 import { ArrowRight } from "lucide-react";
@@ -17,10 +15,9 @@ export const metadata = {
 export default function ToolsPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Tools", path: "/tools" }])} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Tools" }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Tools", href: "/tools" }]} />
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink">
               Free calculators for activity businesses.

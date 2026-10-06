@@ -5,7 +5,7 @@ slug: "instructor-and-guide-scheduling-at-scale"
 canonical_url: "https://www.ridgehq.app/blog/instructor-and-guide-scheduling-at-scale"
 tags: ["operations", "staff scheduling", "instructor scheduling", "activity business software"]
 date: "2026-09-12"
-updatedAt: "2026-10-05"
+updatedAt: "2026-10-06"
 pillar: "Operations"
 draft: false
 ---

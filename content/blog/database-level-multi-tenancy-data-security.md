@@ -5,7 +5,7 @@ slug: "database-level-multi-tenancy-data-security"
 canonical_url: "https://www.ridgehq.app/blog/database-level-multi-tenancy-data-security"
 tags: ["data security", "multi-tenancy", "operations management", "dive center software", "data migration"]
 date: "2026-09-20"
-updatedAt: "2026-10-05"
+updatedAt: "2026-10-06"
 pillar: "Technology"
 draft: false
 ---

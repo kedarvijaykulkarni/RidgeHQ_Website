@@ -5,7 +5,7 @@ slug: "ai-copilot-scheduling-operations-aqua-roster"
 canonical_url: "https://www.ridgehq.app/blog/ai-copilot-scheduling-operations-aqua-roster"
 tags: ["dive-operations", "scheduling-software", "b2b-saas", "dive-center-management"]
 date: "2026-09-04"
-updatedAt: "2026-10-05"
+updatedAt: "2026-10-06"
 pillar: "Technology"
 draft: false
 ---

@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { comparisons } from "@/lib/config/comparisons";
 import { ComparisonTable } from "@/components/marketing/comparisons/ComparisonTable";
@@ -36,18 +34,9 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
 
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Compare", path: "/compare" },
-          { name: comparison.title, path: `/compare/${comparison.slug}` },
-        ])}
-      />
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[{ label: "Compare", href: "/compare" }, { label: comparison.title }]}
-          />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Compare", href: "/compare" }, { label: comparison.title, href: `/compare/${comparison.slug}` }]} />
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               {comparison.heroHeadline}

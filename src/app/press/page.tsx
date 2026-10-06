@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
@@ -58,7 +58,7 @@ export default function PressPage() {
 
       <Section className="pt-24 pb-12">
         <Container className="max-w-3xl">
-          <Breadcrumbs items={[{ label: "Press" }]} />
+          <PageBreadcrumbs trail={[{ label: "Press", href: "/press" }]} />
           <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium mb-8 mt-6">
             Press Kit
           </div>

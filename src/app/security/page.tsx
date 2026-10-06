@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function SecurityPage() {
     <Section className="min-h-[70vh]">
       <Container>
         <div className="max-w-3xl mx-auto space-y-8">
-          <Breadcrumbs items={[{ label: "Security" }]} />
+          <PageBreadcrumbs trail={[{ label: "Security", href: "/security" }]} />
           <h1 className="text-4xl font-bold text-ink">Security</h1>
           <div className="prose max-w-none prose-headings:text-[var(--ink)] prose-a:text-[var(--accent)] prose-a:hover:text-[var(--accent-2)] prose-p:text-[var(--ink-secondary)]">
             <p>At RidgeHQ, the security of your operational data is our top priority. We employ industry-standard practices to protect your information.</p>

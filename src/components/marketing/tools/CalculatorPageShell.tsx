@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
 
 interface CalculatorPageShellProps {
@@ -45,15 +43,9 @@ export function CalculatorPageShell({
 }: CalculatorPageShellProps) {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Tools", path: "/tools" },
-          { name: title, path: `/tools/${slug}` },
-        ])}
-      />
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Tools", href: "/tools" }, { label: title }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Tools", href: "/tools" }, { label: title, href: `/tools/${slug}` }]} />
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">{title}</h1>
             <p className="text-lg text-ink-secondary leading-relaxed">{intro}</p>

@@ -1,7 +1,7 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { visibleBlogPosts } from "@/lib/config/blog";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
 import ReactMarkdown from 'react-markdown';
@@ -52,36 +52,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               "publisher": {
                 "@id": "https://www.ridgehq.app/#organization"
               }
-            },
-            {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://www.ridgehq.app/"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Blog",
-                  "item": "https://www.ridgehq.app/blog"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 3,
-                  "name": post.title,
-                  "item": `https://www.ridgehq.app/blog/${post.slug}`
-                }
-              ]
             }
           ]
         }}
       />
       <Section className="pb-8 pt-24 border-b border-border">
         <Container className="max-w-3xl">
-          <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.category }]} />
+          <PageBreadcrumbs trail={[{ label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
           <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-ink mb-6">
             {post.title}
           </h1>

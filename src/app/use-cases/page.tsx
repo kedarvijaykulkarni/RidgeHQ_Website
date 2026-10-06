@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
 import { ArrowRight } from "lucide-react";
@@ -17,12 +15,9 @@ export const metadata = {
 export default function UseCasesIndexPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([{ name: "Use Cases", path: "/use-cases" }])}
-      />
       <Section className="pt-24 pb-16">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Use Cases" }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Use Cases", href: "/use-cases" }]} />
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink">
               Solve the specific problem, not just the industry

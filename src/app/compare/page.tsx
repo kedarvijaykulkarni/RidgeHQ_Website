@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 import { comparisons } from "@/lib/config/comparisons";
 import { ArrowRight } from "lucide-react";
@@ -17,10 +15,9 @@ export const metadata = {
 export default function ComparePage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Compare", path: "/compare" }])} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Compare" }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Compare", href: "/compare" }]} />
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink">
               How RidgeHQ compares

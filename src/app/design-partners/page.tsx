@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { pageSeo } from "@/lib/config/seo";
 
@@ -13,7 +13,7 @@ export default function DesignPartnersPage() {
   return (
     <Section className="min-h-[80vh]">
       <Container>
-        <Breadcrumbs className="mb-8 justify-center" items={[{ label: "Design Partners" }]} />
+        <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Design Partners", href: "/design-partners" }]} />
         <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
           <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium mb-4">
             Founding Operator Pilot

@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { VideoFrame } from "@/components/marketing/VideoFrame";
@@ -19,7 +19,7 @@ export default function AICopilotPage() {
     <div className="flex flex-col w-full">
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "AI Copilot" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "AI Copilot", href: "/ai-copilot" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium">
               Intelligence built for operations

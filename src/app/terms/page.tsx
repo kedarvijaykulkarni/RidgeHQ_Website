@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
@@ -127,7 +127,7 @@ export default function TermsPage() {
     <Section className="min-h-[70vh]">
       <Container>
         <div className="max-w-3xl mx-auto space-y-8">
-          <Breadcrumbs items={[{ label: "Terms of Service" }]} />
+          <PageBreadcrumbs trail={[{ label: "Terms of Service", href: "/terms" }]} />
           <h1 className="text-4xl font-bold">Terms of Service</h1>
           <p className="mt-2 text-sm text-ink-secondary">Last updated: July 2026</p>
           <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-warning">

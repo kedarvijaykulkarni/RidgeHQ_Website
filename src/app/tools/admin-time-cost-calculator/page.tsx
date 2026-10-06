@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { AdminTimeCostCalculator } from "@/components/marketing/tools/AdminTimeCostCalculator";
 import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
@@ -18,18 +16,9 @@ export const metadata = {
 export default function AdminTimeCostCalculatorPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Tools", path: "/tools" },
-          { name: "Admin Time Cost Calculator", path: "/tools/admin-time-cost-calculator" },
-        ])}
-      />
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[{ label: "Tools", href: "/tools" }, { label: "Admin Time Cost Calculator" }]}
-          />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Tools", href: "/tools" }, { label: "Admin Time Cost Calculator", href: "/tools/admin-time-cost-calculator" }]} />
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               Admin Time Cost Calculator

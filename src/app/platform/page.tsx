@@ -3,9 +3,7 @@ import { FeatureCard } from "@/components/marketing/FeatureCard";
 import { platformCapabilities } from "@/lib/config/platform";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { CTASection } from "@/components/marketing/CTASection";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
@@ -17,10 +15,9 @@ export const metadata = {
 export default function PlatformPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Platform", path: "/platform" }])} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Platform" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Platform", href: "/platform" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">One system for the entire operational day.</h1>
             <p className="text-xl text-ink-secondary">

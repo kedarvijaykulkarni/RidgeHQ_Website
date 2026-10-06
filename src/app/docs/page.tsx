@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { CheckCircle2, XCircle } from "lucide-react";
@@ -69,12 +68,11 @@ const faqs = [
 export default function DocsPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Docs", path: "/docs" }])} />
       <StructuredData data={faqPageJsonLd(faqs)} />
 
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Docs" }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Docs", href: "/docs" }]} />
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium">
               Model Context Protocol (MCP)
