@@ -91,7 +91,7 @@ export const productKnowledge = {
 
   security: {
     summary:
-      "Data encrypted in transit and at rest, role-based access control across systems, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
+      "HTTPS (TLS, HSTS preload) on every page and API call, role-based permissions enforced on the server, an audit log of changes by staff and the AI Copilot, role-controlled visibility of revenue figures, and an AI Copilot that works within the user's role and requires confirmation for medium- and high-risk actions. RidgeHQ holds no third-party security certifications today.",
     url: `${siteUrl}/security`,
   },
 

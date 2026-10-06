@@ -4,6 +4,7 @@ import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
 import { ArrowRight } from "lucide-react";
+import { PageFaq } from "@/components/marketing/PageFaq";
 
 export const metadata = {
   ...pageSeo("/use-cases"),
@@ -51,6 +52,46 @@ export default function UseCasesIndexPage() {
           </div>
         </Container>
       </Section>
+
+      <Section className="border-t border-border">
+        <Container>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <h2 className="text-3xl font-bold text-ink">How these guides are written</h2>
+            <p className="text-lg text-ink-secondary leading-relaxed">
+              Each guide follows the same structure, so you can judge quickly whether the problem is
+              yours: what goes wrong, why it keeps happening when bookings and operations live in
+              separate tools, what it costs to leave it alone, how RidgeHQ addresses it, and &mdash; just
+              as important &mdash; when it probably isn&rsquo;t worth solving for a business your size.
+            </p>
+            <p className="text-lg text-ink-secondary leading-relaxed">
+              The common root cause is the same in almost every case: the booking is recorded in one
+              place, and the schedule, the staff rota, the gear list, and the payment record are rebuilt
+              from it by hand somewhere else. Every re-keying step is a chance for a double-booked
+              instructor, a missing wetsuit size, or a payment that never matches its booking.
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      <PageFaq faqs={useCaseIndexFaqs} className="bg-bg-elevated/50 border-t border-border" />
     </div>
   );
 }
+
+const useCaseIndexFaqs = [
+  {
+    question: "What's the difference between a use case and an industry page?",
+    answer:
+      "Industry pages start from a business type, such as dive centers or surf schools. Use cases start from a specific operational problem that cuts across business types, such as scheduling instructors or keeping gear from being committed twice.",
+  },
+  {
+    question: "Do these guides say when RidgeHQ isn't a fit?",
+    answer:
+      "Yes. Every guide has a section on when the problem may not be costing you much — for example, a one- or two-instructor operation often doesn't need more than a shared calendar.",
+  },
+  {
+    question: "Can I suggest a problem you haven't covered?",
+    answer:
+      "Yes. Get in touch through the contact page; recurring operator problems become new guides and, often, new product work.",
+  },
+];

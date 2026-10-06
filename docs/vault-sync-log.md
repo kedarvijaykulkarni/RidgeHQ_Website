@@ -172,3 +172,23 @@ the site. Updated `sitemap.ts` (`/press` static route) and `navigation.ts` foote
 `ridgehq.app/press` with founder attribution, in case that changes how founder-identity
 questions should be answered elsewhere (e.g. if the founder later wants to stay
 pseudonymous for a specific channel, this page would need to be reconsidered).
+
+## 2026-10-06 — Content-depth pass, batch 2: trust, index, and conversion pages (pull only)
+
+**Pulled:** Brain vault `Modules/AI-Copilot.md`, `MCP-Server.md`, `Logs.md`, `Courses.md`, `Settings.md`; `Architecture/Integration-Architecture.md`; `Operations/Production-Deployment.md`, `Tenant-Onboarding.md`; `operations.md`; `business-context.md`; `launch-plan.md`; `public-page-source-brief.md`.
+
+**Applied:**
+- `/security` was rewritten from 118 words of generic claims ("top priority", "secure, compliant infrastructure", "encrypted at rest") to about 980 words. It now states only what is verified in production: server-enforced RBAC, role-controlled revenue visibility, the audit log, AI Copilot role and risk gates with a one-hour undo on reversible scheduling actions, hashed and revocable MCP tokens capped at Manager, HTTPS with HSTS preload, admin framing protection, and the embed allow-list. A "What isn't in place yet" section and FAQ say plainly that there are no third-party certifications.
+- `/ai-copilot`, `/integrations`, `/platform`, `/products`, `/use-cases`, `/compare`, `/contact`, `/book-demo`, and `/design-partners` were expanded with FAQ sections (FAQPage JSON-LD) through a new shared `PageFaq` component.
+- `integrations.ts` was corrected against Integration-Architecture.md:
+  - Removed "Xero" (no specific accounting target is decided), "Smartwaiver" (no basis, and waivers are built in), and Stripe "in-person payments" (no Terminal support).
+  - Added the implemented surfaces: the booking-widget embed, AI providers, MCP, Stormglass, email, and the iCal feed.
+  - PayPal/Redsys are marked partial. PADI/SSI and an accounting export are marked planned.
+- `/platform`: removed "never … assign an unqualified instructor" and the staff screenshot alt text claiming qualification/availability matching.
+- `Accordion` now force-mounts closed FAQ answers (hidden until opened), so every FAQ answer site-wide is in the HTML for crawlers rather than only in JSON-LD.
+- `product-knowledge.ts` security summary, the home trust card, and `llms.txt` (Copilot, Security, Integrations, Design Partner lines) now match the verified wording.
+- Sitemap `lastmod` set to 2026-10-06 for `/`, `/ai`, `/use-cases`, and `/compare`; the other touched routes were already 2026-10-06.
+
+**Flagged for the owner (not applied):**
+- **Production RLS is not enforced** (Production-Deployment.md, "Still owed": the RUNBOOK §2.3 steps 4–5 roles exist but aren't used). Any wording like "isolated at the database level" is premature until that's done. Batch 1 (PR #119) added that phrase plus "encrypted off-server backups". Backups are deferred by owner decision and no restore has been tested (operations.md), so that wording also overclaims. This branch's wording should win on conflict.
+- `products.ts` (owned by the solutions/products claim audit) still has unsupported claims: staff mobile use, accounting-ready exports, security-deposit pre-authorisation and damage charges, automatic seasonal pricing, per-unit utilisation reporting, waiver answers carried forward, guardian signing for minors, and "isolated to your account at the database level".

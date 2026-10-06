@@ -19,11 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = (
     [
-      ['', '2026-10-05'],
+      ['', '2026-10-06'],
       ['/platform', '2026-10-06'],
       ['/products', '2026-10-06'],
       ['/ai-copilot', '2026-10-06'],
-      ['/ai', '2026-10-05'],
+      ['/ai', '2026-10-06'],
       ['/docs', '2026-10-06'],
       ['/tools', '2026-10-05'],
       ['/tools/no-show-cost-calculator', '2026-10-05'],
@@ -36,8 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ['/tools/instructor-utilization-calculator', '2026-10-05'],
       ['/tools/capacity-utilization-calculator', '2026-10-05'],
       ['/tools/spreadsheet-readiness-assessment', '2026-10-05'],
-      ['/use-cases', '2026-10-05'],
-      ['/compare', '2026-10-05'],
+      ['/use-cases', '2026-10-06'],
+      ['/compare', '2026-10-06'],
       ['/integrations', '2026-10-06'],
       ['/pricing', '2026-10-06'],
       ['/solutions', '2026-10-06'],
