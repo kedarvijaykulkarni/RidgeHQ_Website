@@ -137,16 +137,16 @@ const productGroups: NavGroup[] = [
 // ---------------------------------------------------------------------------
 
 const verticalIcons: Record<string, string> = {
-  'dive-centers': 'Waves',
+  'dive-centers': 'Fish',
   'surf-schools': 'Waves',
-  'kitesurf-schools': 'Waves',
-  'sailing-schools': 'Sailboat',
-  'windsurf-schools': 'Waves',
+  'kitesurf-schools': 'Wind',
+  'sailing-schools': 'Anchor',
+  'windsurf-schools': 'Sailboat',
   'ski-schools': 'Snowflake',
   'outdoor-whitewater': 'LifeBuoy',
   'dive-resorts': 'Building2',
   'surf-camps': 'Tent',
-  'kayak-rental-tours': 'Waves',
+  'kayak-rental-tours': 'Kayak',
   'bike-rental-tours': 'Bike',
   'boat-rental-courses': 'Ship',
 };
