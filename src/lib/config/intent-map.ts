@@ -35,7 +35,7 @@ export const intentMap: Intent[] = [
     category: "booking-management",
     commercialIntent: "high",
     ridgehqFit: "strong",
-    evidence: "verticals.ts:dive-centers.keyCapability (manifest/ratio/gear draw-down build from the booking automatically)",
+    evidence: "verticals.ts:dive-centers (boat manifest generated per session from confirmed divers, with certification and kit sizes)",
     targetResource: `${siteUrl}/solutions/dive-centers`,
   },
   {
@@ -43,8 +43,8 @@ export const intentMap: Intent[] = [
     intent: "How do I reschedule a whole lesson group when the forecast changes, without manually re-messaging everyone?",
     category: "staff-scheduling",
     commercialIntent: "high",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:surf-schools.keyCapability (day plan carries tide/swell forecast plus sizing/instructor level)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:surf-schools (tide/swell per session, move or bulk-reschedule in the planner, one-click session email — not sent automatically on reschedule)",
     targetResource: `${siteUrl}/solutions/surf-schools`,
   },
   {
@@ -52,8 +52,8 @@ export const intentMap: Intent[] = [
     intent: "How do I confirm a kite-size and harness reservation the moment a wind-window lesson is booked?",
     category: "equipment",
     commercialIntent: "medium",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:kitesurf-schools.keyCapability (session holds wind forecast and reserves kite size/harness on booking)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:kitesurf-schools (wind limits per activity; kites tracked by unit and size against stored student weight — no automatic kite reservation)",
     targetResource: `${siteUrl}/solutions/kitesurf-schools`,
   },
   {
@@ -61,8 +61,8 @@ export const intentMap: Intent[] = [
     intent: "How do I stop double-booking a boat across a multi-day course, a haul-out, and a weekend charter?",
     category: "equipment",
     commercialIntent: "high",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:sailing-schools.keyCapability (fleet capacity/inspection/crew inside the same calendar as courses)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:sailing-schools (skipper/pilot overlap checks and vessel compliance alerts — vessels are not reserved per session, so boat double-booking is not prevented automatically)",
     targetResource: `${siteUrl}/solutions/sailing-schools`,
   },
   {
@@ -70,8 +70,8 @@ export const intentMap: Intent[] = [
     intent: "How do I know what gear is actually available right now across lessons and walk-in hire?",
     category: "equipment",
     commercialIntent: "medium",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:windsurf-schools.keyCapability (shared fleet across lessons/walk-in hire, tracked out and back)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:windsurf-schools (timed rentals reserve specific units; maintenance removes units — lessons do not reserve gear)",
     targetResource: `${siteUrl}/solutions/windsurf-schools`,
   },
   {
@@ -79,8 +79,8 @@ export const intentMap: Intent[] = [
     intent: "How do I make sure a trip never runs short a guide, a shuttle seat, or a signed waiver?",
     category: "staff-scheduling",
     commercialIntent: "high",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:outdoor-whitewater.keyCapability (headcount drives rafts/guide ratio/shuttle seats/waiver together)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:outdoor-whitewater (per-participant waivers and guide overlap checks — guide and shuttle allocation is manual)",
     targetResource: `${siteUrl}/solutions/outdoor-whitewater`,
   },
   {
@@ -88,8 +88,8 @@ export const intentMap: Intent[] = [
     intent: "How do I assign instructors to a wave of morning bookings by level and language without manual guesswork?",
     category: "staff-scheduling",
     commercialIntent: "high",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:ski-schools.keyCapability (bookings carry level/language, instructors tagged by certification/language)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:ski-schools (student levels on rosters, instructor languages on profiles, overlap checks — no automatic level/language matching)",
     targetResource: `${siteUrl}/solutions/ski-schools`,
   },
   {
@@ -98,7 +98,7 @@ export const intentMap: Intent[] = [
     category: "booking-management",
     commercialIntent: "high",
     ridgehqFit: "strong",
-    evidence: "verticals.ts:dive-resorts.keyCapability (accommodation and dive schedule share one system and one guest folio)",
+    evidence: "verticals.ts:dive-resorts (package products bundle accommodation and rental components on one order)",
     targetResource: `${siteUrl}/solutions/dive-resorts`,
   },
   {
@@ -107,7 +107,7 @@ export const intentMap: Intent[] = [
     category: "booking-management",
     commercialIntent: "medium",
     ridgehqFit: "strong",
-    evidence: "verticals.ts:surf-camps.keyCapability (one weekly package books bed/transfer/lesson group/dietary need)",
+    evidence: "verticals.ts:surf-camps (camp package bundles bed and gear, transfer as add-on, conditional waiver questions for dietary needs)",
     targetResource: `${siteUrl}/solutions/surf-camps`,
   },
   {
@@ -115,8 +115,8 @@ export const intentMap: Intent[] = [
     intent: "How do I avoid a tour turning up short of boats already rented out to walk-ins?",
     category: "equipment",
     commercialIntent: "medium",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:kayak-rental-tours.keyCapability (tours and walk-in hire draw from one shared boat inventory)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:kayak-rental-tours (timed rentals reserve specific boats — tours do not reserve boats automatically)",
     targetResource: `${siteUrl}/solutions/kayak-rental-tours`,
   },
   {
@@ -125,7 +125,7 @@ export const intentMap: Intent[] = [
     category: "equipment",
     commercialIntent: "medium",
     ridgehqFit: "strong",
-    evidence: "verticals.ts:bike-rental-tours.keyCapability (every bike tracked as its own asset with size and service state)",
+    evidence: "verticals.ts:bike-rental-tours (timed rental of a specific bike; maintenance records remove flagged bikes from availability)",
     targetResource: `${siteUrl}/solutions/bike-rental-tours`,
   },
   {
@@ -133,8 +133,8 @@ export const intentMap: Intent[] = [
     intent: "How do I make sure a charter never hands over without a verified licence and a held security deposit?",
     category: "booking-management",
     commercialIntent: "high",
-    ridgehqFit: "strong",
-    evidence: "verticals.ts:boat-rental-courses.keyCapability (booking collects licence/ID and pre-authorises deposit before handover)",
+    ridgehqFit: "partial",
+    evidence: "verticals.ts:boat-rental-courses (licence level/number collected where the product requires it — not verified, and no pre-authorised deposit hold)",
     targetResource: `${siteUrl}/solutions/boat-rental-courses`,
   },
 ];

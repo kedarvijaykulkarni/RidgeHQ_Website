@@ -703,7 +703,7 @@ export const verticals: Vertical[] = [
     slug: 'dive-resorts',
     lastUpdated: '2026-10-06',
     searchKeyword: 'Dive resort software',
-    seoTitle: 'Dive Resort Software: Rooms, Dives & One Folio',
+    seoTitle: 'Dive Resort Software: Rooms, Dives & Packages',
     metaDescription: 'Dive resort software that runs rooms and the dive schedule on one system, with Stay & Dive packages bundling accommodation, diving, and rental gear.',
     heroHeadline: 'A hotel and a dive centre, running as one.',
     heroDescription: 'RidgeHQ brings website sales, on-site POS, boat operations, guest paperwork, and the daily close into one system — purpose-built for dive operations and flexible for resort stays with add-ons.',
