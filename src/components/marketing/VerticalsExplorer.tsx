@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const TABS = ["Water Sports", "Snow & Mountains", "Rentals & Tours"] as const;
 type Tab = typeof TABS[number];
@@ -83,7 +84,6 @@ export function VerticalsExplorer() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05, ease: "easeOut" }}
-                  whileHover={{ y: -4 }}
                   className="h-full"
                 >
                   <VerticalCard vertical={v} className="h-full" />
@@ -95,7 +95,7 @@ export function VerticalsExplorer() {
 
         <div className="mt-12 text-center">
           <Button variant="link" asChild>
-            <Link href="/solutions">View all supported industries &rarr;</Link>
+            <Link href="/solutions">View all supported industries <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" aria-hidden /></Link>
           </Button>
         </div>
       </Container>

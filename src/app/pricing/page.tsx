@@ -54,7 +54,7 @@ export default function PricingPage() {
               </ul>
               <p className="text-sm text-ink-secondary">
                 Want to run RidgeHQ from Claude, ChatGPT, or Claude Code too? See{" "}
-                <Link href="/docs" className="text-accent hover:underline">
+                <Link href="/docs" className="link-inline">
                   how to connect an AI assistant
                 </Link>
                 .

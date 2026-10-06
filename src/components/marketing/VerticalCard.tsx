@@ -10,7 +10,7 @@ interface VerticalCardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function VerticalCard({ vertical, className, ...props }: VerticalCardProps) {
   return (
-    <Link href={`/solutions/${vertical.slug}`} className="group block h-full">
+    <Link href={`/solutions/${vertical.slug}`} className="group block h-full rounded-2xl">
       <div className={cn("glass-card h-full p-6 flex flex-col gap-4 glass-card-hover", className)} {...props}>
         <div className="flex-1 space-y-2">
           <h3 className="text-xl font-semibold tracking-tight group-hover:text-[var(--accent)] transition-colors text-[var(--ink)]">{vertical.name}</h3>

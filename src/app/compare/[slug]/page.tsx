@@ -83,7 +83,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
               {comparison.relatedToolSlug && (
                 <Link
                   href={`/tools/${comparison.relatedToolSlug}`}
-                  className="text-accent hover:underline text-sm inline-block"
+                  className="link-inline text-sm inline-block"
                 >
                   Check your own numbers: {comparison.relatedToolTitle} &rarr;
                 </Link>

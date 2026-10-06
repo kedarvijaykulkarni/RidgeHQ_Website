@@ -81,8 +81,8 @@ export default function AboutPage() {
             {/* Visual connector line (hidden on mobile) */}
             <div className="hidden lg:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/50 to-transparent -z-10"></div>
             
-            <div className="glass-card p-10 border-t-4 border-t-accent-2 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+            <div className="glass-card p-10 border-t-4 border-t-accent-2 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10">
                 <Navigation className="w-24 h-24 text-accent-2" />
               </div>
               <h3 className="text-sm font-bold tracking-widest uppercase text-accent-2 mb-4">Our Vision</h3>
@@ -94,8 +94,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="glass-card p-10 border-t-4 border-t-accent relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+            <div className="glass-card p-10 border-t-4 border-t-accent relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10">
                 <Target className="w-24 h-24 text-accent" />
               </div>
               <h3 className="text-sm font-bold tracking-widest uppercase text-accent mb-4">Our Mission</h3>
@@ -190,7 +190,7 @@ export default function AboutPage() {
               </p>
               <p className="text-sm text-ink-tertiary mt-6">
                 RidgeHQ is built and run by solo founder Kedar Vijay Kulkarni. See the{" "}
-                <Link href="/press" className="text-accent hover:underline">
+                <Link href="/press" className="link-inline">
                   press kit
                 </Link>{" "}
                 for founder background and brand assets.

@@ -105,7 +105,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                     <Link
                       key={c.slug}
                       href={`/platform/${c.slug}`}
-                      className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-[var(--accent-border)] hover:text-ink transition-colors"
+                      className="chip-link"
                     >
                       {c.title}
                     </Link>

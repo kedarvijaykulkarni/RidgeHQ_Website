@@ -291,7 +291,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                 <Link
                   key={c.slug}
                   href={`/platform/${c.slug}`}
-                  className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors"
+                  className="chip-link"
                 >
                   {c.title}
                 </Link>
@@ -315,7 +315,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
                   <Link
                     key={u.slug}
                     href={`/use-cases/${u.slug}`}
-                    className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors"
+                    className="chip-link"
                   >
                     {u.title}
                   </Link>
@@ -334,15 +334,15 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {relatedTools.map((t) => (
-              <Link key={t.slug} href={`/tools/${t.slug}`} className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors">
+              <Link key={t.slug} href={`/tools/${t.slug}`} className="chip-link">
                 {t.title}
               </Link>
             ))}
-            <Link href="/pricing" className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors">
+            <Link href="/pricing" className="chip-link">
               Pricing
             </Link>
             {comparisons.map((c) => (
-              <Link key={c.slug} href={`/compare/${c.slug}`} className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-border hover:text-ink transition-colors">
+              <Link key={c.slug} href={`/compare/${c.slug}`} className="chip-link">
                 {c.title}
               </Link>
             ))}
@@ -366,7 +366,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             buttonText="Book a Demo"
           />
           <p className="text-center mt-8">
-            <Link href="/platform" className="text-accent hover:underline text-sm">
+            <Link href="/platform" className="link-inline text-sm">
               Or explore the platform &rarr;
             </Link>
           </p>

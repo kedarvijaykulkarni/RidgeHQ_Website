@@ -226,7 +226,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-ink">One system for the operational day</h2>
               <p className="text-ink-secondary max-w-2xl mx-auto">
-                <Link href="/platform" className="text-accent hover:underline">See how every capability fits together &rarr;</Link>
+                <Link href="/platform" className="link-inline">See how every capability fits together &rarr;</Link>
               </p>
             </div>
             <ScreenshotFrame src={proofImage} alt={`${product.title} in RidgeHQ`} />
@@ -266,7 +266,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             buttonText={isEarlyAccess ? "Request a Call" : "Book a Demo"}
           />
           <p className="text-center mt-8">
-            <Link href="/products" className="text-accent hover:underline text-sm">
+            <Link href="/products" className="link-inline text-sm">
               Or see all products &rarr;
             </Link>
           </p>

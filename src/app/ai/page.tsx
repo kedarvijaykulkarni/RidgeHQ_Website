@@ -65,7 +65,7 @@ export default function AIInfoPage() {
                 <strong className="text-ink">Commission on direct bookings:</strong>{" "}
                 {k.pricing.commissionOnDirectBookings}
               </p>
-              <Link href="/pricing" className="text-accent hover:underline text-sm inline-block">
+              <Link href="/pricing" className="link-inline text-sm inline-block">
                 Current pricing terms &rarr;
               </Link>
             </div>
@@ -79,7 +79,7 @@ export default function AIInfoPage() {
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
             {k.industries.map((v) => (
               <li key={v.slug}>
-                <Link href={`/solutions/${v.slug}`} className="text-ink-secondary hover:text-accent text-sm">
+                <Link href={`/solutions/${v.slug}`} className="text-ink-secondary link-muted text-sm">
                   {v.name}
                 </Link>
               </li>
@@ -95,7 +95,7 @@ export default function AIInfoPage() {
             {k.platformCapabilities.map((c) => (
               <div key={c.slug}>
                 <dt className="text-ink font-semibold text-sm">
-                  <Link href={`/platform/${c.slug}`} className="hover:text-accent">
+                  <Link href={`/platform/${c.slug}`} className="link-muted">
                     {c.title}
                   </Link>
                 </dt>
@@ -113,7 +113,7 @@ export default function AIInfoPage() {
             {k.products.map((p) => (
               <div key={p.slug}>
                 <dt className="text-ink font-semibold text-sm">
-                  <Link href={`/products/${p.slug}`} className="hover:text-accent">
+                  <Link href={`/products/${p.slug}`} className="link-muted">
                     {p.title}
                   </Link>{" "}
                   {p.status === "early-access" && (
@@ -138,7 +138,7 @@ export default function AIInfoPage() {
               </li>
             ))}
           </ul>
-          <Link href="/integrations" className="text-accent hover:underline text-sm inline-block mt-4">
+          <Link href="/integrations" className="link-inline text-sm inline-block mt-4">
             Full integrations page &rarr;
           </Link>
         </Container>
@@ -149,10 +149,10 @@ export default function AIInfoPage() {
           <h2 className="text-xl font-bold text-ink mb-3">Security</h2>
           <p className="text-ink-secondary text-sm leading-relaxed max-w-2xl">{k.security.summary}</p>
           <div className="flex flex-col gap-1 mt-4">
-            <Link href="/security" className="text-accent hover:underline text-sm inline-block">
+            <Link href="/security" className="link-inline text-sm inline-block">
               Full security page &rarr;
             </Link>
-            <Link href="/docs" className="text-accent hover:underline text-sm inline-block">
+            <Link href="/docs" className="link-inline text-sm inline-block">
               Connect an AI assistant over MCP &rarr;
             </Link>
           </div>
@@ -167,14 +167,14 @@ export default function AIInfoPage() {
             {k.company.headquarters}.
           </p>
           <div className="flex flex-col gap-1 mt-4">
-            <Link href="/press" className="text-accent hover:underline text-sm inline-block">
+            <Link href="/press" className="link-inline text-sm inline-block">
               Press kit &rarr;
             </Link>
             <a
               href={k.company.founderLinkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:underline text-sm inline-block"
+              className="link-inline text-sm inline-block"
             >
               Founder on LinkedIn &rarr;
             </a>
@@ -216,16 +216,16 @@ export default function AIInfoPage() {
           <h2 className="text-xl font-bold text-ink mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/docs" className="text-accent hover:underline">Connect an AI assistant (MCP)</Link>
+              <Link href="/docs" className="link-inline">Connect an AI assistant (MCP)</Link>
             </li>
             <li>
-              <Link href="/book-demo" className="text-accent hover:underline">Book a demo</Link>
+              <Link href="/book-demo" className="link-inline">Book a demo</Link>
             </li>
             <li>
-              <Link href="/design-partners" className="text-accent hover:underline">Join the Design Partner program</Link>
+              <Link href="/design-partners" className="link-inline">Join the Design Partner program</Link>
             </li>
             <li>
-              <Link href="/contact" className="text-accent hover:underline">Contact RidgeHQ</Link>
+              <Link href="/contact" className="link-inline">Contact RidgeHQ</Link>
             </li>
           </ul>
         </Container>

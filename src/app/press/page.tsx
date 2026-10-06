@@ -129,7 +129,7 @@ export default function PressPage() {
               engineer with 20+ years of experience based in Thane, Mumbai, India. Kedar
               builds and ships RidgeHQ as a solo founder, using AI coding assistants
               rather than a team, and works directly with early operators through the{" "}
-              <Link href="/design-partners" className="text-accent hover:underline">
+              <Link href="/design-partners" className="link-inline">
                 Design Partner Program
               </Link>
               .
@@ -139,9 +139,9 @@ export default function PressPage() {
                 href="https://www.linkedin.com/in/kedarvijaykulkarni/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:underline"
+                className="link-inline"
               >
-                Connect with Kedar on LinkedIn →
+                Connect with Kedar on LinkedIn &rarr;
               </a>
             </p>
           </div>
@@ -162,10 +162,10 @@ export default function PressPage() {
                 className="rounded-lg"
               />
               <div className="flex flex-col gap-2 text-sm">
-                <a href="/images/logo/RidgeHQ-logo-responsive.svg" download className="text-accent hover:underline">
+                <a href="/images/logo/RidgeHQ-logo-responsive.svg" download className="link-inline">
                   Download logo (SVG)
                 </a>
-                <a href="/images/logo/ridgehq-logo-512x512.png" download className="text-accent hover:underline">
+                <a href="/images/logo/ridgehq-logo-512x512.png" download className="link-inline">
                   Download logo (PNG, 512×512)
                 </a>
               </div>
@@ -176,11 +176,11 @@ export default function PressPage() {
             <h2 className="text-2xl font-bold text-ink mb-4">Media contact</h2>
             <p className="text-ink-secondary leading-relaxed">
               For logos, screenshots, interviews, or product walkthroughs, email{" "}
-              <a href="mailto:social@ridgehq.app" className="text-accent hover:underline">
+              <a href="mailto:social@ridgehq.app" className="link-inline">
                 social@ridgehq.app
               </a>{" "}
               or reach out through the{" "}
-              <Link href="/contact" className="text-accent hover:underline">
+              <Link href="/contact" className="link-inline">
                 contact page
               </Link>
               .

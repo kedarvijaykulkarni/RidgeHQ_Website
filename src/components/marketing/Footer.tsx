@@ -116,7 +116,7 @@ export function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-[var(--ink-tertiary)] transition-colors hover:text-[var(--accent)]"
+                      className="text-sm text-[var(--ink-tertiary)] link-muted"
                     >
                       {l.title}
                     </Link>
@@ -130,9 +130,9 @@ export function Footer() {
         <div className="mt-14 flex flex-col-reverse items-start justify-between gap-4 border-t border-[var(--border)] pt-6 text-xs text-[var(--ink-tertiary)] sm:flex-row sm:items-center">
           <p>&copy; {new Date().getFullYear()} RidgeHQ. All rights reserved.</p>
           <div className="flex items-center gap-x-5 gap-y-2">
-            <Link href="/privacy" className="transition-colors hover:text-[var(--accent)]">Privacy</Link>
-            <Link href="/terms" className="transition-colors hover:text-[var(--accent)]">Terms</Link>
-            <Link href="/security" className="transition-colors hover:text-[var(--accent)]">Security</Link>
+            <Link href="/privacy" className="link-muted">Privacy</Link>
+            <Link href="/terms" className="link-muted">Terms</Link>
+            <Link href="/security" className="link-muted">Security</Link>
           </div>
         </div>
       </Container>

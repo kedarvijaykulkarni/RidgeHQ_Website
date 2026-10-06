@@ -227,11 +227,11 @@ export default function DocsPage() {
             <p className="text-sm text-ink-tertiary">
               Tool results pass through the assistant you chose, under that provider&rsquo;s terms &mdash;
               only send what you&rsquo;re comfortable sharing with them. See the full{" "}
-              <Link href="/security" className="text-accent hover:underline">
+              <Link href="/security" className="link-inline">
                 security page
               </Link>{" "}
               and{" "}
-              <Link href="/privacy" className="text-accent hover:underline">
+              <Link href="/privacy" className="link-inline">
                 privacy policy
               </Link>
               .
@@ -275,17 +275,17 @@ export default function DocsPage() {
           <h2 className="text-xl font-bold text-ink mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/ai-copilot" className="text-accent hover:underline">
+              <Link href="/ai-copilot" className="link-inline">
                 See the AI Copilot inside RidgeHQ
               </Link>
             </li>
             <li>
-              <Link href="/pricing" className="text-accent hover:underline">
+              <Link href="/pricing" className="link-inline">
                 Check current plans and pricing
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-accent hover:underline">
+              <Link href="/contact" className="link-inline">
                 Contact RidgeHQ
               </Link>
             </li>
