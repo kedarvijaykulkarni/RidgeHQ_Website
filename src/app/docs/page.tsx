@@ -108,7 +108,7 @@ export default function DocsPage() {
           </div>
 
           <div className="mt-10 grid md:grid-cols-2 gap-8">
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-3 text-ink">Claude or ChatGPT (recommended)</h3>
               <p className="text-ink-secondary mb-4 text-sm leading-relaxed">
                 No token to handle. Add a custom connector with the server address shown on the
@@ -129,7 +129,7 @@ export default function DocsPage() {
               </p>
             </div>
 
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-3 text-ink">Claude Code &amp; CLI clients</h3>
               <p className="text-ink-secondary mb-4 text-sm leading-relaxed">
                 Create a personal access token (PAT) in Settings, Access tokens. Name it for the
@@ -154,7 +154,7 @@ export default function DocsPage() {
         <Container>
           <h2 className="text-2xl font-bold text-ink mb-6">What it can and can&rsquo;t do</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-lg font-bold mb-4 text-ink">It can</h3>
               <ul className="space-y-3">
                 {canDo.map((item) => (
@@ -169,7 +169,7 @@ export default function DocsPage() {
                 everyday scheduling changes ask you to confirm first, every time.
               </p>
             </div>
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-lg font-bold mb-4 text-ink">It will never</h3>
               <ul className="space-y-3">
                 {cannotDo.map((item) => (

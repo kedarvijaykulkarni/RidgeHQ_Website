@@ -157,7 +157,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               </div>
             </div>
             
-            <div className="glass-card p-8 border-l-4 border-l-accent bg-bg-elevated rounded-2xl">
+            <div className="glass-card glass-card-hover p-8 border-l-4 border-l-accent">
               <h3 className="text-xl font-bold mb-3 text-ink">How RidgeHQ helps</h3>
               <p className="text-accent font-medium text-lg mb-6">{vertical.keyCapability}</p>
               
@@ -235,7 +235,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {vertical.outcomes.map((outcome, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-bg-elevated border border-border">
+                <div key={i} className="glass-card glass-card-hover p-6">
                   <h3 className="text-lg font-bold text-ink mb-2">{outcome.label}</h3>
                   <p className="text-sm text-ink-secondary leading-relaxed">{outcome.detail}</p>
                 </div>

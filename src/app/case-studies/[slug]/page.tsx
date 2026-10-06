@@ -78,7 +78,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               <h2 className="text-xl font-bold text-ink">Implementation</h2>
               <p>{caseStudy.implementation}</p>
             </div>
-            <div className="space-y-3 glass-card p-8 rounded-2xl border border-[var(--border)]">
+            <div className="space-y-3 glass-card glass-card-hover p-8">
               <h2 className="text-xl font-bold text-ink">Observed result</h2>
               <p>{caseStudy.observedResult}</p>
               {caseStudy.customerQuote && (

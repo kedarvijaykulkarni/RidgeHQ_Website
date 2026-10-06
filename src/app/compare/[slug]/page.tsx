@@ -79,13 +79,13 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
               )}
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="glass-card p-6 rounded-2xl border border-[var(--border)]">
+              <div className="glass-card glass-card-hover p-6">
                 <h3 className="text-lg font-bold text-ink mb-2">Who should choose this category</h3>
                 <p className="text-sm text-ink-secondary leading-relaxed">
                   {comparison.whoShouldChooseCategory}
                 </p>
               </div>
-              <div className="glass-card p-6 rounded-2xl bg-accent/5 border border-accent/20">
+              <div className="glass-card glass-card-hover p-6 bg-accent/5 border-accent/20">
                 <h3 className="text-lg font-bold text-ink mb-2">Who should choose RidgeHQ</h3>
                 <p className="text-sm text-ink-secondary leading-relaxed">
                   {comparison.whoShouldChooseRidgeHq}

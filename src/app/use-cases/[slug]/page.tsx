@@ -70,7 +70,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-2xl font-bold text-ink">The cost of leaving it unmanaged</h2>
               <p className="text-lg text-ink-secondary leading-relaxed">{useCase.costOfInaction}</p>
             </div>
-            <div className="space-y-4 glass-card p-8 rounded-2xl border border-[var(--border)]">
+            <div className="space-y-4 glass-card glass-card-hover p-8">
               <h2 className="text-2xl font-bold text-ink flex items-center gap-2">
                 <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0" />
                 How RidgeHQ helps
@@ -85,7 +85,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
                 </Link>
               )}
             </div>
-            <div className="space-y-4 glass-card p-8 rounded-2xl bg-amber-500/5 border border-amber-500/20">
+            <div className="space-y-4 glass-card glass-card-hover p-8 bg-amber-500/5 border-amber-500/20">
               <h2 className="text-2xl font-bold text-ink flex items-center gap-2">
                 <AlertTriangle className="w-6 h-6 text-warning shrink-0" />
                 When RidgeHQ may not be the right fit

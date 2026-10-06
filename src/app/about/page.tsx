@@ -81,7 +81,7 @@ export default function AboutPage() {
             {/* Visual connector line (hidden on mobile) */}
             <div className="hidden lg:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/50 to-transparent -z-10"></div>
             
-            <div className="glass-card p-10 border-t-4 border-t-accent-2 relative overflow-hidden">
+            <div className="glass-card glass-card-hover p-10 border-t-4 border-t-accent-2 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-10">
                 <Navigation className="w-24 h-24 text-accent-2" />
               </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="glass-card p-10 border-t-4 border-t-accent relative overflow-hidden">
+            <div className="glass-card glass-card-hover p-10 border-t-4 border-t-accent relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-10">
                 <Target className="w-24 h-24 text-accent" />
               </div>
@@ -121,35 +121,35 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Operator value first.</h3>
               <p className="text-ink-secondary">
                 Every capability should solve an operational problem worth more than the cost and complexity it introduces. We would rather solve an important operational problem deeply than add another feature simply to make a longer checklist.
               </p>
             </div>
             
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Time is a real cost.</h3>
               <p className="text-ink-secondary">
                 Operators often become the human bridge between booking systems, calendars, spreadsheets, messages, staff, equipment, and payments. RidgeHQ should reduce unnecessary coordination and allow people to spend more time on customers, teams and the actual activity.
               </p>
             </div>
 
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Earn retention. Don&rsquo;t engineer lock-in.</h3>
               <p className="text-ink-secondary">
                 We want businesses to keep RidgeHQ because it continues earning its place in the operation — not because leaving has been made intentionally difficult. We focus on usefulness, reliability, data clarity, and constant improvement over time.
               </p>
             </div>
 
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Economics should work for both sides.</h3>
               <p className="text-ink-secondary">
                 RidgeHQ should operate on a commercial model where the operator can clearly understand what the platform costs and what value it provides. We favor predictable subscription economics and currently charge 0% platform commission on direct bookings.
               </p>
             </div>
 
-            <div className="glass-card p-8 md:col-span-2 lg:col-span-1">
+            <div className="glass-card glass-card-hover p-8 md:col-span-2 lg:col-span-1">
               <h3 className="text-xl font-bold mb-4">Trust before automation.</h3>
               <p className="text-ink-secondary">
                 We believe AI belongs inside operational workflows only where context is understood, permissions apply, risky actions require confirmation, and actions are accountable. We don&apos;t claim full autonomy or zero-error decisions.
