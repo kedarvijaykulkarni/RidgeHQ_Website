@@ -149,7 +149,7 @@ export default function Home() {
         <Container>
           <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">Integrations: Connected to the RidgeHQ Software Ecosystem</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {integrations.map(int => (
+            {integrations.filter(int => int.state === 'implemented').slice(0, 8).map(int => (
               <IntegrationCard key={int.id} integration={int} />
             ))}
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
                 <Lock className="w-6 h-6 text-[var(--accent)] mb-3" aria-hidden />
                 <CardTitle>Security &amp; data ownership</CardTitle>
                 <CardDescription>
-                  Role-based access control enforced on the server, each business&rsquo;s data isolated at the database level, encrypted connections, and an AI Copilot that shares your staff&rsquo;s permission boundaries &mdash; high-risk actions require explicit operator confirmation before execution.
+                  Role-based permissions enforced on the server, each business&rsquo;s data isolated at the database level, HTTPS everywhere, an audit log of every change, and an AI Copilot that shares your staff&rsquo;s permission boundaries &mdash; high-risk actions require explicit operator confirmation before execution.
                 </CardDescription>
               </CardHeader>
               <CardFooter>

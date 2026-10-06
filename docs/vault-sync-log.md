@@ -193,6 +193,26 @@ pseudonymous for a specific channel, this page would need to be reconsidered).
 
 All 7 surfaces walked: `platform.ts` (source) → nav menu descriptions (derived), `product-knowledge.ts` (derived capabilities + hand-edited security summary), `/ai` (derived), FAQPage JSON-LD (new capability FAQs), sitemap (config dates + 3 static routes), page metadata (capability pages use the new hero taglines; `/security` description corrected), `llms.txt` (descriptions added).
 
+## 2026-10-06 — Content-depth pass, batch 2: trust, index, and conversion pages (pull only)
+
+**Pulled:** Brain vault `Modules/AI-Copilot.md`, `MCP-Server.md`, `Logs.md`, `Courses.md`, `Settings.md`; `Architecture/Integration-Architecture.md`; `Operations/Production-Deployment.md`, `Tenant-Onboarding.md`; `operations.md`; `business-context.md`; `launch-plan.md`; `public-page-source-brief.md`.
+
+**Applied:**
+- `/security` was rewritten from 118 words of generic claims ("top priority", "secure, compliant infrastructure", "encrypted at rest") to about 980 words. It now states only what is verified in production: server-enforced RBAC, role-controlled revenue visibility, the audit log, AI Copilot role and risk gates with a one-hour undo on reversible scheduling actions, hashed and revocable MCP tokens capped at Manager, HTTPS with HSTS preload, admin framing protection, and the embed allow-list. A "What isn't in place yet" section and FAQ say plainly that there are no third-party certifications.
+- `/ai-copilot`, `/integrations`, `/platform`, `/products`, `/use-cases`, `/compare`, `/contact`, `/book-demo`, and `/design-partners` were expanded with FAQ sections (FAQPage JSON-LD) through a new shared `PageFaq` component.
+- `integrations.ts` was corrected against Integration-Architecture.md:
+  - Removed "Xero" (no specific accounting target is decided), "Smartwaiver" (no basis, and waivers are built in), and Stripe "in-person payments" (no Terminal support).
+  - Added the implemented surfaces: the booking-widget embed, AI providers, MCP, Stormglass, email, and the iCal feed.
+  - PayPal/Redsys are marked partial. PADI/SSI and an accounting export are marked planned.
+- `/platform`: removed "never … assign an unqualified instructor" and the staff screenshot alt text claiming qualification/availability matching.
+- `Accordion` now force-mounts closed FAQ answers (hidden until opened), so every FAQ answer site-wide is in the HTML for crawlers rather than only in JSON-LD.
+- `product-knowledge.ts` security summary, the home trust card, and `llms.txt` (Copilot, Security, Integrations, Design Partner lines) now match the verified wording.
+- Sitemap `lastmod` set to 2026-10-06 for `/`, `/ai`, `/use-cases`, and `/compare`; the other touched routes were already 2026-10-06.
+
+**Flagged for the owner (not applied):**
+- **RLS wording (resolved when merging develop into this branch):** this entry originally said production RLS isn't enforced, citing Production-Deployment.md's "Still owed" list. That line is stale: the same page's header records RLS enforced in production since 2026-09-30 (#683 cutover; api/worker on `ridgehqapp_app`, web on `ridgehqapp_web`), and batch 1 relied on it. Per-business isolation at the database level is restored on `/security`, the home trust card, and `product-knowledge.ts`. Batch 1 had already removed the "encrypted off-server backups" claim.
+- `products.ts` (owned by the solutions/products claim audit) still has unsupported claims: staff mobile use, accounting-ready exports, security-deposit pre-authorisation and damage charges, automatic seasonal pricing, per-unit utilisation reporting, waiver answers carried forward, guardian signing for minors, and "isolated to your account at the database level".
+
 ## 2026-10-06 — Content-depth pass, batch 3: solutions + products claim audit (owner chose "vault-only rewrite")
 
 **Pulled:** Modules docs Bookings, Catalog, Courses, Weather, Gear, Fleet, Rooms, Clients, Event Planner, Reports, Partners; `Architecture/Integration-Architecture.md`; `Operations/Production-Deployment.md` / `Production-Operations-Playbook.md`.

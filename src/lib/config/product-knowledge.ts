@@ -91,7 +91,7 @@ export const productKnowledge = {
 
   security: {
     summary:
-      "Encrypted connections (TLS), per-business data isolation at the database level (row-level security), role-based access control enforced on the server, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
+      "HTTPS (TLS, HSTS preload) on every page and API call, per-business data isolation at the database level (row-level security), role-based permissions enforced on the server, an audit log of changes by staff and the AI Copilot, role-controlled visibility of revenue figures, and an AI Copilot that works within the user's role and requires confirmation for medium- and high-risk actions. RidgeHQ holds no third-party security certifications today.",
     url: `${siteUrl}/security`,
   },
 
