@@ -87,42 +87,45 @@ function MobileSection({
 
 export function MobileNav() {
   const pathname = usePathname() ?? "/";
-  // The drawer is open only on the route it was opened on, so any navigation
-  // (link click, back/forward) closes it without a state-syncing effect.
-  const [openPath, setOpenPath] = React.useState<string | null>(null);
-  const open = openPath === pathname;
+  const [open, setOpen] = React.useState(false);
+  // Close on any navigation (link click, back/forward). Adjusting state while
+  // rendering when the route changes, rather than in an effect, means the
+  // stale-open drawer never paints on the new page.
+  const [renderedPath, setRenderedPath] = React.useState(pathname);
+  if (pathname !== renderedPath) {
+    setRenderedPath(pathname);
+    setOpen(false);
+  }
   const [expanded, setExpanded] = React.useState<string | null>(null);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
   const panelRef = React.useRef<HTMLDivElement>(null);
   const wasOpen = React.useRef(false);
 
-  const close = React.useCallback(() => setOpenPath(null), []);
+  const close = React.useCallback(() => setOpen(false), []);
 
   // Lock body scroll, close on Escape, and trap Tab focus while the panel is open.
   React.useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setOpenPath(null);
+        setOpen(false);
         return;
       }
       if (e.key !== "Tab" || !panelRef.current) return;
-      // The toggle stays visible above the panel, so it is part of the trap.
+      // The toggle (in the header) and the panel (portaled to the end of
+      // <body>) aren't adjacent in the DOM, so the browser's own Tab order
+      // would leave the dialog. Move focus through the cycle explicitly.
       const focusable = [
         ...(toggleRef.current ? [toggleRef.current] : []),
         ...panelRef.current.querySelectorAll<HTMLElement>(
           'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
         ),
       ];
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
+      e.preventDefault();
+      const index = focusable.indexOf(document.activeElement as HTMLElement);
+      const next =
+        index === -1 ? 0 : (index + (e.shiftKey ? -1 : 1) + focusable.length) % focusable.length;
+      focusable[next]?.focus();
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -148,6 +151,7 @@ export function MobileNav() {
       role="dialog"
       aria-modal="true"
       aria-label="Main menu"
+      data-ga-location="mobile_nav"
       className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto overscroll-contain border-t border-[var(--border)] bg-[var(--bg)] lg:hidden"
     >
       <nav aria-label="Main" className="px-4 py-4">
@@ -240,7 +244,7 @@ export function MobileNav() {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls={PANEL_ID}
-        onClick={() => setOpenPath(open ? null : pathname)}
+        onClick={() => setOpen((v) => !v)}
         className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-[var(--ink)] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
       >
         {open ? <X className="w-5 h-5" aria-hidden /> : <Menu className="w-5 h-5" aria-hidden />}
