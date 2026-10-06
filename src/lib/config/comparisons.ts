@@ -90,7 +90,7 @@ export const comparisons: Comparison[] = [
       "Most activity businesses aren't switching from a competing platform — they're switching from a booking widget, a spreadsheet, a group chat, and a whiteboard, each updated by hand. This comparison is about that gap, not a specific vendor.",
     metaDescription:
       "RidgeHQ vs. spreadsheets, WhatsApp, and paper: where a booking widget, group chat, and whiteboard updated by hand break down, and what connecting them changes.",
-    lastUpdated: "2026-10-05",
+    lastUpdated: "2026-10-06",
     categoryStrengths:
       "Spreadsheets and chat tools are free, familiar, and infinitely flexible — there's no subscription, no learning curve past what your team already knows, and no risk of a vendor going away. For a very small, low-volume operation, this can genuinely be enough.",
     ridgehqLimitations:
@@ -109,7 +109,7 @@ export const comparisons: Comparison[] = [
       {
         dimension: "Risk of double-booking or gear conflicts",
         category: "Depends entirely on the person reconciling catching the conflict.",
-        ridgehq: "Checked against capacity, ratios, and gear availability at booking time.",
+        ridgehq: "Checked against session capacity and unit-level rental availability at booking time.",
       },
       {
         dimension: "Reporting",

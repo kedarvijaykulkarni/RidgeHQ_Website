@@ -64,7 +64,7 @@ export const useCases: UseCase[] = [
   },
   {
     slug: "equipment-coordination",
-    lastUpdated: "2026-10-05",
+    lastUpdated: "2026-10-06",
     title: "Equipment & Gear Coordination",
     heroHeadline: "Know what gear is actually available, right now, before you promise it.",
     heroTagline:
@@ -76,7 +76,7 @@ export const useCases: UseCase[] = [
     costOfInaction:
       "A kayak tour arriving to find its boats already rented to a walk-in, or a lesson short a properly sized board, is a same-day scramble that falls on staff and damages the customer's experience — the exact failure mode described for kayak rental/tour and windsurf operations.",
     howRidgeHqHelps:
-      "RidgeHQ draws lesson, tour, and walk-in hire from one shared gear/fleet inventory, tracked out and back per item. A board, boat, or bike reserved for a session is not offered on the walk-in rack at the same time, and individually tracked assets (like bikes with a service state) are excluded automatically when flagged for repair.",
+      "RidgeHQ tracks gear as individual units with sizes, and rentals — online or at the desk — reserve a specific unit for a date and time window, so the same board, boat, or bike can't be hired out twice. A unit with an open maintenance record is removed from availability automatically until it's returned. Allocating kit to a lesson or tour group is still done by your team, from the same inventory.",
     whenNotSuitable:
       "If you only run one sales channel for gear (e.g. lessons only, no separate walk-in hire) with no shared-pool conflict, this specific coordination problem doesn't apply to you.",
     relatedPlatformSlug: "gear-rentals",
@@ -85,7 +85,7 @@ export const useCases: UseCase[] = [
       {
         question: "Does this track individual items or just gear categories?",
         answer:
-          "Both, depending on the vertical: bikes are tracked as individual assets with a size and service state, excluded automatically when flagged for repair; boards and boats are tracked out and back across lessons/tours and walk-in hire from one shared pool.",
+          "Individual units. Each gear type (boards, boats, bikes, wetsuits) is tracked as units with an optional size, rentals reserve a specific unit, and a unit with an open maintenance record is excluded until it's returned.",
       },
       {
         question: "Does it cover both scheduled bookings and walk-in hire?",

@@ -145,7 +145,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
               </p>
               
               <div className="mt-8 pt-8 border-t border-border">
-                <h3 className="text-xl font-bold text-ink mb-4">Core Constraints Managed</h3>
+                <h3 className="text-xl font-bold text-ink mb-4">What your day has to balance</h3>
                 <ul className="space-y-3">
                   {vertical.constraints.map((constraint, i) => (
                     <li key={i} className="flex gap-3 text-sm text-ink-secondary">

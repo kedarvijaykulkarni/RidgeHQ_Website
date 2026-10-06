@@ -58,7 +58,7 @@ export const platformCapabilities: Capability[] = [
         points: [
           "Live availability drawn from the same calendar your team works from",
           "Deposit or full payment, with the balance scheduled and tracked against the order",
-          "Medical, experience, and dietary questions collected at checkout",
+          "Waiver, medical, and your own custom questions collected per participant at checkout",
           "Promotional codes that apply to the actual charged total, not just the displayed price",
           "0% platform commission on direct bookings — you pay only your gateway fee",
         ],
@@ -86,7 +86,7 @@ export const platformCapabilities: Capability[] = [
     ],
     connections: [
       { to: "Scheduling & Dispatch", detail: "A confirmed booking lands on the day plan with its participants, so the schedule is built from real demand, not re-keyed." },
-      { to: "Gear & Fleet Management", detail: "Booking a session or a rental draws the required gear and capacity down automatically." },
+      { to: "Gear & Fleet Management", detail: "Rentals and room bookings reserve a specific unit for their dates, so the desk and the website read the same inventory." },
       { to: "Customer & Participant Profiles", detail: "Each booking is attached to a customer record, carrying history, sizing, and waiver status." },
       { to: "Payments & Reporting", detail: "Deposits, balances, and credit notes flow straight into the daily close and revenue-by-origin reporting." },
     ],
