@@ -7,9 +7,8 @@ import { notFound } from "next/navigation";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { CheckCircle2, ArrowRight, ChevronRight, Clock } from "lucide-react";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { productSoftwareJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
@@ -63,12 +62,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return (
     <div className="flex flex-col w-full">
       <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Products", path: "/products" },
-          { name: product.title, path: `/products/${product.slug}` },
-        ])}
-      />
-      <StructuredData
         data={productSoftwareJsonLd(
           product,
           proofImage ?? "/images/product/dash-responsive-desktop.webp",
@@ -83,10 +76,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 max-w-xl">
-              <Breadcrumbs
-                className="mb-2"
-                items={[{ label: "Products", href: "/products" }, { label: product.title }]}
-              />
+              <PageBreadcrumbs className="mb-2" trail={[{ label: "Products", href: "/products" }, { label: product.title, href: `/products/${product.slug}` }]} />
               <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent font-medium">
                 Product{isEarlyAccess ? " — In development" : ""}
               </div>

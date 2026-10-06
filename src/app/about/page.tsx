@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { Button } from "@/components/ui/Button";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <Section className="relative overflow-hidden pt-24 pb-20">
         <div className="absolute inset-0 bg-[var(--accent-soft)] pointer-events-none"></div>
         <Container className="relative z-10 text-center max-w-4xl">
-          <Breadcrumbs className="mb-8 justify-center" items={[{ label: "About" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "About", href: "/about" }]} />
           <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium mb-8">
             About RidgeHQ
           </div>

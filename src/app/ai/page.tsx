@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { productKnowledge } from "@/lib/config/product-knowledge";
@@ -19,12 +18,11 @@ export default function AIInfoPage() {
 
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "AI Overview", path: "/ai" }])} />
       <StructuredData data={faqPageJsonLd(k.faqs)} />
 
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "AI Overview" }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "AI Overview", href: "/ai" }]} />
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               RidgeHQ, for AI assistants and researchers

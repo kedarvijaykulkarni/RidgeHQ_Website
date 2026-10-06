@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
@@ -42,20 +41,11 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Use Cases", path: "/use-cases" },
-          { name: useCase.title, path: `/use-cases/${useCase.slug}` },
-        ])}
-      />
       {useCase.faqs.length > 0 && <StructuredData data={faqPageJsonLd(useCase.faqs)} />}
 
       <Section className="pt-24 pb-16">
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[{ label: "Use Cases", href: "/use-cases" }, { label: useCase.title }]}
-          />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Use Cases", href: "/use-cases" }, { label: useCase.title, href: `/use-cases/${useCase.slug}` }]} />
           <div className="max-w-3xl space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink">
               {useCase.heroHeadline}

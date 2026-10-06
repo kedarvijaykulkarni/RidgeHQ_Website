@@ -7,9 +7,8 @@ import { notFound } from "next/navigation";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
@@ -83,12 +82,6 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Built For", path: "/solutions" },
-          { name: vertical.name, path: `/solutions/${vertical.slug}` },
-        ])}
-      />
       {vertical.faqs && vertical.faqs.length > 0 && (
         <StructuredData data={faqPageJsonLd(vertical.faqs)} />
       )}
@@ -98,10 +91,7 @@ export default async function VerticalPage({ params }: { params: Promise<{ slug:
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 max-w-xl">
-              <Breadcrumbs
-                className="mb-2"
-                items={[{ label: "Built For", href: "/solutions" }, { label: vertical.name }]}
-              />
+              <PageBreadcrumbs className="mb-2" trail={[{ label: "Solutions", href: "/solutions" }, { label: vertical.name, href: `/solutions/${vertical.slug}` }]} />
               <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent font-medium">
                 {vertical.searchKeyword}
               </div>

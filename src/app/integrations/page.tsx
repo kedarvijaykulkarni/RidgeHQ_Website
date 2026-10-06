@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { IntegrationCard } from "@/components/marketing/IntegrationCard";
 import { integrations } from "@/lib/config/integrations";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -19,7 +19,7 @@ export default function IntegrationsPage() {
     <div className="flex flex-col w-full">
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Integrations" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Integrations", href: "/integrations" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Connected to your ecosystem.</h1>
             <p className="text-xl text-ink-secondary">

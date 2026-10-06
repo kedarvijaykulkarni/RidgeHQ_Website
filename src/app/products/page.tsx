@@ -3,9 +3,8 @@ import { Container, Section } from "@/components/ui/Layout";
 import { FeatureCard } from "@/components/marketing/FeatureCard";
 import { products } from "@/lib/config/products";
 import { CTASection } from "@/components/marketing/CTASection";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { productsItemListJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 
@@ -18,11 +17,10 @@ export const metadata = {
 export default function ProductsPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Products", path: "/products" }])} />
       <StructuredData data={productsItemListJsonLd(products)} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Products" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Products", href: "/products" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">The RidgeHQ product line.</h1>
             <p className="text-xl text-ink-secondary">

@@ -7,9 +7,8 @@ import { notFound } from "next/navigation";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
 import { CheckCircle2, ArrowRight, ChevronRight } from "lucide-react";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { useCases } from "@/lib/config/use-cases";
@@ -70,12 +69,6 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
 
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Platform", path: "/platform" },
-          { name: capability.title, path: `/platform/${capability.slug}` },
-        ])}
-      />
       {capability.faqs && capability.faqs.length > 0 && (
         <StructuredData data={faqPageJsonLd(capability.faqs)} />
       )}
@@ -85,10 +78,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 max-w-xl">
-              <Breadcrumbs
-                className="mb-2"
-                items={[{ label: "Platform", href: "/platform" }, { label: capability.title }]}
-              />
+              <PageBreadcrumbs className="mb-2" trail={[{ label: "Platform", href: "/platform" }, { label: capability.title, href: `/platform/${capability.slug}` }]} />
               <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent font-medium">
                 Platform &mdash; {capability.title}
               </div>

@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { marketingConfig } from "@/lib/config/marketing";
 import { Badge } from "@/components/ui/Badge";
@@ -23,7 +23,7 @@ export default function PricingPage() {
     <Section className="min-h-[80vh]">
       <StructuredData data={softwareOfferJsonLd()} />
       <Container>
-        <Breadcrumbs className="mb-8" items={[{ label: "Pricing" }]} />
+        <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Pricing", href: "/pricing" }]} />
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
           <Badge variant="secondary">Predictable Pricing</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
