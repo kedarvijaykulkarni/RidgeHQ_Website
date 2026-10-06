@@ -94,7 +94,7 @@ export function VerticalsExplorer() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button variant="link" className="text-[var(--accent)] hover:text-[var(--accent-2)]" asChild>
+          <Button variant="link" asChild>
             <Link href="/solutions">View all supported industries &rarr;</Link>
           </Button>
         </div>

@@ -221,13 +221,10 @@ export function MobileNav() {
         </ul>
 
         <div className="mt-6 flex flex-col gap-3">
-          <Button variant="ghost" className="w-full text-[var(--ink)]" asChild>
+          <Button variant="ghost" className="w-full" asChild>
             <Link href="/contact" onClick={close}>Contact</Link>
           </Button>
-          <Button
-            className="w-full bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none font-bold"
-            asChild
-          >
+          <Button className="w-full" asChild>
             <Link href="/book-demo" onClick={close}>Book a Demo</Link>
           </Button>
         </div>
