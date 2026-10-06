@@ -4,18 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-all duration-300 hover:-translate-y-0.5",
+  "group inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-[var(--bg)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-[var(--cta)] text-[var(--cta-text)] hover:bg-[var(--cta-hover)] shadow-sm",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm",
+        // Lift + press only on filled/bordered buttons; ghost and link stay flat.
+        default:
+          "bg-[var(--cta)] text-[var(--cta-text)] font-semibold hover:bg-[var(--cta-hover)] shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
         outline:
-          "border border-[var(--border)] bg-transparent hover:bg-[var(--bg-elevated)] hover:text-[var(--ink)] shadow-sm",
+          "border border-[var(--border-strong)] bg-transparent text-[var(--ink)] hover:border-[var(--accent)] hover:bg-[var(--bg-elevated)] shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
         secondary:
-          "bg-[var(--bg-elevated)] text-[var(--ink)] hover:bg-[var(--border)] shadow-sm",
-        ghost: "hover:bg-[var(--bg-elevated)] hover:text-[var(--ink)]",
+          "bg-[var(--bg-elevated)] text-[var(--ink)] hover:bg-[var(--border)] shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
+        ghost: "text-[var(--ink)] hover:bg-[var(--bg-elevated)] hover:text-[var(--accent)] active:bg-[var(--border)]",
         link: "text-[var(--accent)] underline-offset-4 hover:underline",
       },
       size: {

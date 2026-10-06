@@ -25,6 +25,18 @@ export interface NavItem {
   children?: NavLink[];
   /** Multi-column mega-menu. Takes precedence over `children`. */
   groups?: NavGroup[];
+  /** Accessible label for the `groups` axis when a `secondaryGroups` axis is also present. */
+  groupsLabel?: string;
+  /** Second axis of a two-axis mega-menu, rendered alongside `groups` (e.g. verticals next to capabilities). */
+  secondaryGroups?: NavGroup[];
+  /** Accessible label for the `secondaryGroups` axis. */
+  secondaryGroupsLabel?: string;
+  /** "See all" link for the `groups` axis in a two-axis menu. Defaults to `href`/`viewAllLabel` when absent. */
+  groupsViewAllHref?: string;
+  groupsViewAllLabel?: string;
+  /** "See all" link for the `secondaryGroups` axis in a two-axis menu. */
+  secondaryGroupsViewAllHref?: string;
+  secondaryGroupsViewAllLabel?: string;
   disabled?: boolean;
 }
 
@@ -125,16 +137,16 @@ const productGroups: NavGroup[] = [
 // ---------------------------------------------------------------------------
 
 const verticalIcons: Record<string, string> = {
-  'dive-centers': 'Waves',
+  'dive-centers': 'Fish',
   'surf-schools': 'Waves',
-  'kitesurf-schools': 'Waves',
-  'sailing-schools': 'Sailboat',
-  'windsurf-schools': 'Waves',
+  'kitesurf-schools': 'Wind',
+  'sailing-schools': 'Anchor',
+  'windsurf-schools': 'Sailboat',
   'ski-schools': 'Snowflake',
   'outdoor-whitewater': 'LifeBuoy',
   'dive-resorts': 'Building2',
   'surf-camps': 'Tent',
-  'kayak-rental-tours': 'Waves',
+  'kayak-rental-tours': 'Kayak',
   'bike-rental-tours': 'Bike',
   'boat-rental-courses': 'Ship',
 };
@@ -142,11 +154,11 @@ const verticalIcons: Record<string, string> = {
 const verticalMenuDescriptions: Record<string, string> = {
   'dive-centers': 'Boats, manifests, courses, gear',
   'surf-schools': 'Tide-aware lessons and camps',
-  'kitesurf-schools': 'Wind-window scheduling, gear match',
+  'kitesurf-schools': 'Wind-aware lessons, kit by size',
   'sailing-schools': 'Multi-day courses and fleet',
   'windsurf-schools': 'High-volume lessons and hire',
-  'ski-schools': 'Peak-season lessons, instructor match',
-  'outdoor-whitewater': 'Guides, shuttles, group waivers',
+  'ski-schools': 'Peak-season lessons, levels on rosters',
+  'outdoor-whitewater': 'Group trips, guides, waivers',
   'dive-resorts': 'Rooms plus daily dive operations',
   'surf-camps': 'Beds, lessons, transfers — one week',
   'kayak-rental-tours': 'Tours and hourly hire, one fleet',
@@ -181,9 +193,19 @@ const builtForGroups: NavGroup[] = builtForGroupSlugs.map((group) => ({
 // ---------------------------------------------------------------------------
 
 export const mainNav: NavItem[] = [
-  { title: 'Platform', href: '/platform', viewAllLabel: 'See the full platform', groups: platformGroups },
+  {
+    title: 'Solutions',
+    href: '/solutions',
+    groupsLabel: 'Built For',
+    groups: builtForGroups,
+    groupsViewAllHref: '/solutions',
+    groupsViewAllLabel: 'All industries',
+    secondaryGroupsLabel: 'Platform',
+    secondaryGroups: platformGroups,
+    secondaryGroupsViewAllHref: '/platform',
+    secondaryGroupsViewAllLabel: 'See the full platform',
+  },
   { title: 'Products', href: '/products', viewAllLabel: 'All products', groups: productGroups },
-  { title: 'Built For', href: '/solutions', viewAllLabel: 'All industries', groups: builtForGroups },
   { title: 'Blog', href: '/blog' },
   { title: 'Pricing', href: '/pricing' },
 ];
@@ -203,15 +225,23 @@ export const footerNav = {
     { title: 'Rentals & Tours', href: '/solutions/kayak-rental-tours' },
     { title: 'All Industries', href: '/solutions' },
   ],
+  platform: [
+    { title: 'AI Copilot', href: '/ai-copilot' },
+    { title: 'Integrations', href: '/integrations' },
+    { title: 'Connect an AI Assistant', href: '/docs' },
+    { title: 'AI Overview', href: '/ai' },
+    { title: 'All Platform Features', href: '/platform' },
+  ],
   company: [
     { title: 'About', href: '/about' },
+    { title: 'Case Studies', href: '/case-studies' },
     { title: 'Press', href: '/press' },
     { title: 'Contact', href: '/contact' },
     { title: 'Design Partners', href: '/design-partners' },
+    { title: 'Resources', href: '/resources' },
     { title: 'Free Calculators', href: '/tools' },
     { title: 'Use Cases', href: '/use-cases' },
     { title: 'Compare', href: '/compare' },
-    { title: 'Connect an AI Assistant', href: '/docs' },
   ],
   legal: [
     { title: 'Security', href: '/security' },

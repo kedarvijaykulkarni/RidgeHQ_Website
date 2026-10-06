@@ -10,7 +10,7 @@ function formatPercent(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#22D3EE]";
+  "w-full rounded-lg border border-[var(--border-strong)] bg-bg-elevated px-4 py-2.5 text-ink placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function InstructorUtilizationCalculator() {
   const [instructorCount, setInstructorCount] = React.useState(5);
@@ -31,11 +31,11 @@ export function InstructorUtilizationCalculator() {
   });
 
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <div className="glass-card rounded-2xl border border-[var(--border)] p-6 md:p-10">
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
-            <label htmlFor="iu-instructor-count" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="iu-instructor-count" className="block text-sm font-medium text-ink-secondary mb-2">
               Number of instructors/guides
             </label>
             <input
@@ -48,7 +48,7 @@ export function InstructorUtilizationCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="iu-available-hours" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="iu-available-hours" className="block text-sm font-medium text-ink-secondary mb-2">
               Available hours per instructor per week
             </label>
             <input
@@ -61,7 +61,7 @@ export function InstructorUtilizationCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="iu-booked-hours" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="iu-booked-hours" className="block text-sm font-medium text-ink-secondary mb-2">
               Total booked hours per week, across all instructors
             </label>
             <input
@@ -76,18 +76,18 @@ export function InstructorUtilizationCalculator() {
         </div>
 
         <div
-          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          className="flex flex-col justify-center space-y-6 border-t border-border pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
           aria-live="polite"
         >
           <div>
-            <p className="text-sm text-slate-400 mb-1">Total available hours per week</p>
-            <p className="text-3xl font-bold text-white">{totalAvailableHours.toLocaleString("en-US")}</p>
+            <p className="text-sm text-ink-secondary mb-1">Total available hours per week</p>
+            <p className="text-3xl font-bold text-ink">{totalAvailableHours.toLocaleString("en-US")}</p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-1">Instructor utilization</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">{formatPercent(utilizationPercent)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Instructor utilization</p>
+            <p className="text-4xl font-bold text-accent">{formatPercent(utilizationPercent)}</p>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-ink-tertiary leading-relaxed">
             Formula: booked hours &divide; (instructor count &times; available hours per instructor)
             &times; 100. This is a standalone educational calculator — RidgeHQ does not currently
             publish an automated instructor-utilization report.

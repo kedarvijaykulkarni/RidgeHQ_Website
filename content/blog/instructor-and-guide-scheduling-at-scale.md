@@ -5,6 +5,7 @@ slug: "instructor-and-guide-scheduling-at-scale"
 canonical_url: "https://www.ridgehq.app/blog/instructor-and-guide-scheduling-at-scale"
 tags: ["operations", "staff scheduling", "instructor scheduling", "activity business software"]
 date: "2026-09-12"
+updatedAt: "2026-10-06"
 pillar: "Operations"
 draft: false
 ---
@@ -25,7 +26,7 @@ We wrote a longer breakdown of this as a [problem-first guide](/use-cases/instru
 
 ## What changes when bookings and staff share one system
 
-RidgeHQ's [Staff Coordination](/platform/staff) capability ties a booking's requirements directly to instructor/guide qualifications: assignment becomes a filtered match against real-time availability, not a manual lookup across two tools. For ski schools, that means the morning rush is matched by level and language instead of guesswork. For outdoor/whitewater operators, a trip's headcount reserves guides at the required ratio alongside the rafts and shuttle seats it also needs — one booking, one set of resource checks, not three separate ones.
+RidgeHQ's [Staff Coordination](/platform/staff) capability puts bookings and staff in the same planner. A product can require a minimum skill level, so the participant's level is collected at booking and printed on the session roster. Instructors are assigned to sessions there, and an assignment that overlaps another of their sessions is refused when it's made — the double-booked guide is caught at assignment, not at check-in. For ski schools, the morning rush is assigned from a roster that already shows each participant's level, instead of from memory. Choosing the right person for a group is still your judgement; RidgeHQ makes sure it's made against real bookings and the real schedule.
 
 If matching bookings to the right instructor or guide is where your mornings go sideways, [book a demo](/book-demo) and we'll show you how it works against your own roster.
 

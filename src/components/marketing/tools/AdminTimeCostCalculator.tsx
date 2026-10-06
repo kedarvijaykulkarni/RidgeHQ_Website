@@ -10,7 +10,7 @@ function formatCurrency(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#22D3EE]";
+  "w-full rounded-lg border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-4 py-2.5 text-[var(--ink)] placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function AdminTimeCostCalculator() {
   const [hoursPerWeek, setHoursPerWeek] = React.useState(8);
@@ -31,11 +31,11 @@ export function AdminTimeCostCalculator() {
   });
 
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <div className="glass-card rounded-2xl border border-[var(--border)] p-6 md:p-10">
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
-            <label htmlFor="hours-per-week" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="hours-per-week" className="block text-sm font-medium text-ink-secondary mb-2">
               Hours per week spent re-keying bookings, chasing waivers, or reconciling gear/staff
               across separate tools
             </label>
@@ -49,7 +49,7 @@ export function AdminTimeCostCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="hourly-cost" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="hourly-cost" className="block text-sm font-medium text-ink-secondary mb-2">
               Fully-loaded cost of that time (USD/hour)
             </label>
             <input
@@ -62,7 +62,7 @@ export function AdminTimeCostCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="admin-weeks-per-year" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="admin-weeks-per-year" className="block text-sm font-medium text-ink-secondary mb-2">
               Operating weeks per year
             </label>
             <input
@@ -78,18 +78,18 @@ export function AdminTimeCostCalculator() {
         </div>
 
         <div
-          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          className="flex flex-col justify-center space-y-6 border-t border-[var(--border)] pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
           aria-live="polite"
         >
           <div>
-            <p className="text-sm text-slate-400 mb-1">Estimated admin cost per week</p>
-            <p className="text-3xl font-bold text-white">{formatCurrency(weeklyCost)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Estimated admin cost per week</p>
+            <p className="text-3xl font-bold text-ink">{formatCurrency(weeklyCost)}</p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-1">Estimated admin cost per year</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">{formatCurrency(annualCost)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Estimated admin cost per year</p>
+            <p className="text-4xl font-bold text-accent">{formatCurrency(annualCost)}</p>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-ink-tertiary leading-relaxed">
             Formula: hours/week &times; hourly cost &times; operating weeks/year. This is an estimate
             from the numbers you enter, not a measured result or a guaranteed RidgeHQ saving — edit the
             inputs above to match your own operation.

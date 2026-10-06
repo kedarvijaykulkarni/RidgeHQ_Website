@@ -1,18 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { verticals } from "@/lib/config/verticals";
 import { VerticalCard } from "@/components/marketing/VerticalCard";
 import { Container } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const TABS = ["Water Sports", "Snow & Mountains", "Rentals & Tours"] as const;
 type Tab = typeof TABS[number];
 
 export function VerticalsExplorer() {
   const [activeTab, setActiveTab] = useState<Tab>("Water Sports");
+  const idPrefix = useId();
 
   const filteredVerticals = verticals.filter((v) => {
     if (activeTab === "Water Sports") return ["dive-centers", "surf-schools", "kitesurf-schools", "sailing-schools", "windsurf-schools", "dive-resorts", "surf-camps"].includes(v.id);
@@ -44,24 +47,28 @@ export function VerticalsExplorer() {
 
         {/* Tab switcher */}
         <div className="flex justify-center mb-12">
-          <div className="glass-panel inline-flex items-center rounded-full p-1 bg-[var(--bg-elevated)]/50">
-            {TABS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-[var(--accent)] text-[var(--bg)] shadow-md"
-                    : "text-[var(--ink-tertiary)] hover:text-[var(--ink)] hover:bg-[var(--border)]"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as Tab)}>
+            <TabsList>
+              {TABS.map((tab) => (
+                <TabsTrigger
+                  key={tab}
+                  value={tab}
+                  id={`${idPrefix}-trigger-${tab}`}
+                  aria-controls={`${idPrefix}-panel-${tab}`}
+                >
+                  {tab}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
         </div>
 
-        <div className="min-h-[400px]">
+        <div
+          className="min-h-[400px]"
+          role="tabpanel"
+          id={`${idPrefix}-panel-${activeTab}`}
+          aria-labelledby={`${idPrefix}-trigger-${activeTab}`}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -77,7 +84,6 @@ export function VerticalsExplorer() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05, ease: "easeOut" }}
-                  whileHover={{ y: -4 }}
                   className="h-full"
                 >
                   <VerticalCard vertical={v} className="h-full" />
@@ -88,8 +94,8 @@ export function VerticalsExplorer() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button variant="link" className="text-[var(--accent)] hover:text-[var(--accent-2)]" asChild>
-            <Link href="/solutions">View all supported industries &rarr;</Link>
+          <Button variant="link" asChild>
+            <Link href="/solutions">View all supported industries <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" aria-hidden /></Link>
           </Button>
         </div>
       </Container>

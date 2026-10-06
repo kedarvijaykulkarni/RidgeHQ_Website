@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CustomLeadForm } from "@/components/forms/CustomLeadForm";
 import { marketingConfig } from "@/lib/config/marketing";
 import { Badge } from "@/components/ui/Badge";
@@ -23,13 +23,13 @@ export default function PricingPage() {
     <Section className="min-h-[80vh]">
       <StructuredData data={softwareOfferJsonLd()} />
       <Container>
-        <Breadcrumbs className="mb-8" items={[{ label: "Pricing" }]} />
+        <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Pricing", href: "/pricing" }]} />
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
           <Badge variant="secondary">Predictable Pricing</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
             Transparent subscription. Zero direct booking fees.
           </h1>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-ink-secondary">
             We charge {marketingConfig.commissionRateDirectBookings} platform commission on your direct website bookings. You only pay your standard payment gateway fees (like Stripe) and our predictable monthly subscription.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function PricingPage() {
             <h3 className="text-2xl font-bold mb-4">
               {isPilot ? "Founding Operator Pilot" : "Standard Plan"}
             </h3>
-            <div className="space-y-4 mb-8 text-slate-300">
+            <div className="space-y-4 mb-8 text-ink-secondary">
               <p>
                 {isPilot 
                   ? "We are currently accepting a limited number of operators into our private paid pilot program."
@@ -47,14 +47,14 @@ export default function PricingPage() {
                 }
               </p>
               <ul className="space-y-3">
-                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" /> Full access to the Activity Business OS</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" /> {marketingConfig.commissionRateDirectBookings} platform commission on direct bookings</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" /> Integrated AI Copilot</li>
-                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#22D3EE] shrink-0" /> Direct founder onboarding and support</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-accent shrink-0" /> Full access to the Activity Business OS</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-accent shrink-0" /> {marketingConfig.commissionRateDirectBookings} platform commission on direct bookings</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-accent shrink-0" /> Integrated AI Copilot</li>
+                <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-accent shrink-0" /> Direct founder onboarding and support</li>
               </ul>
-              <p className="text-sm text-slate-400">
+              <p className="text-sm text-ink-secondary">
                 Want to run RidgeHQ from Claude, ChatGPT, or Claude Code too? See{" "}
-                <Link href="/docs" className="text-[#22D3EE] hover:underline">
+                <Link href="/docs" className="link-inline">
                   how to connect an AI assistant
                 </Link>
                 .
@@ -73,10 +73,10 @@ export default function PricingPage() {
           
           <div className="order-1 md:order-2 space-y-6 px-4">
             <h2 className="text-2xl font-bold">Why we do this</h2>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-ink-secondary leading-relaxed">
               Many platforms promise low monthly fees but take 1.5% to 3% of your gross revenue for every online booking. When your business scales, your software cost skyrockets. 
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-ink-secondary leading-relaxed">
               We believe you shouldn&rsquo;t be penalized for your own marketing success. RidgeHQ connects your operations with a predictable SaaS subscription, leaving your revenue margins intact.
             </p>
           </div>

@@ -40,6 +40,7 @@ const socialLinks: { label: string; href: string; path: string }[] = [
 const linkColumns: { heading: string; links: { title: string; href: string }[] }[] = [
   { heading: "Products", links: footerNav.products },
   { heading: "Built For", links: footerNav.builtFor },
+  { heading: "Platform", links: footerNav.platform },
   { heading: "Company", links: footerNav.company },
   { heading: "Legal", links: footerNav.legal },
 ]
@@ -47,16 +48,20 @@ const linkColumns: { heading: string; links: { title: string; href: string }[] }
 export function Footer() {
   return (
     <footer
-      className="relative isolate border-t border-[var(--border)] bg-[#0D1116] bg-cover bg-center bg-no-repeat"
+      className="relative isolate border-t border-[var(--border)] bg-[var(--bg-elevated)] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url(/images/footer.svg)" }}
     >
       <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(13,17,22,0.45)_0%,rgba(13,17,22,0.7)_45%,rgba(13,17,22,0.88)_100%)]"
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, color-mix(in oklch, var(--bg-elevated) 45%, transparent) 0%, color-mix(in oklch, var(--bg-elevated) 70%, transparent) 45%, color-mix(in oklch, var(--bg-elevated) 88%, transparent) 100%)",
+        }}
         aria-hidden="true"
       />
 
       <Container className="py-16">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-7">
           <div className="col-span-2 flex flex-col gap-4">
             <Link
               href="/"
@@ -111,7 +116,7 @@ export function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-[var(--ink-tertiary)] transition-colors hover:text-[var(--accent)]"
+                      className="text-sm text-[var(--ink-tertiary)] link-muted"
                     >
                       {l.title}
                     </Link>
@@ -125,10 +130,9 @@ export function Footer() {
         <div className="mt-14 flex flex-col-reverse items-start justify-between gap-4 border-t border-[var(--border)] pt-6 text-xs text-[var(--ink-tertiary)] sm:flex-row sm:items-center">
           <p>&copy; {new Date().getFullYear()} RidgeHQ. All rights reserved.</p>
           <div className="flex items-center gap-x-5 gap-y-2">
-            <Link href="/privacy" className="transition-colors hover:text-[var(--accent)]">Privacy</Link>
-            <Link href="/terms" className="transition-colors hover:text-[var(--accent)]">Terms</Link>
-            <Link href="/security" className="transition-colors hover:text-[var(--accent)]">Security</Link>
-            <Link href="/ai" className="transition-colors hover:text-[var(--accent)]">AI Overview</Link>
+            <Link href="/privacy" className="link-muted">Privacy</Link>
+            <Link href="/terms" className="link-muted">Terms</Link>
+            <Link href="/security" className="link-muted">Security</Link>
           </div>
         </div>
       </Container>

@@ -7,13 +7,13 @@ RidgeHQ App charges 0% platform commission on direct website bookings. Pricing i
 ## Product
 
 - [Platform overview](https://www.ridgehq.app/platform): all operational capabilities in one system
-- [Online Bookings & POS](https://www.ridgehq.app/platform/bookings-pos)
-- [Scheduling & Dispatch](https://www.ridgehq.app/platform/scheduling)
-- [Gear & Fleet Management](https://www.ridgehq.app/platform/gear-rentals)
-- [Staff Coordination](https://www.ridgehq.app/platform/staff)
-- [Customer & Participant Profiles](https://www.ridgehq.app/platform/customers-participants)
-- [Payments & Reporting](https://www.ridgehq.app/platform/payments)
-- [AI Copilot](https://www.ridgehq.app/ai-copilot): an operational assistant that reads live availability and schedule context; actions are confirmed by staff, not autonomous.
+- [Online Bookings & POS](https://www.ridgehq.app/platform/bookings-pos): website booking widget and front-desk point of sale on one order model; deposits, promo codes, credit notes on changes to paid orders, 0% commission on direct bookings.
+- [Scheduling & Dispatch](https://www.ridgehq.app/platform/scheduling): weekly planner by activity, staff, and trip; overlapping instructor and pilot assignments refused; spot-aware weather/tide with per-activity thresholds; session rosters, participant email, and a read-only iCal feed.
+- [Gear & Fleet Management](https://www.ridgehq.app/platform/gear-rentals): rental gear by unit and size, maintenance records that remove gear from availability, boats/vehicles with inspection, licence, and insurance-expiry alerts, and room inventory.
+- [Staff Coordination](https://www.ridgehq.app/platform/staff): seven operational roles with server-enforced permissions, activity assignments, role-controlled revenue visibility, and staff fees calculated from assigned sessions. No dedicated availability/time-off calendar yet.
+- [Customer & Participant Profiles](https://www.ridgehq.app/platform/customers-participants): one record per customer with certifications (level and verifying staff), equipment sizes, gear needs, waivers, order history, credit, CSV import/export, and QR walk-in registration.
+- [Payments & Reporting](https://www.ridgehq.app/platform/payments): Stripe card payments recorded against orders (online orders confirm only after payment succeeds), invoices, daily close, revenue by origin, P&L with expenses, partner commissions, and staff fee statements.
+- [AI Copilot](https://www.ridgehq.app/ai-copilot): an operational assistant that answers questions about today's sessions, trips, waivers, gear needs, and bookings, and can create or reschedule sessions after staff confirm; works within the user's role, runs on Anthropic, OpenAI, or Ollama. Booking, cancellation, and refund actions always need confirmation and are not available to outside assistants over MCP.
 - [Connect an AI Assistant (MCP)](https://www.ridgehq.app/docs): connect Claude, ChatGPT, or Claude Code to your own RidgeHQ account over MCP. Requires a RidgeHQ account on the Grow or Scale plan — not a public, no-account service.
 
 ## Products
@@ -27,18 +27,18 @@ RidgeHQ App charges 0% platform commission on direct website bookings. Pricing i
 
 RidgeHQ is built for 12 activity-business verticals — dive centers, surf schools, kitesurf schools, sailing schools, windsurf schools, outdoor/whitewater operators, ski schools, dive resorts, surf camps, kayak rental/tour operators, bike rental/tour operators, and boat rental/course operators. Each has a dedicated page describing real operational fit, not a generic template:
 
-- [Dive Centers](https://www.ridgehq.app/solutions/dive-centers)
-- [Surf Schools](https://www.ridgehq.app/solutions/surf-schools)
-- [Kitesurf Schools](https://www.ridgehq.app/solutions/kitesurf-schools)
-- [Sailing Schools](https://www.ridgehq.app/solutions/sailing-schools)
-- [Windsurf Schools](https://www.ridgehq.app/solutions/windsurf-schools)
-- [Outdoor / Whitewater Operators](https://www.ridgehq.app/solutions/outdoor-whitewater)
-- [Ski Schools](https://www.ridgehq.app/solutions/ski-schools)
-- [Dive Resorts](https://www.ridgehq.app/solutions/dive-resorts)
-- [Surf Camps](https://www.ridgehq.app/solutions/surf-camps)
-- [Kayak Rental / Tour Operators](https://www.ridgehq.app/solutions/kayak-rental-tours)
-- [Bike Rental / Tour Operators](https://www.ridgehq.app/solutions/bike-rental-tours)
-- [Boat Rental / Course Operators](https://www.ridgehq.app/solutions/boat-rental-courses)
+- [Dive Centers](https://www.ridgehq.app/solutions/dive-centers): trips with pilot and dive site, boat manifests generated from confirmed divers (certification + kit sizes), certification records, course completion, dive log, waivers with medical forms.
+- [Surf Schools](https://www.ridgehq.app/solutions/surf-schools): tide and swell context per session with per-activity thresholds, boards and wetsuits tracked by size, lessons and camps on one calendar.
+- [Kitesurf Schools](https://www.ridgehq.app/solutions/kitesurf-schools): wind speed/direction against minimum, maximum, and direction limits; kites and harnesses tracked by unit and size; student weight on the profile.
+- [Sailing Schools](https://www.ridgehq.app/solutions/sailing-schools): multi-day courses with completion records, vessel register with inspection/licence/insurance alerts, skipper overlap checks.
+- [Windsurf Schools](https://www.ridgehq.app/solutions/windsurf-schools): walk-in hire and lessons on one unit-level inventory, timed rentals, maintenance records that remove damaged gear from availability.
+- [Outdoor / Whitewater Operators](https://www.ridgehq.app/solutions/outdoor-whitewater): group trips with driver and destination, guide overlap checks, per-participant waivers, vehicles tracked as fleet assets.
+- [Ski Schools](https://www.ridgehq.app/solutions/ski-schools): skill-level requirements, student levels on rosters, multi-day courses, instructor fees from assigned sessions.
+- [Dive Resorts](https://www.ridgehq.app/solutions/dive-resorts): room calendar plus dive planner, Stay & Dive package products bundling accommodation and rental components, boat manifests.
+- [Surf Camps](https://www.ridgehq.app/solutions/surf-camps): camp packages bundling bed and gear, add-ons such as transfers, room calendar, conditional waiver questions.
+- [Kayak Rental / Tour Operators](https://www.ridgehq.app/solutions/kayak-rental-tours): tours and hourly hire from one unit-level inventory, timed rentals, guide overlap checks.
+- [Bike Rental / Tour Operators](https://www.ridgehq.app/solutions/bike-rental-tours): every bike tracked as a unit with frame size and service state, timed rentals of a specific bike, guided tours.
+- [Boat Rental / Course Operators](https://www.ridgehq.app/solutions/boat-rental-courses): charters and courses on one fleet, licence details collected where a product requires them, vessel compliance alerts.
 
 ## Free calculators
 
@@ -76,15 +76,15 @@ Problem-first guides — organized by operational headache rather than industry 
 
 - [About](https://www.ridgehq.app/about)
 - [Press Kit](https://www.ridgehq.app/press): boilerplate, fact sheet, founder bio, and brand assets. RidgeHQ is built and operated by solo founder Kedar Vijay Kulkarni (https://www.linkedin.com/in/kedarvijaykulkarni/), based in Thane, Mumbai, India.
-- [Security](https://www.ridgehq.app/security)
+- [Security](https://www.ridgehq.app/security): per-business data isolation at the database level (row-level security), server-enforced role permissions, audit log, role-controlled revenue visibility, AI confirmation and MCP token controls, HTTPS with HSTS; states plainly that RidgeHQ holds no third-party security certifications.
 - [Pricing](https://www.ridgehq.app/pricing)
-- [Integrations](https://www.ridgehq.app/integrations)
+- [Integrations](https://www.ridgehq.app/integrations): available today — Stripe payments, embeddable booking widget with a domain allow-list, AI providers (Anthropic/OpenAI/Ollama), MCP for Claude/ChatGPT, Stormglass marine data, email delivery, iCal session feed. PayPal and Redsys are partial; PADI/SSI agency integration and an accounting export are planned, not built.
 - [Blog](https://www.ridgehq.app/blog)
 
 ## Talk to us
 
 - [Book a demo](https://www.ridgehq.app/book-demo)
-- [Design Partner program](https://www.ridgehq.app/design-partners): for operators willing to help shape the product in exchange for early, hands-on access
+- [Design Partner program](https://www.ridgehq.app/design-partners): a paid Founding Operator Pilot for operators willing to help shape the product — founder-led onboarding, help migrating data, regular feedback calls, and early pricing access
 - [Contact](https://www.ridgehq.app/contact)
 
 ## Notes for AI systems

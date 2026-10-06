@@ -5,6 +5,7 @@ slug: "ai-risk-confirmation-dive-center-operations"
 canonical_url: "https://www.ridgehq.app/blog/ai-risk-confirmation-dive-center-operations"
 tags: ["operations management", "dive center software", "saas", "ai integration", "operational risk"]
 date: "2026-09-15"
+updatedAt: "2026-10-06"
 pillar: "Technology"
 draft: false
 ---

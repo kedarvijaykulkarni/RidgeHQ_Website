@@ -9,6 +9,7 @@ import { defaultSeo } from "@/lib/config/seo";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
 import { CTAEventTracker } from "@/components/analytics/CTAEventTracker";
+import { ClickTracker } from "@/components/analytics/ClickTracker";
 import { AIReferralTracker } from "@/components/analytics/AIReferralTracker";
 
 import { siteUrl } from "@/lib/config/site";
@@ -23,7 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-1">
@@ -82,6 +90,7 @@ export default function RootLayout({
           <GoogleAnalyticsPageView />
         </Suspense>
         <CTAEventTracker />
+        <ClickTracker />
         <AIReferralTracker />
         <GoogleAnalytics />
       </body>

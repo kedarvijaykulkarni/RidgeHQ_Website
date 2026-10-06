@@ -11,7 +11,7 @@ function formatCurrency(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#22D3EE]";
+  "w-full rounded-lg border border-[var(--border-strong)] bg-[var(--bg-elevated)] px-4 py-2.5 text-[var(--ink)] placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function NoShowCostCalculator() {
   const [bookingsPerWeek, setBookingsPerWeek] = React.useState(40);
@@ -34,11 +34,11 @@ export function NoShowCostCalculator() {
   });
 
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <div className="glass-card rounded-2xl border border-[var(--border)] p-6 md:p-10">
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
-            <label htmlFor="bookings-per-week" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="bookings-per-week" className="block text-sm font-medium text-ink-secondary mb-2">
               Bookings per week
             </label>
             <input
@@ -51,7 +51,7 @@ export function NoShowCostCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="avg-booking-value" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="avg-booking-value" className="block text-sm font-medium text-ink-secondary mb-2">
               Average booking value (USD)
             </label>
             <input
@@ -64,7 +64,7 @@ export function NoShowCostCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="no-show-rate" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="no-show-rate" className="block text-sm font-medium text-ink-secondary mb-2">
               No-show rate (%)
             </label>
             <input
@@ -78,7 +78,7 @@ export function NoShowCostCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="weeks-per-year" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="weeks-per-year" className="block text-sm font-medium text-ink-secondary mb-2">
               Operating weeks per year
             </label>
             <input
@@ -94,18 +94,18 @@ export function NoShowCostCalculator() {
         </div>
 
         <div
-          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          className="flex flex-col justify-center space-y-6 border-t border-[var(--border)] pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
           aria-live="polite"
         >
           <div>
-            <p className="text-sm text-slate-400 mb-1">Estimated revenue lost per week</p>
-            <p className="text-3xl font-bold text-white">{formatCurrency(weeklyLoss)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Estimated revenue lost per week</p>
+            <p className="text-3xl font-bold text-ink">{formatCurrency(weeklyLoss)}</p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-1">Estimated revenue lost per year</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">{formatCurrency(annualLoss)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Estimated revenue lost per year</p>
+            <p className="text-4xl font-bold text-accent">{formatCurrency(annualLoss)}</p>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-ink-tertiary leading-relaxed">
             Formula: bookings/week &times; average booking value &times; no-show rate &times; operating
             weeks/year. This is an estimate from the numbers you enter, not a measured result or a
             guaranteed RidgeHQ saving — edit the inputs above to match your own operation.

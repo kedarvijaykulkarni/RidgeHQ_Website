@@ -32,11 +32,11 @@ export interface UseCase {
 export const useCases: UseCase[] = [
   {
     slug: "instructor-scheduling",
-    lastUpdated: "2026-09-12",
+    lastUpdated: "2026-10-06",
     title: "Instructor & Guide Scheduling",
     heroHeadline: "Assign instructors and guides in seconds, not a morning of messages.",
     heroTagline:
-      "Match every booking to a qualified instructor or guide by certification, language, and real-time availability — instead of checking a whiteboard or a group chat.",
+      "Put instructors and guides on the sessions they run, with overlapping assignments refused and each participant's level on the roster — instead of checking a whiteboard or a group chat.",
     problem:
       "Every booking needs a specific instructor or guide, not just any available body: the right certification level, the right language, sometimes the right specialty. When that matching happens by memory or a shared chat, mismatches (wrong level, unavailable, double-booked) surface at check-in — the worst possible time.",
     whyItHappens:
@@ -44,7 +44,7 @@ export const useCases: UseCase[] = [
     costOfInaction:
       "Morning rushes (ski school class starts, a wave of surf lesson bookings) are where this fails hardest: an operator matching bookings to instructors one at a time, under time pressure, is exactly where wrong-level or double-booked assignments happen — per the pattern described for ski schools and surf schools.",
     howRidgeHqHelps:
-      "In RidgeHQ, bookings carry the participant's level and language, and instructors/guides are tagged by certification and language — so scheduling is a filtered match against real-time availability, not a manual lookup across two tools. Ski schools filter the morning rush by level and language; outdoor/whitewater operators reserve guides at their required ratio alongside rafts and shuttle seats for the same trip.",
+      "In RidgeHQ, bookings and staff live in the same planner. Products can require a minimum skill level, so the booking form asks for it where it matters and the session roster shows each participant's level. Staff are assigned to the activities they run, their languages sit on their profile, and an instructor assignment that overlaps another session is refused when it is made — so a double-booked guide is caught at assignment, not at check-in. Choosing who suits a group is still your team's judgement; RidgeHQ makes sure that judgement is made against the real bookings and the real schedule.",
     whenNotSuitable:
       "If your operation has one or two instructors with no certification/language variation and no ratio requirement to enforce, this specific problem may not be costing you much — a simpler shared calendar may be enough.",
     relatedPlatformSlug: "staff",
@@ -53,18 +53,18 @@ export const useCases: UseCase[] = [
       {
         question: "Does this replace my existing staff chat/messaging tool?",
         answer:
-          "It replaces the need to use chat as the scheduling system of record. Bookings and staff qualifications live in the same system, so assignment doesn't depend on someone checking a thread.",
+          "It replaces the need to use chat as the scheduling system of record. Bookings, rosters, and staff assignments live in the same system, so who is on which session doesn't depend on someone checking a thread. Staff can also subscribe to a read-only calendar feed of sessions.",
       },
       {
         question: "Can it enforce a guide-to-group ratio?",
         answer:
-          "Yes for trips with a headcount-driven ratio requirement — outdoor/whitewater bookings reserve guides at your required ratio alongside rafts and shuttle seats for the same trip, as described on that vertical's page.",
+          "Not automatically today. Each session has its own capacity and the roster shows who is booked, so you can size sessions to your ratio — but RidgeHQ does not yet calculate or enforce an instructor-to-participant ratio for you.",
       },
     ],
   },
   {
     slug: "equipment-coordination",
-    lastUpdated: "2026-09-12",
+    lastUpdated: "2026-10-06",
     title: "Equipment & Gear Coordination",
     heroHeadline: "Know what gear is actually available, right now, before you promise it.",
     heroTagline:
@@ -76,7 +76,7 @@ export const useCases: UseCase[] = [
     costOfInaction:
       "A kayak tour arriving to find its boats already rented to a walk-in, or a lesson short a properly sized board, is a same-day scramble that falls on staff and damages the customer's experience — the exact failure mode described for kayak rental/tour and windsurf operations.",
     howRidgeHqHelps:
-      "RidgeHQ draws lesson, tour, and walk-in hire from one shared gear/fleet inventory, tracked out and back per item. A board, boat, or bike reserved for a session is not offered on the walk-in rack at the same time, and individually tracked assets (like bikes with a service state) are excluded automatically when flagged for repair.",
+      "RidgeHQ tracks gear as individual units with sizes, and rentals — online or at the desk — reserve a specific unit for a date and time window, so the same board, boat, or bike can't be hired out twice. A unit with an open maintenance record is removed from availability automatically until it's returned. Allocating kit to a lesson or tour group is still done by your team, from the same inventory.",
     whenNotSuitable:
       "If you only run one sales channel for gear (e.g. lessons only, no separate walk-in hire) with no shared-pool conflict, this specific coordination problem doesn't apply to you.",
     relatedPlatformSlug: "gear-rentals",
@@ -85,7 +85,7 @@ export const useCases: UseCase[] = [
       {
         question: "Does this track individual items or just gear categories?",
         answer:
-          "Both, depending on the vertical: bikes are tracked as individual assets with a size and service state, excluded automatically when flagged for repair; boards and boats are tracked out and back across lessons/tours and walk-in hire from one shared pool.",
+          "Individual units. Each gear type (boards, boats, bikes, wetsuits) is tracked as units with an optional size, rentals reserve a specific unit, and a unit with an open maintenance record is excluded until it's returned.",
       },
       {
         question: "Does it cover both scheduled bookings and walk-in hire?",

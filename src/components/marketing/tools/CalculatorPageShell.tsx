@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
 
 interface CalculatorPageShellProps {
@@ -45,18 +43,12 @@ export function CalculatorPageShell({
 }: CalculatorPageShellProps) {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Tools", path: "/tools" },
-          { name: title, path: `/tools/${slug}` },
-        ])}
-      />
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Tools", href: "/tools" }, { label: title }]} />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Tools", href: "/tools" }, { label: title, href: `/tools/${slug}` }]} />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">{title}</h1>
-            <p className="text-lg text-slate-400 leading-relaxed">{intro}</p>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">{title}</h1>
+            <p className="text-lg text-ink-secondary leading-relaxed">{intro}</p>
           </div>
         </Container>
       </Section>
@@ -65,10 +57,10 @@ export function CalculatorPageShell({
         <Container>{calculator}</Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <div className="max-w-3xl space-y-4 text-slate-400 text-sm leading-relaxed">
-            <h2 className="text-xl font-bold text-white">{whyHeading}</h2>
+          <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
+            <h2 className="text-xl font-bold text-ink">{whyHeading}</h2>
             {whyBody}
           </div>
         </Container>
@@ -87,8 +79,8 @@ export function CalculatorPageShell({
 
       <Section className="pt-0 pb-16">
         <Container>
-          <p className="text-center text-sm text-slate-500">
-            <Link href="/tools" className="text-[#22D3EE] hover:underline">
+          <p className="text-center text-sm text-ink-tertiary">
+            <Link href="/tools" className="link-inline">
               See all calculators &rarr;
             </Link>
           </p>

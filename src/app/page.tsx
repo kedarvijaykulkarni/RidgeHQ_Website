@@ -1,5 +1,6 @@
 import { Container, Section } from "@/components/ui/Layout";
 import { Button } from "@/components/ui/Button";
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/Card";
 import { FeatureCard } from "@/components/marketing/FeatureCard";
 import { IntegrationCard } from "@/components/marketing/IntegrationCard";
 import { ScreenshotFrame } from "@/components/marketing/ScreenshotFrame";
@@ -7,17 +8,22 @@ import { CTASection } from "@/components/marketing/CTASection";
 import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { HeroSection } from "@/components/marketing/HeroSection";
 import { VerticalsExplorer } from "@/components/marketing/VerticalsExplorer";
+import { Testimonial } from "@/components/marketing/Testimonial";
+import { LogoBand } from "@/components/marketing/LogoBand";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { softwareApplicationJsonLd } from "@/lib/softwareApplicationJsonLd";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { videoObjectJsonLd } from "@/lib/videoObjectJsonLd";
 import { YouTubeEmbed } from "@/components/marketing/YouTubeEmbed";
+import { CopilotTranscript } from "@/components/marketing/CopilotTranscript";
 import { homeVideo } from "@/lib/config/videos";
 import { platformCapabilities } from "@/lib/config/platform";
 import { integrations } from "@/lib/config/integrations";
 import { generalFaqs } from "@/lib/config/faq";
+import { testimonials } from "@/lib/config/testimonials";
+import { clientLogos } from "@/lib/config/logos";
 import Link from "next/link";
-import { Calendar, Users, Box, MapPin, CreditCard, Shield } from "lucide-react";
+import { Calendar, Users, Box, MapPin, CreditCard, Shield, HandHeart, Lock, Users2 } from "lucide-react";
 
 // Map string icon names to Lucide components
 const iconMap: Record<string, React.ReactNode> = {
@@ -46,8 +52,21 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* Pricing Philosophy */}
+      <Section className="bg-[var(--bg-alt)] border-t border-b border-[var(--border)]">
+        <Container className="text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[var(--ink)]">Transparent subscription. Zero direct booking fees.</h2>
+          <p className="text-lg text-[var(--ink-secondary)] mb-8">
+            RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn&rsquo;t be penalized for your own marketing success.
+          </p>
+          <Button asChild>
+            <Link href="/pricing">View Pilot Pricing Details</Link>
+          </Button>
+        </Container>
+      </Section>
+
       {/* Problem & Solution */}
-      <Section className="bg-[var(--bg-alt)]">
+      <Section>
         <Container>
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--ink)]">Your operation is connected. Your tools aren&apos;t.</h2>
@@ -55,7 +74,7 @@ export default function Home() {
               When online booking, front desk, schedules, staff, inventory, and reporting behave like separate businesses, you spend your day acting as the API between them.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {platformCapabilities.map(cap => (
               <FeatureCard
@@ -94,15 +113,15 @@ export default function Home() {
                 </li>
               </ul>
               <div className="flex flex-wrap items-center gap-4 pt-4">
-                <Button variant="outline" asChild className="border-[var(--border)] text-[var(--ink)] hover:border-[var(--accent)] bg-[var(--bg-elevated)]">
+                <Button variant="outline" asChild>
                   <Link href="/ai-copilot">Learn about the Copilot</Link>
                 </Button>
-                <Link href="/docs" className="text-sm text-[var(--accent)] hover:underline">
+                <Link href="/docs" className="text-sm link-inline">
                   Prefer Claude or ChatGPT directly? Connect an AI assistant over MCP &rarr;
                 </Link>
               </div>
             </div>
-            <ScreenshotFrame src="/images/product/ai-what-needs-attention-today.webp" alt="RidgeHQ Copilot summarizing what needs attention today" />
+            <CopilotTranscript />
           </div>
         </Container>
       </Section>
@@ -130,7 +149,7 @@ export default function Home() {
         <Container>
           <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">Integrations: Connected to the RidgeHQ Software Ecosystem</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {integrations.map(int => (
+            {integrations.filter(int => int.state === 'implemented').slice(0, 8).map(int => (
               <IntegrationCard key={int.id} integration={int} />
             ))}
           </div>
@@ -144,14 +163,76 @@ export default function Home() {
           <p className="text-lg text-[var(--ink-secondary)] mb-8">
             RidgeHQ is available via a predictable subscription. We charge 0% platform commission on your direct bookings, because you shouldn&rsquo;t be penalized for your own marketing success.
           </p>
-          <Button asChild className="bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none">
+          <Button asChild>
             <Link href="/pricing">View Pilot Pricing Details</Link>
           </Button>
         </Container>
       </Section>
 
-      {/* FAQ */}
+      {/* Trust / Credibility */}
       <Section>
+        <Container>
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--ink)]">Built in the open, with real operators.</h2>
+            <p className="text-lg text-[var(--ink-secondary)]">
+              RidgeHQ is in its Design Partner pilot. Here&rsquo;s how we handle your data and your onboarding while we build.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card>
+              <CardHeader>
+                <Users2 className="w-6 h-6 text-[var(--accent)] mb-3" aria-hidden />
+                <CardTitle>Design Partner Program</CardTitle>
+                <CardDescription>
+                  We&rsquo;re onboarding a small group of operators before the broad launch and working with each one directly &mdash; direct access to the founding team, priority feature requests for your workflows, and long-term pricing benefits for early adopters.
+                </CardDescription>
+              </CardHeader>
+              <CardFooter>
+                <Link href="/design-partners" className="text-sm font-medium link-inline">
+                  Apply to the pilot &rarr;
+                </Link>
+              </CardFooter>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Lock className="w-6 h-6 text-[var(--accent)] mb-3" aria-hidden />
+                <CardTitle>Security &amp; data ownership</CardTitle>
+                <CardDescription>
+                  Role-based permissions enforced on the server, each business&rsquo;s data isolated at the database level, HTTPS everywhere, an audit log of every change, and an AI Copilot that shares your staff&rsquo;s permission boundaries &mdash; high-risk actions require explicit operator confirmation before execution.
+                </CardDescription>
+              </CardHeader>
+              <CardFooter>
+                <Link href="/security" className="text-sm font-medium link-inline">
+                  Read our security posture &rarr;
+                </Link>
+              </CardFooter>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <HandHeart className="w-6 h-6 text-[var(--accent)] mb-3" aria-hidden />
+                <CardTitle>Founder-led onboarding</CardTitle>
+                <CardDescription>
+                  Hands-on setup and data migration help from the team building the product &mdash; not a support queue. You work directly with the people who can ship the fix.
+                </CardDescription>
+              </CardHeader>
+              <CardFooter>
+                <Link href="/design-partners" className="text-sm font-medium link-inline">
+                  See what to expect &rarr;
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+
+          <Testimonial testimonials={testimonials} className="mb-12" />
+          <LogoBand logos={clientLogos} />
+        </Container>
+      </Section>
+
+      {/* FAQ */}
+      <Section className="bg-[var(--bg-alt)]">
         <Container>
           <h2 className="text-3xl font-bold mb-12 text-center text-[var(--ink)]">RidgeHQ App Frequently Asked Questions</h2>
           <FAQAccordion items={generalFaqs} />

@@ -32,3 +32,18 @@ describe("loadBlogPosts pillar validation", () => {
     expect(() => loadWithPillar('"Technolgy"')).toThrow(/invalid pillar/i);
   });
 });
+
+describe("published blog post dates", () => {
+  // An unquoted YAML date parses as a Date object and stringifies as
+  // "Tue Oct 06 ...", which then leaks into the sitemap's <lastmod>.
+  it("are all ISO YYYY-MM-DD strings", () => {
+    jest.resetModules();
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { blogPosts } = require("./blog") as typeof import("./blog");
+    expect(blogPosts.length).toBeGreaterThan(0);
+    for (const post of blogPosts) {
+      expect(post.publishedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      if (post.updatedAt) expect(post.updatedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+  });
+});

@@ -1,5 +1,5 @@
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
 import { pageSeo } from "@/lib/config/seo";
 
@@ -15,10 +15,10 @@ export default function ResourcesPage() {
     <div className="flex flex-col w-full">
       <Section className="min-h-[60vh]">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Resources" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Resources", href: "/resources" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Resources</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               Operational guides, product updates, and insights for activity businesses.
             </p>
           </div>
@@ -26,7 +26,7 @@ export default function ResourcesPage() {
           <div className="mt-24 text-center">
             <div className="glass-card max-w-2xl mx-auto p-12">
               <h3 className="text-2xl font-bold mb-4">Coming Soon</h3>
-              <p className="text-slate-400">
+              <p className="text-ink-secondary">
                 We are currently focused on onboarding our founding operators and will be publishing our operational guides soon.
               </p>
             </div>

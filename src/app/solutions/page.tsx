@@ -2,9 +2,7 @@ import { Container, Section } from "@/components/ui/Layout";
 import { VerticalCard } from "@/components/marketing/VerticalCard";
 import { verticals } from "@/lib/config/verticals";
 import { CTASection } from "@/components/marketing/CTASection";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 
 export const metadata = {
@@ -16,13 +14,12 @@ export const metadata = {
 export default function SolutionsIndexPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Built For", path: "/solutions" }])} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Built For" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Solutions", href: "/solutions" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Built for how your operation runs.</h1>
-            <p className="text-xl text-slate-400">
+            <p className="text-xl text-ink-secondary">
               One operational model, mapped to the constraints of your industry. Find the workflows that match your day.
             </p>
           </div>

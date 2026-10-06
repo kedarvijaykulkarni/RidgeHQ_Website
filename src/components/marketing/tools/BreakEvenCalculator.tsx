@@ -15,7 +15,7 @@ function formatCount(n: number) {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#22D3EE]";
+  "w-full rounded-lg border border-[var(--border-strong)] bg-bg-elevated px-4 py-2.5 text-ink placeholder:text-ink-tertiary focus:outline-none focus:ring-2 focus:ring-accent";
 
 export function BreakEvenCalculator() {
   const [fixedCostsPerMonth, setFixedCostsPerMonth] = React.useState(4000);
@@ -36,11 +36,11 @@ export function BreakEvenCalculator() {
   });
 
   return (
-    <div className="glass-card rounded-2xl border border-white/10 bg-white/5 p-6 md:p-10">
+    <div className="glass-card rounded-2xl border border-[var(--border)] p-6 md:p-10">
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           <div>
-            <label htmlFor="be-fixed-costs" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="be-fixed-costs" className="block text-sm font-medium text-ink-secondary mb-2">
               Fixed costs per month (USD) &mdash; rent, salaries, software, insurance
             </label>
             <input
@@ -53,7 +53,7 @@ export function BreakEvenCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="be-avg-booking-value" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="be-avg-booking-value" className="block text-sm font-medium text-ink-secondary mb-2">
               Average booking price (USD)
             </label>
             <input
@@ -66,7 +66,7 @@ export function BreakEvenCalculator() {
             />
           </div>
           <div>
-            <label htmlFor="be-variable-cost" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="be-variable-cost" className="block text-sm font-medium text-ink-secondary mb-2">
               Variable cost per booking (USD) &mdash; gateway fees, consumables, per-booking staff time
             </label>
             <input
@@ -81,22 +81,22 @@ export function BreakEvenCalculator() {
         </div>
 
         <div
-          className="flex flex-col justify-center space-y-6 border-t border-white/10 pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
+          className="flex flex-col justify-center space-y-6 border-t border-border pt-8 md:border-t-0 md:border-l md:pl-10 md:pt-0"
           aria-live="polite"
         >
           <div>
-            <p className="text-sm text-slate-400 mb-1">Contribution margin per booking</p>
-            <p className="text-3xl font-bold text-white">{formatCurrency(contributionMargin)}</p>
+            <p className="text-sm text-ink-secondary mb-1">Contribution margin per booking</p>
+            <p className="text-3xl font-bold text-ink">{formatCurrency(contributionMargin)}</p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-1">Bookings needed per month to break even</p>
-            <p className="text-4xl font-bold text-[#22D3EE]">
+            <p className="text-sm text-ink-secondary mb-1">Bookings needed per month to break even</p>
+            <p className="text-4xl font-bold text-accent">
               {Number.isFinite(breakEvenBookingsPerMonth)
                 ? formatCount(breakEvenBookingsPerMonth)
                 : "Not reachable at this price"}
             </p>
           </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <p className="text-xs text-ink-tertiary leading-relaxed">
             Formula: break-even bookings = fixed costs &divide; (price &minus; variable cost per
             booking). Standard contribution-margin break-even math, not a RidgeHQ-specific figure.
           </p>

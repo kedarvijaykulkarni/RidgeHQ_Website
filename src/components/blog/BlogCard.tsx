@@ -4,12 +4,9 @@ import { ArrowRight } from "lucide-react";
 
 export function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block h-full">
+    <Link href={`/blog/${post.slug}`} className="group block h-full rounded-2xl">
       <div className="glass-card p-6 h-full flex flex-col glass-card-hover">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-xs font-medium text-[var(--accent)] bg-[var(--accent-soft)] px-2.5 py-1 rounded-full">
-            {post.category}
-          </span>
           <span className="text-xs text-[var(--ink-tertiary)]">{post.readingTime}</span>
         </div>
         

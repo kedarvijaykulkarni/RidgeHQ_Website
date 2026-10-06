@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { pageSeo } from "@/lib/config/seo";
 import { caseStudies } from "@/lib/config/case-studies";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -21,13 +19,12 @@ export const metadata = {
 export default function CaseStudiesIndexPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData data={breadcrumbJsonLd([{ name: "Case Studies", path: "/case-studies" }])} />
       <Section className="pb-12 pt-24">
         <Container>
-          <Breadcrumbs className="mb-8" items={[{ label: "Case Studies" }]} />
+          <PageBreadcrumbs className="mb-8 justify-center" trail={[{ label: "Case Studies", href: "/case-studies" }]} />
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">Case Studies</h1>
-            <p className="text-xl text-slate-400">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink">Case Studies</h1>
+            <p className="text-xl text-ink-secondary">
               Real operational results from RidgeHQ design partners — published only once they exist,
               with the partner&rsquo;s consent, never hypothetical.
             </p>
@@ -38,9 +35,9 @@ export default function CaseStudiesIndexPage() {
       <Section className="pt-0">
         <Container>
           {caseStudies.length === 0 ? (
-            <div className="max-w-2xl mx-auto text-center glass-card p-12 rounded-2xl bg-white/5 border border-white/10">
-              <h3 className="text-2xl font-bold mb-4 text-white">In progress</h3>
-              <p className="text-slate-400">
+            <div className="max-w-2xl mx-auto text-center glass-card p-12 rounded-2xl border border-[var(--border)]">
+              <h3 className="text-2xl font-bold mb-4 text-ink">In progress</h3>
+              <p className="text-ink-secondary">
                 We&rsquo;re currently onboarding our Founding Operator Pilot partners. Real case studies
                 will be published here as design partners have results worth sharing — we don&rsquo;t
                 publish placeholder or illustrative stories in their place.
@@ -52,10 +49,10 @@ export default function CaseStudiesIndexPage() {
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}`}
-                  className="glass-card rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-[#22D3EE]/40"
+                  className="glass-card glass-card-hover group rounded-2xl border border-[var(--border)] p-8"
                 >
-                  <h2 className="text-xl font-bold text-white mb-2">{cs.businessType}</h2>
-                  <p className="text-slate-400 text-sm leading-relaxed">{cs.problem}</p>
+                  <h2 className="text-xl font-bold text-ink mb-2 transition-colors group-hover:text-accent">{cs.businessType}</h2>
+                  <p className="text-ink-secondary text-sm leading-relaxed">{cs.problem}</p>
                 </Link>
               ))}
             </div>

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Container, Section } from "@/components/ui/Layout";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PageBreadcrumbs } from "@/components/seo/PageBreadcrumbs";
 import { CTASection } from "@/components/marketing/CTASection";
-import { StructuredData } from "@/components/seo/StructuredData";
-import { breadcrumbJsonLd } from "@/lib/breadcrumbJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { AdminTimeCostCalculator } from "@/components/marketing/tools/AdminTimeCostCalculator";
 import { ToolRelatedSolutions } from "@/components/marketing/tools/ToolRelatedSolutions";
@@ -18,23 +16,14 @@ export const metadata = {
 export default function AdminTimeCostCalculatorPage() {
   return (
     <div className="flex flex-col w-full">
-      <StructuredData
-        data={breadcrumbJsonLd([
-          { name: "Tools", path: "/tools" },
-          { name: "Admin Time Cost Calculator", path: "/tools/admin-time-cost-calculator" },
-        ])}
-      />
       <Section className="pb-8 pt-24">
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[{ label: "Tools", href: "/tools" }, { label: "Admin Time Cost Calculator" }]}
-          />
+          <PageBreadcrumbs className="mb-8" trail={[{ label: "Tools", href: "/tools" }, { label: "Admin Time Cost Calculator", href: "/tools/admin-time-cost-calculator" }]} />
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               Admin Time Cost Calculator
             </h1>
-            <p className="text-lg text-slate-400 leading-relaxed">
+            <p className="text-lg text-ink-secondary leading-relaxed">
               When a booking widget, a spreadsheet, and a schedule don&rsquo;t talk to each other,
               someone becomes the API between them — retyping the same booking two or three times.
               Estimate what that time is actually worth.
@@ -49,10 +38,10 @@ export default function AdminTimeCostCalculatorPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <div className="max-w-3xl space-y-4 text-slate-400 text-sm leading-relaxed">
-            <h2 className="text-xl font-bold text-white">What counts as this time</h2>
+          <div className="max-w-3xl space-y-4 text-ink-secondary text-sm leading-relaxed">
+            <h2 className="text-xl font-bold text-ink">What counts as this time</h2>
             <p>
               Typical examples: copying an online booking onto a whiteboard or manifest, checking gear
               sizing from a separate spreadsheet, chasing a waiver by email, or reconciling the day&rsquo;s
@@ -80,8 +69,8 @@ export default function AdminTimeCostCalculatorPage() {
 
       <Section className="pt-0 pb-16">
         <Container>
-          <p className="text-center text-sm text-slate-500">
-            <Link href="/tools" className="text-[#22D3EE] hover:underline">
+          <p className="text-center text-sm text-ink-tertiary">
+            <Link href="/tools" className="link-inline">
               See all calculators &rarr;
             </Link>
           </p>

@@ -172,3 +172,59 @@ the site. Updated `sitemap.ts` (`/press` static route) and `navigation.ts` foote
 `ridgehq.app/press` with founder attribution, in case that changes how founder-identity
 questions should be answered elsewhere (e.g. if the founder later wants to stay
 pseudonymous for a specific channel, this page would need to be reconsidered).
+
+## 2026-10-06 — Content-depth pass, batch 1: platform capabilities (pull + push)
+
+**Pulled:** vault `wiki/log.md` entries 2026-09-17 → 2026-09-29 (SLA table, product decisions #97–#99, first production deploy and sync release, Easyriders prospect findings, currency fix), `public-page-source-brief.md` (2026-09-21), and the module docs for Staff, Event Planner, Weather, Gear, Fleet, Rooms, Clients, Bookings, Reports, Partners, Settings, and AI-Copilot.
+
+**Applied (copy/claim accuracy, safe):**
+- `/platform/scheduling`, `/gear-rentals`, `/staff`, `/customers-participants`, `/payments` went from 160–185 words with no FAQs to 697–821 words with 5–6 FAQs each (FAQPage JSON-LD). Every statement is traced to a module doc; honest limits are stated as FAQs (no availability/time-off calendar; bookings blocked on bad weather only if you opt in, and never when forecast data is missing).
+- **False claim removed:** "real-time availability" staff matching (Staff nav description, the instructor-scheduling use case, and the `instructor-and-guide-scheduling-at-scale` post). The vault has no availability/time-off feature. The use case's ratio FAQ now says ratios aren't enforced automatically.
+- **False claim removed:** "encrypted … at rest" (home trust card, `/security`, `product-knowledge.ts` security summary). Replaced with what's documented: TLS/HSTS and per-business isolation at the database level (row-level security, enforced in production since 2026-09-30 per `Production-Deployment.md`). GAP-004 records no at-rest encryption. **Correction (same day):** an earlier draft also claimed "encrypted off-server backups"; removed, because `operations.md` (2026-09-26) says backups are unverified, restore is untested, and backups are deferred by owner decision until real tenants exist.
+- The `llms.txt` platform links gained one-line factual descriptions.
+- Sitemap `lastmod` set to 2026-10-06 for `/`, `/ai`, `/security`, the 5 capability pages, and the use case.
+
+**Flagged, not applied (consequential or unverified):**
+- **Ratio enforcement** ("instructor-to-diver ratios enforced per course type before a session can confirm", and guide ratios on outdoor/whitewater) on vertical pages: no vault support. To be fixed in the solutions-page claim audit (next batch).
+- **Stripe Connect**: unclear whether each business uses its own Stripe account (`stripe_connect_status` exists, Development-Index says post-MVP). New copy avoids saying so; the existing `bookings-pos` phrase "through your own gateway" is left for owner confirmation.
+- **Pricing**: the source brief lists Starter €49 / Grow €89 / Scale €149 as public, and decision #97 removes AI from Starter. The site stays in pilot mode until the owner approves (#53).
+
+**Pushed to vault:** `wiki/log.md` `[2026-10-06] query` entry with the corrections and the three open questions above.
+
+All 7 surfaces walked: `platform.ts` (source) → nav menu descriptions (derived), `product-knowledge.ts` (derived capabilities + hand-edited security summary), `/ai` (derived), FAQPage JSON-LD (new capability FAQs), sitemap (config dates + 3 static routes), page metadata (capability pages use the new hero taglines; `/security` description corrected), `llms.txt` (descriptions added).
+
+## 2026-10-06 — Content-depth pass, batch 2: trust, index, and conversion pages (pull only)
+
+**Pulled:** Brain vault `Modules/AI-Copilot.md`, `MCP-Server.md`, `Logs.md`, `Courses.md`, `Settings.md`; `Architecture/Integration-Architecture.md`; `Operations/Production-Deployment.md`, `Tenant-Onboarding.md`; `operations.md`; `business-context.md`; `launch-plan.md`; `public-page-source-brief.md`.
+
+**Applied:**
+- `/security` was rewritten from 118 words of generic claims ("top priority", "secure, compliant infrastructure", "encrypted at rest") to about 980 words. It now states only what is verified in production: server-enforced RBAC, role-controlled revenue visibility, the audit log, AI Copilot role and risk gates with a one-hour undo on reversible scheduling actions, hashed and revocable MCP tokens capped at Manager, HTTPS with HSTS preload, admin framing protection, and the embed allow-list. A "What isn't in place yet" section and FAQ say plainly that there are no third-party certifications.
+- `/ai-copilot`, `/integrations`, `/platform`, `/products`, `/use-cases`, `/compare`, `/contact`, `/book-demo`, and `/design-partners` were expanded with FAQ sections (FAQPage JSON-LD) through a new shared `PageFaq` component.
+- `integrations.ts` was corrected against Integration-Architecture.md:
+  - Removed "Xero" (no specific accounting target is decided), "Smartwaiver" (no basis, and waivers are built in), and Stripe "in-person payments" (no Terminal support).
+  - Added the implemented surfaces: the booking-widget embed, AI providers, MCP, Stormglass, email, and the iCal feed.
+  - PayPal/Redsys are marked partial. PADI/SSI and an accounting export are marked planned.
+- `/platform`: removed "never … assign an unqualified instructor" and the staff screenshot alt text claiming qualification/availability matching.
+- `Accordion` now force-mounts closed FAQ answers (hidden until opened), so every FAQ answer site-wide is in the HTML for crawlers rather than only in JSON-LD.
+- `product-knowledge.ts` security summary, the home trust card, and `llms.txt` (Copilot, Security, Integrations, Design Partner lines) now match the verified wording.
+- Sitemap `lastmod` set to 2026-10-06 for `/`, `/ai`, `/use-cases`, and `/compare`; the other touched routes were already 2026-10-06.
+
+**Flagged for the owner (not applied):**
+- **RLS wording (resolved when merging develop into this branch):** this entry originally said production RLS isn't enforced, citing Production-Deployment.md's "Still owed" list. That line is stale: the same page's header records RLS enforced in production since 2026-09-30 (#683 cutover; api/worker on `ridgehqapp_app`, web on `ridgehqapp_web`), and batch 1 relied on it. Per-business isolation at the database level is restored on `/security`, the home trust card, and `product-knowledge.ts`. Batch 1 had already removed the "encrypted off-server backups" claim.
+- `products.ts` (owned by the solutions/products claim audit) still has unsupported claims: staff mobile use, accounting-ready exports, security-deposit pre-authorisation and damage charges, automatic seasonal pricing, per-unit utilisation reporting, waiver answers carried forward, guardian signing for minors, and "isolated to your account at the database level".
+
+## 2026-10-06 — Content-depth pass, batch 3: solutions + products claim audit (owner chose "vault-only rewrite")
+
+**Pulled:** Modules docs Bookings, Catalog, Courses, Weather, Gear, Fleet, Rooms, Clients, Event Planner, Reports, Partners; `Architecture/Integration-Architecture.md`; `Operations/Production-Deployment.md` / `Production-Operations-Playbook.md`.
+
+**Applied:** the claim-bearing fields of all 12 verticals (proof points, key capability, representative flow, 3 feature sections, workflow, outcomes, FAQs; metas/hero copy where they overclaimed) were regenerated from verified facts only. Problem framing (pain points, operator constraints) was kept, and the solutions template heading "Core Constraints Managed" became "What your day has to balance" so constraints read as the operator's reality, not product claims. Pages stay 815–1,025 words with 8–9 FAQs each. Honest-limit FAQs were added where buyers will ask: no automatic ratio enforcement; no instructor auto-matching; no automatic kite-size pick; no hour-package drawdown; no automatic messaging on reschedule (manual session email; a cancellation notice does go out); no pre-authorised security deposits; no ID collection; no package-dive countdown; not a hotel PMS; no lift passes.
+- **Removed as unsupported:** ratio enforcement (dive, outdoor, kayak, use case, comparison); instructor matching by level/language; auto-reserving kit by size or weight; cylinder stock drawdown; manifest weight/ratio checks; automated pre-arrival reminders, joining instructions, and packing lists; staff mobile app; accounting exports; pre-paid hour packages; IKO/VDWS progression tracking; safety-boat linkage; rafting headcount auto-allocating rafts, guides, and shuttle seats; client storage racks; package dives drawn down; guest folio; pre-authorised deposits; ID checks; rental turnaround buffers, payment links, and per-unit utilisation; half-day/multi-day pricing rules; waiver guardian flow, shareable waiver link, carried-forward answers, and waiver search/export; "dietary questions at checkout" (now custom waiver questions).
+- **New guard:** `src/lib/config/claims.test.ts` fails if any unsupported-claim phrase reappears in the config copy (FAQ questions and negated answers are allowed). It also checks each vertical's meta description contains its keyword and fits in 160 characters. A built-HTML scan of all 75 sitemap pages found 0 hits.
+- Nav menu descriptions corrected (kitesurf "gear match", ski "instructor match", outdoor "shuttles"); `llms.txt` industry links gained factual one-liners; sitemap `lastmod` updated via the 12 vertical, 3 product, 1 comparison, and 1 use-case config dates, plus `/solutions` and `/tools/no-show-cost-calculator`.
+
+**Corrections found during the pass:**
+- `payment_gateways_config` is per business (Stripe/PayPal/Redsys adapters), so "through your own gateway" **is** supported. Kept.
+- A scheduled `send_pending_session_reminders` job exists, but its content and recipients aren't documented. The website makes no reminder claim until the vault documents it.
+- **Backups:** an earlier batch-1 draft said "encrypted off-server backups"; removed (backups unverified/deferred per `operations.md`). **RLS:** `operations.md` says not enforced, while the newer `Production-Deployment.md` says enforced since 2026-09-30. The website follows the newer page. Both pushed to vault `log.md`.
+
+**Flagged for the owner:** `comparisons.ts` says "Stripe is currently the only supported payment gateway", but PayPal/Redsys adapters exist (Integration-Architecture says "Partial"). This understates rather than overclaims, so it's left for the owner to confirm.

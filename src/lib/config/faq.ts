@@ -6,7 +6,7 @@ export interface FAQ {
 export const generalFaqs: FAQ[] = [
   {
     question: 'How is RidgeHQ different from standard booking software?',
-    answer: 'Standard booking software stops at the transaction. RidgeHQ connects the booking directly into your daily operational plan—automatically updating staff schedules, resource availability, gear inventory, and reporting without needing a second system.',
+    answer: 'Standard booking software stops at the transaction. RidgeHQ connects the booking directly to your operational plan — it lands on the session your team works from, rentals reserve the specific unit, and payments flow into the daily close and reporting — without a second system.',
   },
   {
     question: 'Do you charge a commission on bookings?',

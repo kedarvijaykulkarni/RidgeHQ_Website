@@ -5,6 +5,7 @@ slug: "enhancing-waivers-for-center-operations"
 canonical_url: "https://www.ridgehq.app/blog/enhancing-waivers-for-center-operations"
 tags: ["dive center management", "waiver system", "operations efficiency", "saas", "dive shop"]
 date: "2026-09-12"
+updatedAt: "2026-10-06"
 pillar: "Operations"
 draft: false
 ---
