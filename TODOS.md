@@ -125,6 +125,7 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
 
 - [ ] **Content-depth + vault-sync pass (owner request 2026-10-06)** — every page checked against the Brain vault for missing material, with real problem-solving text and no fake commitments. **Batch 1 done:** 5 thin `/platform/*` capability pages expanded (160–185 → 697–821 words, 5–6 FAQs each), plus two unsupported claims removed site-wide ("real-time availability" staff matching; "encrypted at rest"). See `docs/vault-sync-log.md` 2026-10-06. **Batch 2** (trust, index, and conversion pages; FAQ answers now in the HTML): merged via PR #120. **Batch 3 done:** all 12 solutions pages and the products/use-case/comparison copy rewritten to vault-supported claims only, plus a `claims.test.ts` guard against unsupported phrases. **Remaining:** the 11 tool pages (content depth), and the owner decisions listed in `docs/vault-sync-log.md`.
 - [x] **Content-depth pass, batch 2 (trust, index, and conversion pages)**: /security rewritten to verified production controls (no at-rest or certification claims; RLS isolation kept per Production-Deployment.md). /ai-copilot, /integrations, /platform, /products, /use-cases, /compare, /contact, /book-demo, and /design-partners expanded with FAQ sections. integrations.ts corrected (Xero/Smartwaiver/Stripe in-person removed; real surfaces added). FAQ answers are now in the HTML site-wide via Accordion forceMount. See docs/vault-sync-log.md 2026-10-06 batch 2. Merged via PR #120 2026-10-06.
+- [x] [#69](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/69) — Post-deploy Search Console resubmission — release PR #118 merged to `main` 2026-10-06 (`5163214`), Vercel production deploy succeeded. Production `sitemap.xml` has 75 URLs, identical to the verified `develop` build; all 75 return 200; `robots.txt` points at the sitemap. Compared with the pre-release production sitemap, none were added or removed, and every URL has a new `lastmod`. The resubmission list was given to the owner (see `docs/vault-sync-log.md` 2026-10-06 post-deploy entry); the Search Console submission itself is the owner's step.
 
 ## Blocked by another open issue
 
@@ -133,7 +134,7 @@ merge — an item may become unblocked.
 
 | Issue | Blocked by | Becomes unblocked once |
 |---|---|---|
-| [#69](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/69) Post-deploy Search Console resubmission | everything | whole revamp ships |
+| _None_ | | |
 
 ## Blocked by an owner decision (do not start without Kedar's sign-off)
 
