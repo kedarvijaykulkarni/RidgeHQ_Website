@@ -31,10 +31,10 @@ export function Header() {
           </div>
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <Button variant="ghost" className="hidden sm:inline-flex text-[var(--ink)] hover:text-[var(--accent)]" asChild>
+            <Button variant="ghost" className="hidden sm:inline-flex" asChild>
               <Link href="/contact">Contact</Link>
             </Button>
-            <Button className="hidden sm:inline-flex bg-[var(--cta)] hover:bg-[var(--cta-hover)] text-[var(--cta-text)] border-none font-bold" asChild>
+            <Button className="hidden sm:inline-flex" asChild>
               <Link href="/book-demo">Book a Demo <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" /></Link>
             </Button>
             <MobileNav />

@@ -54,15 +54,20 @@ const TabsList = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     const listRef = React.useRef<HTMLDivElement>(null)
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return
       const tabs = listRef.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')
       if (!tabs || tabs.length === 0) return
       const tabList = Array.from(tabs)
       const currentIndex = tabList.findIndex((tab) => tab === document.activeElement)
       if (currentIndex === -1) return
       event.preventDefault()
-      const delta = event.key === "ArrowRight" ? 1 : -1
-      const nextIndex = (currentIndex + delta + tabList.length) % tabList.length
+      let nextIndex: number
+      if (event.key === "Home") nextIndex = 0
+      else if (event.key === "End") nextIndex = tabList.length - 1
+      else {
+        const delta = event.key === "ArrowRight" ? 1 : -1
+        nextIndex = (currentIndex + delta + tabList.length) % tabList.length
+      }
       tabList[nextIndex].focus()
       tabList[nextIndex].click()
     }
@@ -112,10 +117,10 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
           onClick?.(event)
         }}
         className={cn(
-          "px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-all duration-300",
+          "px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]",
           isActive
             ? "bg-[var(--accent)] text-[var(--bg)] shadow-md"
-            : "text-[var(--ink-tertiary)] hover:text-[var(--ink)] hover:bg-[var(--border)]",
+            : "text-[var(--ink-secondary)] hover:text-[var(--ink)] hover:bg-[var(--accent-soft)]",
           className
         )}
         {...props}
