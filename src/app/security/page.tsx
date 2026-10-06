@@ -16,7 +16,7 @@ export default function SecurityPage() {
         <div className="max-w-3xl mx-auto space-y-8">
           <Breadcrumbs items={[{ label: "Security" }]} />
           <h1 className="text-4xl font-bold text-ink">Security</h1>
-          <div className="prose max-w-none prose-headings:text-[var(--ink)] prose-a:text-[var(--accent)] hover:prose-a:text-[var(--accent-2)] prose-p:text-[var(--ink-secondary)]">
+          <div className="prose max-w-none prose-headings:text-[var(--ink)] prose-a:text-[var(--accent)] prose-a:hover:text-[var(--accent-2)] prose-p:text-[var(--ink-secondary)]">
             <p>At RidgeHQ, the security of your operational data is our top priority. We employ industry-standard practices to protect your information.</p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4">Infrastructure Security</h2>
@@ -30,7 +30,7 @@ export default function SecurityPage() {
             <p>
               The same boundary applies when you connect an outside AI assistant to your account over
               MCP &mdash; see{" "}
-              <Link href="/docs" className="text-accent hover:underline">
+              <Link href="/docs" className="link-inline">
                 Connect an AI assistant
               </Link>{" "}
               for how that access is scoped, confirmed, and logged.

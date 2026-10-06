@@ -52,9 +52,9 @@ export default function CaseStudiesIndexPage() {
                 <Link
                   key={cs.slug}
                   href={`/case-studies/${cs.slug}`}
-                  className="glass-card rounded-2xl border border-[var(--border)] p-8 transition-colors hover:border-accent/40"
+                  className="glass-card glass-card-hover group rounded-2xl border border-[var(--border)] p-8"
                 >
-                  <h2 className="text-xl font-bold text-ink mb-2">{cs.businessType}</h2>
+                  <h2 className="text-xl font-bold text-ink mb-2 transition-colors group-hover:text-accent">{cs.businessType}</h2>
                   <p className="text-ink-secondary text-sm leading-relaxed">{cs.problem}</p>
                 </Link>
               ))}

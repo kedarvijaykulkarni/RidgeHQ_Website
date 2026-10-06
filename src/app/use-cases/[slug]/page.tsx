@@ -89,7 +89,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
               {relatedCapability && (
                 <Link
                   href={`/platform/${relatedCapability.slug}`}
-                  className="text-accent hover:underline text-sm inline-block"
+                  className="link-inline text-sm inline-block"
                 >
                   See the {relatedCapability.title} capability &rarr;
                 </Link>
@@ -111,14 +111,14 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
                     <Link
                       key={v.slug}
                       href={`/solutions/${v.slug}`}
-                      className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-[var(--accent-border)] hover:text-ink transition-colors"
+                      className="chip-link"
                     >
                       {v.name}
                     </Link>
                   ))}
                   <Link
                     href="/pricing"
-                    className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-4 py-2 text-sm text-ink-secondary hover:border-[var(--accent-border)] hover:text-ink transition-colors"
+                    className="chip-link"
                   >
                     Pricing
                   </Link>

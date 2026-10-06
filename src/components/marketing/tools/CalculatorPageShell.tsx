@@ -88,7 +88,7 @@ export function CalculatorPageShell({
       <Section className="pt-0 pb-16">
         <Container>
           <p className="text-center text-sm text-ink-tertiary">
-            <Link href="/tools" className="text-accent hover:underline">
+            <Link href="/tools" className="link-inline">
               See all calculators &rarr;
             </Link>
           </p>

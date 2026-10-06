@@ -21,7 +21,10 @@ export function LogoBand({ logos, className, ...props }: LogoBandProps) {
             alt={logo.name}
             width={120}
             height={40}
-            className="h-8 w-auto object-contain opacity-70 transition-opacity hover:opacity-100"
+            className={cn(
+              "h-8 w-auto object-contain opacity-70",
+              logo.href && "transition-opacity hover:opacity-100"
+            )}
           />
         )
         return logo.href ? (

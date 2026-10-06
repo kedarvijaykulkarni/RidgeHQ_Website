@@ -116,7 +116,7 @@ export default function Home() {
                 <Button variant="outline" asChild>
                   <Link href="/ai-copilot">Learn about the Copilot</Link>
                 </Button>
-                <Link href="/docs" className="text-sm text-[var(--accent)] hover:underline">
+                <Link href="/docs" className="text-sm link-inline">
                   Prefer Claude or ChatGPT directly? Connect an AI assistant over MCP &rarr;
                 </Link>
               </div>
@@ -189,7 +189,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardFooter>
-                <Link href="/design-partners" className="text-sm font-medium text-[var(--accent)] hover:underline">
+                <Link href="/design-partners" className="text-sm font-medium link-inline">
                   Apply to the pilot &rarr;
                 </Link>
               </CardFooter>
@@ -204,7 +204,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardFooter>
-                <Link href="/security" className="text-sm font-medium text-[var(--accent)] hover:underline">
+                <Link href="/security" className="text-sm font-medium link-inline">
                   Read our security posture &rarr;
                 </Link>
               </CardFooter>
@@ -219,7 +219,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardFooter>
-                <Link href="/design-partners" className="text-sm font-medium text-[var(--accent)] hover:underline">
+                <Link href="/design-partners" className="text-sm font-medium link-inline">
                   See what to expect &rarr;
                 </Link>
               </CardFooter>

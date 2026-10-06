@@ -41,9 +41,9 @@ export default function ComparePage() {
               <Link
                 key={c.slug}
                 href={`/compare/${c.slug}`}
-                className="glass-card group rounded-2xl border border-[var(--border)] p-8 transition-colors hover:border-accent/40"
+                className="glass-card glass-card-hover group rounded-2xl border border-[var(--border)] p-8"
               >
-                <h2 className="text-xl font-bold text-ink mb-2">{c.title}</h2>
+                <h2 className="text-xl font-bold text-ink mb-2 transition-colors group-hover:text-accent">{c.title}</h2>
                 <p className="text-ink-secondary text-sm leading-relaxed mb-4">{c.heroTagline}</p>
                 <span className="inline-flex items-center gap-1 text-sm text-accent">
                   Read comparison <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

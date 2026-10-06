@@ -51,7 +51,7 @@ export default function ProductsPage() {
         <Container>
           <p className="text-center text-ink-secondary">
             Looking for how the capabilities fit together?{" "}
-            <Link href="/platform" className="text-accent hover:underline">Explore the platform &rarr;</Link>
+            <Link href="/platform" className="link-inline">Explore the platform &rarr;</Link>
           </p>
         </Container>
       </Section>

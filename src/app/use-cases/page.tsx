@@ -43,9 +43,9 @@ export default function UseCasesIndexPage() {
               <Link
                 key={useCase.slug}
                 href={`/use-cases/${useCase.slug}`}
-                className="glass-card p-8 rounded-2xl border border-[var(--border)] hover:border-[var(--accent-border)] transition-colors group"
+                className="glass-card glass-card-hover group rounded-2xl border border-[var(--border)] p-8"
               >
-                <h2 className="text-2xl font-bold text-ink mb-3">{useCase.title}</h2>
+                <h2 className="text-2xl font-bold text-ink mb-3 transition-colors group-hover:text-accent">{useCase.title}</h2>
                 <p className="text-ink-secondary leading-relaxed mb-4">{useCase.heroTagline}</p>
                 <span className="inline-flex items-center gap-1 text-accent text-sm font-medium">
                   Read more

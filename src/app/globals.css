@@ -56,6 +56,7 @@
     /* Caution text/icons (beta notes, "may not be the right fit" callouts) —
        AA against --bg and against a bg-amber-500/10 panel. */
     --warning: oklch(48% 0.13 60);
+    --card-shadow-hover: 0 18px 40px -16px oklch(25% 0.03 250 / 0.28), 0 0 20px -6px var(--accent-soft);
     color-scheme: light;
   }
 
@@ -82,6 +83,7 @@
     --glass-grid: oklch(100% 0 0 / 0.015);
     --glass-border: oklch(100% 0 0 / 0.04);
     --warning: oklch(88% 0.15 90);
+    --card-shadow-hover: 0 20px 50px -12px oklch(0% 0 0 / 0.9), 0 0 20px -5px var(--accent-soft);
     color-scheme: dark;
   }
 
@@ -205,14 +207,64 @@
 }
 
 @layer utilities {
+  /*
+   * The one hover treatment for clickable cards: lift, accent border and a
+   * theme-aware shadow. Also applies on keyboard focus, whether the card is
+   * the link itself or the link's direct child. Non-clickable cards don't
+   * use it, so a lift always means "this goes somewhere".
+   */
   .glass-card-hover {
-    @apply transition-all duration-300 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,1),_0_0_20px_-5px_var(--accent-soft)] hover:-translate-y-1;
+    transition-property: translate, box-shadow, border-color, background-image;
+    transition-duration: 300ms;
   }
 
-  .glass-card-hover:hover, .glass-card-hover:focus-within {
+  .glass-card-hover:hover,
+  .glass-card-hover:focus-visible,
+  :focus-visible > .glass-card-hover {
+    translate: 0 -0.25rem;
+    border-color: var(--accent-border);
+    box-shadow: var(--card-shadow-hover);
     background-image: var(--glass-bg);
   }
-  
+
+  /* Links. `link-inline`: accent text links in body copy ("Learn more",
+     cross-references). `link-muted`: secondary links in footers, breadcrumbs
+     and lists (keeps the surrounding text colour, accent on hover). `chip-link`: pill-shaped related-page links. */
+  .link-inline {
+    color: var(--accent);
+    text-underline-offset: 4px;
+    transition: color 150ms;
+    &:hover {
+      color: var(--accent-2);
+      text-decoration-line: underline;
+    }
+  }
+
+  .link-muted {
+    transition: color 150ms;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  .chip-link {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-elevated);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--ink-secondary);
+    transition: color 150ms, border-color 150ms, background-color 150ms;
+    &:hover {
+      border-color: var(--accent-border);
+      background-color: var(--accent-soft);
+      color: var(--ink);
+    }
+  }
+
   @keyframes accordion-down {
     from { height: 0 }
     to { height: var(--radix-accordion-content-height) }

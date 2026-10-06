@@ -27,7 +27,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
           return (
             <li key={index} className="flex items-center">
               {item.href && !isLast ? (
-                <Link href={item.href} className="hover:text-[var(--accent)] transition-colors">
+                <Link href={item.href} className="link-muted">
                   {item.label}
                 </Link>
               ) : (
