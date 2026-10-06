@@ -91,7 +91,7 @@ export const productKnowledge = {
 
   security: {
     summary:
-      "Encrypted connections (TLS) and encrypted off-server backups, per-business data isolation at the database level, role-based access control enforced on the server, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
+      "Encrypted connections (TLS), per-business data isolation at the database level (row-level security), role-based access control enforced on the server, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
     url: `${siteUrl}/security`,
   },
 
