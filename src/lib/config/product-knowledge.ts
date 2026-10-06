@@ -91,7 +91,7 @@ export const productKnowledge = {
 
   security: {
     summary:
-      "Data encrypted in transit and at rest, role-based access control across systems, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
+      "Encrypted connections (TLS), per-business data isolation at the database level (row-level security), role-based access control enforced on the server, and an AI Copilot that operates within the same permission boundaries as staff and requires confirmation for high-risk actions.",
     url: `${siteUrl}/security`,
   },
 
