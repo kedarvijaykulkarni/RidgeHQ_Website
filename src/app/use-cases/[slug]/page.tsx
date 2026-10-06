@@ -97,7 +97,7 @@ export default async function UseCasePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className="space-y-4 glass-card p-8 rounded-2xl bg-amber-500/5 border border-amber-500/20">
               <h2 className="text-2xl font-bold text-ink flex items-center gap-2">
-                <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0" />
+                <AlertTriangle className="w-6 h-6 text-warning shrink-0" />
                 When RidgeHQ may not be the right fit
               </h2>
               <p className="text-lg text-ink-secondary leading-relaxed">{useCase.whenNotSuitable}</p>

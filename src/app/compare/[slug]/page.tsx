@@ -76,7 +76,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
             </div>
             <div className="space-y-3">
               <h2 className="text-xl font-bold text-ink flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0" />
+                <AlertTriangle className="w-5 h-5 text-warning shrink-0" />
                 Where RidgeHQ currently falls short
               </h2>
               <p className="text-ink-secondary leading-relaxed">{comparison.ridgehqLimitations}</p>

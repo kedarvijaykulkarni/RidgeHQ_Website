@@ -25,9 +25,9 @@ export function ScreenshotFrame({ src, alt, priority = false, sizes = "column", 
     sizes === "column" ? SIZES_COLUMN : sizes === "full" ? SIZES_FULL : sizes
 
   return (
-    <div className={cn("relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-bg-elevated/50 backdrop-blur-sm", className)} {...props}>
+    <div className={cn("relative rounded-2xl overflow-hidden border border-border shadow-2xl bg-bg-elevated/50 backdrop-blur-sm", className)} {...props}>
       {/* Fake Browser/App Header */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-bg-elevated/50">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-bg-elevated/50">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-border"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-border"></div>
@@ -46,7 +46,7 @@ export function ScreenshotFrame({ src, alt, priority = false, sizes = "column", 
           className="object-cover object-left-top"
         />
         {/* Subtle Halo */}
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/5 pointer-events-none rounded-b-2xl"></div>
+        <div className="absolute inset-0 ring-1 ring-inset ring-border pointer-events-none rounded-b-2xl"></div>
       </div>
     </div>
   )

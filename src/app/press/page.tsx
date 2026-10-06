@@ -59,7 +59,7 @@ export default function PressPage() {
       <Section className="pt-24 pb-12">
         <Container className="max-w-3xl">
           <Breadcrumbs items={[{ label: "Press" }]} />
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium mb-8 mt-6">
+          <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium mb-8 mt-6">
             Press Kit
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
@@ -75,7 +75,7 @@ export default function PressPage() {
       <Section className="bg-bg-elevated/30">
         <Container className="max-w-3xl space-y-12">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Boilerplate</h2>
+            <h2 className="text-2xl font-bold text-ink mb-4">Boilerplate</h2>
             <p className="text-sm uppercase tracking-widest text-ink-tertiary mb-2">Short</p>
             <p className="text-ink-secondary leading-relaxed mb-6">
               RidgeHQ is an activity business operating system that connects bookings,
@@ -102,8 +102,8 @@ export default function PressPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Fact sheet</h2>
-            <dl className="divide-y divide-white/5 border-y border-white/5">
+            <h2 className="text-2xl font-bold text-ink mb-4">Fact sheet</h2>
+            <dl className="divide-y divide-border border-y border-border">
               {[
                 ["Product", "RidgeHQ — Activity Business Operating System"],
                 ["Founder", "Kedar Vijay Kulkarni"],
@@ -122,10 +122,10 @@ export default function PressPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Founder</h2>
+            <h2 className="text-2xl font-bold text-ink mb-4">Founder</h2>
             <p className="text-ink-secondary leading-relaxed">
               RidgeHQ is built and operated by{" "}
-              <strong className="text-white">Kedar Vijay Kulkarni</strong>, a software
+              <strong className="text-ink">Kedar Vijay Kulkarni</strong>, a software
               engineer with 20+ years of experience based in Thane, Mumbai, India. Kedar
               builds and ships RidgeHQ as a solo founder, using AI coding assistants
               rather than a team, and works directly with early operators through the{" "}
@@ -147,13 +147,13 @@ export default function PressPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Brand assets</h2>
+            <h2 className="text-2xl font-bold text-ink mb-4">Brand assets</h2>
             <p className="text-ink-secondary leading-relaxed mb-6">
-              The product name is written as one word, <strong className="text-white">RidgeHQ</strong>{" "}
+              The product name is written as one word, <strong className="text-ink">RidgeHQ</strong>{" "}
               (capital R and H). Please don&apos;t alter the logo&apos;s colors or
               proportions.
             </p>
-            <div className="flex flex-wrap items-center gap-6 bg-bg-elevated/50 border border-white/5 rounded-xl p-6">
+            <div className="flex flex-wrap items-center gap-6 bg-bg-elevated/50 border border-border rounded-xl p-6">
               <Image
                 src="/images/logo/ridgehq-logo-512x512.png"
                 alt="RidgeHQ logo"
@@ -173,7 +173,7 @@ export default function PressPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Media contact</h2>
+            <h2 className="text-2xl font-bold text-ink mb-4">Media contact</h2>
             <p className="text-ink-secondary leading-relaxed">
               For logos, screenshots, interviews, or product walkthroughs, email{" "}
               <a href="mailto:social@ridgehq.app" className="text-accent hover:underline">
@@ -191,7 +191,7 @@ export default function PressPage() {
 
       <Section>
         <Container className="max-w-3xl">
-          <h2 className="text-2xl font-bold text-white mb-8 text-center">
+          <h2 className="text-2xl font-bold text-ink mb-8 text-center">
             Frequently asked questions
           </h2>
           <FAQAccordion items={pressFaqs} />

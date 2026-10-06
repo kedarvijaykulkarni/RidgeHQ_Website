@@ -117,7 +117,7 @@ export default function PrivacyPage() {
           <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="mt-2 text-sm text-ink-secondary">Last updated: July 2026</p>
-          <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
+          <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-warning">
             This policy is written to reflect how RidgeHQ actually collects and uses data during our
             design partner and early access phase. It should still be reviewed by qualified legal counsel
             before general availability.
