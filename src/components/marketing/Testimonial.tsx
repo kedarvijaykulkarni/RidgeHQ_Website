@@ -15,7 +15,7 @@ export function Testimonial({ testimonials, className, ...props }: TestimonialPr
   return (
     <div className={cn("grid gap-6 sm:grid-cols-2 lg:grid-cols-3", className)} {...props}>
       {testimonials.map((t) => (
-        <figure key={`${t.name}-${t.business}`} className="glass-card p-6 flex flex-col gap-4">
+        <figure key={`${t.name}-${t.business}`} className="glass-card glass-card-hover p-6 flex flex-col gap-4">
           <blockquote className="text-base text-[var(--ink)] leading-relaxed">
             &ldquo;{t.quote}&rdquo;
           </blockquote>

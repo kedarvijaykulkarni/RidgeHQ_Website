@@ -165,7 +165,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
             </div>
             <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {capability.connections.map((connection, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-bg-elevated border border-border">
+                <div key={i} className="glass-card glass-card-hover p-6">
                   <div className="flex items-center gap-2 text-accent font-semibold mb-2">
                     <ArrowRight className="w-4 h-4 shrink-0" />
                     {connection.to}
@@ -187,7 +187,7 @@ export default async function PlatformCapabilityPage({ params }: { params: Promi
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {capability.outcomes.map((outcome, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl bg-bg-elevated border border-border">
+                <div key={i} className="glass-card glass-card-hover p-6">
                   <h3 className="text-lg font-bold text-ink mb-2">{outcome.label}</h3>
                   <p className="text-sm text-ink-secondary leading-relaxed">{outcome.detail}</p>
                 </div>

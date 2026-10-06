@@ -208,13 +208,15 @@
 
 @layer utilities {
   /*
-   * The one hover treatment for clickable cards: lift, accent border and a
-   * theme-aware shadow. Also applies on keyboard focus, whether the card is
-   * the link itself or the link's direct child. Non-clickable cards don't
-   * use it, so a lift always means "this goes somewhere".
+   * The one card hover treatment, used by every card on the site (clickable
+   * or not): lift, a 1px accent ring and a theme-aware shadow. The ring is
+   * drawn with box-shadow rather than border-color so cards with an accent
+   * edge (border-t-4 / border-l-4) keep their stripe colour on hover. Also
+   * applies on keyboard focus, whether the card is the link itself or the
+   * link's direct child. Only cards that are links get the pointer cursor.
    */
   .glass-card-hover {
-    transition-property: translate, box-shadow, border-color, background-image;
+    transition-property: translate, box-shadow, background-image;
     transition-duration: 300ms;
   }
 
@@ -222,8 +224,7 @@
   .glass-card-hover:focus-visible,
   :focus-visible > .glass-card-hover {
     translate: 0 -0.25rem;
-    border-color: var(--accent-border);
-    box-shadow: var(--card-shadow-hover);
+    box-shadow: 0 0 0 1px var(--accent-border), var(--card-shadow-hover);
     background-image: var(--glass-bg);
   }
 

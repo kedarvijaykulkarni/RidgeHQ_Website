@@ -63,7 +63,7 @@ export default function AICopilotPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Controlled Actions</h3>
               <p className="text-ink-secondary mb-6">The Copilot can suggest and stage actions, but medium and high-risk operations require your explicit confirmation before execution.</p>
               <ul className="space-y-3">
@@ -72,7 +72,7 @@ export default function AICopilotPage() {
               </ul>
             </div>
             
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Audit & Undo</h3>
               <p className="text-ink-secondary mb-6">Every non-read action the AI takes is recorded in the operational audit log. Selected schedule and assignment actions have explicit undo support.</p>
               <ul className="space-y-3">
@@ -81,7 +81,7 @@ export default function AICopilotPage() {
               </ul>
             </div>
 
-            <div className="glass-card p-8">
+            <div className="glass-card glass-card-hover p-8">
               <h3 className="text-xl font-bold mb-4">Provider Choice</h3>
               <p className="text-ink-secondary mb-6">The RidgeHQ AI layer is provider-agnostic. Depending on your configuration, it supports major models to balance intelligence with privacy.</p>
               <ul className="space-y-3">

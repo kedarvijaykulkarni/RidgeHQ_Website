@@ -21,7 +21,7 @@ const STATE_VARIANT: Record<Integration["state"], BadgeProps["variant"]> = {
 
 export function IntegrationCard({ integration, className, ...props }: IntegrationCardProps) {
   return (
-    <div className={cn("glass-card p-6 flex flex-col gap-4 h-full", className)} {...props}>
+    <div className={cn("glass-card glass-card-hover p-6 flex flex-col gap-4 h-full", className)} {...props}>
       <div className="flex justify-between items-start">
         <h3 className="text-lg font-semibold text-[var(--ink)]">{integration.name}</h3>
         <Badge variant={STATE_VARIANT[integration.state]}>
