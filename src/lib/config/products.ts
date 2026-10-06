@@ -175,7 +175,7 @@ export const products: Product[] = [
       { label: "No mystery stock", detail: "Availability reflects the real state of each unit, not a number in a spreadsheet." },
       { label: "Flagged gear stays off the floor", detail: "An item in for repair is removed from availability until it is checked back in." },
       { label: "Rentals and sessions do not collide", detail: "One inventory across hire, walk-ins, and guided activities." },
-      { label: "Deposits handled cleanly", detail: "Pre-authorised at booking, released after inspection, all on one order." },
+      { label: "Service status that controls availability", detail: "Units out for maintenance leave availability until they are returned, so damaged gear is never handed out." },
     ],
     faqs: [
       { question: "Is the Rental App separate from the platform?", answer: "No. It is the rental side of the same RidgeHQ system, sharing one calendar, customer records, and payments with bookings and scheduling." },

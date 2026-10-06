@@ -60,7 +60,7 @@ export default function NoShowCostCalculatorPage() {
 
       <CTASection
         headline="See how RidgeHQ handles bookings and reminders"
-        description="Confirmations, pre-arrival reminders, and deposits are part of every booking on RidgeHQ, not a separate step."
+        description="Confirmation emails and deposits are part of every booking on RidgeHQ, not a separate step."
         primaryCtaText="Book a Demo"
         primaryCtaHref="/book-demo"
         secondaryCtaText="Explore Bookings & POS"

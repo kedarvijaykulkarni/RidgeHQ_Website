@@ -17,6 +17,9 @@ const UNSUPPORTED_CLAIMS: RegExp[] = [
   /payment links?/i,
   /carried forward/i,
   /drawn down (?:automatically|as )/i,
+  /encrypted (?:off-server )?backups/i,
+  /pre-arrival reminders/i,
+  /guardian complet/i,
 ];
 
 const COPY_FILES = [
