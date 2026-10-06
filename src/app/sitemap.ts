@@ -19,11 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = (
     [
-      ['', '2026-10-05'],
+      ['', '2026-10-06'],
       ['/platform', '2026-10-06'],
       ['/products', '2026-10-06'],
       ['/ai-copilot', '2026-10-06'],
-      ['/ai', '2026-10-05'],
+      ['/ai', '2026-10-06'],
       ['/docs', '2026-10-06'],
       ['/tools', '2026-10-05'],
       ['/tools/no-show-cost-calculator', '2026-10-05'],

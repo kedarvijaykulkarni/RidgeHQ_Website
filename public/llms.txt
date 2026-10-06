@@ -7,12 +7,12 @@ RidgeHQ App charges 0% platform commission on direct website bookings. Pricing i
 ## Product
 
 - [Platform overview](https://www.ridgehq.app/platform): all operational capabilities in one system
-- [Online Bookings & POS](https://www.ridgehq.app/platform/bookings-pos)
-- [Scheduling & Dispatch](https://www.ridgehq.app/platform/scheduling)
-- [Gear & Fleet Management](https://www.ridgehq.app/platform/gear-rentals)
-- [Staff Coordination](https://www.ridgehq.app/platform/staff)
-- [Customer & Participant Profiles](https://www.ridgehq.app/platform/customers-participants)
-- [Payments & Reporting](https://www.ridgehq.app/platform/payments)
+- [Online Bookings & POS](https://www.ridgehq.app/platform/bookings-pos): website booking widget and front-desk point of sale on one order model; deposits, promo codes, credit notes on changes to paid orders, 0% commission on direct bookings.
+- [Scheduling & Dispatch](https://www.ridgehq.app/platform/scheduling): weekly planner by activity, staff, and trip; overlapping instructor and pilot assignments refused; spot-aware weather/tide with per-activity thresholds; session rosters, participant email, and a read-only iCal feed.
+- [Gear & Fleet Management](https://www.ridgehq.app/platform/gear-rentals): rental gear by unit and size, maintenance records that remove gear from availability, boats/vehicles with inspection, licence, and insurance-expiry alerts, and room inventory.
+- [Staff Coordination](https://www.ridgehq.app/platform/staff): seven operational roles with server-enforced permissions, activity assignments, role-controlled revenue visibility, and staff fees calculated from assigned sessions. No dedicated availability/time-off calendar yet.
+- [Customer & Participant Profiles](https://www.ridgehq.app/platform/customers-participants): one record per customer with certifications (level and verifying staff), equipment sizes, gear needs, waivers, order history, credit, CSV import/export, and QR walk-in registration.
+- [Payments & Reporting](https://www.ridgehq.app/platform/payments): Stripe card payments recorded against orders (online orders confirm only after payment succeeds), invoices, daily close, revenue by origin, P&L with expenses, partner commissions, and staff fee statements.
 - [AI Copilot](https://www.ridgehq.app/ai-copilot): an operational assistant that reads live availability and schedule context; actions are confirmed by staff, not autonomous.
 - [Connect an AI Assistant (MCP)](https://www.ridgehq.app/docs): connect Claude, ChatGPT, or Claude Code to your own RidgeHQ account over MCP. Requires a RidgeHQ account on the Grow or Scale plan — not a public, no-account service.
 
