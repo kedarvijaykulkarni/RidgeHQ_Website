@@ -97,7 +97,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
               {isEarlyAccess && product.roadmapNote && (
                 <div className="flex gap-3 rounded-2xl border border-amber-400/20 bg-amber-400/5 p-4 text-sm text-ink-secondary">
-                  <Clock className="w-5 h-5 text-amber-400 shrink-0" />
+                  <Clock className="w-5 h-5 text-warning shrink-0" />
                   <p>{product.roadmapNote}</p>
                 </div>
               )}

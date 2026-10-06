@@ -79,7 +79,7 @@ function MenuLink({ item }: { item: NavLink }) {
         href={item.href}
         className="group/link flex gap-3 rounded-xl p-3 transition-colors hover:bg-[var(--accent-soft)]"
       >
-        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-soft)] text-[var(--accent)] group-hover/link:bg-[var(--accent)] group-hover/link:text-white transition-colors">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-soft)] text-[var(--accent)] group-hover/link:bg-[var(--accent)] group-hover/link:text-bg transition-colors">
           <Icon name={item.icon} className="h-4 w-4" />
         </span>
         <span className="min-w-0">

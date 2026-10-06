@@ -117,7 +117,7 @@ export default function AIInfoPage() {
                     {p.title}
                   </Link>{" "}
                   {p.status === "early-access" && (
-                    <span className="text-xs text-amber-400 font-normal">(early access)</span>
+                    <span className="text-xs text-warning font-normal">(early access)</span>
                   )}
                 </dt>
                 <dd className="text-ink-secondary text-sm">{p.description}</dd>

@@ -51,3 +51,33 @@ The visible focus ring (`focus-visible:ring-2 focus-visible:ring-[var(--accent)]
 / `focus:ring-2 focus:ring-[var(--accent)]`) reuses the `--accent` token,
 already verified above at 5.17:1 (light) / 9.57:1 (dark) against `--bg` —
 comfortably clears the 3:1 focus-indicator requirement.
+
+## Addendum 2026-10-06 — epic #37 Codex review remediation
+
+The consolidated review of epic #37 found pairings this audit had missed,
+because it only covered token-on-token pairings, not hardcoded Tailwind
+colours still left on some pages. Fixed:
+
+| Pairing | Before (light) | After light | After dark |
+|---|---|---|---|
+| `/docs`, `/press` headings + strong (`text-white` on `--bg`) | ~1.06:1 | `--ink`, as every other page | — |
+| Warning panels on `/docs`, `/privacy`, `/terms` (`text-amber-200`) | ~1.2:1 | new `--warning` token: 6.41:1 on `--bg`, 6.08:1 on the `bg-amber-500/10` panel | 14.44:1 / 7.73:1 |
+| Caution icons/labels (`text-amber-400` on compare/products/use-cases/ai) | ~1.5:1 | `--warning` (as above) | as above |
+| Mega-menu icon hover (`text-white` on `--accent`) | — | `--bg` on `--accent`: 5.17:1 | 9.57:1 (was ~2.2:1) |
+
+Also: `prose-invert` (dark-only) removed from `/blog/[slug]` and
+`/security`; `@tailwindcss/typography`'s `--tw-prose-*` palette is now mapped
+to theme tokens in `globals.css`, so code, blockquotes, tables and rules
+follow the theme too (verified via computed styles in both themes).
+`.glass-card` grid/border literals moved to per-theme `--glass-grid` /
+`--glass-border` tokens (dark values unchanged). `color-scheme` is now set
+per theme, so native controls and scrollbars match.
+
+Ratios are computed from the OKLCH tokens (sRGB-clipped), with the amber
+panel approximated as a 10% linear blend over `--bg`.
+
+Intentionally unchanged: `opengraph-image.tsx` (fixed dark social card
+rendered outside CSS), `YouTubeEmbed`'s `bg-black` letterbox, the hero
+`.starfield` (white stars are a dark-theme-only decoration), and
+`footer.svg` (its dark artwork sits under a theme-coloured overlay that
+renders as a light misty treatment in the light theme — checked visually).

@@ -76,10 +76,10 @@ export default function DocsPage() {
         <Container>
           <Breadcrumbs className="mb-8" items={[{ label: "Docs" }]} />
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-accent-2 font-medium">
+            <div className="inline-flex items-center rounded-full border border-border bg-bg-elevated px-3 py-1 text-sm text-accent-2 font-medium">
               Model Context Protocol (MCP)
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
               Connect your AI assistant to RidgeHQ
             </h1>
             <p className="text-lg text-ink-secondary leading-relaxed">
@@ -89,7 +89,7 @@ export default function DocsPage() {
               boat?&rdquo; and it answers from your live data. For everyday changes, such as moving a
               session, it asks you to confirm before it does anything.
             </p>
-            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-warning">
               Requires a RidgeHQ account on the <strong>Grow or Scale</strong> plan. This is not a
               public or no-account service &mdash; Starter plans don&rsquo;t include the AI assistant
               features.
@@ -98,12 +98,12 @@ export default function DocsPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-bold text-white">How to connect</h2>
+            <h2 className="text-2xl font-bold text-ink">How to connect</h2>
             <p className="text-ink-secondary leading-relaxed">
-              An Owner or Manager sets this up in RidgeHQ under <strong className="text-white">Settings,
+              An Owner or Manager sets this up in RidgeHQ under <strong className="text-ink">Settings,
               Access tokens, Connect an AI assistant</strong>. That page shows your server address
               (the MCP URL) with a copy button and the exact steps for your assistant.
             </p>
@@ -111,7 +111,7 @@ export default function DocsPage() {
 
           <div className="mt-10 grid md:grid-cols-2 gap-8">
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold mb-3 text-white">Claude or ChatGPT (recommended)</h3>
+              <h3 className="text-xl font-bold mb-3 text-ink">Claude or ChatGPT (recommended)</h3>
               <p className="text-ink-secondary mb-4 text-sm leading-relaxed">
                 No token to handle. Add a custom connector with the server address shown on the
                 Connect page, then sign in with your own RidgeHQ staff account.
@@ -132,7 +132,7 @@ export default function DocsPage() {
             </div>
 
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold mb-3 text-white">Claude Code &amp; CLI clients</h3>
+              <h3 className="text-xl font-bold mb-3 text-ink">Claude Code &amp; CLI clients</h3>
               <p className="text-ink-secondary mb-4 text-sm leading-relaxed">
                 Create a personal access token (PAT) in Settings, Access tokens. Name it for the
                 person and tool, and choose the lowest role that does the job.
@@ -152,12 +152,12 @@ export default function DocsPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-2xl font-bold text-white mb-6">What it can and can&rsquo;t do</h2>
+          <h2 className="text-2xl font-bold text-ink mb-6">What it can and can&rsquo;t do</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass-card p-8">
-              <h3 className="text-lg font-bold mb-4 text-white">It can</h3>
+              <h3 className="text-lg font-bold mb-4 text-ink">It can</h3>
               <ul className="space-y-3">
                 {canDo.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-ink-secondary">
@@ -172,7 +172,7 @@ export default function DocsPage() {
               </p>
             </div>
             <div className="glass-card p-8">
-              <h3 className="text-lg font-bold mb-4 text-white">It will never</h3>
+              <h3 className="text-lg font-bold mb-4 text-ink">It will never</h3>
               <ul className="space-y-3">
                 {cannotDo.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-ink-secondary">
@@ -189,10 +189,10 @@ export default function DocsPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-bold text-white">Security &amp; privacy</h2>
+            <h2 className="text-2xl font-bold text-ink">Security &amp; privacy</h2>
             <ul className="space-y-3 text-sm text-ink-secondary">
               <li className="flex gap-3">
                 <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
@@ -240,10 +240,10 @@ export default function DocsPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
           <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-bold text-white">Listings &amp; directories</h2>
+            <h2 className="text-2xl font-bold text-ink">Listings &amp; directories</h2>
             <p className="text-ink-secondary text-sm leading-relaxed">
               {/* TODO(#166): once the MCP Registry and third-party directory listings
                   (Glama, PulseMCP, MCP Market, mcp.so, Claude/ChatGPT connector
@@ -256,13 +256,13 @@ export default function DocsPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-2xl font-bold text-white mb-6">Frequently asked</h2>
+          <h2 className="text-2xl font-bold text-ink mb-6">Frequently asked</h2>
           <dl className="space-y-6 max-w-3xl">
             {faqs.map((faq) => (
               <div key={faq.question}>
-                <dt className="text-white font-semibold text-sm">{faq.question}</dt>
+                <dt className="text-ink font-semibold text-sm">{faq.question}</dt>
                 <dd className="text-ink-secondary text-sm mt-1">{faq.answer}</dd>
               </div>
             ))}
@@ -270,9 +270,9 @@ export default function DocsPage() {
         </Container>
       </Section>
 
-      <Section className="border-t border-white/5">
+      <Section className="border-t border-border">
         <Container>
-          <h2 className="text-xl font-bold text-white mb-3">Next steps</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Next steps</h2>
           <ul className="space-y-2 text-sm">
             <li>
               <Link href="/ai-copilot" className="text-accent hover:underline">
