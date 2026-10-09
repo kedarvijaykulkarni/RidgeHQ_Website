@@ -255,3 +255,28 @@ Release PR #118 (`develop` → `main`, 49 commits, 38 PRs) merged as `5163214`; 
 - Check-in is now claimed in a blog post but on no other surface (platform/products/llms.txt). Run `ai-discoverability-sync` if it should be.
 - Published posts that are now stale or overclaim: `enhancing-waivers-for-center-operations` still frames conditional questions and check-in as future work. `ai-copilot-for-dive-center-scheduling-operations` claims the copilot "checks staff availability" and certification expiry.
 - Topic overlap: about 6 AI-copilot posts, 2 multi-tenancy, 2 role-based permissions, 2 order immutability, and 4 waiver posts. Near-duplicate posts are a likely reason Google leaves some at "Discovered/Crawled – currently not indexed". Consider consolidating with 308 redirects.
+
+## 2026-10-09 — Blog consolidation: 21 posts → 11, near-duplicates merged with 308 redirects
+
+**Why:** near-duplicate topics (6 AI-copilot, 4 waiver, and 2 each for multi-tenancy, RBAC, and order immutability) were a likely reason Google left several posts at "Discovered/Crawled – currently not indexed". Two published posts were also wrong: `enhancing-waivers-for-center-operations` presented shipped features as future work, and `ai-copilot-for-dive-center-scheduling-operations` claimed staff availability and certification-expiry checks.
+
+**Canonical choice:** for each topic, the surviving URL is one that a site search showed as already indexed. The merged-away URLs redirect permanently (308) through `src/lib/config/blog-redirects.ts`, wired into `next.config.ts`.
+- AI Copilot → `ai-copilot-for-dive-center-scheduling-operations`. Absorbed `ai-copilot-for-dive-center-operations`, `ai-copilot-operational-core-dive-management`, `ai-copilot-scheduling-operations-aqua-roster` (which still used the old "AquaRoster" name), and `native-ai-operational-intelligence-ridgehq`.
+- Waivers → `waiver-system-dive-center-operations`. Absorbed `enhancing-waivers-for-center-operations`, `integrated-waiver-system-dive-operations`, and `future-waiver-system-digital-compliance`.
+- Multi-tenancy → `database-level-multi-tenancy-for-dive-centers`, absorbing `database-level-multi-tenancy-data-security`.
+- RBAC → `role-based-permissions-dive-center-saas`, absorbing `role-based-permissions-dive-center-operations`.
+- Order immutability → `order-immutability-credit-note-on-change`, absorbing `order-immutability-credit-notes-divescenes`.
+
+**Pulled to verify claims:** `business-context.md` §2, `Modules/AI-Copilot.md`, `Bookings.md`, `Staff.md`, and `Operations/Production-Deployment.md`. All five canonicals were rewritten to supported claims only. Dropped as unsupported:
+- staff availability and time-off checks, certification-expiry checks, and instructor matching
+- AI-generated credit notes and AI billing adjustments
+- waivers blocking scheduling, POS, or gear
+- custom or user-defined roles, and a "Compliance Officer" role (RidgeHQ has 7 fixed roles)
+- "absolute", "physically separated", and "unshakeable" isolation
+- predictive staffing and stock levels
+- detailed credit-note reversal mechanics (the vault still marks credit-note commercial rules as needing product confirmation)
+- QR-linked signing, kept as roadmap only
+
+**Surfaces:** `llms.txt` Blog section regenerated (11 posts). New tests require that each redirect targets a live post, that removed slugs are absent from the sitemap and `llms.txt`, and that redirects are permanent. Sitemap: 68 URLs.
+
+**Asked of the owner:** check Search Console for clicks and impressions on the 10 redirected URLs. Redirects are in place either way, so none of them 404.

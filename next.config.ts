@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { BLOG_REDIRECTS } from "./src/lib/config/blog-redirects";
 
 // Baseline security headers applied to every response. A full
 // Content-Security-Policy is intentionally left out for now — it needs to be
@@ -33,6 +34,13 @@ const nextConfig: NextConfig = {
       { source: "/demo", destination: "/book-demo", permanent: true },
       { source: "/llm.txt", destination: "/llms.txt", permanent: true },
       { source: "/mcp", destination: "/docs", permanent: true },
+      // Blog consolidation (2026-10-09): near-duplicate posts merged into one
+      // canonical post per topic. See src/lib/config/blog-redirects.ts.
+      ...BLOG_REDIRECTS.map(([from, to]) => ({
+        source: `/blog/${from}`,
+        destination: `/blog/${to}`,
+        permanent: true,
+      })),
     ];
   },
   async headers() {

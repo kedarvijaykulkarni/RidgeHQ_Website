@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import sitemap from "./sitemap";
 import nextConfig from "../../next.config";
+import { BLOG_REDIRECTS } from "@/lib/config/blog-redirects";
 import { verticals } from "@/lib/config/verticals";
 import { products } from "@/lib/config/products";
 import { platformCapabilities } from "@/lib/config/platform";
@@ -144,5 +145,17 @@ describe("redirects", () => {
         { source: "/llm.txt", destination: "/llms.txt", permanent: true },
       ]),
     );
+  });
+
+  it("permanently redirects every merged blog post to a live canonical post", async () => {
+    const redirects = await nextConfig.redirects!();
+    const liveSlugs = new Set(visibleBlogPosts.map((p) => p.slug));
+    const urls = sitemap().map((entry) => entry.url);
+    for (const [from, to] of BLOG_REDIRECTS) {
+      expect(liveSlugs.has(from)).toBe(false);
+      expect(liveSlugs.has(to)).toBe(true);
+      expect(redirects).toContainEqual({ source: `/blog/${from}`, destination: `/blog/${to}`, permanent: true });
+      expect(urls).not.toContain(`${siteUrl}/blog/${from}`);
+    }
   });
 });
