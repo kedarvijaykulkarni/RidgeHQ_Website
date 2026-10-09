@@ -6,6 +6,8 @@ import { CTASection } from "@/components/marketing/CTASection";
 import { StructuredData } from "@/components/seo/StructuredData";
 import ReactMarkdown from 'react-markdown';
 import { pageSeo } from "@/lib/config/seo";
+import { siteUrl } from "@/lib/config/site";
+import { BlogCard } from "@/components/blog/BlogCard";
 
 export async function generateStaticParams() {
   return visibleBlogPosts.map((post) => ({
@@ -33,6 +35,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  // Same-pillar posts first, then the most recent others — gives every post
+  // crawlable internal links beyond the /blog index.
+  const relatedPosts = [
+    ...visibleBlogPosts.filter((p) => p.slug !== post.slug && p.pillar === post.pillar),
+    ...visibleBlogPosts.filter((p) => p.slug !== post.slug && p.pillar !== post.pillar),
+  ].slice(0, 3);
+
   return (
     <div className="flex flex-col w-full">
       <StructuredData
@@ -44,7 +53,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               "headline": post.title,
               "description": post.excerpt,
               "image": `https://www.ridgehq.app/opengraph-image`,
+              "url": `${siteUrl}/blog/${post.slug}`,
+              "mainEntityOfPage": `${siteUrl}/blog/${post.slug}`,
               "datePublished": post.publishedAt,
+              "dateModified": post.updatedAt ?? post.publishedAt,
               "author": {
                 "@type": "Person",
                 "name": post.author
@@ -86,7 +98,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </Container>
       </Section>
-      
+
+      {relatedPosts.length > 0 && (
+        <Section className="pt-0">
+          <Container>
+            <h2 className="text-2xl font-bold text-ink mb-6">Related reading</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedPosts.map((related) => (
+                <BlogCard key={related.slug} post={related} />
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
       <CTASection
         headline="See how this looks running on RidgeHQ"
         description="Explore the platform capability this post describes, or book a demo when you're ready to see your own operation."
