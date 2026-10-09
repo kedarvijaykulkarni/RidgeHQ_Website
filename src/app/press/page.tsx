@@ -7,6 +7,7 @@ import { FAQAccordion } from "@/components/marketing/FAQAccordion";
 import { faqPageJsonLd } from "@/lib/faqPageJsonLd";
 import { pageSeo } from "@/lib/config/seo";
 import { siteUrl } from "@/lib/config/site";
+import { visibleBlogPosts } from "@/lib/config/blog";
 
 export const metadata = {
   ...pageSeo("/press"),
@@ -170,6 +171,33 @@ export default function PressPage() {
                 </a>
               </div>
             </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-ink mb-4">Latest from RidgeHQ</h2>
+            <p className="text-ink-secondary leading-relaxed mb-4">
+              Recent product and operations write-ups from the{" "}
+              <Link href="/blog" className="link-inline">
+                RidgeHQ blog
+              </Link>
+              :
+            </p>
+            <ul className="space-y-3">
+              {visibleBlogPosts.slice(0, 5).map((post) => (
+                <li key={post.slug} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                  <span className="text-sm text-ink-tertiary sm:w-28 shrink-0">
+                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                  <Link href={`/blog/${post.slug}`} className="link-inline">
+                    {post.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>

@@ -67,6 +67,32 @@ Problem-first guides — organized by operational headache rather than industry 
 - [Instructor & Guide Scheduling](https://www.ridgehq.app/use-cases/instructor-scheduling)
 - [Equipment & Gear Coordination](https://www.ridgehq.app/use-cases/equipment-coordination)
 
+## Blog (RidgeHQ Academy)
+
+Articles on the business economics, operations, and technology behind running a connected activity business, newest first. Where a post and a /platform or /products page differ, the platform/product page is the current source:
+
+- [Core Intelligence: Building AI into Your Operations OS](https://www.ridgehq.app/blog/ai-core-intelligence-operational-os) (Technology, 2026-10-09)
+- [AI Copilot for Operations: Next-Generation Read and Scheduling Logic](https://www.ridgehq.app/blog/ai-copilot-for-dive-center-operations) (Technology, 2026-10-05)
+- [The Next Generation of Operational Waivers for Dive Centers](https://www.ridgehq.app/blog/future-waiver-system-digital-compliance) (Operations, 2026-10-04)
+- [Operationalizing Waivers: Seamless Compliance for Dive Centers](https://www.ridgehq.app/blog/integrated-waiver-system-dive-operations) (Operations, 2026-10-02)
+- [Implementing Role-Based Access for Operational Safety](https://www.ridgehq.app/blog/role-based-permissions-dive-center-operations) (Technology, 2026-10-01)
+- [Database-Level Isolation: Securing Your Dive Operations Data](https://www.ridgehq.app/blog/database-level-multi-tenancy-data-security) (Technology, 2026-09-20)
+- [Order Immutability: Ensuring Data Integrity in Dive Operations](https://www.ridgehq.app/blog/order-immutability-credit-note-on-change) (Technology, 2026-09-18)
+- [Operational Core: Unifying Dive Center Management Tools](https://www.ridgehq.app/blog/operational-core-dive-center-management) (Operations, 2026-09-16)
+- [Operational Guardrails: AI, Risk, and Data Integrity for Dive Centers](https://www.ridgehq.app/blog/ai-risk-confirmation-dive-center-operations) (Technology, 2026-09-15)
+- [Native AI: Operational Intelligence Built into Your Core System](https://www.ridgehq.app/blog/native-ai-operational-intelligence-ridgehq) (Technology, 2026-09-14)
+- [AI Copilot for Scheduling and Operational Efficiency at Dive Centers](https://www.ridgehq.app/blog/ai-copilot-for-dive-center-scheduling-operations) (Technology, 2026-09-13)
+- [Enhancing Waivers: Future Capabilities for Streamlined Center Operations](https://www.ridgehq.app/blog/enhancing-waivers-for-center-operations) (Operations, 2026-09-12)
+- [Instructor and Guide Scheduling at Scale](https://www.ridgehq.app/blog/instructor-and-guide-scheduling-at-scale) (Operations, 2026-09-12)
+- [The Real Cost of Manual Admin in Activity Businesses](https://www.ridgehq.app/blog/the-real-cost-of-manual-admin-in-activity-businesses) (Business Economics, 2026-09-12)
+- [Built-in Waiver Management for Dive Operations](https://www.ridgehq.app/blog/waiver-system-dive-center-operations) (Operations, 2026-09-11)
+- [Role-Based Permissions: Control Staff Actions in Your Dive Center SaaS](https://www.ridgehq.app/blog/role-based-permissions-dive-center-saas) (Technology, 2026-09-10)
+- [Ensuring Data Integrity: Multi-Tenancy at the Database Level](https://www.ridgehq.app/blog/database-level-multi-tenancy-for-dive-centers) (Technology, 2026-09-09)
+- [Achieving Data Integrity with Order Immutability and Credit Notes](https://www.ridgehq.app/blog/order-immutability-credit-notes-divescenes) (Technology, 2026-09-08)
+- [Pricing Structure Built for Operational Scale and Direct Bookings](https://www.ridgehq.app/blog/flat-pricing-0-commission-direct-bookings-dive-centers) (Business Economics, 2026-09-07)
+- [Integrating AI into the Operational Core of Dive Management](https://www.ridgehq.app/blog/ai-copilot-operational-core-dive-management) (Technology, 2026-09-05)
+- [AI Copilot: Revolutionizing Dive Center Scheduling and Admin](https://www.ridgehq.app/blog/ai-copilot-scheduling-operations-aqua-roster) (Technology, 2026-09-04)
+
 ## Machine-readable summary
 
 - [AI Overview](https://www.ridgehq.app/ai): one page summarizing product, pricing mode, industries, capabilities, integrations, security, and FAQs — server-rendered, kept in sync with the config that drives the marketing pages.

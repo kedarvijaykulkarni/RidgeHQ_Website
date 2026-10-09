@@ -238,3 +238,20 @@ Release PR #118 (`develop` → `main`, 49 commits, 38 PRs) merged as `5163214`; 
 **Diff against the pre-release production sitemap:** no URLs added or removed (no redirects needed), and every URL has a new `lastmod` (2026-10-05 or 2026-10-06).
 
 **Asked of the owner:** resubmit `sitemap.xml` in Google Search Console and request indexing, materially changed pages first: `/`, `/security`, `/ai`, `/ai-copilot`, `/integrations`, `/platform` and its 6 capability pages, `/solutions` and its 12 verticals, `/products` and its 4 products, `/use-cases` (+2), `/compare` (+2), `/contact`, `/book-demo`, `/design-partners`, and `/tools/no-show-cost-calculator`. The remaining URLs (blog, tools, legal, about, press, docs, pricing) changed visually only; the sitemap resubmission covers them.
+
+## 2026-10-09 — Publish 3 blog posts; Search Console indexing fixes
+
+**Pulled:** `business-context.md` §2, `goals.md` §7, `development-reference/Modules/Bookings.md` (waiver, conditional-question, check-in, guest self-check-in rules), `Modules/AI-Copilot.md`.
+
+**Published** (added `pillar`, `draft: false`, stripped internal review comments):
+- `ai-copilot-for-dive-center-operations`. Removed unsupported claims: cross-referencing staff availability, time off, and certifications; the copilot adjusting roster, gear, and billing in one workflow; the copilot generating credit notes and updating the ledger; "learns your operational patterns". Reworded to the documented tools: availability, bookings, gear, morning brief, create/reschedule session, instructor assignment, participant transfer, weather reschedule suggestion, trip waiver compliance, and operational insights.
+- `ai-core-intelligence-operational-os` (kayak). Removed guide certification-level checks, partner-commission and minimum-group-size scheduling, "voiding a day's inventory", and automatic gear and payment adjustments. Added the two missing target keywords.
+- `future-waiver-system-digital-compliance`. The draft framed conditional questions and check-in as future work. Both have shipped: conditional questions in #52, staff check-in in #51, and guest QR self-check-in in #813/#814, per `Bookings.md`. These are now stated in present tense. QR-linked *signing* stays roadmap; it is not built.
+
+**SEO:** blog posts now show a "Related reading" block (3 posts, same pillar first). Article JSON-LD gains `url`, `mainEntityOfPage`, and `dateModified`. `/press` gains a "Latest from RidgeHQ" list of the 5 newest posts. `llms.txt` gains a "Blog (RidgeHQ Academy)" section listing every published post, guarded by `src/app/llms.test.ts`. Sitemap: 78 URLs (+3); `/blog` and `/press` lastmod set to 2026-10-09.
+
+**Flagged for the owner (not applied):**
+- **Vault contradiction:** `goals.md` §7, `pricing.md`, and `business-context.md` §2 still say participant check-in is NOT built, while `Modules/Bookings.md` documents it as implemented (#51, #813, #814). The website follows the module doc. Pushed to vault `log.md`.
+- Check-in is now claimed in a blog post but on no other surface (platform/products/llms.txt). Run `ai-discoverability-sync` if it should be.
+- Published posts that are now stale or overclaim: `enhancing-waivers-for-center-operations` still frames conditional questions and check-in as future work. `ai-copilot-for-dive-center-scheduling-operations` claims the copilot "checks staff availability" and certification expiry.
+- Topic overlap: about 6 AI-copilot posts, 2 multi-tenancy, 2 role-based permissions, 2 order immutability, and 4 waiver posts. Near-duplicate posts are a likely reason Google leaves some at "Discovered/Crawled – currently not indexed". Consider consolidating with 308 redirects.
