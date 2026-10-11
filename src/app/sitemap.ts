@@ -7,7 +7,18 @@ import { useCases } from '@/lib/config/use-cases'
 import { comparisons } from '@/lib/config/comparisons'
 import { caseStudies } from '@/lib/config/case-studies'
 import { siteUrl } from '@/lib/config/site'
-import { homeVideo, youtubeEmbedUrl, youtubeThumbnailUrl } from '@/lib/config/videos'
+import { homeVideo, youtubeEmbedUrl, youtubeThumbnailUrl, type YouTubeVideo } from '@/lib/config/videos'
+
+/** Video sitemap entry — mirrors the page's player and VideoObject JSON-LD. */
+const videoEntry = (video: YouTubeVideo) => ({
+  title: video.title,
+  description: video.description,
+  thumbnail_loc: youtubeThumbnailUrl(video),
+  player_loc: youtubeEmbedUrl(video),
+  duration: video.durationSeconds,
+  publication_date: video.uploadDate,
+  family_friendly: 'yes' as const,
+})
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteUrl
@@ -41,12 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ['/integrations', '2026-10-06'],
       ['/pricing', '2026-10-06'],
       ['/solutions', '2026-10-06'],
-      ['/blog', '2026-10-09'],
+      ['/blog', '2026-10-11'],
       ['/contact', '2026-10-06'],
       ['/book-demo', '2026-10-06'],
       ['/design-partners', '2026-10-06'],
       ['/about', '2026-10-06'],
-      ['/press', '2026-10-09'],
+      ['/press', '2026-10-11'],
       ['/security', '2026-10-06'],
       ['/privacy', '2026-10-06'],
       ['/terms', '2026-10-06'],
@@ -60,17 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // its VideoObject JSON-LD, so Search Console sees one consistent video.
     ...(route === ''
       ? {
-          videos: [
-            {
-              title: homeVideo.title,
-              description: homeVideo.description,
-              thumbnail_loc: youtubeThumbnailUrl(homeVideo),
-              player_loc: youtubeEmbedUrl(homeVideo),
-              duration: homeVideo.durationSeconds,
-              publication_date: homeVideo.uploadDate,
-              family_friendly: 'yes' as const,
-            },
-          ],
+          videos: [videoEntry(homeVideo)],
         }
       : {}),
   }))
@@ -101,6 +102,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: p.updatedAt ?? p.publishedAt,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
+    // Same record as the post's player and VideoObject JSON-LD.
+    ...(p.video
+      ? {
+          videos: [videoEntry(p.video)],
+        }
+      : {}),
   }))
 
   const useCaseRoutes = useCases.map((u) => ({

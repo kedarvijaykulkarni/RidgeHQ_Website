@@ -33,6 +33,52 @@ describe("loadBlogPosts pillar validation", () => {
   });
 });
 
+describe("loadBlogPosts video frontmatter", () => {
+  function loadWithVideo(uploadDateLine: string) {
+    const raw = [
+      "---",
+      'title: "Test Post"',
+      'excerpt: "A test post."',
+      'publishedAt: "2026-01-01"',
+      'pillar: "Operations"',
+      "video:",
+      '  youtubeId: "abc123"',
+      '  title: "Video title"',
+      '  description: "Video description."',
+      `  uploadDate: ${uploadDateLine}`,
+      "  durationSeconds: 49",
+      "---",
+      "Body content.",
+    ].join("\n");
+    jest.resetModules();
+    jest.doMock("node:fs", () => ({
+      readdirSync: () => ["test-post.md"],
+      readFileSync: () => raw,
+    }));
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require("./blog");
+  }
+
+  afterEach(() => {
+    jest.dontMock("node:fs");
+  });
+
+  it("loads a post's video with YouTube's exact upload timestamp", () => {
+    const { blogPosts } = loadWithVideo('"2026-10-10T22:46:31-07:00"');
+    expect(blogPosts[0].video).toEqual({
+      youtubeId: "abc123",
+      title: "Video title",
+      description: "Video description.",
+      uploadDate: "2026-10-10T22:46:31-07:00",
+      durationSeconds: 49,
+    });
+  });
+
+  it("throws for an unquoted uploadDate, which YAML would turn into a Date", () => {
+    expect(() => loadWithVideo("2026-10-10T22:46:31-07:00")).toThrow(/video\.uploadDate/);
+  });
+});
+
 describe("published blog post dates", () => {
   // An unquoted YAML date parses as a Date object and stringifies as
   // "Tue Oct 06 ...", which then leaks into the sitemap's <lastmod>.

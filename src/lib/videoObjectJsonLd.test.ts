@@ -2,6 +2,7 @@ import { videoObjectJsonLd } from "./videoObjectJsonLd";
 import { homeVideo, isoDuration } from "./config/videos";
 import sitemap from "@/app/sitemap";
 import { siteUrl } from "./config/site";
+import { visibleBlogPosts } from "./config/blog";
 
 describe("isoDuration", () => {
   it.each([
@@ -37,10 +38,14 @@ describe("videoObjectJsonLd", () => {
 describe("video sitemap entry", () => {
   const entries = sitemap();
 
-  it("attaches the home video to the home page only, matching its JSON-LD", () => {
-    const withVideos = entries.filter((e) => e.videos?.length);
-    expect(withVideos.map((e) => e.url)).toEqual([siteUrl]);
-    const [video] = withVideos[0].videos!;
+  it("attaches videos only to the home page and to blog posts that embed one", () => {
+    const withVideos = entries.filter((e) => e.videos?.length).map((e) => e.url);
+    const expected = [siteUrl, ...visibleBlogPosts.filter((p) => p.video).map((p) => `${siteUrl}/blog/${p.slug}`)];
+    expect(withVideos.sort()).toEqual(expected.sort());
+  });
+
+  it("gives the home page its video, matching its JSON-LD", () => {
+    const [video] = entries.find((e) => e.url === siteUrl)!.videos!;
     const ld = videoObjectJsonLd(homeVideo);
     expect(video.title).toBe(ld.name);
     expect(video.description).toBe(ld.description);

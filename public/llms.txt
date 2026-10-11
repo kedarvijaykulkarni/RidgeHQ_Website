@@ -71,6 +71,8 @@ Problem-first guides — organized by operational headache rather than industry 
 
 Articles on the business economics, operations, and technology behind running a connected activity business, newest first. Where a post and a /platform or /products page differ, the platform/product page is the current source:
 
+- [Kitesurf School Booking System: Waivers, Kit, and Check-In in One Place](https://www.ridgehq.app/blog/kitesurf-school-waivers-gear-check-in) (Operations, 2026-10-11)
+- [Surf School Waivers and Check-In: From Booking to the Beach](https://www.ridgehq.app/blog/surf-school-waivers-and-check-in) (Operations, 2026-10-11)
 - [Core Intelligence: Building AI into Your Operations OS](https://www.ridgehq.app/blog/ai-core-intelligence-operational-os) (Technology, 2026-10-09)
 - [Order Immutability and Credit Notes: Keeping Dive Center Records Accurate](https://www.ridgehq.app/blog/order-immutability-credit-note-on-change) (Technology, 2026-09-18)
 - [Operational Core: Unifying Dive Center Management Tools](https://www.ridgehq.app/blog/operational-core-dive-center-management) (Operations, 2026-09-16)

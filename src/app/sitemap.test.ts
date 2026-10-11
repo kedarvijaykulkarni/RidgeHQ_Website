@@ -77,6 +77,20 @@ describe("sitemap", () => {
     }
   });
 
+  it("carries a video entry for every blog post with an embedded video", () => {
+    const entries = sitemap();
+    const withVideo = visibleBlogPosts.filter((p) => p.video);
+    expect(withVideo.length).toBeGreaterThan(0);
+    for (const post of withVideo) {
+      const entry = entries.find((e) => e.url === `${siteUrl}/blog/${post.slug}`);
+      expect(entry?.videos?.[0]).toMatchObject({
+        title: post.video!.title,
+        player_loc: `https://www.youtube-nocookie.com/embed/${post.video!.youtubeId}`,
+        publication_date: post.video!.uploadDate,
+      });
+    }
+  });
+
   it("includes one entry per use case", () => {
     for (const u of useCases) {
       expect(urls).toContain(`${siteUrl}/use-cases/${u.slug}`);

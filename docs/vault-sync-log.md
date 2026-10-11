@@ -280,3 +280,19 @@ Release PR #118 (`develop` → `main`, 49 commits, 38 PRs) merged as `5163214`; 
 **Surfaces:** `llms.txt` Blog section regenerated (11 posts). New tests require that each redirect targets a live post, that removed slugs are absent from the sitemap and `llms.txt`, and that redirects are permanent. Sitemap: 68 URLs.
 
 **Asked of the owner:** check Search Console for clicks and impressions on the 10 redirected URLs. Redirects are in place either way, so none of them 404.
+
+## 2026-10-11 — Publish surf + kitesurf waiver/check-in posts; YouTube video embeds on blog posts
+
+**Pulled:** `business-context.md` §2 (waiver ✅ row, "QR-linked signing" ❌ row re-verified 2026-10-09), plus the vault-vetted copy already on `verticals.ts` (`surf-schools`, `kitesurf-schools`) and the canonical `waiver-system-dive-center-operations` post.
+
+**Published** (both drafts came from the same vault topic, `waiver-system-lacks-qr-linked-signing`, which #127 had just consolidated). To avoid re-creating that cannibalization, each was rewritten to its vertical and renamed before ever going live, so no redirects are needed:
+- `qr-linked-waivers-for-surf-schools` → `surf-school-waivers-and-check-in`
+- `waiver-system-qr-linked-signing-roadmap` → `kitesurf-school-waivers-gear-check-in`
+
+QR-linked signing gets one roadmap section per post, linking to the canonical waiver post. Dropped as unsupported or wrong: "check-in flows shipping soon" (check-in is live: #51, #813/#814); "gear rental tracking is upcoming" (it is live); "waiver gates session activation"; waiver linked to "the staff member who processes the sign-in"; "AI adjusting billing rates"; "indisputable/impenetrable audit trail".
+
+**Video:** blog frontmatter gains an optional `video:` block (same `YouTubeVideo` record as `videos.ts`), rendering the player, VideoObject JSON-LD, and a sitemap `<video:video>` entry. Embedded on the surf post (iewqB6rm5zw), the kitesurf post (gIH568hKNkc), and `ai-copilot-for-dive-center-scheduling-operations` (lYLXlXNhKzY; `updatedAt` → 2026-10-11).
+
+**Surfaces:** `llms.txt` Blog section +2. Sitemap: 70 URLs (+2), 4 video entries; `/blog` and `/press` lastmod 2026-10-11. No product-truth change, so the other surfaces are untouched.
+
+**Flagged for the owner:** both waiver videos are titled "Waiver system lacks: QR-linked signing" on YouTube, which is the vault's internal gap label. The title is what appears in Google video results. Consider renaming them on YouTube, then update the `video.title` frontmatter to match.
