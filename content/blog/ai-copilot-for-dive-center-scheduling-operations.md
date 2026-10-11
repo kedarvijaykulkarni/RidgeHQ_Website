@@ -5,9 +5,15 @@ slug: "ai-copilot-for-dive-center-scheduling-operations"
 canonical_url: "https://www.ridgehq.app/blog/ai-copilot-for-dive-center-scheduling-operations"
 tags: ["dive center operations", "scheduling software", "ai copilot", "dive logistics", "operational management"]
 date: "2026-09-13"
-updatedAt: "2026-10-09"
+updatedAt: "2026-10-11"
 pillar: "Technology"
 draft: false
+video:
+  youtubeId: "lYLXlXNhKzY"
+  title: "AI copilot for read and scheduling operations"
+  description: "Stop juggling spreadsheets. AI copilot manages your dive schedule, automatically. Our new AI copilot function directly manages the complexity of daily dive operations, automating routine reads and scheduling tasks. This tool provides a reliable, central system for managing capacity and bookings."
+  uploadDate: "2026-10-06T19:42:59-07:00"
+  durationSeconds: 67
 ---
 
 # AI Copilot for Dive Center Scheduling and Operations

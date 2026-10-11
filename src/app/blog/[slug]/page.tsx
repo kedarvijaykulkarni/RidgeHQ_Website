@@ -8,6 +8,8 @@ import ReactMarkdown from 'react-markdown';
 import { pageSeo } from "@/lib/config/seo";
 import { siteUrl } from "@/lib/config/site";
 import { BlogCard } from "@/components/blog/BlogCard";
+import { YouTubeEmbed } from "@/components/marketing/YouTubeEmbed";
+import { videoObjectJsonLd } from "@/lib/videoObjectJsonLd";
 
 export async function generateStaticParams() {
   return visibleBlogPosts.map((post) => ({
@@ -68,6 +70,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           ]
         }}
       />
+      {post.video && <StructuredData data={videoObjectJsonLd(post.video)} />}
       <Section className="pb-8 pt-24 border-b border-border">
         <Container className="max-w-3xl">
           <PageBreadcrumbs trail={[{ label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
@@ -93,6 +96,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       
       <Section className="py-12">
         <Container className="max-w-3xl">
+          {post.video && (
+            <div className="mb-10">
+              <YouTubeEmbed video={post.video} />
+            </div>
+          )}
           <div className="prose prose-lg max-w-none prose-headings:text-[var(--ink)] prose-headings:break-words max-sm:prose-h1:text-3xl prose-a:text-[var(--accent)] prose-a:hover:text-[var(--accent-2)] prose-p:text-[var(--ink-secondary)] prose-li:text-[var(--ink-secondary)] prose-strong:text-[var(--ink)]">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>

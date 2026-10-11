@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import type { YouTubeVideo } from "./videos";
 
 export type BlogPillar = "Business Economics" | "Operations" | "Technology";
 
@@ -29,6 +30,13 @@ export interface BlogPost {
    * previewed before the claims are verified and the flag is removed.
    */
   draft?: boolean;
+  /**
+   * Optional YouTube video embedded above the post body. One record feeds the
+   * player, the VideoObject JSON-LD, and the sitemap's video entry. `title`,
+   * `uploadDate` and `durationSeconds` must match YouTube exactly — Google
+   * cross-checks structured data against the video itself.
+   */
+  video?: YouTubeVideo;
 }
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
@@ -72,6 +80,15 @@ function loadBlogPosts(): BlogPost[] {
     if (!excerpt) missing.push("excerpt (or description)");
     if (!publishedAt) missing.push("publishedAt (or date)");
     if (!data.pillar) missing.push("pillar");
+    if (data.video) {
+      for (const field of ["youtubeId", "title", "description", "uploadDate", "durationSeconds"]) {
+        if (!data.video[field]) missing.push(`video.${field}`);
+      }
+      // Unquoted, YAML parses it as a Date and drops YouTube's own UTC offset.
+      if (data.video.uploadDate && typeof data.video.uploadDate !== "string") {
+        missing.push("video.uploadDate (as a quoted ISO 8601 string)");
+      }
+    }
     if (missing.length > 0) {
       throw new Error(
         `Blog post content/blog/${file} is missing required frontmatter: ${missing.join(", ")}`,
@@ -94,6 +111,15 @@ function loadBlogPosts(): BlogPost[] {
       pillar: data.pillar as BlogPillar,
       readingTime: computeReadingTime(content),
       draft: data.draft ?? false,
+      video: data.video
+        ? {
+            youtubeId: String(data.video.youtubeId),
+            title: data.video.title,
+            description: data.video.description,
+            uploadDate: data.video.uploadDate,
+            durationSeconds: Number(data.video.durationSeconds),
+          }
+        : undefined,
     };
   });
 
