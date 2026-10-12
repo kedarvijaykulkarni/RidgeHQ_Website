@@ -49,11 +49,11 @@ export const comparisons: Comparison[] = [
       "Booking platforms in this category range from a $0/month, commission-only model to a $49–$295/month flat fee, and a few charge 0% on direct bookings too — pricing alone isn't a reliable differentiator. What's more consistently different is how deep automation goes: RidgeHQ's AI copilot and connected scheduling operate on the same live data your bookings, staff, and gear already use, rather than a chatbot layered on top of a separate booking tool.",
     metaDescription:
       "RidgeHQ vs. commission-based booking platforms: a flat subscription with 0% commission on direct bookings, and an AI copilot built into scheduling.",
-    lastUpdated: "2026-10-05",
+    lastUpdated: "2026-10-12",
     categoryStrengths:
       "Commission-based platforms are genuinely easier to start with — no upfront subscription cost in many cases, and often broader out-of-the-box marketplace/OTA distribution than a smaller, newer platform can offer. For a low-volume or seasonal operation, a low-fixed-cost model can be the cheaper option in absolute terms.",
     ridgehqLimitations:
-      "RidgeHQ launches with fewer built-in OTA/marketplace connectors than an established platform, and Stripe is currently the only supported payment gateway. If broad third-party marketplace distribution is your primary channel today, that gap is real and worth weighing.",
+      "RidgeHQ launches with fewer built-in OTA/marketplace connectors than an established platform. Stripe is the primary payment gateway; PayPal and Redsys exist as adapters alongside it, but aren't yet ready to rely on for checkout. If broad third-party marketplace distribution is your primary channel today, that gap is real and worth weighing.",
     rows: [
       {
         dimension: "Pricing model",
