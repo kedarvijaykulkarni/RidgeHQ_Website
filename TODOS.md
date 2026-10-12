@@ -128,6 +128,20 @@ These have no open `depends on #N` and aren't gated by a pending owner decision.
 - [x] [#69](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/69) — Post-deploy Search Console resubmission — release PR #118 merged to `main` 2026-10-06 (`5163214`), Vercel production deploy succeeded. Production `sitemap.xml` has 75 URLs, identical to the verified `develop` build; all 75 return 200; `robots.txt` points at the sitemap. Compared with the pre-release production sitemap, none were added or removed, and every URL has a new `lastmod`. The resubmission list was given to the owner (see `docs/vault-sync-log.md` 2026-10-06 post-deploy entry); the Search Console submission itself is the owner's step.
 - [x] [#123](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/123) — CI on PRs: release PR #118 shipped with no checks (`vercel.json` limited Vercel to `main`; no GitHub Actions). Added `.github/workflows/ci.yml` (typecheck, lint, jest, `next build` on PRs into and pushes to `develop`/`main`) and enabled Vercel builds for `develop`, so a `develop` → `main` release PR gets a Vercel preview check. **Owner step:** make the CI check required on `main` in Settings → Branches.
 
+## AI/SEO discoverability audit follow-ups (#132, separate from the #70 revamp)
+
+Tracking issues opened 2026-10-12 from a full repo + Brain-vault AI-search/GEO/AEO/positioning
+audit (see [EPIC #132](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/132)). This
+is a short, independent follow-up list, not part of the #70 revamp — the audit's headline finding
+was that the site's vault-reconciliation process (`docs/vault-sync-log.md`, the
+`ai-discoverability-sync` skill, `claims.test.ts`) is already current; these are the few confirmed
+still-open items.
+
+- [ ] [#130](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/130) — `comparisons.ts` understates payment-gateway support (says Stripe-only, ignores partial PayPal/Redsys). Safe, no decision needed — pick up first.
+- [ ] [#131](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/131) — question: should live check-in (staff + guest QR self-check-in) be surfaced on `/platform`/`/products`, or stay blog-only. Needs a quick owner call before any copy change.
+- [ ] [#129](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/129) — YouTube waiver-video titles leak the internal gap-tracking label "Waiver system lacks: QR-linked signing" into public search/JSON-LD/sitemap. Blocked on Kedar renaming both videos in YouTube Studio first; the frontmatter edit follows once new titles are confirmed.
+- See also [#53](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/53) below (pricing) — re-surfaced by this audit, already tracked under "Blocked by an owner decision", not duplicated.
+
 ## Blocked by another open issue
 
 Kept here so the next pass knows what frees up as items above land. Re-check this list after each
@@ -139,7 +153,7 @@ merge — an item may become unblocked.
 
 ## Blocked by an owner decision (do not start without Kedar's sign-off)
 
-- [#53](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/53) [EPIC] Pricing page truth + transparency rebuild — the Brain vault (`wiki/log.md`, 2026-09-05) flags the real Starter/Grow/Scale ladder as **pending the website owner's confirmation**; it hasn't been approved to publish yet.
+- [#53](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/53) [EPIC] Pricing page truth + transparency rebuild — the Brain vault (`wiki/log.md`, 2026-09-05) flags the real Starter/Grow/Scale ladder as **pending the website owner's confirmation**; it hasn't been approved to publish yet. Independently re-confirmed still open by the 2026-10-12 audit ([EPIC #132](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/132)).
 - [#54](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/54) Build Starter/Grow/Scale pricing table — same pending-confirmation gate as #53.
 - [#55](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/55) Wire `pricingMode` 'public' branch to the real ladder — depends on #54, same gate.
 - [#56](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/56) Sync pricing update across the 7 AI-discoverability surfaces — depends on #54/#55, same gate.
