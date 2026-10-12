@@ -296,3 +296,11 @@ QR-linked signing gets one roadmap section per post, linking to the canonical wa
 **Surfaces:** `llms.txt` Blog section +2. Sitemap: 70 URLs (+2), 4 video entries; `/blog` and `/press` lastmod 2026-10-11. No product-truth change, so the other surfaces are untouched.
 
 **Flagged for the owner:** both waiver videos are titled "Waiver system lacks: QR-linked signing" on YouTube, which is the vault's internal gap label. The title is what appears in Google video results. Consider renaming them on YouTube, then update the `video.title` frontmatter to match.
+
+## 2026-10-12 — Payment-gateway wording correction (push)
+
+**Fixed (issue #130, from the 2026-10-12 AI/SEO discoverability audit):** `comparisons.ts`'s `commission-based-booking-platforms` page said "Stripe is currently the only supported payment gateway," which understated what's built — `Architecture/Integration-Architecture.md` and `integrations.ts` both already document PayPal/Redsys as partial gateway adapters ("exist alongside Stripe; talk to us before relying on them for your checkout"). Corrected to state Stripe as primary with PayPal/Redsys as not-yet-reliable adapters, matching `integrations.ts`'s existing wording. No overclaim either direction. `lastUpdated` bumped to 2026-10-12 (sitemap `lastmod` for `/compare/commission-based-booking-platforms`).
+
+**No other surface affected** — this line existed only on the one comparison page; `product-knowledge.ts`, `llms.txt`, and `/ai` don't list per-gateway support, so no further 7-surface sync was needed.
+
+**No vault change needed** — the vault's own `Integration-Architecture.md` "Partial" status for PayPal/Redsys was the source of this fix and is already accurate.
