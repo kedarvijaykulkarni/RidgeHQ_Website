@@ -83,7 +83,7 @@ Follow the Tier-A/Tier-B reading rules in `01-SOURCE-OF-TRUTH.md`. Do not load t
 
 # Source-of-truth rules
 
-1. Explicit current website decisions in this pack override older AquaRosters branding/site notes.
+1. Accepted decisions and current notes in the live Brain override everything in this prompt. Website decisions here (a 2026-08-11 snapshot) only override older AquaRosters branding/site notes.
 2. Newer dated business/launch files beat older raw plans.
 3. Specific implementation/module evidence beats broad marketing/business summaries for present-tense capability claims.
 4. Historical marketing documents are inspiration, not implementation proof.

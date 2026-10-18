@@ -33,7 +33,7 @@ In the local project, the expected Brain root is:
 
 (Moved 2026-09-04 from the earlier `D:\work\Bloowatch\aquarosters\Brain\AquaRosters` location — same vault, same reading order below, new path only.)
 
-If the local vault has been intentionally updated after this snapshot, prefer the newer dated implementation evidence while preserving the explicit website decisions above.
+The live vault has been updated since this snapshot. Use its current accepted decisions and dated implementation evidence. Where a website task fact above conflicts with them, the Brain wins; record the conflict in the vault's `wiki/log.md`.
 
 ## Reading order
 
