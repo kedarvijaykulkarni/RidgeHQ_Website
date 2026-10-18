@@ -4,6 +4,8 @@ This pack is the implementation specification and execution workflow for the **R
 
 It was revised against the founder-supplied `Brain(1).zip` on **2026-08-11** and incorporates the current controlled-pilot business decision plus a **single Zoho Forms → Zoho CRM lead architecture**.
 
+> **Status (2026-10-18):** historical prompt pack, written against a 2026-08-11 Brain snapshot. It does not override accepted Brain decisions. Current authority follows the RidgeHQ operating contract (`RidgeHQAPP/Brain/RidgeHQAPP/wiki/ai-operations/operating-contract.md` §2): business policy, brand and pricing come from accepted owner decisions and current Brain notes; implemented behavior comes from source and tests. Where this pack conflicts with the Brain, the Brain wins; record the conflict in the vault's `wiki/log.md`. Reconciling the facts in this pack is package BRAIN-02 of the RidgeHQ AI operating plan (`RidgeHQAPP/Brain/RidgeHQAPP/wiki/ai-operations-plan.md`).
+
 ## Recommended use
 
 ### Full implementation

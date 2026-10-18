@@ -33,7 +33,7 @@ The website must:
 - Public final pricing: **not yet validated**
 - Direct booking principle: **0% RidgeHQ platform commission on direct bookings** while current
 
-The latest Brain snapshot supplied for this prompt revision is `Brain(1).zip`, dated 2026-08-11 in this workstream.
+The Brain snapshot supplied for this prompt revision was `Brain(1).zip`, dated 2026-08-11. That snapshot is historical: the live Brain at `D:\work\RidgeHQAPP\Brain\RidgeHQAPP` and its accepted decisions take precedence (see `01-SOURCE-OF-TRUTH.md`).
 
 ## 12 master-brand verticals
 
