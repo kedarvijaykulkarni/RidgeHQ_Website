@@ -88,6 +88,7 @@ Follow the Tier-A/Tier-B reading rules in `01-SOURCE-OF-TRUTH.md`. Do not load t
 3. Specific implementation/module evidence beats broad marketing/business summaries for present-tense capability claims.
 4. Historical marketing documents are inspiration, not implementation proof.
 5. Never fabricate evidence.
+6. Rules 2-5 rank documents inside the live Brain. None of them lets this pack, or a newer or more specific file, outrank an accepted Brain decision.
 
 Important current conflicts:
 
