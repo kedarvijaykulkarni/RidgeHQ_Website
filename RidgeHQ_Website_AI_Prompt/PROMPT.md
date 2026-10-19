@@ -33,7 +33,7 @@ The website must:
 - Public final pricing: **not yet validated**
 - Direct booking principle: **0% RidgeHQ platform commission on direct bookings** while current
 
-The latest Brain snapshot supplied for this prompt revision is `Brain(1).zip`, dated 2026-08-11 in this workstream.
+The Brain snapshot supplied for this prompt revision was `Brain(1).zip`, dated 2026-08-11. That snapshot is historical: the live Brain at `D:\work\RidgeHQAPP\Brain\RidgeHQAPP` and its accepted decisions take precedence (see `01-SOURCE-OF-TRUTH.md`).
 
 ## 12 master-brand verticals
 
@@ -83,11 +83,12 @@ Follow the Tier-A/Tier-B reading rules in `01-SOURCE-OF-TRUTH.md`. Do not load t
 
 # Source-of-truth rules
 
-1. Explicit current website decisions in this pack override older AquaRosters branding/site notes.
+1. Accepted decisions and current notes in the live Brain override everything in this pack. Website decisions in this pack (a 2026-08-11 snapshot) only override older AquaRosters branding/site notes within the pack.
 2. Newer dated business/launch files beat older raw plans.
 3. Specific implementation/module evidence beats broad marketing/business summaries for present-tense capability claims.
 4. Historical marketing documents are inspiration, not implementation proof.
 5. Never fabricate evidence.
+6. Rules 2-5 rank documents inside the live Brain. None of them lets this pack, or a newer or more specific file, outrank an accepted Brain decision.
 
 Important current conflicts:
 

@@ -142,6 +142,12 @@ still-open items.
 - [ ] [#129](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/129) — YouTube waiver-video titles leak the internal gap-tracking label "Waiver system lacks: QR-linked signing" into public search/JSON-LD/sitemap. Blocked on Kedar renaming both videos in YouTube Studio first; the frontmatter edit follows once new titles are confirmed.
 - See also [#53](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/53) below (pricing) — re-surfaced by this audit, already tracked under "Blocked by an owner decision", not duplicated.
 
+## AI operating plan (shared rules, separate from the #70 revamp)
+
+Packages from the RidgeHQ AI operating plan (`RidgeHQAPP/Brain/RidgeHQAPP/wiki/ai-operations-plan.md`). The shared rules are generated from the Brain; do not hand-edit the managed block in `AGENTS.md` or the generated `ridgehq-next-issue` skill. Regenerate or check with `<RidgeHQAPP>/apps/api/.venv/Scripts/python <RidgeHQAPP>/scripts/ai_ops/sync_adapters.py --repo . [--check]`.
+
+- [ ] [#135](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/issues/135) — WEB-01: shared operating rules in `AGENTS.md` (outside the Next.js block; `CLAUDE.md` gets them through `@AGENTS.md`), the generated `ridgehq-next-issue` skill, and the source pack marked as a 2026-08-11 snapshot that defers to accepted Brain decisions. No business facts changed. Implemented; awaiting owner review in [PR #136](https://github.com/kedarvijaykulkarni/RidgeHQ_Website/pull/136) (branch `codex/135-shared-operating-rules`, base `main`). Base verified: `develop` no longer exists on the remote, so the "Branching model" section above is stale. Companion app PR [kedarvijaykulkarni/RidgeHQAPP#1058](https://github.com/kedarvijaykulkarni/RidgeHQAPP/pull/1058): the generator skips a `CLAUDE.md` that imports `AGENTS.md`.
+
 ## Blocked by another open issue
 
 Kept here so the next pass knows what frees up as items above land. Re-check this list after each

@@ -126,9 +126,7 @@ The homepage should make four things clear quickly:
 
 ## Product proof
 
-Use real screenshots from:
-
-`Brain/RidgeHQAPP/wiki/development-reference/Docs/marketing/screenshots/`
+Use real product screenshots. The former Brain folder `Brain/RidgeHQAPP/wiki/development-reference/Docs/marketing/screenshots/` was removed on 2026-08-21 and has no live replacement; capture current screens from the running app instead.
 
 Prefer crops and frames that focus on functionality and avoid prominent stale AquaRosters branding.
 

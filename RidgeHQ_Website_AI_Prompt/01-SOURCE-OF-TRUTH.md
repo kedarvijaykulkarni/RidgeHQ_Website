@@ -1,12 +1,14 @@
 # 01 — Source of Truth and Conflict Resolution
 
+> **Status (2026-10-18):** historical prompt pack, written against a 2026-08-11 Brain snapshot. It does not override accepted Brain decisions. Current authority follows the RidgeHQ operating contract (`RidgeHQAPP/Brain/RidgeHQAPP/wiki/ai-operations/operating-contract.md` §2): business policy, brand and pricing come from accepted owner decisions and current Brain notes; implemented behavior comes from source and tests. Where this pack conflicts with the Brain, the Brain wins; record the conflict in the vault's `wiki/log.md`. Reconciling the facts in this pack is package BRAIN-02 of the RidgeHQ AI operating plan (`RidgeHQAPP/Brain/RidgeHQAPP/wiki/ai-operations-plan.md`).
+
 ## Purpose
 
 The RidgeHQ marketing website is being built from a fast-moving AquaRosters product vault. This file prevents an AI agent from treating every historical note as equally current.
 
-## Current task facts — highest priority
+## Website task facts (2026-08-11 snapshot)
 
-These are explicit decisions for this website task and override older branding/site notes:
+These were the website-task decisions as of 2026-08-11. They take precedence over older branding/site notes in this pack only. Check each one against current accepted Brain decisions before relying on it:
 
 - Public website brand: **RidgeHQ**
 - Public domain: **ridgehq.app**
@@ -31,7 +33,7 @@ In the local project, the expected Brain root is:
 
 (Moved 2026-09-04 from the earlier `D:\work\Bloowatch\aquarosters\Brain\AquaRosters` location — same vault, same reading order below, new path only.)
 
-If the local vault has been intentionally updated after this snapshot, prefer the newer dated implementation evidence while preserving the explicit website decisions above.
+The live vault has been updated since this snapshot. Use its current accepted decisions and dated implementation evidence. Where a website task fact above conflicts with them, the Brain wins; record the conflict in the vault's `wiki/log.md`.
 
 ## Reading order
 
@@ -66,7 +68,7 @@ For present-tense capability claims use:
 - `wiki/development-reference/Architecture/*`
 - `wiki/development-reference/Modules/*`
 - `wiki/development-reference/APIs/*`
-- newest QA/gap/decision documents under `wiki/development-reference/Docs/`
+- newest QA, gap and decision notes under `wiki/development-reference/Modules/`, `testing/` and `Operations/` (the former `Docs/` folder was removed on 2026-08-21)
 
 Specific implementation documents beat broad business summaries if they are newer or more precise.
 
@@ -74,9 +76,7 @@ Example: `Modules/AI-Copilot.md` documents provider-agnostic Anthropic/OpenAI/Ol
 
 ### Tier C — marketing inspiration, not proof
 
-`wiki/development-reference/Docs/marketing/AquaRoster-Marketing-Brief.md`
-
-Use it for pain points, buyer language, feature-to-benefit framing, persona ideas, and content structure.
+`wiki/development-reference/Docs/marketing/AquaRoster-Marketing-Brief.md`. **Removed from the Brain on 2026-08-21, with no live copy.** Do not cite it. When it was available it was used for pain points, buyer language, feature-to-benefit framing, persona ideas, and content structure.
 
 Do not trust it blindly for current prices, capability status, GTM phase, competitor status, or brand.
 

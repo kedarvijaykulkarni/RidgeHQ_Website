@@ -1,5 +1,12 @@
 # Prompt Pack Changelog
 
+## v2.1 — 2026-10-18
+
+- Marked the pack as a historical 2026-08-11 snapshot that defers to accepted Brain decisions (RidgeHQ operating contract §2).
+- Removed the pack's claim to "highest priority" over the Brain; renamed it to website task facts (2026-08-11 snapshot).
+- Marked the removed `wiki/development-reference/Docs/` paths (marketing brief, screenshots) as gone, with no live copy.
+- No brand, pricing or positioning fact was changed; reconciliation is BRAIN-02.
+
 ## v2 — 2026-08-11
 
 Revised against founder-supplied `Brain(1).zip` and the current RidgeHQ commercial decision.
