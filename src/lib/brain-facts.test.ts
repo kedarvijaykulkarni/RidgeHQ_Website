@@ -31,7 +31,7 @@ function filesUnder(dir: string, exts: string[]): string[] {
 
 // Update these together with docs/brain-facts/export.json when the export is regenerated.
 const PINNED_BRAIN_REVISION = "6b13403e30fa2cf4d82fae8fbe69e687f7ae2567";
-const PINNED_MANIFEST_SHA256 = "c143fdbf";
+const PINNED_MANIFEST_SHA256 = "c143fdbf8c095627bdd2c758a1f703558768358f17edbcba4c84ee82ded991e6";
 const PINNED_FACT_IDS = [
   "brand.public-name",
   "commercial.sales-led",
@@ -51,7 +51,7 @@ describe("pinned Brain fact export", () => {
     expect(exported.facts.map((f: { id: string }) => f.id)).toEqual(PINNED_FACT_IDS);
     const digest = crypto.createHash("sha256").update(canonical(exported.facts), "utf8").digest("hex");
     expect(digest).toBe(exported.manifest_sha256);
-    expect(digest.startsWith(PINNED_MANIFEST_SHA256)).toBe(true);
+    expect(digest).toBe(PINNED_MANIFEST_SHA256);
   });
 
   it("keeps the live site in pilot pricing mode while the ladder is held", () => {
@@ -79,7 +79,7 @@ describe("pinned Brain fact export", () => {
         : fs
             .readFileSync(f, "utf8")
             .split(/\r?\n/)
-            .filter((line) => /QR[- ]linked/i.test(line) && !qualifier.test(line))
+            .filter((line) => /QR[^.]{0,40}(waiver|sign)|(waiver|sign)[^.]{0,40}QR/i.test(line) && !qualifier.test(line))
             .map((line) => `${path.relative(process.cwd(), f)}: ${line.trim().slice(0, 100)}`),
     );
     expect(offenders).toEqual([]);
