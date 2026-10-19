@@ -133,7 +133,7 @@ Default public language:
 - 0% RidgeHQ platform commission on direct bookings, if still current;
 - pilot/early-access conversation;
 - no free plan promise;
-- no final numeric tier ladder unless explicitly approved later.
+- no public numeric tier ladder until the owner approves publishing it (ladder approved, DECISIONS #165).
 
 Do **not** publish the private €49/month 90-day pilot as a permanent public price merely because it exists in the business plan.
 

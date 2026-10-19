@@ -49,7 +49,7 @@ The RidgeHQ marketing website is complete only when the applicable criteria belo
 - [ ] Latest 2026-08-11 Brain business/launch files read.
 - [ ] Present-tense claims verified against owning implementation docs.
 - [ ] No stale €29/€59/€99 pricing.
-- [ ] No unvalidated €49/€89/€149 ladder presented as final public pricing.
+- [ ] The €49/€89/€149 ladder is not shown publicly until the owner approves publishing it (DECISIONS #165/#166).
 - [ ] No fake testimonials/logos/metrics/certifications.
 - [ ] No unsupported integration claims.
 - [ ] AI wording reflects partial undo, not universal reversibility.
