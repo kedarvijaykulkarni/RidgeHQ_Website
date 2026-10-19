@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
+import { marketingConfig } from "@/lib/config/marketing";
 
 // Pinned copy of the RidgeHQAPP public fact export (docs/brain-facts/export.json).
 // Regenerate it with `brain_facts.py export` in RidgeHQAPP; never edit it by hand.
@@ -28,12 +29,33 @@ function filesUnder(dir: string, exts: string[]): string[] {
   });
 }
 
+// Update these together with docs/brain-facts/export.json when the export is regenerated.
+const PINNED_BRAIN_REVISION = "6b13403e30fa2cf4d82fae8fbe69e687f7ae2567";
+const PINNED_MANIFEST_SHA256 = "c143fdbf";
+const PINNED_FACT_IDS = [
+  "brand.public-name",
+  "commercial.sales-led",
+  "commission.direct-bookings",
+  "feature.waivers",
+  "onboarding.service-prices",
+  "pricing.annual-grow",
+  "pricing.design-partner-pilot",
+  "pricing.monthly-plans",
+  "support.scale-bounded",
+];
+
 describe("pinned Brain fact export", () => {
-  it("has the expected schema and a matching manifest hash", () => {
+  it("is the pinned revision, fact set and manifest hash", () => {
     expect(exported.schema_version).toBe(1);
-    expect(exported.source.brain_revision).toMatch(/^[0-9a-f]{40}$/);
+    expect(exported.source.brain_revision).toBe(PINNED_BRAIN_REVISION);
+    expect(exported.facts.map((f: { id: string }) => f.id)).toEqual(PINNED_FACT_IDS);
     const digest = crypto.createHash("sha256").update(canonical(exported.facts), "utf8").digest("hex");
     expect(digest).toBe(exported.manifest_sha256);
+    expect(digest.startsWith(PINNED_MANIFEST_SHA256)).toBe(true);
+  });
+
+  it("keeps the live site in pilot pricing mode while the ladder is held", () => {
+    expect(marketingConfig.pricingMode).toBe("pilot");
   });
 
   it("keeps waivers as an approved website claim and QR signing out of it", () => {
@@ -47,11 +69,27 @@ describe("pinned Brain fact export", () => {
     expect(ids.filter((id: string) => id.startsWith("ai.") || id.startsWith("sms."))).toEqual([]);
   });
 
-  it("public site content does not use the retired brand name", () => {
+  it("never presents QR-linked waiver signing as available", () => {
+    const qualifier = /roadmap|planned|not (yet )?(built|available)|soon|lacks|aim|until|will|upcoming/i;
+    const roots = ["src", "content", "public"].map((d) => path.join(process.cwd(), d));
+    const files = roots.flatMap((r) => filesUnder(r, [".ts", ".tsx", ".md", ".txt"]));
+    const offenders = files.flatMap((f) =>
+      f.endsWith("brain-facts.test.ts")
+        ? []
+        : fs
+            .readFileSync(f, "utf8")
+            .split(/\r?\n/)
+            .filter((line) => /QR[- ]linked/i.test(line) && !qualifier.test(line))
+            .map((line) => `${path.relative(process.cwd(), f)}: ${line.trim().slice(0, 100)}`),
+    );
+    expect(offenders).toEqual([]);
+  });
+
+  it("public site content has no retired brand name or unapproved €79 price", () => {
     const roots = ["src", "content", "public"].map((d) => path.join(process.cwd(), d));
     const files = roots.flatMap((r) => filesUnder(r, [".ts", ".tsx", ".md", ".txt"]));
     const offenders = files.filter(
-      (f) => !f.endsWith("brain-facts.test.ts") && /aquaroster/i.test(fs.readFileSync(f, "utf8")),
+      (f) => !f.endsWith("brain-facts.test.ts") && /aquaroster|€\s?79\b/i.test(fs.readFileSync(f, "utf8")),
     );
     expect(offenders).toEqual([]);
   });
