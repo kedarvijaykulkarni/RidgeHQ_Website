@@ -67,7 +67,7 @@ Required behavior:
 - show 0% RidgeHQ platform commission on direct bookings if current;
 - explain early access / Founding Operator conversation;
 - link to the same Zoho lead form with `pricing_interest` intent;
-- no public hard-coded €49/€89/€149 ladder until explicitly approved.
+- no public hard-coded €49/€89/€149 ladder until the owner approves publishing it (ladder approved, DECISIONS #165).
 
 Keep the tier data model reusable for a later validated public mode.
 

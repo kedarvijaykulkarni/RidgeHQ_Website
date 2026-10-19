@@ -1,0 +1,223 @@
+{
+  "created_at": "2026-10-19T05:18:24Z",
+  "facts": [
+    {
+      "channels": [
+        "sales",
+        "social",
+        "website"
+      ],
+      "evidence": [
+        "DECISIONS.md #165",
+        "wiki/business-context.md#Brand and naming guardrail"
+      ],
+      "id": "brand.public-name",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "All public copy: ridgehq.app, website, social and sales. Name clearance is unresolved: do not claim a registered trademark, and do not fund a major brand campaign until clearance is complete.",
+      "source": {
+        "heading": "Brand and naming guardrail",
+        "note": "business-context"
+      },
+      "statement": "RidgeHQ is the product's public name.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "website"
+      ],
+      "evidence": [
+        "wiki/pricing.md#✅ Published pricing — confirmed 2026-08-28 (founder decision)",
+        "DECISIONS.md #165"
+      ],
+      "id": "commercial.sales-led",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "Controlled-pilot motion. Changing to self-service needs a new owner decision.",
+      "source": {
+        "heading": "✅ Published pricing — confirmed 2026-08-28 (founder decision)",
+        "note": "pricing"
+      },
+      "statement": "Every plan is sold through Book a Demo. There is no self-service signup and no free plan.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "social",
+        "website"
+      ],
+      "evidence": [
+        "apps/api/app/modules/bookings/service.py::create_basket_order at 7003f8a: commission only through partner attribution",
+        "Commitment-Traceability-Matrix CTM-004 (scenarios BOOK-012, POS-015, PARTNER-003 not yet run)",
+        "DECISIONS.md #165"
+      ],
+      "id": "commission.direct-bookings",
+      "implementation": "implemented",
+      "review_by": "2027-01-18",
+      "scope": "Partner-attributed orders follow that partner's commission rule. A supporting point, not the headline.",
+      "source": {
+        "heading": "On the 0% commission line",
+        "note": "pricing"
+      },
+      "statement": "0% platform commission on direct bookings, on every plan.",
+      "verification": {
+        "date": "2026-10-18",
+        "state": "source-inspected"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "social",
+        "website"
+      ],
+      "evidence": [
+        "apps/api/app/modules/bookings/models.py WaiverTemplate, WaiverCapture at 7003f8a",
+        "apps/api/tests/test_waiver_conditional_logic.py",
+        "apps/api/tests/test_waiver_cap_never_blocks.py",
+        "DECISIONS.md #165",
+        "DECISIONS.md #166"
+      ],
+      "id": "feature.waivers",
+      "implementation": "implemented",
+      "review_by": "2027-01-18",
+      "scope": "QR-linked waiver signing is not built and must not be claimed. Signature allowances are soft and never block a signature.",
+      "source": {
+        "heading": "2. What you can honestly claim today",
+        "note": "business-context"
+      },
+      "statement": "Digital waivers are built in: typed e-signature, per-participant enforcement and conditional questions.",
+      "verification": {
+        "date": "2026-10-18",
+        "state": "source-inspected"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "website"
+      ],
+      "evidence": [
+        "DECISIONS.md #166",
+        "wiki/pricing.md#11. One-time services"
+      ],
+      "id": "onboarding.service-prices",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "One-time services sold by manual invoice. Design-partner founder onboarding is included as an explicit exception.",
+      "source": {
+        "heading": "11. One-time services: price list and manual process (issues #329, #330, Epic #303)",
+        "note": "pricing"
+      },
+      "statement": "Founder Setup costs €750 and Migration Only costs €450.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    },
+    {
+      "channels": [
+        "sales"
+      ],
+      "evidence": [
+        "DECISIONS.md #166"
+      ],
+      "id": "pricing.annual-grow",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "Annual prepay sold by agreement with the customer.",
+      "source": {
+        "heading": "4. Pricing path",
+        "note": "launch-plan"
+      },
+      "statement": "Grow is also available at €890 a year.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "website"
+      ],
+      "evidence": [
+        "DECISIONS.md #166",
+        "wiki/launch-plan.md#3. Founding Operator Pilot offer"
+      ],
+      "id": "pricing.design-partner-pilot",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "Pilot offer only, separate from the monthly plans. Written offers already made are honoured.",
+      "source": {
+        "heading": "3. Founding Operator Pilot offer",
+        "note": "launch-plan"
+      },
+      "statement": "Design Partner pilot: €49 a month for 90 days with Grow features, then €89 a month.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "website"
+      ],
+      "evidence": [
+        "wiki/ridgehq-pricing-ai-sms-support-2026-10-18.md#4. Tier pricing",
+        "DECISIONS.md #165",
+        "DECISIONS.md #166"
+      ],
+      "id": "pricing.monthly-plans",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "The launch ladder. The Design Partner pilot and annual Grow are separate facts. Held until the operator pricing calls are done; a Grow price test applies to new prospects only.",
+      "source": {
+        "heading": "4. Tier pricing",
+        "note": "ridgehq-pricing-ai-sms-support-2026-10-18"
+      },
+      "statement": "Starter €49 a month, Grow €89 a month, Scale €149 a month.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    },
+    {
+      "channels": [
+        "sales",
+        "website"
+      ],
+      "evidence": [
+        "DECISIONS.md #166"
+      ],
+      "id": "support.scale-bounded",
+      "implementation": "unknown",
+      "review_by": "2027-01-18",
+      "scope": "For new offers. No guaranteed phone support or named contact. Existing written commitments are honoured or renegotiated.",
+      "source": {
+        "heading": "5. Support by tier",
+        "note": "ridgehq-pricing-ai-sms-support-2026-10-18"
+      },
+      "statement": "Scale support: priority response by the next business day within published business hours, and two training sessions a year.",
+      "verification": {
+        "date": null,
+        "state": "not-checked"
+      }
+    }
+  ],
+  "manifest_sha256": "c143fdbf8c095627bdd2c758a1f703558768358f17edbcba4c84ee82ded991e6",
+  "schema_version": 1,
+  "source": {
+    "brain_revision": "6b13403e30fa2cf4d82fae8fbe69e687f7ae2567",
+    "registry": "wiki/ai-operations/facts/registry.json"
+  }
+}

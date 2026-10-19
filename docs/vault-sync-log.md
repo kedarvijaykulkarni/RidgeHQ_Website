@@ -304,3 +304,13 @@ QR-linked signing gets one roadmap section per post, linking to the canonical wa
 **No other surface affected** — this line existed only on the one comparison page; `product-knowledge.ts`, `llms.txt`, and `/ai` don't list per-gateway support, so no further 7-surface sync was needed.
 
 **No vault change needed** — the vault's own `Integration-Architecture.md` "Partial" status for PayPal/Redsys was the source of this fix and is already accurate.
+
+## 2026-10-19 — Pinned facts and source-pack alignment (issue #137, WEB-02 docs slice)
+
+**Pulled:** RidgeHQAPP `DECISIONS.md` #165/#166 and the public fact export (9 facts, Brain revision `6b13403`, manifest `c143fdbf`), pinned at `docs/brain-facts/export.json`.
+
+**Changed:** `RidgeHQ_Website_AI_Prompt/` (01, 03, 04, 07, 10): the €49/€89/€149 ladder, the €49-for-90-days pilot with the €89 post-pilot price, waivers as the only feature claim, and the bounded Scale support wording now follow #165/#166. New `src/lib/brain-facts.test.ts` checks the export hash, that no AI or SMS fact is exported, and that site content does not use the retired brand name.
+
+**Not changed:** nothing the live site publishes. `pricingMode` stays `pilot`; the registry holds the ladder until the operator pricing calls are done, so publishing it (#54/#55/#56) needs a separate owner go. The 7 AI-discoverability surfaces are untouched.
+
+**Not done (later WEB-02 slices):** seven-surface fact validation and the route/focus manifest.

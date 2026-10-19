@@ -141,7 +141,7 @@ Default `pilot` state:
 - explain that Founding Operator / early access is currently conversation-led;
 - CTA to demo/pilot form;
 - no “Buy now” or self-service checkout;
-- no public hard-coded €49/€89/€149 ladder until explicitly approved after validation.
+- no public hard-coded €49/€89/€149 ladder until the owner approves publishing it (the ladder itself is approved, DECISIONS #165).
 
 The code may retain a reusable tier model behind a configuration flag so validated packaging can be published later without a redesign.
 
