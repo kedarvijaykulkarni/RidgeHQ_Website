@@ -17,4 +17,15 @@ describe("public/llms.txt", () => {
       expect(llms).not.toContain(`/blog/${from})`);
     }
   });
+
+  it("points to an OpenAPI document that describes every public API route", () => {
+    expect(llms).toContain("https://www.ridgehq.app/openapi.json");
+    const spec = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public/openapi.json"), "utf8"));
+    expect(Object.keys(spec.paths).sort()).toEqual(
+      ["/api/public/features", "/api/public/industries", "/api/public/pricing", "/api/public/product"],
+    );
+    for (const route of Object.keys(spec.paths)) {
+      expect(fs.existsSync(path.join(process.cwd(), "src/app", route, "route.ts"))).toBe(true);
+    }
+  });
 });

@@ -1,0 +1,51 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "RidgeHQ public product facts API",
+    "version": "1.0.0",
+    "description": "Read-only JSON of the same already-public marketing facts published on https://www.ridgehq.app/ai and https://www.ridgehq.app/llms.txt. No authentication, no per-customer data. This is not the RidgeHQ application API; connecting an AI assistant to a RidgeHQ account over MCP requires an account and is described at https://www.ridgehq.app/docs."
+  },
+  "servers": [{ "url": "https://www.ridgehq.app" }],
+  "paths": {
+    "/api/public/product": {
+      "get": {
+        "operationId": "getProduct",
+        "summary": "Product description, ideal and poor-fit customer profiles, security summary, company details, and canonical routes.",
+        "responses": { "200": { "$ref": "#/components/responses/Facts" }, "429": { "$ref": "#/components/responses/RateLimited" } }
+      }
+    },
+    "/api/public/industries": {
+      "get": {
+        "operationId": "getIndustries",
+        "summary": "The activity-business verticals RidgeHQ serves and how each is supported.",
+        "responses": { "200": { "$ref": "#/components/responses/Facts" }, "429": { "$ref": "#/components/responses/RateLimited" } }
+      }
+    },
+    "/api/public/features": {
+      "get": {
+        "operationId": "getFeatures",
+        "summary": "Platform capabilities, products, and integrations with their current status.",
+        "responses": { "200": { "$ref": "#/components/responses/Facts" }, "429": { "$ref": "#/components/responses/RateLimited" } }
+      }
+    },
+    "/api/public/pricing": {
+      "get": {
+        "operationId": "getPricing",
+        "summary": "Current pricing mode and terms. Treat https://www.ridgehq.app/pricing as the authoritative source.",
+        "responses": { "200": { "$ref": "#/components/responses/Facts" }, "429": { "$ref": "#/components/responses/RateLimited" } }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "Facts": {
+        "description": "JSON object with a lastUpdated date and the requested facts.",
+        "content": { "application/json": { "schema": { "type": "object", "required": ["lastUpdated"], "properties": { "lastUpdated": { "type": "string" } }, "additionalProperties": true } } }
+      },
+      "RateLimited": {
+        "description": "Too many requests from this client. Retry after the number of seconds in the Retry-After header.",
+        "headers": { "Retry-After": { "schema": { "type": "string" } } }
+      }
+    }
+  }
+}

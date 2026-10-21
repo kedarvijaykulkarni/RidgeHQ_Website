@@ -71,6 +71,11 @@ Problem-first guides — organized by operational headache rather than industry 
 
 Articles on the business economics, operations, and technology behind running a connected activity business, newest first. Where a post and a /platform or /products page differ, the platform/product page is the current source:
 
+- [Dive Center Software: One Schedule for Trips, Gear, and Divers](https://www.ridgehq.app/blog/core-scheduling-for-activity-businesses) (Operations, 2026-10-21)
+- [Sailing School Software and Data Isolation: Row-Level Security Explained](https://www.ridgehq.app/blog/rls-multi-tenancy-data-security-sailing-schools) (Technology, 2026-10-21)
+- [Controlled AI for Windsurf Schools: Role Checks, Confirmations, and Undo](https://www.ridgehq.app/blog/ai-permission-gating-safe-operations) (Technology, 2026-10-21)
+- [Staff Permissions for Dive Resorts: Who Can Change What](https://www.ridgehq.app/blog/role-based-staff-permissions-dive-resort-software) (Operations, 2026-10-21)
+- [Surf Camp Waivers: One Signature Trail from Booking to Check-Out](https://www.ridgehq.app/blog/integrated-waiver-systems-for-surf-camps) (Operations, 2026-10-21)
 - [Kitesurf School Booking System: Waivers, Kit, and Check-In in One Place](https://www.ridgehq.app/blog/kitesurf-school-waivers-gear-check-in) (Operations, 2026-10-11)
 - [Surf School Waivers and Check-In: From Booking to the Beach](https://www.ridgehq.app/blog/surf-school-waivers-and-check-in) (Operations, 2026-10-11)
 - [Core Intelligence: Building AI into Your Operations OS](https://www.ridgehq.app/blog/ai-core-intelligence-operational-os) (Technology, 2026-10-09)
@@ -88,7 +93,7 @@ Articles on the business economics, operations, and technology behind running a 
 ## Machine-readable summary
 
 - [AI Overview](https://www.ridgehq.app/ai): one page summarizing product, pricing mode, industries, capabilities, integrations, security, and FAQs — server-rendered, kept in sync with the config that drives the marketing pages.
-- Public JSON API (read-only, no auth, same data as the AI Overview page above): `GET /api/public/product`, `GET /api/public/industries`, `GET /api/public/features`, `GET /api/public/pricing`. Excluded from robots.txt crawling/indexing — call these directly, they aren't meant to be discovered by crawling.
+- Public JSON API (read-only, no auth, same data as the AI Overview page above): `GET /api/public/product`, `GET /api/public/industries`, `GET /api/public/features`, `GET /api/public/pricing`. Excluded from robots.txt crawling/indexing — call these directly, they aren't meant to be discovered by crawling. Described by an [OpenAPI 3.1 document](https://www.ridgehq.app/openapi.json).
 
 ## Company
 
