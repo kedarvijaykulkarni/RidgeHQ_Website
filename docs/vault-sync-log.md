@@ -314,3 +314,13 @@ QR-linked signing gets one roadmap section per post, linking to the canonical wa
 **Not changed:** nothing the live site publishes. `pricingMode` stays `pilot`; the registry holds the ladder until the operator pricing calls are done, so publishing it (#54/#55/#56) needs a separate owner go. The 7 AI-discoverability surfaces are untouched.
 
 **Not done (later WEB-02 slices):** seven-surface fact validation and the route/focus manifest.
+
+## 2026-10-21 — Publish 5 shipped-topic blog posts; OpenAPI description of the public API
+
+**Pulled:** `business-context.md` §2 (✅ rows for core scheduling, RLS, role-based permissions, AI permission gating + undo, waivers; ❌ row for QR-linked signing) and the already-published canonical posts for each topic.
+
+**Published** (the raw drafts carried unsupported specifics, so each was rewritten to its vertical and limited to claims the vault and the live canonical posts already make): `core-scheduling-for-activity-businesses` (dive centers), `rls-multi-tenancy-data-security-sailing-schools`, `ai-permission-gating-safe-operations` (windsurf), `role-based-staff-permissions-dive-resort-software`, `integrated-waiver-systems-for-surf-camps`. Dropped from the drafts: "tank counts", "unique serial number" gear tracking, "waiver re-created on booking change", "industry-leading", "absolute/ironclad" security wording, billing changes as AI-gated actions, competitor add-on pricing.
+
+**Not published:** three more QR-linked-signing drafts (`qr-linked-waivers-for-surf-schools`, `waiver-system-qr-linked-signing-roadmap`, `uture-of-waivers-bike-rental-software`). The first two were already superseded by the live surf and kitesurf waiver posts (#128), and #127 merged this same topic once. QR-linked signing is still not built; publishing a third angle on it would re-create the cannibalization. They stay out of the repo.
+
+**Surfaces:** `llms.txt` Blog section +5; new `public/openapi.json` describing the four `/api/public/*` routes, linked from `llms.txt`. Sitemap: blog posts are generated from content; `/blog` lastmod 2026-10-21. No product-truth change, so the other surfaces are untouched.
