@@ -6,6 +6,7 @@ canonical_url: "https://www.ridgehq.app/blog/integrated-waiver-systems-for-surf-
 tags: ["surf camp booking software", "surf camp software", "waiver management", "ridgehq"]
 keywords: ["surf camp booking software", "surf camp software", "digital waivers", "RidgeHQ"]
 date: "2026-10-21"
+updatedAt: "2026-11-15"
 pillar: "Operations"
 draft: false
 ---
@@ -28,7 +29,7 @@ Waiver templates support conditional questions: a follow-up appears only when an
 
 ## Returning Guests and Renewals
 
-A template can carry a validity window, so a signature stays current for a set number of months, then shows as expiring or expired. When a guest needs to sign or renew outside checkout, staff can capture it at the desk or email a single-use renewal link that expires after seven days.
+A template can carry a validity window, which sets when a signature expires. If the template is also marked as required for trips, staff see each signature's status (valid, expiring soon or expired), and RidgeHQ blocks adding someone to a roster while theirs is unsigned or expired; a Manager can override, and the override is audited. Online checkout still collects a fresh signature from every guest on each booking. When a guest needs to sign or renew outside checkout, staff can capture it at the desk or email a single-use renewal link that expires after seven days.
 
 ## On the Day
 
@@ -37,7 +38,7 @@ Staff check guests in from the session roster, and guests can check in everyone 
 ## Key takeaways
 
 - Waivers are built in and enforced per participant with a typed e-signature before checkout.
-- Conditional questions, validity windows and renewal links suit multi-day camps and returning guests.
+- Each booking collects its own signatures at checkout; trip-required templates with a validity window flag expired signatures before a roster add, and renewal links cover the gaps.
 - Health answers need separate consent, are restricted to senior roles, and every read is audited.
 - Staff check-in and guest QR check-in are live; QR-linked signing is planned.
 

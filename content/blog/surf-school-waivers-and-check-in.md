@@ -6,6 +6,7 @@ canonical_url: "https://www.ridgehq.app/blog/surf-school-waivers-and-check-in"
 tags: ["surf school software", "surf school booking software", "surf lesson scheduling", "waiver management", "check-in", "ridgehq"]
 keywords: ["surf school software", "surf school booking software", "surf lesson scheduling", "digital waivers", "surf school check-in", "RidgeHQ"]
 date: "2026-10-11"
+updatedAt: "2026-11-15"
 pillar: "Operations"
 draft: false
 video:
@@ -38,7 +39,7 @@ The same mechanism carries a health questionnaire. Medical answers need a separa
 
 ## Camps, Returning Students, and Renewals
 
-Surf camps, and regulars who book every week, make one-signature-per-booking tedious. A waiver template can carry a validity window, so a signature stays current for a set number of months and then shows as expiring or expired. When a student needs to sign or renew outside the booking flow, staff can capture it at the desk or email a single-use renewal link that expires after seven days.
+Surf camps and regulars who book every week sign at checkout for each booking. A waiver template can also carry a validity window, which sets when a signature expires. If the template is also marked as required for trips, staff see each signature's status (valid, expiring soon or expired), and RidgeHQ blocks adding someone to a roster while theirs is unsigned or expired; a Manager can override, and the override is audited. When a student needs to sign or renew outside the booking flow, staff can capture it at the desk or email a single-use renewal link that expires after seven days.
 
 ## Check-In on the Day
 
@@ -56,7 +57,7 @@ Until that ships, students sign during booking checkout, by renewal link, or wit
 
 - Waivers are built into RidgeHQ's surf school software and enforced per student with a typed e-signature before checkout.
 - Conditional questions and a restricted, audited health questionnaire fit the form to the student.
-- Validity windows and renewal links cover camps and returning students.
+- On trip-required templates, validity windows show staff whose signature is current; renewal links and desk capture cover anyone who still needs to sign.
 - Staff roster check-in and guest QR self-check-in are live.
 - QR-linked waiver signing is on the roadmap and not yet available.
 
