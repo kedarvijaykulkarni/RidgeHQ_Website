@@ -48,7 +48,7 @@ The same template mechanism can carry a medical questionnaire as well as a liabi
 
 ## Validity Windows and Trip Roster Checks
 
-Some forms only need to be signed once a season; others should be renewed. A waiver template can carry a validity window, so a signature stays current for a set number of months and then shows as expiring or expired.
+Some forms only need to cover a season; others should be renewed more often. A waiver template can carry a validity window, so a signature shows as valid for a set number of months and then as expiring or expired. Online checkout still collects a fresh signature from every participant on each booking; the validity window is what staff see on the roster and what the renewal link brings current.
 
 A template can also be marked as required for trips. When staff add a diver to a trip roster, RidgeHQ checks that diver's required waivers first. If one is unsigned or expired, the add is blocked and staff see which form is missing. A Manager can override with a reason, and that override is recorded in the audit log. The trip roster shows a per-diver waiver and medical badge, so gaps are visible before the boat leaves.
 

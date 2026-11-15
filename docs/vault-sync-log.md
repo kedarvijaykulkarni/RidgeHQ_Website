@@ -338,3 +338,11 @@ QR-linked signing gets one roadmap section per post, linking to the canonical wa
 **Surfaces:** `llms.txt` Blog +8; sitemap 83 URLs (+8, blog routes generated from content), `/blog` lastmod 2026-11-15, 10 video entries. No product-truth change, so the other surfaces are untouched.
 
 **Open for the vault (not pushed — the vault checkout was on another session's feature branch):** `products.ts` Waiver App FAQ says returning customers re-sign on each booking, while the live surf posts publish waiver validity windows; one of them is stale. The new rafting/ski posts mention neither.
+
+## 2026-11-15 — Waiver validity-window copy correction (follow-up to #140)
+
+**Pulled:** `Modules/Bookings.md` rules #188 (validity windows), #189 (status by customer email across bookings), #190 (roster-add block, Manager override), #219 (staff capture / renewal link), and `create_basket_order` in `apps/api/app/modules/bookings/service.py` (RidgeHQAPP `origin/main`): checkout requires a signature from every participant for every required template on every booking, with no reuse of an earlier valid capture.
+
+**Resolved:** the `products.ts` Waiver App FAQ ("each booking collects its own signature") is correct. Four live posts implied validity windows spare returning customers a new signature: `surf-school-waivers-and-check-in`, `integrated-waiver-systems-for-surf-camps`, `kitesurf-school-waivers-gear-check-in`, `waiver-system-dive-center-operations`. Each now says checkout collects a fresh signature per booking and that the validity window drives the valid/expiring/expired status on the roster, the trip-roster block and renewal links. `updatedAt` 2026-11-15 on all four (sitemap lastmod).
+
+**Surfaces:** blog copy only; FAQ, `llms.txt`, `/ai` and product-knowledge make no validity-window claim, so nothing else changes.
