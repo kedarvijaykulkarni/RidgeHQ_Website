@@ -31,7 +31,7 @@ Waiver requirements attach to products. When a course or taster session requires
 
 Waiver templates support conditional questions, so a student who reports previous kite or wing experience can be asked follow-ups that a complete beginner never sees. A health questionnaire can travel with the waiver, with a separate health-data consent and answers restricted to senior roles.
 
-Students give their weight and sizes at booking, and those are stored on their profile, so a returning student does not fill them in again. Waivers are signed at checkout for each booking, so a multi-lesson course booked once is signed once. A template's validity window then shows staff whether a signature is valid, expiring or expired.
+Students give their weight and sizes at booking, and those are stored on their profile, so a returning student does not fill them in again. Waivers are signed at checkout for each booking, so a multi-lesson course booked once is signed once. A template can also carry a validity window, which sets when a signature expires. If the template is also marked as required for trips, staff see each signature's status (valid, expiring soon or expired), and RidgeHQ blocks adding someone to a roster while theirs is unsigned or expired; a Manager can override, and the override is audited.
 
 ## Kit Tracked by Unit and Size
 

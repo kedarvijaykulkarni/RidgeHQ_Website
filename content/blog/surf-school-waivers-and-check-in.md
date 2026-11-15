@@ -39,7 +39,7 @@ The same mechanism carries a health questionnaire. Medical answers need a separa
 
 ## Camps, Returning Students, and Renewals
 
-Surf camps and regulars who book every week sign at checkout for each booking. A waiver template can also carry a validity window, so a signature shows as valid, expiring or expired on the roster for a set number of months. When a student needs to sign or renew outside the booking flow, staff can capture it at the desk or email a single-use renewal link that expires after seven days.
+Surf camps and regulars who book every week sign at checkout for each booking. A waiver template can also carry a validity window, which sets when a signature expires. If the template is also marked as required for trips, staff see each signature's status (valid, expiring soon or expired), and RidgeHQ blocks adding someone to a roster while theirs is unsigned or expired; a Manager can override, and the override is audited. When a student needs to sign or renew outside the booking flow, staff can capture it at the desk or email a single-use renewal link that expires after seven days.
 
 ## Check-In on the Day
 
@@ -57,7 +57,7 @@ Until that ships, students sign during booking checkout, by renewal link, or wit
 
 - Waivers are built into RidgeHQ's surf school software and enforced per student with a typed e-signature before checkout.
 - Conditional questions and a restricted, audited health questionnaire fit the form to the student.
-- Validity windows show staff whose signature is current; renewal links and desk capture cover anyone who still needs to sign.
+- On trip-required templates, validity windows show staff whose signature is current; renewal links and desk capture cover anyone who still needs to sign.
 - Staff roster check-in and guest QR self-check-in are live.
 - QR-linked waiver signing is on the roadmap and not yet available.
 
