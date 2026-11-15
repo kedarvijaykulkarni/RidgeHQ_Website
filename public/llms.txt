@@ -71,6 +71,14 @@ Problem-first guides — organized by operational headache rather than industry 
 
 Articles on the business economics, operations, and technology behind running a connected activity business, newest first. Where a post and a /platform or /products page differ, the platform/product page is the current source:
 
+- [Gear Maintenance Holds for Dive Resorts: No Rentals Until Service Is Confirmed](https://www.ridgehq.app/blog/gear-maintenance-hold-dive-resorts) (Operations, 2026-11-15)
+- [Direct Card Payments for Sailing Schools: Revenue to Your Own Stripe Account](https://www.ridgehq.app/blog/retaining-financial-visibility-direct-payments) (Business Economics, 2026-11-15)
+- [Ski School Waivers: Kids' Lessons, Multi-Day Courses and the Meeting Point](https://www.ridgehq.app/blog/managing-waivers-in-ski-school-software) (Operations, 2026-11-15)
+- [Rafting Waivers: Every Participant Signed Before the Put-In](https://www.ridgehq.app/blog/rafting-booking-software-waivers) (Operations, 2026-11-15)
+- [Windsurf School Booking Software With a Flat Monthly Price](https://www.ridgehq.app/blog/flat-pricing-zero-commission-windsurf-schools) (Business Economics, 2026-11-15)
+- [AI Copilot for Surf Schools: Role Checks, Confirmations and Real Undo](https://www.ridgehq.app/blog/ai-permission-gating-operations-surf-schools) (Technology, 2026-11-15)
+- [An AI Copilot Inside Kayak Rental Booking Software, Not Beside It](https://www.ridgehq.app/blog/operational-ai-core-kayak-booking-software) (Technology, 2026-11-15)
+- [Boat Rental Software With an AI Copilot for Scheduling](https://www.ridgehq.app/blog/ai-copilot-for-boat-rental-operations) (Technology, 2026-11-15)
 - [Dive Center Software: One Schedule for Trips, Gear, and Divers](https://www.ridgehq.app/blog/core-scheduling-for-activity-businesses) (Operations, 2026-10-21)
 - [Sailing School Software and Data Isolation: Row-Level Security Explained](https://www.ridgehq.app/blog/rls-multi-tenancy-data-security-sailing-schools) (Technology, 2026-10-21)
 - [Controlled AI for Windsurf Schools: Role Checks, Confirmations, and Undo](https://www.ridgehq.app/blog/ai-permission-gating-safe-operations) (Technology, 2026-10-21)

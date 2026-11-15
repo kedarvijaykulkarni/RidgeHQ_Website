@@ -6,8 +6,15 @@ canonical_url: "https://www.ridgehq.app/blog/role-based-staff-permissions-dive-r
 tags: ["dive resort software", "dive resort booking software", "staff permissions", "ridgehq"]
 keywords: ["dive resort software", "dive resort booking software", "role-based permissions", "RidgeHQ"]
 date: "2026-10-21"
+updatedAt: "2026-11-15"
 pillar: "Operations"
 draft: false
+video:
+  youtubeId: "xEpaCqGXcOw"
+  title: "Role-based staff permissions"
+  description: "How RidgeHQ's seven built-in staff roles are enforced on the server, so each person at a dive resort, from the front desk to the boat crew, can only change what their job needs."
+  uploadDate: "2026-10-18T12:00:31-07:00"
+  durationSeconds: 70
 ---
 
 _A dive resort runs a room calendar, a dive planner, a boat, a gear room and a front desk at once. The more people who touch the system, the more it matters that each can only do their own job._
