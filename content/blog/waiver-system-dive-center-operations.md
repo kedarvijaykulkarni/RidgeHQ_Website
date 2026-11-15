@@ -5,9 +5,15 @@ slug: "waiver-system-dive-center-operations"
 canonical_url: "https://www.ridgehq.app/blog/waiver-system-dive-center-operations"
 tags: ["dive center operations", "waiver management", "e-signature", "compliance", "operations software"]
 date: "2026-09-11"
-updatedAt: "2026-10-09"
+updatedAt: "2026-11-15"
 pillar: "Operations"
 draft: false
+video:
+  youtubeId: "Nzw_ohWO6mY"
+  title: "Waiver system"
+  description: "How RidgeHQ builds digital waivers into dive center bookings: typed e-signature, per-participant enforcement and conditional questions, so waivers are part of the booking rather than a separate stack of forms."
+  uploadDate: "2026-11-07T03:40:23-08:00"
+  durationSeconds: 70
 ---
 
 _Dive centers need waivers that are part of the booking, not a stack of forms filed next to it. RidgeHQ builds waiver capture, medical questionnaires, roster checks, and check-in into the same system that runs the day, and is plain about the one piece still on the roadmap._
